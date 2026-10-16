@@ -268,6 +268,12 @@ components:
     padding: 64px
 ---
 
+> **Anpassung für J&L Bauprojekte (gilt vorrangig):** Struktur, Typografie und Abstände folgen diesem System.
+> Die Farben sind an das Firmenlogo angepasst: Primärfarbe ist das Logo-Gelb `#FFC000` mit dunkler Schrift
+> (`#1D1C1A`), dunkle Flächen sind warmes Anthrazit (`#1F1E1C` / `#2D2B28`), helle Flächen warmer Stein (`#F3F1EC`).
+> Buttons, Karten und Eingabefelder haben 4px Radius. Karten heben sich mit weißer Fläche, feinem Rand,
+> weichem Schatten und 4px gelber Oberkante ab (`.card`, `.card-dark` in `app/globals.css`).
+
 ## Overview
 
 BMW's corporate site carries a far more **measured, corporate-automotive** interface than its motorsport-bombastic cousin BMW M. The atmosphere is light: `{colors.canvas}` (#ffffff) is the base surface, `{colors.surface-card}` (#fafafa) carries the soft-grey card plates, and dark navy `{colors.surface-dark}` (#1a2129) appears only inside hero bands — one per page, framing the lead model render.

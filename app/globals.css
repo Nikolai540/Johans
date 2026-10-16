@@ -6,25 +6,25 @@
    ------------------------------------------------------------------ */
 @theme {
   --color-*: initial;
-  --color-primary: #1c69d4;
-  --color-primary-active: #0653b6;
-  --color-primary-disabled: #d6d6d6;
-  --color-ink: #262626;
-  --color-body: #3c3c3c;
+  --color-primary: #ffc000; /* Logo-Gelb */
+  --color-primary-active: #e6ad00;
+  --color-primary-disabled: #e2ded4;
+  --color-ink: #1d1c1a;
+  --color-body: #3a3834;
   --color-body-strong: #1a1a1a;
-  --color-muted: #6b6b6b;
+  --color-muted: #6b675f;
   --color-muted-soft: #9a9a9a;
-  --color-hairline: #e6e6e6;
-  --color-hairline-strong: #cccccc;
+  --color-hairline: #e7e3da;
+  --color-hairline-strong: #cfc9bc;
   --color-canvas: #ffffff;
-  --color-surface-soft: #f7f7f7;
-  --color-surface-card: #fafafa;
-  --color-surface-strong: #ebebeb;
-  --color-surface-dark: #1a2129;
-  --color-surface-dark-elevated: #262e38;
-  --color-on-primary: #ffffff;
+  --color-surface-soft: #f3f1ec; /* warmer Stein */
+  --color-surface-card: #faf9f6;
+  --color-surface-strong: #e7e3da;
+  --color-surface-dark: #1f1e1c; /* Anthrazit */
+  --color-surface-dark-elevated: #2d2b28;
+  --color-on-primary: #1d1c1a;
   --color-on-dark: #ffffff;
-  --color-on-dark-soft: #bbbbbb;
+  --color-on-dark-soft: #c9c4b8;
   --color-success: #22c55e;
   --color-warning: #f59e0b;
   --color-error: #dc2626;
@@ -136,12 +136,12 @@
   /* Kein blinkender Textcursor beim Klick auf normalen Text – nur in Eingabefeldern */
   body { caret-color: transparent; }
   input, textarea, select, [contenteditable="true"] { caret-color: auto; }
-  ::selection { background: var(--color-primary); color: var(--color-on-primary); }
+  ::selection { background: var(--color-primary); color: var(--color-ink); }
   :focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--color-ink);
     outline-offset: 2px;
   }
-  .on-dark :focus-visible { outline-color: var(--color-on-dark); }
+  .on-dark :focus-visible { outline-color: var(--color-primary); }
   summary { list-style: none; }
   summary::-webkit-details-marker { display: none; }
 }
@@ -155,7 +155,7 @@
     gap: var(--spacing-xs);
     min-height: 48px;
     padding: 14px 32px;
-    border-radius: 0;
+    border-radius: var(--radius-sm);
     font-size: var(--text-button);
     font-weight: 700;
     line-height: 1;
@@ -188,7 +188,7 @@
   .link-underlined { text-decoration-color: currentColor; }
   @media (hover: hover) and (pointer: fine) {
     .link:hover { text-decoration-color: currentColor; }
-    .link-underlined:hover { color: var(--color-primary); }
+    .link-underlined:hover { text-decoration-thickness: 0.14em; text-decoration-color: var(--color-primary); }
   }
 
   .page-x {
@@ -198,6 +198,26 @@
   @media (width >= 64rem) { .page-x { padding-inline: var(--spacing-xl); } }
 
   .tabular { font-variant-numeric: tabular-nums; }
+
+  /* Karten: heben sich durch Fläche, Rand, Schatten und gelbe Kante ab */
+  .card {
+    position: relative;
+    background-color: var(--color-canvas);
+    border: 1px solid var(--color-hairline);
+    border-top: 4px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 1px 2px rgb(29 28 26 / 0.06), 0 12px 32px -16px rgb(29 28 26 / 0.28); /* taste-skill-ignore: Karten-Schatten auf Kundenwunsch */
+    transition: transform var(--t-ui) var(--ease-out), box-shadow var(--t-ui) var(--ease-out);
+  }
+  .card-dark {
+    background-color: var(--color-surface-dark-elevated);
+    border-color: var(--color-surface-dark-elevated);
+    border-top-color: var(--color-primary);
+    box-shadow: 0 12px 32px -16px rgb(0 0 0 / 0.6); /* taste-skill-ignore: Karten-Schatten auf Kundenwunsch */
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .card:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgb(29 28 26 / 0.06), 0 20px 40px -18px rgb(29 28 26 / 0.35); } /* taste-skill-ignore */
+  }
 
   /* Neutrale Abdunklung unter Text auf Fotos (Ink #262626 mit Alpha) */
   .scrim-bottom {

@@ -11,7 +11,7 @@ type Status = "idle" | "sending" | "success" | "error";
 type FieldErrors = Partial<Record<"name" | "email" | "phone" | "message" | "consent", string>>;
 
 const inputClass =
-  "block min-h-12 w-full rounded-none border border-muted bg-canvas px-md py-[14px] text-body-md text-ink placeholder:text-muted aria-invalid:border-error";
+  "block min-h-12 w-full rounded-sm border border-muted bg-canvas px-md py-[14px] text-body-md text-ink placeholder:text-muted aria-invalid:border-error";
 
 function joinNames(names: string[]) {
   if (names.length <= 1) return names[0] ?? "";
@@ -167,7 +167,7 @@ export function ContactForm({ initial = [] }: { initial?: ServiceId[] }) {
             {serviceOrder.map((id) => (
               <label
                 key={id}
-                className="inline-flex min-h-11 cursor-pointer items-center border border-muted bg-canvas px-md text-body-md text-ink transition-colors duration-[180ms] select-none has-checked:border-ink has-checked:bg-ink has-checked:text-on-dark has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-primary"
+                className="inline-flex min-h-11 cursor-pointer items-center border border-muted bg-canvas px-md text-body-md text-ink transition-colors duration-[180ms] select-none rounded-sm has-checked:border-primary has-checked:bg-primary has-checked:font-bold has-checked:text-ink has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-ink"
               >
                 <input
                   type="checkbox"
@@ -187,7 +187,7 @@ export function ContactForm({ initial = [] }: { initial?: ServiceId[] }) {
         <div className="lg:col-span-4 lg:col-start-9 lg:row-span-6 lg:row-start-1">
           <aside
             aria-label="Vorschau: Ihr Bauschild"
-            className="bg-surface-dark p-lg text-on-dark lg:sticky lg:top-[calc(var(--spacing-nav)+var(--spacing-xxl))] lg:p-xl"
+            className="card card-dark p-lg text-on-dark lg:sticky lg:top-[calc(var(--spacing-nav)+var(--spacing-xxl))] lg:p-xl"
           >
             <p className="text-title-lg text-on-dark">Ihr Bauschild</p>
             <dl className="mt-lg grid gap-md text-body-md">

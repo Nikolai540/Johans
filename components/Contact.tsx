@@ -18,7 +18,7 @@ export function Contact({ initial }: { initial?: ServiceId[] }) {
         <div className="page-x relative mx-auto -mt-section max-w-page lg:absolute lg:inset-0 lg:mt-0">
           <div
             data-reveal
-            className="bg-canvas p-xl lg:absolute lg:top-[60px] lg:right-xl lg:w-[400px]"
+            className="card p-xl lg:absolute lg:top-[60px] lg:right-xl lg:w-[400px]"
           >
             <h2 id="kontakt-title" className="text-display-md">
               Kontakt aufnehmen

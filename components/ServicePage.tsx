@@ -101,7 +101,7 @@ export function ServicePage({ page }: { page: SubPage }) {
         </section>
 
         {/* Leistungen im Detail */}
-        <section aria-labelledby="leistungen-titel" className="bg-canvas py-section">
+        <section aria-labelledby="leistungen-titel" className="bg-surface-soft py-section">
           <div className="page-x mx-auto grid max-w-page gap-xxl lg:grid-cols-12 lg:gap-lg">
             <div className="lg:col-span-4">
               <h2 id="leistungen-titel" data-reveal className="text-display-md lg:sticky lg:top-[calc(var(--spacing-nav)+var(--spacing-xxl))]">
@@ -112,9 +112,9 @@ export function ServicePage({ page }: { page: SubPage }) {
               <p data-reveal className="max-w-[60ch] text-title-md text-ink">
                 {page.services.intro}
               </p>
-              <div className="mt-xxl grid gap-xxl sm:grid-cols-2 sm:gap-x-xl">
+              <div className="mt-xxl grid gap-lg sm:grid-cols-2">
                 {page.services.items.map((item, i) => (
-                  <article key={item.h3} data-reveal style={{ ["--i" as string]: i % 2 }}>
+                  <article key={item.h3} data-reveal style={{ ["--i" as string]: i % 2 }} className="card p-lg">
                     <h3 className="text-display-sm">{item.h3}</h3>
                     <p className="mt-sm text-body-md">{item.text}</p>
                   </article>
@@ -125,14 +125,14 @@ export function ServicePage({ page }: { page: SubPage }) {
         </section>
 
         {/* Anlässe */}
-        <section aria-labelledby="anlaesse-titel" className="bg-surface-soft py-section">
+        <section aria-labelledby="anlaesse-titel" className="bg-canvas py-section">
           <div className="page-x mx-auto max-w-page">
             <h2 id="anlaesse-titel" data-reveal className="text-display-md lg:text-display-lg">
               {page.occasions.h2}
             </h2>
             <div className="mt-xxl grid gap-xl sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-lg lg:gap-y-xxl">
               {page.occasions.items.map((o, i) => (
-                <div key={o.h3} data-reveal style={{ ["--i" as string]: i % 3 }}>
+                <div key={o.h3} data-reveal style={{ ["--i" as string]: i % 3 }} className="card p-lg">
                   <h3 className="text-title-lg">{o.h3}</h3>
                   <p className="mt-xs text-body-md">{o.text}</p>
                 </div>
@@ -142,7 +142,7 @@ export function ServicePage({ page }: { page: SubPage }) {
         </section>
 
         {/* Checkliste */}
-        <section aria-labelledby="checkliste-titel" className="bg-canvas py-section">
+        <section aria-labelledby="checkliste-titel" className="bg-surface-soft py-section">
           <div className="page-x mx-auto grid max-w-page gap-xl lg:grid-cols-12 lg:gap-lg">
             <div className="lg:col-span-4">
               <h2 id="checkliste-titel" data-reveal className="text-display-md">
@@ -171,7 +171,7 @@ export function ServicePage({ page }: { page: SubPage }) {
             </h2>
             <ol className="mt-xxl grid gap-xl sm:grid-cols-2 lg:grid-cols-4 lg:gap-lg">
               {page.steps.items.map((s, i) => (
-                <li key={s.title} data-reveal style={{ ["--i" as string]: i % 4 }} className="bg-surface-dark-elevated p-lg">
+                <li key={s.title} data-reveal style={{ ["--i" as string]: i % 4 }} className="card card-dark p-lg">
                   <h3 className="text-title-lg text-on-dark">{s.title}</h3>
                   <p className="mt-xs text-body-md text-on-dark">{s.text}</p>
                 </li>
@@ -189,7 +189,7 @@ export function ServicePage({ page }: { page: SubPage }) {
               </h2>
               <div className="mt-xxl grid gap-xl">
                 {page.benefits.items.map((b, i) => (
-                  <div key={b.title} data-reveal style={{ ["--i" as string]: i }}>
+                  <div key={b.title} data-reveal style={{ ["--i" as string]: i }} className="card p-lg">
                     <h3 className="text-display-sm">{b.title}</h3>
                     <p className="mt-xs max-w-[56ch] text-body-md">{b.text}</p>
                   </div>
@@ -202,7 +202,7 @@ export function ServicePage({ page }: { page: SubPage }) {
                 { v: String(site.proof.years), l: "Jahre Erfahrung im Landkreis Landsberg" },
                 { v: `${site.proof.projects}+`, l: "abgeschlossene Projekte" },
               ].map((f, i) => (
-                <div key={f.l} data-reveal style={{ ["--i" as string]: i }} className="bg-surface-soft p-lg">
+                <div key={f.l} data-reveal style={{ ["--i" as string]: i }} className="card p-lg">
                   <dt className="sr-only">{f.l}</dt>
                   <dd>
                     <span className="block text-display-lg text-ink tabular">{f.v}</span>
@@ -245,9 +245,9 @@ export function ServicePage({ page }: { page: SubPage }) {
             <h2 id="faq-titel" data-reveal className="text-display-md lg:col-span-4 lg:text-display-lg">
               Häufige Fragen
             </h2>
-            <div className="flex flex-col gap-xs lg:col-span-7 lg:col-start-6">
+            <div className="flex flex-col gap-sm lg:col-span-7 lg:col-start-6">
               {page.faqs.map((f, i) => (
-                <details key={f.q} data-reveal style={{ ["--i" as string]: i % 3 }} className="group">
+                <details key={f.q} data-reveal style={{ ["--i" as string]: i % 3 }} className="card group px-lg py-xs">
                   <summary className="flex min-h-11 cursor-pointer items-start justify-between gap-md py-xs text-ink">
                     <h3 className="text-title-md">{f.q}</h3>
                     <ChevronIcon className="mt-xxs size-5 shrink-0 transition-transform duration-[180ms] group-open:rotate-180" />

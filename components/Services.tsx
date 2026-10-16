@@ -19,7 +19,7 @@ const mobileFrames = ["w-full", "ml-auto w-[70%]", "w-[55%]"];
 export function Services() {
   let photoIndex = 0;
   return (
-    <section id="leistungen" aria-labelledby="leistungen-title" className="bg-canvas pb-section lg:pt-section">
+    <section id="leistungen" aria-labelledby="leistungen-title" className="bg-surface-soft py-section">
       <div className="page-x mx-auto grid max-w-page gap-xxl lg:grid-cols-12 lg:gap-lg">
         <div className="lg:col-span-4">
           <h2 id="leistungen-title" data-reveal className="text-display-md lg:text-display-lg">
@@ -45,7 +45,7 @@ export function Services() {
             const shape = shapes[row.shape];
             const frame = photo ? mobileFrames[photoIndex++ % mobileFrames.length] : "";
             return (
-              <div key={row.ids.join("-")} className="grid gap-lg lg:grid-cols-8">
+              <div key={row.ids.join("-")} className="card grid gap-lg p-lg sm:p-xl lg:grid-cols-8">
                 <div className="flex flex-col gap-xl lg:col-span-5">
                   {row.ids.map((id, i) => {
                     const s = services[id];

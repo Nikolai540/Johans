@@ -52,9 +52,9 @@ export function Faq() {
             </div>
           </dl>
 
-          <div className="mt-xxl flex flex-col gap-xs">
+          <div className="mt-xxl flex flex-col gap-sm">
             {faqs.map((f, i) => (
-              <details key={f.q} data-reveal style={{ ["--i" as string]: i + 2 }} className="group">
+              <details key={f.q} data-reveal style={{ ["--i" as string]: i + 2 }} className="card group px-lg py-xs">
                 <summary className="flex min-h-11 cursor-pointer items-start justify-between gap-md py-xs text-title-md text-ink">
                   <h3 className="text-title-md">{f.q}</h3>
                   <ChevronIcon className="mt-xxs size-5 shrink-0 transition-transform duration-[180ms] group-open:rotate-180" />

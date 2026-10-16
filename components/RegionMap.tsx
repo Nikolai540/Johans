@@ -57,7 +57,7 @@ export function RegionMap({ className }: { className?: string }) {
         am Lech
       </text>
       {/* Firmensitz: Vilgertshofen */}
-      <circle cx="210" cy="222" r="11" className="fill-on-dark" />
+      <circle cx="210" cy="222" r="11" className="fill-primary" />
       <text x="226" y="230" className="fill-on-dark" fontSize="22" fontWeight="700">
         Vilgertshofen
       </text>
