@@ -1,0 +1,129 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+import { CloseIcon, MenuIcon, PhoneIcon } from "@/components/Icons";
+import { site } from "@/lib/site";
+
+const links = [
+  { href: "#leistungen", label: "Leistungen" },
+  { href: "#netzwerk", label: "Netzwerk" },
+  { href: "#einsatzgebiet", label: "Einsatzgebiet" },
+  { href: "#faq", label: "FAQ" },
+  { href: "#kontakt", label: "Kontakt" },
+] as const;
+
+export function SiteHeader() {
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState<string | null>(null);
+
+  // Aktive Sprungmarke hervorheben
+  useEffect(() => {
+    const sections = links
+      .map((l) => document.querySelector<HTMLElement>(l.href))
+      .filter((el): el is HTMLElement => Boolean(el));
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) if (e.isIntersecting) setActive(`#${e.target.id}`);
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+    sections.forEach((s) => io.observe(s));
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    document.addEventListener("keydown", onKey);
+    document.documentElement.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.documentElement.style.overflow = "";
+    };
+  }, [open]);
+
+  return (
+    <header className="sticky top-0 z-50 h-nav bg-canvas text-ink">
+      <div className="page-x mx-auto flex h-full max-w-page items-center justify-between gap-lg">
+        <a href="#top" className="flex min-h-11 items-center text-title-md" aria-label={`${site.name} – zum Seitenanfang`}>
+          <span className="mr-xs bg-surface-dark px-xs py-xxs text-title-sm text-on-dark">JL</span>
+          Bauprojekte
+        </a>
+
+        <nav aria-label="Hauptnavigation" className="hidden lg:block">
+          <ul className="flex items-center gap-xl">
+            {links.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  aria-current={active === l.href ? "location" : undefined}
+                  className={`link inline-flex min-h-11 items-center text-nav-link ${
+                    active === l.href ? "font-bold text-ink link-underlined" : "text-body"
+                  }`}
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="flex items-center gap-xs">
+          <a href={site.phone.href} className="btn btn-primary hidden lg:inline-flex">
+            <PhoneIcon className="size-4" />
+            Jetzt anrufen
+          </a>
+          <a
+            href={site.phone.href}
+            className="btn btn-primary size-11 min-h-11 p-0 lg:hidden"
+            aria-label={`Jetzt anrufen: ${site.phone.display}`}
+          >
+            <PhoneIcon className="size-5" />
+          </a>
+          <button
+            type="button"
+            className="inline-flex size-11 items-center justify-center lg:hidden"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "Menü schließen" : "Menü öffnen"}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <CloseIcon /> : <MenuIcon />}
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="mobile-menu"
+        hidden={!open}
+        className="fixed inset-x-0 top-nav bottom-0 overflow-y-auto bg-canvas lg:hidden"
+      >
+        <nav aria-label="Mobile Navigation" className="page-x flex min-h-full flex-col pb-xl pt-lg">
+          <ul className="flex flex-col">
+            {links.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="flex min-h-14 items-center text-display-sm text-ink"
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-auto flex flex-col gap-sm pt-xxl">
+            <a href={site.phone.href} className="btn btn-primary w-full" onClick={() => setOpen(false)}>
+              <PhoneIcon className="size-4" />
+              Jetzt anrufen · {site.phone.display}
+            </a>
+            <a href="#kontakt-formular" className="btn w-full bg-surface-strong text-ink" onClick={() => setOpen(false)}>
+              Kontakt aufnehmen
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+  );
+}
