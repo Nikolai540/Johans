@@ -1,14 +1,16 @@
 import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Faq } from "@/components/Faq";
+import { faqGraph, JsonLd } from "@/components/JsonLd";
 import { Hero } from "@/components/Hero";
 import { MobileActions } from "@/components/MobileActions";
 import { Network } from "@/components/Network";
-import { Process } from "@/components/Process";
 import { Region } from "@/components/Region";
 import { Services } from "@/components/Services";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { faqs } from "@/lib/content";
+import { site } from "@/lib/site";
 
 export default function Home() {
   return (
@@ -19,12 +21,12 @@ export default function Home() {
       >
         Zum Inhalt springen
       </a>
+      <JsonLd data={faqGraph(`${site.url}/#faq`, faqs)} />
       <SiteHeader />
       <main id="inhalt">
         <Hero />
         <About />
         <Services />
-        <Process />
         <Region />
         <Network />
         <Faq />

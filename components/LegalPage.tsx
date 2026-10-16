@@ -6,7 +6,7 @@ export function LegalPage({ title, children }: { title: string; children: React.
       <header className="h-nav bg-canvas">
         <div className="page-x mx-auto flex h-full max-w-page items-center justify-between">
           <a href="/" className="flex min-h-11 items-center text-title-md text-ink">
-            <span className="mr-xs bg-surface-dark px-xs py-xxs text-title-sm text-on-dark">JL</span>
+            <span className="mr-xs bg-surface-dark px-xs py-xxs text-title-sm text-on-dark">J&L</span>
             Bauprojekte
           </a>
           <a href={site.phone.href} className="btn btn-primary">

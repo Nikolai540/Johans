@@ -1,10 +1,22 @@
-import { faqs, places, serviceOrder, services } from "@/lib/content";
+import { places, serviceOrder, services } from "@/lib/content";
 import { site } from "@/lib/site";
 
-// Schema.org: LocalBusiness (GeneralContractor) + WebSite + FAQPage in einem @graph.
-export function JsonLd() {
-  const businessId = `${site.url}/#business`;
+export const businessId = `${site.url}/#business`;
 
+export function JsonLd({ data }: { data: Record<string, unknown> | Record<string, unknown>[] }) {
+  const graph = Array.isArray(data) ? data : [data];
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({ "@context": "https://schema.org", "@graph": graph }).replace(/</g, "\\u003c"),
+      }}
+    />
+  );
+}
+
+/** LocalBusiness + WebSite – auf jeder Seite (layout.tsx) */
+export function businessGraph() {
   const address: Record<string, string> = {
     "@type": "PostalAddress",
     postalCode: site.address.postalCode,
@@ -14,13 +26,14 @@ export function JsonLd() {
   };
   if (site.address.street) address.streetAddress = site.address.street;
 
-  const graph = [
+  return [
     {
       "@type": ["GeneralContractor", "LocalBusiness"],
       "@id": businessId,
       name: site.name,
       legalName: site.legalName,
-      url: site.url,
+      founder: { "@type": "Person", name: site.owner },
+      url: `${site.url}/`,
       telephone: site.phone.e164,
       email: site.email,
       image: `${site.url}/images/landsberg-lechwehr.jpg`,
@@ -47,41 +60,25 @@ export function JsonLd() {
         name: "Leistungen",
         itemListElement: serviceOrder.map((id) => ({
           "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: services[id].name,
-            description: services[id].text,
-            areaServed: { "@type": "City", name: "Landsberg am Lech" },
-            provider: { "@id": businessId },
-          },
+          itemOffered: { "@type": "Service", name: services[id].name, description: services[id].text },
         })),
       },
     },
     {
       "@type": "WebSite",
       "@id": `${site.url}/#website`,
-      url: site.url,
+      url: `${site.url}/`,
       name: site.name,
       inLanguage: "de-DE",
       publisher: { "@id": businessId },
     },
-    {
-      "@type": "FAQPage",
-      "@id": `${site.url}/#faq`,
-      mainEntity: faqs.map((f) => ({
-        "@type": "Question",
-        name: f.q,
-        acceptedAnswer: { "@type": "Answer", text: f.a },
-      })),
-    },
   ];
+}
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify({ "@context": "https://schema.org", "@graph": graph }).replace(/</g, "\\u003c"),
-      }}
-    />
-  );
+export function faqGraph(id: string, faqs: { q: string; a: string }[]) {
+  return {
+    "@type": "FAQPage",
+    "@id": id,
+    mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  };
 }

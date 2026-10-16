@@ -16,7 +16,7 @@ Alle Platzhalter sind im Code mit `PLATZHALTER` markiert:
 
 | Was | Wo |
 | --- | --- |
-| Telefon, E-Mail, Straße, Rechtsform, Erreichbarkeit | `lib/site.ts` |
+| Straße, Rechtsform, Erreichbarkeit (Telefon/E-Mail von jlbauprojekte.de übernommen) | `lib/site.ts` |
 | Welche Gewerke selbst / über Partner | `lib/content.ts` → `trades` |
 | Impressum, Datenschutzerklärung | `app/impressum/page.tsx`, `app/datenschutz/page.tsx` |
 | Domain | `.env` → `NEXT_PUBLIC_SITE_URL` |

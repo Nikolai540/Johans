@@ -3,12 +3,13 @@ import Image from "next/image";
 import { RegionMap } from "@/components/RegionMap";
 import { places } from "@/lib/content";
 import { photos } from "@/lib/images";
+import { site } from "@/lib/site";
 
 const facts = [
-  { label: "Sitz", value: "Landsberg am Lech" },
-  { label: "Regionen", value: "Oberbayern und Schwaben" },
-  { label: "Leistungen", value: "Zehn aus einer Hand" },
-  { label: "Ansprechpartner", value: "Einer für alles" },
+  { label: "Sitz", value: `${site.address.locality}, Landkreis Landsberg` },
+  { label: "Erfahrung", value: `${site.proof.years} Jahre, über ${site.proof.projects} Projekte` },
+  { label: "Google-Bewertung", value: `${site.proof.rating} von 5 (${site.proof.reviews} Bewertungen)` },
+  { label: "Ansprechpartner", value: site.owner },
 ];
 
 export function Region() {
@@ -21,8 +22,8 @@ export function Region() {
             Zwischen Lech und Ammersee
           </h2>
           <p data-reveal style={{ ["--i" as string]: 1 }} className="mt-lg text-title-md text-ink">
-            Unser Sitz ist Landsberg am Lech. Von hier sind wir im ganzen Landkreis unterwegs, am Westufer des
-            Ammersees und westlich des Lechs bis Buchloe – im Grenzgebiet von Oberbayern und Schwaben.
+            Unser Sitz ist Vilgertshofen bei Landsberg am Lech. Von hier sind wir im ganzen Landkreis unterwegs,
+            am Westufer des Ammersees und westlich des Lechs bis Buchloe – im Grenzgebiet von Oberbayern und Schwaben.
           </p>
         </div>
 

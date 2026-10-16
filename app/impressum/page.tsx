@@ -4,8 +4,8 @@ import { LegalPage } from "@/components/LegalPage";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `Impressum | ${site.name}`,
-  alternates: { canonical: "/impressum" },
+  title: "Impressum",
+  alternates: { canonical: "/impressum/" },
   robots: { index: false, follow: true },
 };
 
@@ -15,9 +15,11 @@ export default function Impressum() {
     <LegalPage title="Impressum">
       <h2>Angaben gemäß § 5 DDG</h2>
       <p>
-        {site.legalName}
+        {site.name}
         <br />
-        [Inhaber/in, Straße und Hausnummer]
+        Inhaber: {site.owner}
+        <br />
+        [Straße und Hausnummer]
         <br />
         {site.address.postalCode} {site.address.locality}
       </p>

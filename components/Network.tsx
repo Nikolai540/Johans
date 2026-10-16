@@ -2,7 +2,7 @@ import { ArrowIcon } from "@/components/Icons";
 import { ServiceLink } from "@/components/ServiceLink";
 import { trades } from "@/lib/content";
 
-// Das Bauschild: wer was ausführt – JL Bauprojekte selbst oder ein Partnerbetrieb aus der Region.
+// Das Bauschild: wer was ausführt – J&L Bauprojekte selbst oder ein Partnerbetrieb aus der Region.
 export function Network() {
   return (
     <section id="netzwerk" aria-labelledby="netzwerk-title" className="bg-surface-dark pt-section">
@@ -30,7 +30,7 @@ export function Network() {
                         </div>
                         <p
                           className={`shrink-0 text-right text-body-sm ${
-                            item.by === "JL Bauprojekte" ? "font-bold text-ink" : "text-body"
+                            item.by === "J&L Bauprojekte" ? "font-bold text-ink" : "text-body"
                           }`}
                         >
                           {item.by}
@@ -43,7 +43,7 @@ export function Network() {
             </div>
 
             <div className="mt-xxl text-body-md text-ink">
-              <p>Koordination: JL Bauprojekte, Landsberg am Lech</p>
+              <p>Koordination: J&L Bauprojekte, Landsberg am Lech</p>
               <p>Landkreis Landsberg · Ammersee · Buchloe</p>
             </div>
             <ServiceLink

@@ -5,7 +5,7 @@ import { ServiceIndex } from "@/components/ServiceIndex";
 import { ServiceLink } from "@/components/ServiceLink";
 import { serviceRows, services } from "@/lib/content";
 import { photos } from "@/lib/images";
-import { site } from "@/lib/site";
+import { pages, site } from "@/lib/site";
 
 const shapes = {
   portrait: { ratio: "aspect-[4/5]", desk: "lg:w-full" },
@@ -79,6 +79,19 @@ export function Services() {
                       </article>
                     );
                   })}
+                  {(() => {
+                    const sub = row.ids.includes("entruempelung")
+                      ? pages.entruempelung
+                      : row.ids.includes("entkernung") || row.ids.includes("abbruch")
+                        ? pages.entkernung
+                        : null;
+                    return sub ? (
+                      <a href={sub.href} className="btn btn-primary self-start">
+                        Alles zu {sub.full}
+                        <ArrowIcon className="size-4" />
+                      </a>
+                    ) : null;
+                  })()}
                 </div>
                 {photo && (
                   <figure className={`${frame} lg:col-span-3 lg:ml-0 ${shape.desk}`}>

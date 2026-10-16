@@ -2,10 +2,11 @@ import Image from "next/image";
 
 import { ContactForm } from "@/components/ContactForm";
 import { PhoneIcon } from "@/components/Icons";
+import type { ServiceId } from "@/lib/content";
 import { photos } from "@/lib/images";
 import { site } from "@/lib/site";
 
-export function Contact() {
+export function Contact({ initial }: { initial?: ServiceId[] }) {
   const p = photos.lechBlickNorden;
   return (
     <section id="kontakt" aria-labelledby="kontakt-title" className="bg-canvas">
@@ -44,6 +45,9 @@ export function Contact() {
               <a href={`mailto:${site.email}`} className="link link-underlined mt-xxs inline-block text-ink">
                 {site.email}
               </a>
+              <a href={site.whatsapp} className="link link-underlined mt-xxs block text-ink" rel="noopener">
+                Fotos per WhatsApp senden
+              </a>
             </p>
             <a href={site.phone.href} className="btn btn-primary mt-xl min-h-[52px] w-full">
               <PhoneIcon className="size-4" />
@@ -56,7 +60,7 @@ export function Contact() {
         </div>
       </div>
 
-      <ContactForm />
+      <ContactForm initial={initial} />
     </section>
   );
 }

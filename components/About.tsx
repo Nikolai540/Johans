@@ -23,7 +23,7 @@ export function About() {
             <div data-reveal style={{ ["--i" as string]: 2 }} className="mt-xl max-w-[58ch] space-y-md text-body-md">
               <p>
                 Wer ein Haus entrümpelt, eine Wohnung entkernt oder einen Altbau saniert, braucht selten nur ein
-                Gewerk. Bei JL Bauprojekte laufen die Arbeiten zusammen: Wir räumen, bauen zurück, sanieren und
+                Gewerk. Bei J&L Bauprojekte laufen die Arbeiten zusammen: Wir räumen, bauen zurück, sanieren und
                 bauen aus – und stimmen alles, was wir nicht selbst ausführen, mit Fachbetrieben aus der Region ab.
               </p>
               <p>

@@ -1,17 +1,12 @@
 import type { MetadataRoute } from "next";
 
-import { site } from "@/lib/site";
+import { pages, site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const now = new Date();
   return [
-    {
-      url: `${site.url}/`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
-      images: [`${site.url}/images/landsberg-lechwehr.jpg`],
-    },
-    { url: `${site.url}/impressum`, changeFrequency: "yearly", priority: 0.2 },
-    { url: `${site.url}/datenschutz`, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${site.url}/`, lastModified: now, changeFrequency: "monthly", priority: 1 },
+    { url: `${site.url}${pages.entruempelung.href}`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${site.url}${pages.entkernung.href}`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
   ];
 }

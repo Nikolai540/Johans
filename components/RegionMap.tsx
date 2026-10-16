@@ -5,7 +5,7 @@ const towns: { name: string; x: number; y: number; anchor: "start" | "end"; dx: 
   { name: "Buchloe", x: 56, y: 130, anchor: "start", dx: -14, dy: -16 },
   { name: "Schondorf", x: 330, y: 106, anchor: "end", dx: -12, dy: 7 },
   { name: "Utting", x: 328, y: 138, anchor: "end", dx: -12, dy: 7 },
-  { name: "Dießen", x: 338, y: 218, anchor: "end", dx: -12, dy: 7 },
+  { name: "Dießen", x: 338, y: 218, anchor: "start", dx: 40, dy: 32 },
 ];
 
 export function RegionMap({ className }: { className?: string }) {
@@ -16,9 +16,9 @@ export function RegionMap({ className }: { className?: string }) {
       aria-labelledby="karte-titel karte-text"
       className={className}
     >
-      <title id="karte-titel">Einsatzgebiet von JL Bauprojekte</title>
+      <title id="karte-titel">Einsatzgebiet von J&L Bauprojekte</title>
       <desc id="karte-text">
-        Karte mit dem Lech von Süden nach Norden, Landsberg am Lech und Kaufering am Fluss, Buchloe im Westen und
+        Karte mit dem Lech von Süden nach Norden, dem Firmensitz Vilgertshofen, Landsberg am Lech und Kaufering am Fluss, Buchloe im Westen und
         dem Ammersee mit Schondorf, Utting und Dießen im Osten.
       </desc>
       {/* Ammersee */}
@@ -37,7 +37,7 @@ export function RegionMap({ className }: { className?: string }) {
         strokeWidth="4"
         strokeLinecap="round"
       />
-      <text x="206" y="262" className="fill-on-dark-soft" fontSize="21" fontWeight="300">
+      <text x="212" y="270" className="fill-on-dark-soft" fontSize="21" fontWeight="300">
         Lech
       </text>
       {towns.map((t) => (
@@ -48,13 +48,18 @@ export function RegionMap({ className }: { className?: string }) {
           </text>
         </g>
       ))}
-      {/* Sitz: Landsberg am Lech */}
-      <circle cx="164" cy="113" r="11" className="fill-on-dark" />
+      {/* Landsberg am Lech */}
+      <circle cx="164" cy="113" r="8" className="fill-on-dark" />
       <text x="152" y="148" textAnchor="end" className="fill-on-dark" fontSize="22" fontWeight="700">
         Landsberg
       </text>
       <text x="152" y="174" textAnchor="end" className="fill-on-dark" fontSize="22" fontWeight="700">
         am Lech
+      </text>
+      {/* Firmensitz: Vilgertshofen */}
+      <circle cx="210" cy="222" r="11" className="fill-on-dark" />
+      <text x="226" y="230" className="fill-on-dark" fontSize="22" fontWeight="700">
+        Vilgertshofen
       </text>
     </svg>
   );

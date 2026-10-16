@@ -94,30 +94,6 @@
     "saved": "2026-10-16T08:06:19.958Z"
   },
   {
-    "file": "public/images/landsberg-lech-tuerkis.jpg",
-    "media": "image",
-    "ref": "commons:48568451",
-    "title": "Landsberg Lech 3",
-    "creator": "Zairon",
-    "creatorUrl": null,
-    "date": "2015-04-19",
-    "license": "CC BY-SA 4.0",
-    "licenseCode": "by-sa",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "creditRequired": true,
-    "page": "https://commons.wikimedia.org/wiki/File:Landsberg_Lech_3.JPG",
-    "via": "Wikimedia Commons",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Landsberg_Lech_3.JPG/1920px-Landsberg_Lech_3.JPG",
-    "width": 1920,
-    "height": 966,
-    "bytes": 411021,
-    "credit": "\"Landsberg Lech 3\" by Zairon, CC BY-SA 4.0, via Wikimedia Commons",
-    "notes": [
-      "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
-    ],
-    "saved": "2026-10-16T08:06:21.556Z"
-  },
-  {
     "file": "public/images/landsberg-bayertor.jpg",
     "media": "image",
     "ref": "commons:120378208",
@@ -142,30 +118,6 @@
     "saved": "2026-10-16T08:06:23.158Z"
   },
   {
-    "file": "public/images/ammersee-luftbild.jpg",
-    "media": "image",
-    "ref": "openverse:c662a030-94e3-4073-a111-5402ef2e0adf",
-    "title": "Aerial image of the Ammersee (view from the south)",
-    "creator": "Carsten Steger",
-    "creatorUrl": "https://commons.wikimedia.org/wiki/User:Carsten_Steger",
-    "date": null,
-    "license": "CC BY-SA 4.0",
-    "licenseCode": "by-sa",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "creditRequired": true,
-    "page": "https://commons.wikimedia.org/w/index.php?curid=114816560",
-    "via": "Wikimedia Commons",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Aerial_image_of_the_Ammersee_%28view_from_the_south%29.jpg/1920px-Aerial_image_of_the_Ammersee_%28view_from_the_south%29.jpg",
-    "width": 1920,
-    "height": 1187,
-    "bytes": 505597,
-    "credit": "\"Aerial image of the Ammersee (view from the south)\" by Carsten Steger, CC BY-SA 4.0, via Wikimedia Commons",
-    "notes": [
-      "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
-    ],
-    "saved": "2026-10-16T08:06:25.113Z"
-  },
-  {
     "file": "public/images/utting-ammersee.jpg",
     "media": "image",
     "ref": "openverse:fc88bb91-199c-4c43-b0c6-aff9b9a5a216",
@@ -188,30 +140,6 @@
       "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
     ],
     "saved": "2026-10-16T08:06:27.363Z"
-  },
-  {
-    "file": "public/images/kaufering-lech.jpg",
-    "media": "image",
-    "ref": "commons:109678806",
-    "title": "Kaufering nördl - Lech Staustufe 18 v N, Kaufering 020921 - 03",
-    "creator": "Flodur63",
-    "creatorUrl": null,
-    "date": "2021-09-02",
-    "license": "CC BY-SA 4.0",
-    "licenseCode": "by-sa",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "creditRequired": true,
-    "page": "https://commons.wikimedia.org/wiki/File:Kaufering_n%C3%B6rdl_-_Lech_Staustufe_18_v_N,_Kaufering_020921_-_03.jpg",
-    "via": "Wikimedia Commons",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Kaufering_n%C3%B6rdl_-_Lech_Staustufe_18_v_N%2C_Kaufering_020921_-_03.jpg/1920px-Kaufering_n%C3%B6rdl_-_Lech_Staustufe_18_v_N%2C_Kaufering_020921_-_03.jpg",
-    "width": 1920,
-    "height": 1230,
-    "bytes": 492794,
-    "credit": "\"Kaufering nördl - Lech Staustufe 18 v N, Kaufering 020921 - 03\" by Flodur63, CC BY-SA 4.0, via Wikimedia Commons",
-    "notes": [
-      "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
-    ],
-    "saved": "2026-10-16T08:06:28.936Z"
   },
   {
     "file": "public/images/buchloe-luftbild.jpg",
@@ -378,31 +306,5 @@
       "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
     ],
     "saved": "2026-10-16T08:06:41.070Z"
-  },
-  {
-    "file": "public/images/lechwehr-film.webm",
-    "media": "video",
-    "poster": "public/images/lechwehr-film-poster.jpg",
-    "ref": "commons:150304713",
-    "title": "2024-Lechwehr-Landsberg-am-Lech",
-    "creator": "Arths-at",
-    "creatorUrl": null,
-    "date": "2024-06-19",
-    "license": "CC BY-SA 4.0",
-    "licenseCode": "by-sa",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "creditRequired": true,
-    "page": "https://commons.wikimedia.org/wiki/File:2024-Lechwehr-Landsberg-am-Lech.webm",
-    "via": "Wikimedia Commons",
-    "video": "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/db/2024-Lechwehr-Landsberg-am-Lech.webm/2024-Lechwehr-Landsberg-am-Lech.webm.480p.vp9.webm",
-    "width": 854,
-    "height": 480,
-    "duration": 12.4,
-    "bytes": 1647006,
-    "credit": "\"2024-Lechwehr-Landsberg-am-Lech\" by Arths-at, CC BY-SA 4.0, via Wikimedia Commons",
-    "notes": [
-      "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
-    ],
-    "saved": "2026-10-16T08:21:56.986Z"
   }
 ]

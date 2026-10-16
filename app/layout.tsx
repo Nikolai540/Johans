@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 
-import { JsonLd } from "@/components/JsonLd";
+import { businessGraph, JsonLd } from "@/components/JsonLd";
 import { RevealObserver } from "@/components/RevealObserver";
 import { site } from "@/lib/site";
 
@@ -16,13 +16,13 @@ const inter = localFont({
   preload: true,
 });
 
-const title = "Entkernung, Abbruch & Sanierung in Landsberg | JL Bauprojekte";
+const title = "Entrümpelung, Entkernung & Rückbau in Landsberg am Lech | J&L Bauprojekte";
 const description =
-  "Entrümpelung, Entkernung, Abbruch, Sanierung, Trockenbau und Gartenbau aus einer Hand – in Landsberg am Lech, Kaufering, Buchloe und am Ammersee.";
+  "Entrümpelung, Haushaltsauflösung, Entkernung, Abbruch und Rückbau aus einer Hand – in Landsberg am Lech, Kaufering, Buchloe und am Ammersee. Festpreis nach Besichtigung.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title,
+  title: { default: title, template: `%s | ${site.name}` },
   description,
   applicationName: site.name,
   alternates: { canonical: "/" },
@@ -71,7 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         {/* Motion-Startzustände nur mit JavaScript – ohne JS bleibt alles sichtbar */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
-        <JsonLd />
+        <JsonLd data={businessGraph()} />
       </head>
       <body>
         {children}

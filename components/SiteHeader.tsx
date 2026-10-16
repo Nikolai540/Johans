@@ -1,36 +1,32 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { CloseIcon, MenuIcon, PhoneIcon } from "@/components/Icons";
-import { site } from "@/lib/site";
-
-const links = [
-  { href: "#leistungen", label: "Leistungen" },
-  { href: "#netzwerk", label: "Netzwerk" },
-  { href: "#einsatzgebiet", label: "Einsatzgebiet" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#kontakt", label: "Kontakt" },
-] as const;
+import { nav, site } from "@/lib/site";
 
 export function SiteHeader() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string | null>(null);
 
-  // Aktive Sprungmarke hervorheben
+  // Aktive Sprungmarke auf der Startseite hervorheben
   useEffect(() => {
-    const sections = links
-      .map((l) => document.querySelector<HTMLElement>(l.href))
+    if (pathname !== "/") return;
+    const sections = nav
+      .filter((l) => l.href.startsWith("/#"))
+      .map((l) => document.getElementById(l.href.slice(2)))
       .filter((el): el is HTMLElement => Boolean(el));
     const io = new IntersectionObserver(
       (entries) => {
-        for (const e of entries) if (e.isIntersecting) setActive(`#${e.target.id}`);
+        for (const e of entries) if (e.isIntersecting) setActive(`/#${e.target.id}`);
       },
       { rootMargin: "-45% 0px -50% 0px" },
     );
     sections.forEach((s) => io.observe(s));
     return () => io.disconnect();
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     if (!open) return;
@@ -43,23 +39,25 @@ export function SiteHeader() {
     };
   }, [open]);
 
+  const isActive = (href: string) => (href.startsWith("/#") ? active === href : pathname === href);
+
   return (
     <header className="sticky top-0 z-50 h-nav bg-canvas text-ink">
       <div className="page-x mx-auto flex h-full max-w-page items-center justify-between gap-lg">
-        <a href="#top" className="flex min-h-11 items-center text-title-md" aria-label={`${site.name} – zum Seitenanfang`}>
-          <span className="mr-xs bg-surface-dark px-xs py-xxs text-title-sm text-on-dark">JL</span>
+        <a href="/" className="flex min-h-11 shrink-0 items-center text-title-md" aria-label={`${site.name} – Startseite`}>
+          <span className="mr-xs bg-surface-dark px-xs py-xxs text-title-sm text-on-dark">J&amp;L</span>
           Bauprojekte
         </a>
 
-        <nav aria-label="Hauptnavigation" className="hidden lg:block">
-          <ul className="flex items-center gap-xl">
-            {links.map((l) => (
+        <nav aria-label="Hauptnavigation" className="hidden xl:block">
+          <ul className="flex items-center gap-lg">
+            {nav.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
-                  aria-current={active === l.href ? "location" : undefined}
+                  aria-current={isActive(l.href) ? (l.href.startsWith("/#") ? "location" : "page") : undefined}
                   className={`link inline-flex min-h-11 items-center text-nav-link ${
-                    active === l.href ? "font-bold text-ink link-underlined" : "text-body"
+                    isActive(l.href) ? "font-bold text-ink link-underlined" : "text-body"
                   }`}
                 >
                   {l.label}
@@ -70,20 +68,20 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-xs">
-          <a href={site.phone.href} className="btn btn-primary hidden lg:inline-flex">
+          <a href={site.phone.href} className="btn btn-primary hidden xl:inline-flex">
             <PhoneIcon className="size-4" />
             Jetzt anrufen
           </a>
           <a
             href={site.phone.href}
-            className="btn btn-primary size-11 min-h-11 p-0 lg:hidden"
+            className="btn btn-primary size-11 min-h-11 p-0 xl:hidden"
             aria-label={`Jetzt anrufen: ${site.phone.display}`}
           >
             <PhoneIcon className="size-5" />
           </a>
           <button
             type="button"
-            className="inline-flex size-11 items-center justify-center lg:hidden"
+            className="inline-flex size-11 items-center justify-center xl:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Menü schließen" : "Menü öffnen"}
@@ -94,20 +92,12 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <div
-        id="mobile-menu"
-        hidden={!open}
-        className="fixed inset-x-0 top-nav bottom-0 overflow-y-auto bg-canvas lg:hidden"
-      >
+      <div id="mobile-menu" hidden={!open} className="fixed inset-x-0 top-nav bottom-0 overflow-y-auto bg-canvas xl:hidden">
         <nav aria-label="Mobile Navigation" className="page-x flex min-h-full flex-col pb-xl pt-lg">
           <ul className="flex flex-col">
-            {links.map((l) => (
+            {nav.map((l) => (
               <li key={l.href}>
-                <a
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  className="flex min-h-14 items-center text-display-sm text-ink"
-                >
+                <a href={l.href} onClick={() => setOpen(false)} className="flex min-h-14 items-center text-display-sm text-ink">
                   {l.label}
                 </a>
               </li>

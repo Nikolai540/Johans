@@ -36,8 +36,8 @@ export const services: Record<ServiceId, Service> = {
   abbruch: {
     id: "abbruch",
     name: "Abbruch",
-    short: "Garagen, Anbauten, ganze Häuser",
-    text: "Garage, Nebengebäude, Anbau oder das ganze Einfamilienhaus: Wir planen den Abbruch, klären mit Ihnen die nötige Anzeige nach der Bayerischen Bauordnung und trennen den Bauschutt sortenrein – vom Ortskern in Landsberg bis zum Grundstück am Ammersee.",
+    short: "Wände, Böden, Gartenhäuser, Nebengebäude",
+    text: "Kleinere Abbrucharbeiten sauber erledigt: einzelne Wände, Fliesen und Estrich, Gartenhäuser, Schuppen und kleine Nebengebäude. Wanddurchbrüche für neue Türen und Durchgänge, bei tragenden Wänden gemeinsam mit dem Statiker. Komplette Hausabrisse führen wir nicht aus.",
   },
   rueckbau: {
     id: "rueckbau",
@@ -101,31 +101,9 @@ export const serviceRows: { ids: ServiceId[]; photo?: PhotoKey; shape: "portrait
   { ids: ["gewerke"], shape: "landscape" },
 ];
 
-export const steps: { verb: string; text: string; photo?: PhotoKey; film?: true }[] = [
-  {
-    verb: "Zuhören",
-    text: "Sie rufen an oder schreiben uns. Am Telefon klären wir, was gemacht werden soll, wo und bis wann.",
-    film: true,
-  },
-  {
-    verb: "Besichtigen",
-    text: "Wir sehen uns Haus, Wohnung oder Grundstück vor Ort an und nehmen auf, was für ein belastbares Angebot nötig ist.",
-    photo: "landsbergLechTuerkis",
-  },
-  {
-    verb: "Anbieten",
-    text: "Sie erhalten ein schriftliches Angebot mit klar beschriebenen Positionen – und wissen, welches Gewerk wann dazukommt.",
-    photo: "kauferingLech",
-  },
-  {
-    verb: "Anpacken",
-    text: "Wir räumen, bauen zurück und bauen aus, stimmen die Fachbetriebe ab und übergeben die Baustelle besenrein.",
-    photo: "ammerseeLuftbild",
-  },
-];
-
 export const places = [
   "Landsberg am Lech",
+  "Vilgertshofen",
   "Kaufering",
   "Penzing",
   "Igling",
@@ -144,14 +122,14 @@ export const places = [
 ] as const;
 
 // PLATZHALTER: Welche Gewerke selbst ausgeführt und welche vermittelt werden, vor dem Livegang bestätigen.
-export const trades: { group: string; items: { name: string; note: string; by: "JL Bauprojekte" | "Partnerbetrieb" }[] }[] = [
+export const trades: { group: string; items: { name: string; note: string; by: "J&L Bauprojekte" | "Partnerbetrieb" }[] }[] = [
   {
     group: "Räumen & Rückbau",
     items: [
-      { name: "Entrümpelung & Haushaltsauflösung", note: "Räumen, sortieren, entsorgen", by: "JL Bauprojekte" },
-      { name: "Entkernung, Abbruch & Rückbau", note: "Bis auf den Rohbau oder ganz", by: "JL Bauprojekte" },
-      { name: "Container & Entsorgung", note: "Mulden, Bauschutt, Wertstoffe", by: "Partnerbetrieb" },
-      { name: "Schadstofferkundung", note: "Proben und Gutachten vor dem Rückbau", by: "Partnerbetrieb" },
+      { name: "Entrümpelung & Haushaltsauflösung", note: "Räumen, sortieren, entsorgen", by: "J&L Bauprojekte" },
+      { name: "Entkernung, Abbruch & Rückbau", note: "Bis auf den Rohbau, Wanddurchbrüche", by: "J&L Bauprojekte" },
+      { name: "Container & Entsorgung", note: "Mulden, Bauschutt, Wertstoffe", by: "J&L Bauprojekte" },
+      { name: "Statik bei tragenden Wänden", note: "Berechnung und Abfangung", by: "Partnerbetrieb" },
     ],
   },
   {
@@ -166,8 +144,8 @@ export const trades: { group: string; items: { name: string; note: string; by: "
   {
     group: "Innenausbau & Technik",
     items: [
-      { name: "Renovierung & Sanierung", note: "Koordination bis zur Übergabe", by: "JL Bauprojekte" },
-      { name: "Trockenbau", note: "Wände, Decken, Dachgeschoss", by: "JL Bauprojekte" },
+      { name: "Renovierung & Sanierung", note: "Koordination bis zur Übergabe", by: "J&L Bauprojekte" },
+      { name: "Trockenbau", note: "Wände, Decken, Dachgeschoss", by: "J&L Bauprojekte" },
       { name: "Elektroinstallation", note: "Leitungen, Verteiler, Anschlüsse", by: "Partnerbetrieb" },
       { name: "Sanitär & Heizung", note: "Bad, Leitungen, Heiztechnik", by: "Partnerbetrieb" },
       { name: "Estrich & Bodenbeläge", note: "Unterbau, Parkett, Vinyl", by: "Partnerbetrieb" },
@@ -178,7 +156,7 @@ export const trades: { group: string; items: { name: string; note: string; by: "
   {
     group: "Außenanlagen",
     items: [
-      { name: "Gartenbau, Pflaster & Wege", note: "Terrasse, Einfahrt, Beete, Rasen", by: "JL Bauprojekte" },
+      { name: "Gartenbau, Pflaster & Wege", note: "Terrasse, Einfahrt, Beete, Rasen", by: "J&L Bauprojekte" },
       { name: "Baumpflege & Fällungen", note: "Mit Genehmigung, wo nötig", by: "Partnerbetrieb" },
     ],
   },
@@ -187,19 +165,19 @@ export const trades: { group: string; items: { name: string; note: string; by: "
 export const faqs: { q: string; a: string }[] = [
   {
     q: "In welchen Orten sind Sie im Einsatz?",
-    a: "Unser Sitz ist Landsberg am Lech. Wir arbeiten im gesamten Landkreis – unter anderem in Kaufering, Penzing, Igling und Fuchstal –, in der Ammersee-Region mit Dießen, Utting und Schondorf sowie in Buchloe und Umgebung. Fragen Sie gern auch für Orte, die hier nicht stehen.",
+    a: "Unser Sitz ist Vilgertshofen bei Landsberg am Lech. Wir arbeiten im gesamten Landkreis – unter anderem in Kaufering, Penzing, Igling und Fuchstal –, in der Ammersee-Region mit Dießen, Utting und Schondorf sowie in Buchloe und Umgebung. Fragen Sie gern auch für Orte, die hier nicht stehen.",
   },
   {
     q: "Was ist der Unterschied zwischen Entkernung, Rückbau und Abbruch?",
-    a: "Bei der Entkernung bleibt der Rohbau stehen: Wir entfernen Beläge, Putz, nichttragende Wände und Installationen, damit saniert werden kann. Beim Rückbau werden einzelne Bauteile oder Gebäudeteile kontrolliert entfernt. Der Abbruch beseitigt ein Gebäude vollständig, bis auf Wunsch einschließlich Fundament.",
+    a: "Bei der Entkernung wird ein Gebäude weitgehend vom Innenausbau befreit: Böden, Fliesen, Decken, Trockenbau, Türen und Sanitär kommen raus, der Rohbau bleibt stehen. Beim Rückbau werden gezielt einzelne Bauteile entfernt, etwa eine Wand, eine Treppe oder ein Kamin. Abbruch meint das Abtragen von Bauteilen oder kleinen Gebäuden wie Gartenhäusern – komplette Hausabrisse übernehmen wir nicht.",
   },
   {
-    q: "Brauche ich für einen Abbruch eine Genehmigung?",
-    a: "Das hängt vom Gebäude ab. In Bayern ist die Beseitigung kleinerer, freistehender Gebäude meist verfahrensfrei; in den übrigen Fällen muss der Abbruch mindestens einen Monat vorher bei Gemeinde und Bauaufsicht angezeigt werden (Art. 57 BayBO). Für Baudenkmäler – etwa in der Landsberger Altstadt – gelten eigene Regeln. Wir klären das mit Ihnen vor Beginn.",
+    q: "Können Sie auch tragende Wände entfernen?",
+    a: "Ja – in Zusammenarbeit mit einem Statiker. Er legt fest, wie die Last abgefangen wird, zum Beispiel mit einem Stahlträger. Erst danach öffnen wir die Wand. Nichttragende Wände und Wanddurchbrüche für neue Türen erledigen wir direkt.",
   },
   {
     q: "Was kostet eine Entrümpelung oder Haushaltsauflösung?",
-    a: "Der Preis richtet sich nach Menge, Zugänglichkeit, Stockwerk und Art der Gegenstände – und danach, was sich noch verwerten lässt. Nach einer kurzen Besichtigung erhalten Sie ein schriftliches Angebot, damit Sie vorher wissen, woran Sie sind.",
+    a: "Der Preis richtet sich nach Menge, Zugänglichkeit, Stockwerk und Entsorgungsart. Nach einer Besichtigung – oder anhand von Fotos per WhatsApp – erhalten Sie einen verbindlichen Festpreis. Spätere Nachforderungen gibt es nicht.",
   },
   {
     q: "Kümmern Sie sich auch um Entsorgung und Container?",

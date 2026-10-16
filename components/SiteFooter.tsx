@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-import { film, photos } from "@/lib/images";
+import { photos } from "@/lib/images";
 import { nav, site } from "@/lib/site";
 
 export function SiteFooter() {
   const stamp = photos.landsbergBayertor;
-  const credits = [...Object.values(photos).map((p) => p.credit), film.credit];
+  const credits = Object.values(photos).map((p) => p.credit);
 
   return (
     <footer className="bg-surface-soft pt-section pb-[calc(var(--spacing-xxl)+88px)] lg:pb-xxl">
@@ -44,23 +44,18 @@ export function SiteFooter() {
             <ul className="grid grid-cols-2 gap-x-lg text-body-md text-ink">
               {nav.map((l) => (
                 <li key={l.href}>
-                  <a href={`/${l.href}`} className="link inline-flex min-h-11 items-center">
+                  <a href={l.href} className="link inline-flex min-h-11 items-center">
                     {l.label}
                   </a>
                 </li>
               ))}
               <li>
-                <a href="/#kontakt" className="link inline-flex min-h-11 items-center">
-                  Kontakt
-                </a>
-              </li>
-              <li>
-                <a href="/impressum" className="link inline-flex min-h-11 items-center">
+                <a href="/impressum/" className="link inline-flex min-h-11 items-center">
                   Impressum
                 </a>
               </li>
               <li>
-                <a href="/datenschutz" className="link inline-flex min-h-11 items-center">
+                <a href="/datenschutz/" className="link inline-flex min-h-11 items-center">
                   Datenschutz
                 </a>
               </li>
@@ -69,7 +64,7 @@ export function SiteFooter() {
           <div className="lg:col-span-8">
             <p className="text-title-sm text-ink">Bildnachweise</p>
             <p className="mt-xs text-body-sm text-body">
-              Alle Fotos und das Video via Wikimedia Commons; Gewerke-Fotos sind Symbolbilder und zeigen keine Projekte von{" "}
+              Alle Fotos via Wikimedia Commons; Gewerke-Fotos sind Symbolbilder und zeigen keine Projekte von{" "}
               {site.name}.{" "}
               {credits.map((c, i) => (
                 <span key={c.source}>

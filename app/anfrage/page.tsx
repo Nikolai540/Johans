@@ -4,7 +4,7 @@ import { LegalPage } from "@/components/LegalPage";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `Anfrage | ${site.name}`,
+  title: "Anfrage",
   robots: { index: false, follow: false },
 };
 

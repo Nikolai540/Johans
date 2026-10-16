@@ -97,7 +97,7 @@ export async function POST(req: NextRequest) {
   const reply = (ok: boolean, status: number, errors?: Errors) =>
     isJson
       ? NextResponse.json({ ok, errors }, { status })
-      : NextResponse.redirect(new URL(`/anfrage?status=${ok ? "ok" : "fehler"}`, req.url), 303);
+      : NextResponse.redirect(new URL(`/anfrage/?status=${ok ? "ok" : "fehler"}`, req.url), 303);
 
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
   if (limited(ip)) return reply(false, 429);

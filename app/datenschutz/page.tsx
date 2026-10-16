@@ -4,8 +4,8 @@ import { LegalPage } from "@/components/LegalPage";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `Datenschutz | ${site.name}`,
-  alternates: { canonical: "/datenschutz" },
+  title: "Datenschutz",
+  alternates: { canonical: "/datenschutz/" },
   robots: { index: false, follow: true },
 };
 

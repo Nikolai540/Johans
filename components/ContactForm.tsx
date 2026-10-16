@@ -18,10 +18,10 @@ function joinNames(names: string[]) {
   return `${names.slice(0, -1).join(", ")} und ${names.at(-1)}`;
 }
 
-export function ContactForm() {
+export function ContactForm({ initial = [] }: { initial?: ServiceId[] }) {
   const uid = useId();
   const [name, setName] = useState("");
-  const [selected, setSelected] = useState<ServiceId[]>([]);
+  const [selected, setSelected] = useState<ServiceId[]>(initial);
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<FieldErrors>({});
 
@@ -46,7 +46,7 @@ export function ContactForm() {
     setStatus("sending");
     setErrors({});
     try {
-      const res = await fetch("/api/kontakt", {
+      const res = await fetch("/api/kontakt/", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
@@ -97,7 +97,7 @@ export function ContactForm() {
       </div>
 
       <form
-        action="/api/kontakt"
+        action="/api/kontakt/"
         method="post"
         onSubmit={onSubmit}
         noValidate={false}
@@ -253,7 +253,7 @@ export function ContactForm() {
             />
             <span>
               Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage gespeichert werden. Details in der{" "}
-              <a href="/datenschutz" className="link link-underlined text-ink">
+              <a href="/datenschutz/" className="link link-underlined text-ink">
                 Datenschutzerklärung
               </a>
               . <span aria-hidden>*</span>
