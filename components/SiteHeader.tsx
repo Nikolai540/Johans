@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import { LogoIcon } from "@/components/Logo";
 import { CloseIcon, MenuIcon, PhoneIcon } from "@/components/Icons";
 import { nav, site } from "@/lib/site";
 
@@ -45,8 +46,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 h-nav bg-canvas text-ink">
       <div className="page-x mx-auto flex h-full max-w-page items-center justify-between gap-lg">
         <a href="/" className="flex min-h-11 shrink-0 items-center text-title-md" aria-label={`${site.name} – Startseite`}>
-          <span className="mr-xs bg-surface-dark px-xs py-xxs text-title-sm text-on-dark">J&amp;L</span>
-          Bauprojekte
+          <LogoIcon className="mr-sm h-9 w-auto" />
+          <span>J&amp;L Bauprojekte</span>
         </a>
 
         <nav aria-label="Hauptnavigation" className="hidden xl:block">

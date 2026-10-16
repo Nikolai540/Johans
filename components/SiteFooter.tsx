@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { LogoFull } from "@/components/Logo";
 import { photos } from "@/lib/images";
 import { nav, site } from "@/lib/site";
 
@@ -12,6 +13,7 @@ export function SiteFooter() {
       <div className="page-x mx-auto max-w-page">
         <div className="relative grid gap-xxl bg-canvas p-lg sm:p-xxl lg:grid-cols-2">
           <div>
+            <LogoFull className="mb-xl h-auto w-56 text-ink" title={site.name} />
             <p className="text-display-md text-ink">Bis bald in Landsberg.</p>
             <p className="mt-md max-w-[44ch] text-body-md">
               Ob Keller voller Erinnerungen, Altbau mit Zukunft oder Garten nach dem Abriss: Rufen Sie an, wir

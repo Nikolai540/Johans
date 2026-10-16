@@ -37,7 +37,7 @@ export function businessGraph() {
       telephone: site.phone.e164,
       email: site.email,
       image: `${site.url}/images/landsberg-lechwehr.jpg`,
-      logo: `${site.url}/icon.svg`,
+      logo: `${site.url}/logo.svg`,
       description:
         "Entrümpelung, Haushaltsauflösung, Entkernung, Abbruch, Rückbau, Renovierung, Sanierung, Trockenbau, Gartenbau und Vermittlung von Gewerken in Landsberg am Lech und Umgebung.",
       address,
