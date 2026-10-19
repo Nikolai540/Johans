@@ -47,7 +47,7 @@ export function SiteHeader() {
       <div className="page-x mx-auto flex h-full max-w-page items-center justify-between gap-lg">
         <a href="/" className="flex min-h-11 shrink-0 items-center text-title-md" aria-label={`${site.name} – Startseite`}>
           <LogoIcon className="mr-sm h-9 w-auto" />
-          <span>J&amp;L Bauprojekte</span>
+          <span className="max-[359px]:hidden">J&amp;L Bauprojekte</span>
         </a>
 
         <nav aria-label="Hauptnavigation" className="hidden xl:block">

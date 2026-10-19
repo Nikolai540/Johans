@@ -23,13 +23,13 @@ export function Network() {
                   <h3 className="text-center text-title-lg">{group.group}</h3>
                   <ul className="mt-lg flex flex-col gap-md">
                     {group.items.map((item) => (
-                      <li key={item.name} className="flex items-start justify-between gap-md">
+                      <li key={item.name} className="flex items-start justify-between gap-md max-[359px]:flex-col max-[359px]:gap-xxs">
                         <div>
                           <p className="text-title-sm text-ink">{item.name}</p>
                           <p className="text-body-sm text-body">{item.note}</p>
                         </div>
                         <p
-                          className={`shrink-0 text-right text-body-sm ${
+                          className={`shrink-0 text-right text-body-sm max-[359px]:text-left ${
                             item.by === "J&L Bauprojekte" ? "font-bold text-ink" : "text-body"
                           }`}
                         >

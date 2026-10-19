@@ -158,10 +158,11 @@
     border-radius: var(--radius-sm);
     font-size: var(--text-button);
     font-weight: 700;
-    line-height: 1;
+    line-height: 1.25;
     letter-spacing: 0.5px;
+    text-align: center;
     text-decoration: none;
-    white-space: nowrap;
+    /* bricht nur um, wenn der Platz nicht reicht – sonst Seitenüberlauf auf schmalen Geräten */
     cursor: pointer;
     transition: transform var(--t-press) var(--ease-out), background-color var(--t-hover) ease, color var(--t-hover) ease;
   }
@@ -269,5 +270,18 @@
   @media (prefers-reduced-motion: no-preference) {
     .drift { animation: drift linear both; animation-timeline: view(); animation-range: entry 0% exit 100%; }
     @keyframes drift { from { transform: translateY(-5%) scale(1.1); } to { transform: translateY(5%) scale(1.1); } }
+  }
+}
+
+/* Sehr schmale Geräte: Überschriften eine Stufe kleiner, sonst passen lange Komposita
+   wie „Haushaltsauflösung“ oder „Garagenentrümpelung“ nicht in die Zeile */
+@media (width < 360px) {
+  .text-display-md {
+    font-size: var(--text-display-sm);
+    line-height: var(--text-display-sm--line-height);
+  }
+  .text-display-sm {
+    font-size: var(--text-title-lg);
+    line-height: var(--text-title-lg--line-height);
   }
 }

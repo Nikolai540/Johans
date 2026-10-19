@@ -7,7 +7,7 @@ export const site = {
   owner: "Johann Schmidt",
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://jlbauprojekte.de").replace(/\/$/, ""),
   phone: {
-    display: "0151 55450377",
+    display: "0151\u00a055450377", // geschütztes Leerzeichen: Nummer bricht nie um
     href: "tel:+4915155450377",
     e164: "+49 151 55450377",
   },

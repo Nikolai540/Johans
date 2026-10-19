@@ -49,7 +49,7 @@ export function Hero() {
           <a href={site.phone.href} className="btn btn-primary">
             <PhoneIcon className="size-4" />
             Jetzt anrufen
-            <span className="font-light tabular">{site.phone.display}</span>
+            <span className="font-light tabular max-[359px]:hidden">{site.phone.display}</span>
           </a>
           <a href="#kontakt-formular" className="btn btn-secondary">
             Kontakt aufnehmen
