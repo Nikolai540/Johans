@@ -149,7 +149,7 @@ export const trades: { group: string; items: { name: string; note: string; by: "
 export const faqs: { q: string; a: string }[] = [
   {
     q: "In welchen Orten sind Sie im Einsatz?",
-    a: "Unser Sitz ist Vilgertshofen bei Landsberg am Lech. Wir arbeiten im gesamten Landkreis – unter anderem in Kaufering, Penzing, Igling und Fuchstal –, in der Ammersee-Region mit Dießen, Utting und Schondorf sowie in Buchloe und Umgebung. Fragen Sie gern auch für Orte, die hier nicht stehen.",
+    a: "Wir sind in Vilgertshofen und in Landsberg am Lech (Max-Planck-Straße 13) zu Hause. Wir arbeiten im gesamten Landkreis – unter anderem in Kaufering, Penzing, Igling und Fuchstal –, in der Ammersee-Region mit Dießen, Utting und Schondorf sowie in Buchloe und Umgebung. Fragen Sie gern auch für Orte, die hier nicht stehen.",
   },
   {
     q: "Was ist der Unterschied zwischen Entkernung, Rückbau und Abbruch?",

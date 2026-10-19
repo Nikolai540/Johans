@@ -21,6 +21,14 @@ export const site = {
     country: "DE",
   },
   geo: { latitude: 47.9497, longitude: 10.9147 }, // Vilgertshofen
+  // Zweiter Standort (Koordinaten: OpenStreetMap)
+  branch: {
+    label: "Standort Landsberg am Lech",
+    street: "Max-Planck-Straße 13",
+    postalCode: "86899",
+    locality: "Landsberg am Lech",
+    geo: { latitude: 48.0623, longitude: 10.8566 },
+  },
   // Angaben von der bisherigen Website
   proof: { years: 7, projects: 270, rating: "4,8", reviews: 42 },
   // PLATZHALTER: Erreichbarkeit bestätigen

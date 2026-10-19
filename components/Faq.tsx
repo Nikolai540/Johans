@@ -9,6 +9,7 @@ export function Faq() {
   const tall = photos.landsbergBayertor;
   const square = photos.landsbergLechwehr;
   const place = [site.address.street, `${site.address.postalCode} ${site.address.locality}`].filter(Boolean).join(", ");
+  const branch = `${site.branch.street}, ${site.branch.postalCode} ${site.branch.locality}`;
 
   return (
     <section id="faq" aria-labelledby="faq-title" className="bg-surface-soft pb-section lg:pb-0">
@@ -33,8 +34,10 @@ export function Faq() {
           </h2>
           <dl data-reveal style={{ ["--i" as string]: 1 }} className="mt-lg grid gap-xs text-body-md text-ink">
             <div className="flex gap-xs">
-              <dt className="font-bold">Sitz:</dt>
-              <dd>{place}</dd>
+              <dt className="font-bold">Standorte:</dt>
+              <dd>
+                {place} und {branch}
+              </dd>
             </div>
             <div className="flex gap-xs">
               <dt className="font-bold">Erreichbar:</dt>

@@ -113,7 +113,7 @@ export const entkernung: SubPage = {
   local: {
     h2: "Entkernung und Rückbau in Landsberg und Umgebung",
     paragraphs: [
-      "Von unserem Sitz in Vilgertshofen aus sind wir im gesamten Landkreis Landsberg am Lech im Einsatz: in der Landsberger Altstadt genauso wie in Kaufering, Penzing, Igling, Fuchstal, Denklingen, Windach und Geltendorf.",
+      "Von unseren Standorten in Landsberg am Lech und Vilgertshofen aus sind wir im gesamten Landkreis Landsberg am Lech im Einsatz: in der Landsberger Altstadt genauso wie in Kaufering, Penzing, Igling, Fuchstal, Denklingen, Windach und Geltendorf.",
       "Auch am Ammersee – in Dießen, Utting und Schondorf – sowie in Buchloe übernehmen wir Entkernung, Rückbau, Wanddurchbrüche und kleinere Abbrucharbeiten. Ihr Ort fehlt? Rufen Sie einfach an.",
     ],
   },
@@ -235,7 +235,7 @@ export const entruempelung: SubPage = {
   local: {
     h2: "Entrümpelung in Landsberg am Lech und Umgebung",
     paragraphs: [
-      "Wir entrümpeln und lösen Haushalte im gesamten Landkreis Landsberg am Lech auf – von unserem Sitz in Vilgertshofen aus, in Landsberg, Kaufering, Penzing, Igling, Fuchstal, Denklingen, Windach und Geltendorf.",
+      "Wir entrümpeln und lösen Haushalte im gesamten Landkreis Landsberg am Lech auf – von unseren Standorten in Landsberg (Max-Planck-Straße 13) und Vilgertshofen aus, in Landsberg, Kaufering, Penzing, Igling, Fuchstal, Denklingen, Windach und Geltendorf.",
       "Auch am Ammersee in Dießen, Utting und Schondorf sowie in Buchloe sind wir für Wohnungsauflösungen, Haushaltsauflösungen und Kellerentrümpelungen unterwegs. Weiter entfernte Objekte können Sie gern anfragen.",
     ],
   },

@@ -4,7 +4,7 @@ import { regions, type RegionId } from "@/lib/regions";
 import { site } from "@/lib/site";
 
 const facts = [
-  { label: "Sitz", value: `${site.address.locality}, Landkreis Landsberg` },
+  { label: "Standorte", value: `${site.branch.locality} und ${site.address.locality}` },
   { label: "Erfahrung", value: `${site.proof.years} Jahre, über ${site.proof.projects} Projekte` },
   { label: "Google-Bewertung", value: `${site.proof.rating} von 5 (${site.proof.reviews} Bewertungen)` },
   { label: "Ansprechpartner", value: site.owner },
@@ -22,9 +22,9 @@ export function Region() {
               Zwischen Lech und Ammersee
             </h2>
             <p data-reveal style={{ ["--i" as string]: 1 }} className="mt-lg max-w-[60ch] text-title-md text-ink">
-              Unser Sitz ist Vilgertshofen bei Landsberg am Lech. Von hier betreuen wir drei Regionen im Grenzgebiet
-              von Oberbayern und Schwaben – mit kurzen Wegen, die Ihnen Zeit und Geld sparen. Wählen Sie Ihre Region
-              und sehen Sie, was wir dort für Sie tun.
+              Mit Standorten in Landsberg am Lech und Vilgertshofen betreuen wir drei Regionen im Grenzgebiet von
+              Oberbayern und Schwaben – mit kurzen Wegen, die Ihnen Zeit und Geld sparen. Wählen Sie Ihre Region und
+              sehen Sie, was wir dort für Sie tun.
             </p>
             <dl className="mt-xl grid max-w-[560px] grid-cols-2 gap-x-md gap-y-lg">
               {facts.map((f, i) => (

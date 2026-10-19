@@ -18,8 +18,8 @@ export function RegionMap({ className }: { className?: string }) {
     >
       <title id="karte-titel">Einsatzgebiet von J&L Bauprojekte</title>
       <desc id="karte-text">
-        Karte mit dem Lech von Süden nach Norden, dem Firmensitz Vilgertshofen, Landsberg am Lech und Kaufering am Fluss, Buchloe im Westen und
-        dem Ammersee mit Schondorf, Utting und Dießen im Osten.
+        Karte mit dem Lech von Süden nach Norden, unseren Standorten Landsberg am Lech und Vilgertshofen, Kaufering am Fluss, Buchloe im
+        Westen und dem Ammersee mit Schondorf, Utting und Dießen im Osten.
       </desc>
       {/* Ammersee */}
       <path
@@ -48,18 +48,23 @@ export function RegionMap({ className }: { className?: string }) {
           </text>
         </g>
       ))}
-      {/* Landsberg am Lech */}
-      <circle cx="164" cy="113" r="8" className="fill-on-dark" />
+      {/* Standort Landsberg am Lech, Max-Planck-Straße 13 */}
+      <circle cx="154" cy="97" r="11" className="fill-primary" />
       <text x="152" y="158" textAnchor="end" className="fill-on-dark" fontSize="22" fontWeight="700">
         Landsberg
       </text>
       <text x="152" y="184" textAnchor="end" className="fill-on-dark" fontSize="22" fontWeight="700">
         am Lech
       </text>
-      {/* Firmensitz: Vilgertshofen */}
+      {/* Firmensitz Vilgertshofen */}
       <circle cx="210" cy="222" r="11" className="fill-primary" />
       <text x="184" y="230" textAnchor="end" className="fill-on-dark" fontSize="22" fontWeight="700">
         Vilgertshofen
+      </text>
+      {/* Legende */}
+      <circle cx="316" cy="312" r="9" className="fill-primary" />
+      <text x="334" y="319" className="fill-on-dark-soft" fontSize="19" fontWeight="300">
+        Unsere Standorte
       </text>
     </svg>
   );

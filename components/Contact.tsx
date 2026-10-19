@@ -23,11 +23,20 @@ export function Contact({ initial, formTitle }: { initial?: ServiceId[]; formTit
             <h2 id="kontakt-title" className="text-display-md">
               Kontakt aufnehmen
             </h2>
-            <address className="mt-lg not-italic text-body-md text-ink">
-              <span className="block font-bold">{site.name}</span>
-              {site.address.street && <span className="block">{site.address.street}</span>}
-              <span className="block">
-                {site.address.postalCode} {site.address.locality}
+            <address className="mt-lg grid gap-sm not-italic text-body-md text-ink">
+              <span>
+                <span className="block font-bold">{site.name}</span>
+                {site.address.street && <span className="block">{site.address.street}</span>}
+                <span className="block">
+                  {site.address.postalCode} {site.address.locality}
+                </span>
+              </span>
+              <span>
+                <span className="block font-bold">{site.branch.label}</span>
+                <span className="block">{site.branch.street}</span>
+                <span className="block">
+                  {site.branch.postalCode} {site.branch.locality}
+                </span>
               </span>
             </address>
             <dl className="mt-lg grid gap-xs text-body-md text-ink">

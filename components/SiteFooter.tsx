@@ -28,9 +28,13 @@ export function SiteFooter() {
               <a href={`mailto:${site.email}`} className="link break-all">
                 {site.email}
               </a>
-              {site.address.street && <span className="font-light">{site.address.street}</span>}
               <span className="font-light">
+                {site.address.street && <span className="block">{site.address.street}</span>}
                 {site.address.postalCode} {site.address.locality}
+              </span>
+              <span className="font-light">
+                <span className="block">{site.branch.street}</span>
+                {site.branch.postalCode} {site.branch.locality}
               </span>
             </address>
             <div className="w-16 shrink-0 bg-canvas p-[6px] sm:w-[88px]">

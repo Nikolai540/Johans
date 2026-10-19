@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { Contact } from "@/components/Contact";
 import { ArrowIcon, ChevronIcon, PhoneIcon } from "@/components/Icons";
-import { businessId, faqGraph, JsonLd } from "@/components/JsonLd";
+import { branchId, businessId, faqGraph, JsonLd } from "@/components/JsonLd";
 import { MobileActions } from "@/components/MobileActions";
 import { ServiceLink } from "@/components/ServiceLink";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -21,6 +21,19 @@ const detailPage: Partial<Record<ServiceId, string>> = {
   rueckbau: pages.entkernung.href,
 };
 
+const addresses = {
+  main: {
+    id: businessId,
+    label: `Firmensitz ${site.address.locality}`,
+    lines: [site.address.street, `${site.address.postalCode} ${site.address.locality}`].filter(Boolean),
+  },
+  branch: {
+    id: branchId,
+    label: site.branch.label,
+    lines: [site.branch.street, `${site.branch.postalCode} ${site.branch.locality}`],
+  },
+};
+
 export function RegionPage({ page }: { page: RegionPageData }) {
   const region = regionById(page.region);
   const others = regions.filter((r) => r.id !== region.id);
@@ -35,7 +48,7 @@ export function RegionPage({ page }: { page: RegionPageData }) {
       name: page.h1,
       description: page.description,
       url,
-      provider: { "@id": businessId },
+      provider: { "@id": addresses[page.locations[0]].id },
       areaServed: region.places.map((name) => ({ "@type": "City", name })),
       hasOfferCatalog: {
         "@type": "OfferCatalog",
@@ -133,6 +146,11 @@ export function RegionPage({ page }: { page: RegionPageData }) {
                 const linkClass = "link mt-auto inline-flex min-h-11 items-center gap-xs pt-md text-title-sm text-ink";
                 return (
                   <li key={item.id} data-reveal style={{ ["--i" as string]: i % 3 }} className="card flex flex-col p-lg">
+                    {item.focus && (
+                      <span className="mb-sm self-start rounded-pill bg-primary px-sm py-xxs text-body-sm font-bold text-on-primary">
+                        Schwerpunkt in der Region
+                      </span>
+                    )}
                     <h3 className="text-display-sm">{s.name}</h3>
                     <p className="mt-sm text-body-md">{item.text}</p>
                     {href ? (
@@ -230,6 +248,24 @@ export function RegionPage({ page }: { page: RegionPageData }) {
                   </span>
                 ))}
               </p>
+              <h3 data-reveal className="mt-xl text-title-md">
+                {page.locations.length > 1 ? "Unsere Standorte in der Nähe" : "Unser Standort in der Nähe"}
+              </h3>
+              <div data-reveal style={{ ["--i" as string]: 1 }} className="mt-sm grid gap-md sm:grid-cols-2">
+                {page.locations.map((key) => {
+                  const a = addresses[key];
+                  return (
+                    <address key={key} className="border-l-4 border-primary bg-surface-soft p-md not-italic text-body-md text-ink">
+                      <span className="block font-bold">{a.label}</span>
+                      {a.lines.map((line) => (
+                        <span key={line} className="block">
+                          {line}
+                        </span>
+                      ))}
+                    </address>
+                  );
+                })}
+              </div>
             </div>
             <figure className="lg:col-span-5 lg:col-start-8">
               <div data-reveal="mask" className="relative aspect-[4/3] overflow-hidden bg-surface-card lg:aspect-square">

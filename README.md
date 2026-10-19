@@ -36,8 +36,9 @@ Ohne JavaScript funktioniert das Formular als normales POST mit Weiterleitung au
 
 ## Regionale Landingpages
 
-Die Sektion „Einsatzgebiet“ auf der Startseite verteilt auf drei Regionen (`lib/regions.ts` → `regions`).
-Vorlage ist `/einsatzgebiet/landsberg-am-lech/` (`components/RegionPage.tsx`, Texte in `lib/regions.ts` → `landsbergPage`).
+Die Sektion „Einsatzgebiet“ auf der Startseite verteilt auf drei Regionen (`lib/regions.ts` → `regions`):
+`/einsatzgebiet/landsberg-am-lech/`, `/einsatzgebiet/ammersee-westufer/`, `/einsatzgebiet/buchloe-fuchstal/`.
+Vorlage: `components/RegionPage.tsx`, Texte in `lib/regions.ts`. Standorte (Vilgertshofen, Landsberg) in `lib/site.ts`.
 
 Neue Region veröffentlichen:
 
