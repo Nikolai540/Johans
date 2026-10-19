@@ -52,3 +52,30 @@ export function ChevronIcon({ className }: IconProps) {
     </svg>
   );
 }
+
+/** Stadttor – Landsberg am Lech */
+export function GateIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M4 21h16M6 21V5h2v2h2V5h4v2h2V5h2v16M10 21v-4a2 2 0 0 1 4 0v4" />
+    </svg>
+  );
+}
+
+/** Segelboot auf Wellen – Ammersee */
+export function SailIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M12 3v12M12 4l6 9h-6M5 15h14M3 20c1.5-1.3 3-1.3 4.5 0s3 1.3 4.5 0 3-1.3 4.5 0 3 1.3 4.5 0" />
+    </svg>
+  );
+}
+
+/** Haus – Firmensitz */
+export function HomeIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M3 11l9-7 9 7M5 9.5V21h14V9.5M10 21v-6h4v6" />
+    </svg>
+  );
+}

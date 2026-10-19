@@ -6,7 +6,7 @@ import type { ServiceId } from "@/lib/content";
 import { photos } from "@/lib/images";
 import { site } from "@/lib/site";
 
-export function Contact({ initial }: { initial?: ServiceId[] }) {
+export function Contact({ initial, formTitle }: { initial?: ServiceId[]; formTitle?: string }) {
   const p = photos.lechBlickNorden;
   return (
     <section id="kontakt" aria-labelledby="kontakt-title" className="bg-canvas">
@@ -60,7 +60,7 @@ export function Contact({ initial }: { initial?: ServiceId[] }) {
         </div>
       </div>
 
-      <ContactForm initial={initial} />
+      <ContactForm initial={initial} title={formTitle} />
     </section>
   );
 }

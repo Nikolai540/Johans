@@ -34,6 +34,17 @@ Ohne JavaScript funktioniert das Formular als normales POST mit Weiterleitung au
 - Schema.org `GeneralContractor`/`LocalBusiness` + `WebSite` + `FAQPage`: `components/JsonLd.tsx`
 - `sitemap.xml`, `robots.txt`: `app/sitemap.ts`, `app/robots.ts`
 
+## Regionale Landingpages
+
+Die Sektion „Einsatzgebiet“ auf der Startseite verteilt auf drei Regionen (`lib/regions.ts` → `regions`).
+Vorlage ist `/einsatzgebiet/landsberg-am-lech/` (`components/RegionPage.tsx`, Texte in `lib/regions.ts` → `landsbergPage`).
+
+Neue Region veröffentlichen:
+
+1. In `lib/regions.ts` einen `RegionPage`-Datensatz anlegen und in `regionPages` eintragen (Sitemap).
+2. Ordner `app/einsatzgebiet/landsberg-am-lech/` kopieren, Ordnername = Slug aus `regions[].href`, Import anpassen.
+3. Texte je Region eigenständig schreiben (Schwerpunkte, Orte, FAQ) – reine Ortsnamen-Kopien wertet Google als Brückenseiten.
+
 ## Bilder
 
 Alle Fotos und das Video stammen aus Wikimedia Commons (CC0 / CC BY / CC BY-SA), Quellen und Lizenzen in

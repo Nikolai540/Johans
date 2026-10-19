@@ -1,8 +1,6 @@
-import Image from "next/image";
-
+import { ArrowIcon, GateIcon, HomeIcon, SailIcon } from "@/components/Icons";
 import { RegionMap } from "@/components/RegionMap";
-import { places } from "@/lib/content";
-import { photos } from "@/lib/images";
+import { regions, type RegionId } from "@/lib/regions";
 import { site } from "@/lib/site";
 
 const facts = [
@@ -12,40 +10,23 @@ const facts = [
   { label: "Ansprechpartner", value: site.owner },
 ];
 
+const icons: Record<RegionId, typeof GateIcon> = { landsberg: GateIcon, ammersee: SailIcon, buchloe: HomeIcon };
+
 export function Region() {
-  const p = photos.landsbergLechUfer;
   return (
     <section id="einsatzgebiet" aria-labelledby="einsatzgebiet-title" className="bg-canvas py-section">
       <div className="page-x mx-auto max-w-page">
-        <div className="max-w-[60ch]">
-          <h2 id="einsatzgebiet-title" data-reveal className="text-display-md lg:text-display-lg">
-            Zwischen Lech und Ammersee
-          </h2>
-          <p data-reveal style={{ ["--i" as string]: 1 }} className="mt-lg text-title-md text-ink">
-            Unser Sitz ist Vilgertshofen bei Landsberg am Lech. Von hier sind wir im ganzen Landkreis unterwegs,
-            am Westufer des Ammersees und westlich des Lechs bis Buchloe – im Grenzgebiet von Oberbayern und Schwaben.
-          </p>
-        </div>
-
-        <div className="mt-xxl grid gap-md lg:grid-cols-12">
-          <figure className="lg:col-span-8">
-            <div className="relative">
-              <div data-reveal="mask" className="relative aspect-[4/3] overflow-hidden bg-surface-card lg:aspect-[16/10]">
-                <Image src={p.src} alt={p.alt} fill sizes="(min-width: 1024px) 60vw, 100vw" placeholder="blur" className="object-cover" />
-              </div>
-              <p className="mt-md text-body-md text-ink lg:absolute lg:top-0 lg:right-0 lg:mt-0 lg:w-[320px] lg:bg-canvas lg:p-lg">
-                Kurze Wege sparen Zeit und Geld. Weil wir in der Region zu Hause sind, sind wir für Besichtigung,
-                Absprachen und Ausführung schnell vor Ort – in der Altstadt genauso wie auf dem Land.
-              </p>
-            </div>
-            <figcaption className="mt-xs text-body-sm text-body">{p.caption}</figcaption>
-          </figure>
-
-          <div className="lg:col-span-4">
-            <div data-reveal style={{ ["--i" as string]: 1 }} className="flex aspect-[3/2] items-center justify-center bg-surface-dark p-md lg:aspect-[4/3] lg:p-lg">
-              <RegionMap className="h-full w-full" />
-            </div>
-            <dl className="mt-lg grid grid-cols-2 gap-x-md gap-y-lg">
+        <div className="grid gap-xxl lg:grid-cols-12 lg:gap-lg">
+          <div className="lg:col-span-7">
+            <h2 id="einsatzgebiet-title" data-reveal className="text-display-md lg:text-display-lg">
+              Zwischen Lech und Ammersee
+            </h2>
+            <p data-reveal style={{ ["--i" as string]: 1 }} className="mt-lg max-w-[60ch] text-title-md text-ink">
+              Unser Sitz ist Vilgertshofen bei Landsberg am Lech. Von hier betreuen wir drei Regionen im Grenzgebiet
+              von Oberbayern und Schwaben – mit kurzen Wegen, die Ihnen Zeit und Geld sparen. Wählen Sie Ihre Region
+              und sehen Sie, was wir dort für Sie tun.
+            </p>
+            <dl className="mt-xl grid max-w-[560px] grid-cols-2 gap-x-md gap-y-lg">
               {facts.map((f, i) => (
                 <div key={f.label} data-reveal style={{ ["--i" as string]: i + 2 }}>
                   <dt className="text-body-sm text-body">{f.label}</dt>
@@ -54,19 +35,51 @@ export function Region() {
               ))}
             </dl>
           </div>
+          <div
+            data-reveal
+            style={{ ["--i" as string]: 1 }}
+            className="flex aspect-[3/2] items-center justify-center self-start bg-surface-dark p-md lg:col-span-5 lg:aspect-[4/3] lg:p-lg"
+          >
+            <RegionMap className="h-full w-full" />
+          </div>
         </div>
 
-        <div className="mt-section grid gap-lg lg:grid-cols-12">
-          <h3 data-reveal className="text-display-sm lg:col-span-4">
-            Hier sind wir für Sie im Einsatz
-          </h3>
-          <ul data-reveal style={{ ["--i" as string]: 1 }} className="flex flex-wrap gap-x-lg gap-y-xs text-title-md text-ink lg:col-span-8">
-            {places.map((place) => (
-              <li key={place}>{place}</li>
-            ))}
-            <li className="font-light text-body">und Umgebung</li>
-          </ul>
-        </div>
+        <ul className="mt-xxl grid gap-lg lg:grid-cols-3">
+          {regions.map((r, i) => {
+            const Icon = icons[r.id];
+            return (
+              <li key={r.id} data-reveal style={{ ["--i" as string]: i }} className="flex">
+                <a href={r.href} className="card group flex w-full flex-col p-lg sm:p-xl">
+                  <span className="flex items-start justify-between gap-md">
+                    <span className="flex size-14 items-center justify-center rounded-sm bg-primary text-on-primary">
+                      <Icon className="size-7" />
+                    </span>
+                    {r.badge && (
+                      <span className="rounded-pill bg-surface-dark px-sm py-xxs text-body-sm font-bold text-on-dark">
+                        {r.badge}
+                      </span>
+                    )}
+                  </span>
+                  <h3 className="mt-lg text-display-sm">{r.name}</h3>
+                  <p className="mt-xs text-body-sm text-body">{r.places.join(" · ")}</p>
+                  <p className="mt-md text-body-md">{r.teaser}</p>
+                  <span className="mt-auto pt-lg text-title-sm text-ink">
+                    {r.cta}
+                    <ArrowIcon className="ml-xs inline size-4 align-[-2px] transition-transform duration-[180ms] group-hover:translate-x-1" />
+                  </span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+
+        <p data-reveal className="mt-xl text-body-md">
+          Ihr Ort ist nicht dabei? Wir sind auch darüber hinaus im Einsatz –{" "}
+          <a href={site.phone.href} className="link link-underlined font-bold text-ink">
+            rufen Sie uns an
+          </a>
+          .
+        </p>
       </div>
     </section>
   );

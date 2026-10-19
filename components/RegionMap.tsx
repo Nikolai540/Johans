@@ -50,15 +50,15 @@ export function RegionMap({ className }: { className?: string }) {
       ))}
       {/* Landsberg am Lech */}
       <circle cx="164" cy="113" r="8" className="fill-on-dark" />
-      <text x="152" y="148" textAnchor="end" className="fill-on-dark" fontSize="22" fontWeight="700">
+      <text x="152" y="158" textAnchor="end" className="fill-on-dark" fontSize="22" fontWeight="700">
         Landsberg
       </text>
-      <text x="152" y="174" textAnchor="end" className="fill-on-dark" fontSize="22" fontWeight="700">
+      <text x="152" y="184" textAnchor="end" className="fill-on-dark" fontSize="22" fontWeight="700">
         am Lech
       </text>
       {/* Firmensitz: Vilgertshofen */}
       <circle cx="210" cy="222" r="11" className="fill-primary" />
-      <text x="226" y="230" className="fill-on-dark" fontSize="22" fontWeight="700">
+      <text x="184" y="230" textAnchor="end" className="fill-on-dark" fontSize="22" fontWeight="700">
         Vilgertshofen
       </text>
     </svg>

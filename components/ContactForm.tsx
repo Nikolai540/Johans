@@ -18,7 +18,7 @@ function joinNames(names: string[]) {
   return `${names.slice(0, -1).join(", ")} und ${names.at(-1)}`;
 }
 
-export function ContactForm({ initial = [] }: { initial?: ServiceId[] }) {
+export function ContactForm({ initial = [], title = "Anfrage senden" }: { initial?: ServiceId[]; title?: string }) {
   const uid = useId();
   const [name, setName] = useState("");
   const [selected, setSelected] = useState<ServiceId[]>(initial);
@@ -85,7 +85,7 @@ export function ContactForm({ initial = [] }: { initial?: ServiceId[] }) {
     <div id="kontakt-formular" className="page-x mx-auto max-w-page scroll-mt-nav py-section">
       <div className="max-w-[60ch]">
         <h3 data-reveal className="text-display-md lg:text-display-lg">
-          Anfrage senden
+          {title}
         </h3>
         <p data-reveal style={{ ["--i" as string]: 1 }} className="mt-md text-body-md">
           Beschreiben Sie kurz Ihr Vorhaben. Wir melden uns mit Rückfragen und einem Terminvorschlag für die

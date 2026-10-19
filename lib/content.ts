@@ -1,4 +1,5 @@
 import type { PhotoKey } from "./images";
+import { regions } from "./regions";
 
 export type ServiceId =
   | "entruempelung"
@@ -101,25 +102,8 @@ export const serviceRows: { ids: ServiceId[]; photo?: PhotoKey; shape: "portrait
   { ids: ["gewerke"], shape: "landscape" },
 ];
 
-export const places = [
-  "Landsberg am Lech",
-  "Vilgertshofen",
-  "Kaufering",
-  "Penzing",
-  "Igling",
-  "Hurlach",
-  "Scheuring",
-  "Prittriching",
-  "Fuchstal",
-  "Denklingen",
-  "Windach",
-  "Geltendorf",
-  "Dießen am Ammersee",
-  "Utting am Ammersee",
-  "Schondorf am Ammersee",
-  "Greifenberg",
-  "Buchloe",
-] as const;
+/** Alle Orte des Einsatzgebiets, gruppiert nach Region in lib/regions.ts */
+export const places = regions.flatMap((r) => r.places);
 
 // PLATZHALTER: Welche Gewerke selbst ausgeführt und welche vermittelt werden, vor dem Livegang bestätigen.
 export const trades: { group: string; items: { name: string; note: string; by: "J&L Bauprojekte" | "Partnerbetrieb" }[] }[] = [
