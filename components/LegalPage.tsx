@@ -4,9 +4,9 @@ import { site } from "@/lib/site";
 export function LegalPage({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <>
-      <header className="h-nav bg-canvas">
+      <header className="on-dark h-nav border-b border-surface-dark-elevated bg-surface-dark">
         <div className="page-x mx-auto flex h-full max-w-page items-center justify-between">
-          <a href="/" className="flex min-h-11 items-center text-title-md text-ink">
+          <a href="/" className="flex min-h-11 items-center text-title-md text-on-dark">
             <LogoIcon className="mr-sm h-9 w-auto" />
           <span>J&amp;L Bauprojekte</span>
           </a>

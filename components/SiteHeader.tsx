@@ -43,7 +43,7 @@ export function SiteHeader() {
   const isActive = (href: string) => (href.startsWith("/#") ? active === href : pathname === href);
 
   return (
-    <header className="sticky top-0 z-50 h-nav bg-canvas text-ink">
+    <header className="on-dark sticky top-0 z-50 h-nav border-b border-surface-dark-elevated bg-surface-dark text-on-dark">
       <div className="page-x mx-auto flex h-full max-w-page items-center justify-between gap-lg">
         <a href="/" className="flex min-h-11 shrink-0 items-center text-title-md" aria-label={`${site.name} – Startseite`}>
           <LogoIcon className="mr-sm h-9 w-auto" />
@@ -58,7 +58,7 @@ export function SiteHeader() {
                   href={l.href}
                   aria-current={isActive(l.href) ? (l.href.startsWith("/#") ? "location" : "page") : undefined}
                   className={`link inline-flex min-h-11 items-center text-nav-link ${
-                    isActive(l.href) ? "font-bold text-ink link-underlined" : "text-body"
+                    isActive(l.href) ? "font-bold text-on-dark link-underlined" : "text-on-dark-soft"
                   }`}
                 >
                   {l.label}
@@ -93,12 +93,12 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <div id="mobile-menu" hidden={!open} className="fixed inset-x-0 top-nav bottom-0 overflow-y-auto bg-canvas xl:hidden">
+      <div id="mobile-menu" hidden={!open} className="fixed inset-x-0 top-nav bottom-0 overflow-y-auto bg-surface-dark xl:hidden">
         <nav aria-label="Mobile Navigation" className="page-x flex min-h-full flex-col pb-xl pt-lg">
           <ul className="flex flex-col">
             {nav.map((l) => (
               <li key={l.href}>
-                <a href={l.href} onClick={() => setOpen(false)} className="flex min-h-14 items-center text-display-sm text-ink">
+                <a href={l.href} onClick={() => setOpen(false)} className="flex min-h-14 items-center text-display-sm text-on-dark">
                   {l.label}
                 </a>
               </li>
@@ -109,7 +109,7 @@ export function SiteHeader() {
               <PhoneIcon className="size-4" />
               Jetzt anrufen · {site.phone.display}
             </a>
-            <a href="#kontakt-formular" className="btn w-full bg-surface-strong text-ink" onClick={() => setOpen(false)}>
+            <a href="#kontakt-formular" className="btn w-full bg-surface-dark-elevated text-on-dark" onClick={() => setOpen(false)}>
               Kontakt aufnehmen
             </a>
           </div>
