@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/webp"],
     qualities: [70, 80],
+    // Weniger Bildbreiten: jede Breite ist eine eigene Umwandlung im Vercel-Bildcache.
+    // So sind mehr Anfragen Cache-Treffer, und das Kontingent der Bildoptimierung wird geschont.
+    deviceSizes: [640, 828, 1080, 1200, 1920],
+    imageSizes: [96, 256, 384],
+    // Statische Importe tragen einen Inhalts-Hash, ändern sich also nie unter derselben URL
+    minimumCacheTTL: 31536000,
   },
 };
 
