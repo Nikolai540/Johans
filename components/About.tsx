@@ -36,12 +36,12 @@ export function About() {
         </div>
 
         <div className="flex flex-col gap-xxl lg:col-span-5 lg:col-start-8 lg:gap-[30svh] lg:py-[18svh]">
-          {passing.map(({ key, ratio, frame }, i) => {
+          {passing.map(({ key, ratio, frame }) => {
             const p = photos[key];
             return (
               <figure key={key} className={frame}>
-                <div data-reveal="mask" style={{ ["--i" as string]: i }} className={`relative overflow-hidden bg-surface-card ${ratio}`}>
-                  <Image src={p.src} alt={p.alt} fill loading="eager" sizes="(min-width: 1024px) 40vw, 80vw" placeholder="blur" className="object-cover" />
+                <div className={`relative overflow-hidden bg-surface-card ${ratio}`}>
+                  <Image src={p.src} alt={p.alt} fill sizes="(min-width: 1024px) 40vw, 80vw" placeholder="blur" className="object-cover" />
                 </div>
                 <figcaption className="mt-xs text-body-sm text-body">{p.caption}</figcaption>
               </figure>

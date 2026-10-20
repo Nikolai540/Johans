@@ -95,8 +95,8 @@ export function Services() {
                 </div>
                 {photo && (
                   <figure className={`${frame} lg:col-span-3 lg:ml-0 ${shape.desk}`}>
-                    <div data-reveal="mask" className={`relative overflow-hidden bg-surface-card ${shape.ratio}`}>
-                      <Image src={photo.src} alt={photo.alt} fill loading="eager" sizes="(min-width: 1024px) 25vw, 80vw" placeholder="blur" className="object-cover" />
+                    <div className={`relative overflow-hidden bg-surface-card ${shape.ratio}`}>
+                      <Image src={photo.src} alt={photo.alt} fill sizes="(min-width: 1024px) 25vw, 80vw" placeholder="blur" className="object-cover" />
                     </div>
                     <figcaption className="mt-xs text-body-sm text-body">{photo.caption}</figcaption>
                   </figure>

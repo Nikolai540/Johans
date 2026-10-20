@@ -120,7 +120,7 @@ export function RegionPage({ page }: { page: RegionPageData }) {
               </p>
             </div>
             <figure className="lg:col-span-6">
-              <div className="shutter relative aspect-[4/3] overflow-hidden bg-surface-dark-elevated">
+              <div className="relative aspect-[4/3] overflow-hidden bg-surface-dark-elevated">
                 <Image src={hero.src} alt={hero.alt} fill preload sizes="(min-width: 1024px) 50vw, 100vw" placeholder="blur" className="object-cover" />
               </div>
               <figcaption className="mt-xs text-body-sm text-on-dark-soft">{hero.caption}</figcaption>
@@ -268,8 +268,8 @@ export function RegionPage({ page }: { page: RegionPageData }) {
               </div>
             </div>
             <figure className="lg:col-span-5 lg:col-start-8">
-              <div data-reveal="mask" className="relative aspect-[4/3] overflow-hidden bg-surface-card lg:aspect-square">
-                <Image src={local.src} alt={local.alt} fill loading="eager" sizes="(min-width: 1024px) 40vw, 100vw" placeholder="blur" className="object-cover" />
+              <div className="relative aspect-[4/3] overflow-hidden bg-surface-card lg:aspect-square">
+                <Image src={local.src} alt={local.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" placeholder="blur" className="object-cover" />
               </div>
               <figcaption className="mt-xs text-body-sm text-body">{local.caption}</figcaption>
             </figure>

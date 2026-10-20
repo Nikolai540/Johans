@@ -92,7 +92,7 @@ export function ServicePage({ page }: { page: SubPage }) {
               </p>
             </div>
             <figure className="lg:col-span-6">
-              <div className="shutter relative aspect-[4/3] overflow-hidden bg-surface-dark-elevated">
+              <div className="relative aspect-[4/3] overflow-hidden bg-surface-dark-elevated">
                 <Image src={hero.src} alt={hero.alt} fill preload sizes="(min-width: 1024px) 50vw, 100vw" placeholder="blur" className="object-cover" />
               </div>
               <figcaption className="mt-xs text-body-sm text-on-dark-soft">{hero.caption}</figcaption>

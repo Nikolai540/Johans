@@ -230,12 +230,7 @@
    Motion. Versteckte Startzustände gelten nur mit html.js, damit ohne
    JavaScript alles sichtbar bleibt.
    ------------------------------------------------------------------ */
-.shutter { overflow: hidden; }
-
 @media (prefers-reduced-motion: no-preference) {
-  /* Signatur: das Hero-Foto öffnet sich wie ein Verschluss */
-  .js .shutter { clip-path: inset(0 0 100% 0); animation: shutter-open 500ms var(--ease-out) forwards; }
-
   .js [data-rise] {
     opacity: 0;
     transform: translateY(18px);
@@ -249,18 +244,9 @@
     transition: opacity 700ms var(--ease-out), transform 900ms var(--ease-out);
     transition-delay: calc(var(--i, 0) * 75ms);
   }
-  /* Maske auf dem Kind: ein Element mit clip-path meldet dem IntersectionObserver keine Fläche */
-  .js [data-reveal="mask"] { opacity: 1; transform: none; }
-  .js [data-reveal="mask"] > * {
-    clip-path: inset(0 0 100% 0);
-    transition: clip-path 500ms var(--ease-out);
-    transition-delay: calc(var(--i, 0) * 75ms);
-  }
   .js [data-reveal].is-in { opacity: 1; transform: none; }
-  .js [data-reveal="mask"].is-in > * { clip-path: inset(0); }
 }
 
-@keyframes shutter-open { to { clip-path: inset(0); } }
 @keyframes rise { to { opacity: 1; transform: none; } }
 
 @supports (animation-timeline: view()) {

@@ -12,7 +12,7 @@ export function Hero() {
       aria-labelledby="hero-title"
       className="on-dark relative isolate flex min-h-[560px] flex-col justify-end bg-surface-dark text-on-dark h-[calc(100svh-var(--spacing-nav))]"
     >
-      <div className="shutter absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10">
         <Image
           src={p.src}
           alt={p.alt}

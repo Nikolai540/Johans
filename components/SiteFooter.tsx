@@ -39,7 +39,7 @@ export function SiteFooter() {
             </address>
             <div className="w-16 shrink-0 bg-canvas p-[6px] sm:w-[88px]">
               <div className="relative aspect-[3/4] overflow-hidden">
-                <Image src={stamp.src} alt="" fill loading="eager" sizes="88px" className="object-cover object-[60%_50%]" />
+                <Image src={stamp.src} alt="" fill sizes="88px" className="object-cover object-[60%_50%]" />
               </div>
             </div>
           </div>

@@ -16,15 +16,11 @@ export function Faq() {
       <div className="page-x mx-auto grid max-w-page gap-xxl lg:grid-cols-12 lg:gap-lg">
         {/* Bilder: auf dem Smartphone zuerst */}
         <div className="relative pb-xxl lg:order-2 lg:col-span-6 lg:col-start-7 lg:pb-section">
-          <div data-reveal="mask" className="relative aspect-[4/5] overflow-hidden bg-surface-card lg:aspect-[3/4]">
-            <Image src={tall.src} alt={tall.alt} fill loading="eager" sizes="(min-width: 1024px) 45vw, 100vw" placeholder="blur" className="object-cover object-[60%_50%]" />
+          <div className="relative aspect-[4/5] overflow-hidden bg-surface-card lg:aspect-[3/4]">
+            <Image src={tall.src} alt={tall.alt} fill sizes="(min-width: 1024px) 45vw, 100vw" placeholder="blur" className="object-cover object-[60%_50%]" />
           </div>
-          <div
-            data-reveal="mask"
-            style={{ ["--i" as string]: 2 }}
-            className="absolute right-md bottom-0 aspect-square w-[38%] overflow-hidden bg-surface-card lg:right-auto lg:-left-xl lg:bottom-xl lg:w-1/3"
-          >
-            <Image src={square.src} alt={square.alt} fill loading="eager" sizes="(min-width: 1024px) 15vw, 38vw" placeholder="blur" className="object-cover object-[30%_60%]" />
+          <div className="absolute right-md bottom-0 aspect-square w-[38%] overflow-hidden bg-surface-card lg:right-auto lg:-left-xl lg:bottom-xl lg:w-1/3">
+            <Image src={square.src} alt={square.alt} fill sizes="(min-width: 1024px) 15vw, 38vw" placeholder="blur" className="object-cover object-[30%_60%]" />
           </div>
         </div>
 
