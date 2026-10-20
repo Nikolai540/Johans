@@ -269,7 +269,7 @@ export function RegionPage({ page }: { page: RegionPageData }) {
             </div>
             <figure className="lg:col-span-5 lg:col-start-8">
               <div data-reveal="mask" className="relative aspect-[4/3] overflow-hidden bg-surface-card lg:aspect-square">
-                <Image src={local.src} alt={local.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" placeholder="blur" className="object-cover" />
+                <Image src={local.src} alt={local.alt} fill loading="eager" sizes="(min-width: 1024px) 40vw, 100vw" placeholder="blur" className="object-cover" />
               </div>
               <figcaption className="mt-xs text-body-sm text-body">{local.caption}</figcaption>
             </figure>

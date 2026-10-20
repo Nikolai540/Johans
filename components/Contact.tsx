@@ -12,7 +12,7 @@ export function Contact({ initial, formTitle }: { initial?: ServiceId[]; formTit
     <section id="kontakt" aria-labelledby="kontakt-title" className="bg-canvas">
       <div className="relative">
         <div className="relative h-[60svh] min-h-[380px] overflow-hidden bg-surface-card lg:h-svh lg:min-h-[640px]">
-          <Image src={p.src} alt={p.alt} fill sizes="100vw" placeholder="blur" className="object-cover object-[50%_60%]" />
+          <Image src={p.src} alt={p.alt} fill loading="eager" sizes="100vw" placeholder="blur" className="object-cover object-[50%_60%]" />
         </div>
 
         <div className="page-x relative mx-auto -mt-section max-w-page lg:absolute lg:inset-0 lg:mt-0">
