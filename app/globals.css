@@ -253,12 +253,11 @@
   .js [data-reveal="mask"] { opacity: 1; transform: none; }
   .js [data-reveal="mask"] > * {
     clip-path: inset(0 0 100% 0);
-    transition: clip-path 900ms var(--ease-in-out), transform 1400ms var(--ease-soft);
+    transition: clip-path 500ms var(--ease-out);
     transition-delay: calc(var(--i, 0) * 75ms);
-    transform: scale(1.06);
   }
   .js [data-reveal].is-in { opacity: 1; transform: none; }
-  .js [data-reveal="mask"].is-in > * { clip-path: inset(0); transform: none; }
+  .js [data-reveal="mask"].is-in > * { clip-path: inset(0); }
 }
 
 @keyframes shutter-open { to { clip-path: inset(0); } }
