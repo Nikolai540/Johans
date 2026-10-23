@@ -30,7 +30,7 @@ export function MobileActions() {
 
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-40 bg-surface-dark px-sm pt-sm pb-[max(12px,env(safe-area-inset-bottom))] transition-transform duration-[240ms] ease-[var(--ease-out)] lg:hidden ${
+      className={`on-dark fixed inset-x-0 bottom-0 z-40 bg-surface-dark px-sm pt-sm pb-[max(12px,env(safe-area-inset-bottom))] transition-transform duration-[240ms] ease-[var(--ease-out)] lg:hidden ${
         visible ? "translate-y-0" : "translate-y-full"
       }`}
       aria-hidden={!visible}

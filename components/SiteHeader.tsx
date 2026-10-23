@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { LogoIcon } from "@/components/Logo";
 import { CloseIcon, MenuIcon, PhoneIcon } from "@/components/Icons";
@@ -11,6 +11,8 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string | null>(null);
+  const headerRef = useRef<HTMLElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   // Aktive Sprungmarke auf der Startseite hervorheben
   useEffect(() => {
@@ -29,12 +31,24 @@ export function SiteHeader() {
     return () => io.disconnect();
   }, [pathname]);
 
+  // Offenes Menü: Fokus ins Menü, Rest der Seite für Tastatur und Screenreader sperren, Escape schließt
   useEffect(() => {
     if (!open) return;
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    const header = headerRef.current!;
+    const locked = [...document.body.children].filter(
+      (el): el is HTMLElement => el instanceof HTMLElement && !el.contains(header) && !el.inert,
+    );
+    locked.forEach((el) => (el.inert = true));
+    header.querySelector<HTMLElement>("#mobile-menu a")?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      setOpen(false);
+      toggleRef.current?.focus();
+    };
     document.addEventListener("keydown", onKey);
     document.documentElement.style.overflow = "hidden";
     return () => {
+      locked.forEach((el) => (el.inert = false));
       document.removeEventListener("keydown", onKey);
       document.documentElement.style.overflow = "";
     };
@@ -43,11 +57,11 @@ export function SiteHeader() {
   const isActive = (href: string) => (href.startsWith("/#") ? active === href : pathname === href);
 
   return (
-    <header className="on-dark sticky top-0 z-50 h-nav border-b border-surface-dark-elevated bg-surface-dark text-on-dark">
+    <header ref={headerRef} className="on-dark sticky top-0 z-50 h-nav border-b border-surface-dark-elevated bg-surface-dark text-on-dark">
       <div className="page-x mx-auto flex h-full max-w-page items-center justify-between gap-lg">
         <a href="/" className="flex min-h-11 shrink-0 items-center text-title-md" aria-label={`${site.name} – Startseite`}>
           <LogoIcon className="mr-sm h-9 w-auto" />
-          <span className="max-[359px]:hidden">J&amp;L Bauprojekte</span>
+          <span className="max-[22.5rem]:hidden">J&amp;L Bauprojekte</span>
         </a>
 
         <nav aria-label="Hauptnavigation" className="hidden xl:block">
@@ -81,6 +95,7 @@ export function SiteHeader() {
             <PhoneIcon className="size-5" />
           </a>
           <button
+            ref={toggleRef}
             type="button"
             className="inline-flex size-11 items-center justify-center xl:hidden"
             aria-expanded={open}

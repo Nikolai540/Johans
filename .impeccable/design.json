@@ -1,0 +1,570 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-23T12:48:12+00:00",
+  "title": "Design System: J&L Bauprojekte",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Logo-Gelb",
+        "tonalRamp": [
+          "oklch(15% 0.115 84.6)",
+          "oklch(26% 0.134 84.6)",
+          "oklch(37% 0.153 84.6)",
+          "oklch(48% 0.172 84.6)",
+          "oklch(60% 0.173 84.6)",
+          "oklch(72% 0.172 84.6)",
+          "oklch(84% 0.151 84.6)",
+          "oklch(95% 0.132 84.6)"
+        ]
+      },
+      "primary-active": {
+        "role": "primary",
+        "displayName": "Gelb gedrückt",
+        "tonalRamp": [
+          "oklch(15% 0.108 84.7)",
+          "oklch(26% 0.125 84.7)",
+          "oklch(37% 0.143 84.7)",
+          "oklch(48% 0.16 84.7)",
+          "oklch(60% 0.16 84.7)",
+          "oklch(72% 0.16 84.7)",
+          "oklch(84% 0.141 84.7)",
+          "oklch(95% 0.124 84.7)"
+        ]
+      },
+      "primary-disabled": {
+        "role": "neutral",
+        "displayName": "Gelb deaktiviert",
+        "tonalRamp": [
+          "oklch(15% 0.014 88.7)",
+          "oklch(26% 0.014 88.7)",
+          "oklch(37% 0.014 88.7)",
+          "oklch(48% 0.014 88.7)",
+          "oklch(60% 0.014 88.7)",
+          "oklch(72% 0.014 88.7)",
+          "oklch(84% 0.014 88.7)",
+          "oklch(95% 0.014 88.7)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinte",
+        "tonalRamp": [
+          "oklch(15% 0.004 84.6)",
+          "oklch(26% 0.004 84.6)",
+          "oklch(37% 0.004 84.6)",
+          "oklch(48% 0.004 84.6)",
+          "oklch(60% 0.004 84.6)",
+          "oklch(72% 0.004 84.6)",
+          "oklch(84% 0.004 84.6)",
+          "oklch(95% 0.004 84.6)"
+        ]
+      },
+      "body": {
+        "role": "neutral",
+        "displayName": "Fließtext",
+        "tonalRamp": [
+          "oklch(15% 0.007 84.6)",
+          "oklch(26% 0.007 84.6)",
+          "oklch(37% 0.007 84.6)",
+          "oklch(48% 0.007 84.6)",
+          "oklch(60% 0.007 84.6)",
+          "oklch(72% 0.007 84.6)",
+          "oklch(84% 0.007 84.6)",
+          "oklch(95% 0.007 84.6)"
+        ]
+      },
+      "body-strong": {
+        "role": "neutral",
+        "displayName": "Fließtext kräftig",
+        "tonalRamp": [
+          "oklch(15% 0.0 89.9)",
+          "oklch(26% 0.0 89.9)",
+          "oklch(37% 0.0 89.9)",
+          "oklch(48% 0.0 89.9)",
+          "oklch(60% 0.0 89.9)",
+          "oklch(72% 0.0 89.9)",
+          "oklch(84% 0.0 89.9)",
+          "oklch(95% 0.0 89.9)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Gedämpft",
+        "tonalRamp": [
+          "oklch(15% 0.013 84.6)",
+          "oklch(26% 0.013 84.6)",
+          "oklch(37% 0.013 84.6)",
+          "oklch(48% 0.013 84.6)",
+          "oklch(60% 0.013 84.6)",
+          "oklch(72% 0.013 84.6)",
+          "oklch(84% 0.013 84.6)",
+          "oklch(95% 0.013 84.6)"
+        ]
+      },
+      "muted-soft": {
+        "role": "neutral",
+        "displayName": "Gedämpft hell",
+        "tonalRamp": [
+          "oklch(15% 0.0 89.9)",
+          "oklch(26% 0.0 89.9)",
+          "oklch(37% 0.0 89.9)",
+          "oklch(48% 0.0 89.9)",
+          "oklch(60% 0.0 89.9)",
+          "oklch(72% 0.0 89.9)",
+          "oklch(84% 0.0 89.9)",
+          "oklch(95% 0.0 89.9)"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Haarlinie",
+        "tonalRamp": [
+          "oklch(15% 0.013 86.8)",
+          "oklch(26% 0.013 86.8)",
+          "oklch(37% 0.013 86.8)",
+          "oklch(48% 0.013 86.8)",
+          "oklch(60% 0.013 86.8)",
+          "oklch(72% 0.013 86.8)",
+          "oklch(84% 0.013 86.8)",
+          "oklch(95% 0.013 86.8)"
+        ]
+      },
+      "hairline-strong": {
+        "role": "neutral",
+        "displayName": "Haarlinie kräftig",
+        "tonalRamp": [
+          "oklch(15% 0.019 86.2)",
+          "oklch(26% 0.019 86.2)",
+          "oklch(37% 0.019 86.2)",
+          "oklch(48% 0.019 86.2)",
+          "oklch(60% 0.019 86.2)",
+          "oklch(72% 0.019 86.2)",
+          "oklch(84% 0.019 86.2)",
+          "oklch(95% 0.019 86.2)"
+        ]
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Papierweiß",
+        "tonalRamp": [
+          "oklch(15% 0.0 89.9)",
+          "oklch(26% 0.0 89.9)",
+          "oklch(37% 0.0 89.9)",
+          "oklch(48% 0.0 89.9)",
+          "oklch(60% 0.0 89.9)",
+          "oklch(72% 0.0 89.9)",
+          "oklch(84% 0.0 89.9)",
+          "oklch(95% 0.0 89.9)"
+        ]
+      },
+      "surface-soft": {
+        "role": "neutral",
+        "displayName": "Warmer Stein",
+        "tonalRamp": [
+          "oklch(15% 0.007 88.6)",
+          "oklch(26% 0.007 88.6)",
+          "oklch(37% 0.007 88.6)",
+          "oklch(48% 0.007 88.6)",
+          "oklch(60% 0.007 88.6)",
+          "oklch(72% 0.007 88.6)",
+          "oklch(84% 0.007 88.6)",
+          "oklch(95% 0.007 88.6)"
+        ]
+      },
+      "surface-card": {
+        "role": "neutral",
+        "displayName": "Kartenweiß",
+        "tonalRamp": [
+          "oklch(15% 0.004 91.4)",
+          "oklch(26% 0.004 91.4)",
+          "oklch(37% 0.004 91.4)",
+          "oklch(48% 0.004 91.4)",
+          "oklch(60% 0.004 91.4)",
+          "oklch(72% 0.004 91.4)",
+          "oklch(84% 0.004 91.4)",
+          "oklch(95% 0.004 91.4)"
+        ]
+      },
+      "surface-strong": {
+        "role": "neutral",
+        "displayName": "Stein kräftig",
+        "tonalRamp": [
+          "oklch(15% 0.013 86.8)",
+          "oklch(26% 0.013 86.8)",
+          "oklch(37% 0.013 86.8)",
+          "oklch(48% 0.013 86.8)",
+          "oklch(60% 0.013 86.8)",
+          "oklch(72% 0.013 86.8)",
+          "oklch(84% 0.013 86.8)",
+          "oklch(95% 0.013 86.8)"
+        ]
+      },
+      "surface-dark": {
+        "role": "neutral",
+        "displayName": "Anthrazit",
+        "tonalRamp": [
+          "oklch(15% 0.004 84.6)",
+          "oklch(26% 0.004 84.6)",
+          "oklch(37% 0.004 84.6)",
+          "oklch(48% 0.004 84.6)",
+          "oklch(60% 0.004 84.6)",
+          "oklch(72% 0.004 84.6)",
+          "oklch(84% 0.004 84.6)",
+          "oklch(95% 0.004 84.6)"
+        ]
+      },
+      "surface-dark-elevated": {
+        "role": "neutral",
+        "displayName": "Anthrazit erhöht",
+        "tonalRamp": [
+          "oklch(15% 0.006 78.2)",
+          "oklch(26% 0.006 78.2)",
+          "oklch(37% 0.006 78.2)",
+          "oklch(48% 0.006 78.2)",
+          "oklch(60% 0.006 78.2)",
+          "oklch(72% 0.006 78.2)",
+          "oklch(84% 0.006 78.2)",
+          "oklch(95% 0.006 78.2)"
+        ]
+      },
+      "on-primary": {
+        "role": "neutral",
+        "displayName": "Tinte auf Gelb",
+        "tonalRamp": [
+          "oklch(15% 0.004 84.6)",
+          "oklch(26% 0.004 84.6)",
+          "oklch(37% 0.004 84.6)",
+          "oklch(48% 0.004 84.6)",
+          "oklch(60% 0.004 84.6)",
+          "oklch(72% 0.004 84.6)",
+          "oklch(84% 0.004 84.6)",
+          "oklch(95% 0.004 84.6)"
+        ]
+      },
+      "on-dark": {
+        "role": "neutral",
+        "displayName": "Auf Dunkel",
+        "tonalRamp": [
+          "oklch(15% 0.0 89.9)",
+          "oklch(26% 0.0 89.9)",
+          "oklch(37% 0.0 89.9)",
+          "oklch(48% 0.0 89.9)",
+          "oklch(60% 0.0 89.9)",
+          "oklch(72% 0.0 89.9)",
+          "oklch(84% 0.0 89.9)",
+          "oklch(95% 0.0 89.9)"
+        ]
+      },
+      "on-dark-soft": {
+        "role": "neutral",
+        "displayName": "Auf Dunkel gedämpft",
+        "tonalRamp": [
+          "oklch(15% 0.017 88.0)",
+          "oklch(26% 0.017 88.0)",
+          "oklch(37% 0.017 88.0)",
+          "oklch(48% 0.017 88.0)",
+          "oklch(60% 0.017 88.0)",
+          "oklch(72% 0.017 88.0)",
+          "oklch(84% 0.017 88.0)",
+          "oklch(95% 0.017 88.0)"
+        ]
+      },
+      "success": {
+        "role": "semantic",
+        "displayName": "Erfolg",
+        "tonalRamp": [
+          "oklch(15% 0.126 149.6)",
+          "oklch(26% 0.147 149.6)",
+          "oklch(37% 0.168 149.6)",
+          "oklch(48% 0.189 149.6)",
+          "oklch(60% 0.192 149.6)",
+          "oklch(72% 0.189 149.6)",
+          "oklch(84% 0.166 149.6)",
+          "oklch(95% 0.145 149.6)"
+        ]
+      },
+      "warning": {
+        "role": "semantic",
+        "displayName": "Warnung",
+        "tonalRamp": [
+          "oklch(15% 0.111 70.1)",
+          "oklch(26% 0.129 70.1)",
+          "oklch(37% 0.147 70.1)",
+          "oklch(48% 0.165 70.1)",
+          "oklch(60% 0.165 70.1)",
+          "oklch(72% 0.165 70.1)",
+          "oklch(84% 0.145 70.1)",
+          "oklch(95% 0.127 70.1)"
+        ]
+      },
+      "error": {
+        "role": "semantic",
+        "displayName": "Fehler",
+        "tonalRamp": [
+          "oklch(15% 0.138 27.3)",
+          "oklch(26% 0.162 27.3)",
+          "oklch(37% 0.186 27.3)",
+          "oklch(48% 0.209 27.3)",
+          "oklch(60% 0.215 27.3)",
+          "oklch(72% 0.209 27.3)",
+          "oklch(84% 0.184 27.3)",
+          "oklch(95% 0.16 27.3)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display-xl": {
+        "displayName": "Display XL",
+        "purpose": "Hero-Überschrift der Startseite ab Desktop."
+      },
+      "display-lg": {
+        "displayName": "Display LG",
+        "purpose": "Abschnittsüberschriften ab Desktop, H1 der Unterseiten."
+      },
+      "display-md": {
+        "displayName": "Display MD",
+        "purpose": "Abschnittsüberschriften und H1 mobil."
+      },
+      "display-sm": {
+        "displayName": "Display SM",
+        "purpose": "Kartentitel und Einträge im mobilen Menü."
+      },
+      "title-lg": {
+        "displayName": "Title LG",
+        "purpose": "Kartengruppen, Titel dunkler Karten."
+      },
+      "title-md": {
+        "displayName": "Title MD",
+        "purpose": "Einleitungen, Fragen im FAQ."
+      },
+      "title-sm": {
+        "displayName": "Title SM",
+        "purpose": "Linktexte und Labels."
+      },
+      "body-md": {
+        "displayName": "Body MD",
+        "purpose": "Fließtext, höchstens 52–60ch breit."
+      },
+      "body-sm": {
+        "displayName": "Body SM",
+        "purpose": "Bildunterschriften, Orte, Kleingedrucktes."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Button-Beschriftungen."
+      },
+      "nav-link": {
+        "displayName": "Nav Link",
+        "purpose": "Hauptnavigation."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card",
+        "value": "inset 0 3px 0 #ffc000, 0 1px 2px rgb(29 28 26 / 0.06), 0 12px 32px -16px rgb(29 28 26 / 0.28)",
+        "purpose": "Weiße Karten inklusive gelber Oberkante."
+      },
+      {
+        "name": "card-hover",
+        "value": "inset 0 3px 0 #ffc000, 0 2px 4px rgb(29 28 26 / 0.06), 0 20px 40px -18px rgb(29 28 26 / 0.35)",
+        "purpose": "Hover auf Mausgeräten mit translateY(-3px)."
+      },
+      {
+        "name": "card-dark",
+        "value": "inset 0 3px 0 #ffc000, 0 12px 32px -16px rgb(0 0 0 / 0.6)",
+        "purpose": "Karten auf Anthrazit."
+      },
+      {
+        "name": "scrim-bottom",
+        "value": "linear-gradient(to top, ink 90%, ink 55% at 45%, transparent)",
+        "purpose": "Abdunklung unter Text auf Fotos."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Standard für Einblendungen und Zustandswechsel."
+      },
+      {
+        "name": "ease-in-out",
+        "value": "cubic-bezier(0.76, 0, 0.24, 1)",
+        "purpose": "Seltene, symmetrische Übergänge."
+      },
+      {
+        "name": "ease-soft",
+        "value": "cubic-bezier(0.33, 1, 0.68, 1)",
+        "purpose": "Weiche Ausläufe."
+      },
+      {
+        "name": "t-press",
+        "value": "140ms",
+        "purpose": "Button-Druck (scale 0.97)."
+      },
+      {
+        "name": "t-hover",
+        "value": "180ms",
+        "purpose": "Hover-Farbwechsel."
+      },
+      {
+        "name": "t-ui",
+        "value": "240ms",
+        "purpose": "Kartenanhebung, Aktionsleiste."
+      },
+      {
+        "name": "t-reveal",
+        "value": "800ms",
+        "purpose": "Hero-Texte steigen einmal ein."
+      },
+      {
+        "name": "scroll-reveal",
+        "value": "500ms, 16px, Stagger 60ms",
+        "purpose": "Abschnitte beim Scrollen (Web Animations API, ohne JS sichtbar)."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "40rem"
+      },
+      {
+        "name": "md",
+        "value": "48rem"
+      },
+      {
+        "name": "lg",
+        "value": "64rem"
+      },
+      {
+        "name": "xl",
+        "value": "72rem"
+      },
+      {
+        "name": "narrow",
+        "value": "< 22.5rem"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primär-Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Hauptaktion: anrufen oder Besichtigung anfragen.",
+      "html": "<button class=\"ds-btn ds-btn-primary\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2\"/></svg>Jetzt anrufen</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:14px 32px;border:0;border-radius:var(--radius-sm,4px);font:700 0.875rem/1.25 var(--font-sans,Inter,system-ui,sans-serif);letter-spacing:.5px;text-align:center;cursor:pointer;transition:transform 140ms cubic-bezier(.22,1,.36,1),background-color 180ms ease}.ds-btn:active{transform:scale(.97)}.ds-btn:focus-visible{outline:2px solid #1d1c1a;outline-offset:2px}.ds-btn-primary{background:#ffc000;color:#1d1c1a}.ds-btn-primary:hover{background:#e6ad00}"
+    },
+    {
+      "name": "Sekundär-Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Zweite Aktion neben dem Primär-Button, auch auf Anthrazit.",
+      "html": "<button class=\"ds-btn ds-btn-secondary\">Kostenlose Besichtigung anfragen</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:14px 32px;border:0;border-radius:var(--radius-sm,4px);font:700 0.875rem/1.25 var(--font-sans,Inter,system-ui,sans-serif);letter-spacing:.5px;text-align:center;cursor:pointer;transition:transform 140ms cubic-bezier(.22,1,.36,1),background-color 180ms ease}.ds-btn:active{transform:scale(.97)}.ds-btn:focus-visible{outline:2px solid #1d1c1a;outline-offset:2px}.ds-btn-secondary{background:#fff;color:#1d1c1a}.ds-btn-secondary:hover{background:#e7e3da}"
+    },
+    {
+      "name": "Karte",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Weiße Karte mit gelber Oberkante für Leistungen, Vorteile und FAQ.",
+      "html": "<article class=\"ds-card\"><h3>Entrümpelung</h3><p>Keller, Dachboden, Garage oder die ganze Wohnung: Wir räumen, trennen nach Wertstoffen und übergeben besenrein.</p></article>",
+      "css": ".ds-card{position:relative;background:#fff;border:1px solid #e7e3da;border-top-color:#ffc000;border-radius:4px;padding:24px;color:#3a3834;font:300 1rem/1.55 Inter,system-ui,sans-serif;box-shadow:inset 0 3px 0 #ffc000,0 1px 2px rgb(29 28 26/.06),0 12px 32px -16px rgb(29 28 26/.28);transition:transform 240ms cubic-bezier(.22,1,.36,1),box-shadow 240ms cubic-bezier(.22,1,.36,1)}.ds-card:hover{transform:translateY(-3px);box-shadow:inset 0 3px 0 #ffc000,0 2px 4px rgb(29 28 26/.06),0 20px 40px -18px rgb(29 28 26/.35)}.ds-card h3{margin:0 0 8px;color:#1d1c1a;font:700 1.5rem/1.25 Inter,system-ui,sans-serif}.ds-card p{margin:0}"
+    },
+    {
+      "name": "Karte dunkel",
+      "kind": "card",
+      "refersTo": "card-dark",
+      "description": "Karte auf Anthrazit-Bändern (Vertrauen, Ablauf).",
+      "html": "<div class=\"ds-card-dark\"><h3>Festpreis statt Überraschungen</h3><p>Nach der Besichtigung erhalten Sie einen verbindlichen Festpreis.</p></div>",
+      "css": ".ds-card-dark{background:#2d2b28;border:1px solid #2d2b28;border-top-color:#ffc000;border-radius:4px;padding:24px;color:#fff;font:300 1rem/1.55 Inter,system-ui,sans-serif;box-shadow:inset 0 3px 0 #ffc000,0 12px 32px -16px rgb(0 0 0/.6)}.ds-card-dark h3{margin:0 0 4px;font:700 1.25rem/1.3 Inter,system-ui,sans-serif}.ds-card-dark p{margin:0}"
+    },
+    {
+      "name": "Eingabefeld",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Textfeld im Anfrageformular.",
+      "html": "<label class=\"ds-field\">Name *<input class=\"ds-input\" placeholder=\"Ihr Name\"></label>",
+      "css": ".ds-field{display:grid;gap:8px;color:#1d1c1a;font:700 1rem/1.4 Inter,system-ui,sans-serif}.ds-input{min-height:48px;padding:14px 16px;border:1px solid #6b675f;border-radius:4px;background:#fff;color:#1d1c1a;font:300 1rem/1.55 Inter,system-ui,sans-serif}.ds-input::placeholder{color:#6b675f}.ds-input:focus-visible{outline:2px solid #1d1c1a;outline-offset:2px}"
+    },
+    {
+      "name": "Leistungs-Chip",
+      "kind": "chip",
+      "refersTo": "chip-service",
+      "description": "Umschalter für Leistungen im Formular; gewählt in Gelb.",
+      "html": "<span class=\"ds-chips\"><label class=\"ds-chip\"><input type=\"checkbox\" checked>Entrümpelung</label><label class=\"ds-chip\"><input type=\"checkbox\">Trockenbau</label></span>",
+      "css": ".ds-chips{display:flex;gap:8px;flex-wrap:wrap}.ds-chip{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #6b675f;border-radius:4px;background:#fff;color:#1d1c1a;font:300 1rem/1.55 Inter,system-ui,sans-serif;cursor:pointer}.ds-chip input{position:absolute;opacity:0}.ds-chip:has(input:checked){background:#ffc000;border-color:#ffc000;font-weight:700}.ds-chip:has(input:focus-visible){outline:2px solid #1d1c1a;outline-offset:2px}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "top-nav",
+      "description": "Klebende Kopfzeile in Anthrazit mit Logo, Links und Anruf-Button.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-brand\">J&amp;L Bauprojekte</span><a class=\"ds-nav-link\" aria-current=\"page\" href=\"#\">Leistungen</a><a class=\"ds-nav-link\" href=\"#\">Einsatzgebiet</a><a class=\"ds-nav-link\" href=\"#\">Kontakt</a><a class=\"ds-nav-cta\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2\"/></svg>Jetzt anrufen</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:24px;height:64px;padding:0 32px;background:#1f1e1c;border-bottom:1px solid #2d2b28;font:400 .875rem/1.4 Inter,system-ui,sans-serif;letter-spacing:.3px}.ds-nav-brand{color:#fff;font:700 1.125rem/1.4 Inter,system-ui,sans-serif;margin-right:auto}.ds-nav-link{color:#c9c4b8;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:.2em}.ds-nav-link:hover{text-decoration-color:currentColor}.ds-nav-link[aria-current]{color:#fff;font-weight:700;text-decoration-color:currentColor}.ds-nav-link:focus-visible,.ds-nav-cta:focus-visible{outline:2px solid #ffc000;outline-offset:2px}.ds-nav-cta{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:14px 32px;border-radius:4px;background:#ffc000;color:#1d1c1a;font:700 .875rem/1.25 Inter,system-ui,sans-serif;text-decoration:none}"
+    },
+    {
+      "name": "Regionskarte",
+      "kind": "custom",
+      "refersTo": "card",
+      "description": "Signatur: Verteiler-Karte im Einsatzgebiet mit Icon-Kachel, Abzeichen und über die Karte gespanntem Link.",
+      "html": "<article class=\"ds-card ds-region\"><div class=\"ds-region-top\"><span class=\"ds-region-icon\"><svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M4 21h16M6 21V5h2v2h2V5h4v2h2V5h2v16M10 21v-4a2 2 0 0 1 4 0v4\"/></svg></span><span class=\"ds-badge\">Unser Standort</span></div><h3><a href=\"#\">Landsberg am Lech &amp; Umgebung</a></h3><p class=\"ds-region-places\">Landsberg am Lech · Kaufering · Penzing · Igling</p><p>Unser komplettes Leistungsportfolio für Stadt und Umland.</p><span class=\"ds-region-cta\" aria-hidden=\"true\">Leistungen in Landsberg &amp; Umgebung <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M5 12h13M13 6l6 6-6 6\"/></svg></span></article>",
+      "css": ".ds-card{position:relative;background:#fff;border:1px solid #e7e3da;border-top-color:#ffc000;border-radius:4px;padding:24px;color:#3a3834;font:300 1rem/1.55 Inter,system-ui,sans-serif;box-shadow:inset 0 3px 0 #ffc000,0 1px 2px rgb(29 28 26/.06),0 12px 32px -16px rgb(29 28 26/.28);transition:transform 240ms cubic-bezier(.22,1,.36,1),box-shadow 240ms cubic-bezier(.22,1,.36,1)}.ds-card:hover{transform:translateY(-3px);box-shadow:inset 0 3px 0 #ffc000,0 2px 4px rgb(29 28 26/.06),0 20px 40px -18px rgb(29 28 26/.35)}.ds-card h3{margin:0 0 8px;color:#1d1c1a;font:700 1.5rem/1.25 Inter,system-ui,sans-serif}.ds-card p{margin:0}.ds-region{display:flex;flex-direction:column;gap:8px;max-width:380px}.ds-region-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}.ds-region-icon{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:4px;background:#ffc000;color:#1d1c1a}.ds-badge{padding:4px 12px;border-radius:9999px;background:#1f1e1c;color:#fff;font:700 .875rem/1.55 Inter,system-ui,sans-serif}.ds-region h3 a{color:inherit;text-decoration:none}.ds-region h3 a::after{content:'';position:absolute;inset:0}.ds-region:has(a:focus-visible){outline:2px solid #1d1c1a;outline-offset:2px}.ds-region h3 a:focus-visible{outline:none}.ds-region-places{font-size:.875rem;color:#3a3834}.ds-region-cta{display:inline-flex;align-items:center;gap:8px;margin-top:16px;color:#1d1c1a;font:700 1rem/1.4 Inter,system-ui,sans-serif}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Die Baustellentafel",
+    "overview": "Die Website spricht wie das Schild am Bauzaun: Logo-Gelb auf Anthrazit, große klare Zeilen, keine Umwege. Sie ist zupackend, ehrlich und regional. Zupackend heißt kräftige 700er-Überschriften neben leichtem 300er-Fließtext und ein Anruf-Button, der immer in Reichweite ist. Ehrlich heißt echte Firmendaten, Fremdfotos als „Symbolbild“ gekennzeichnet, Platzhalter im Code markiert statt erfunden. Regional heißt Fotos von Lechwehr, Altstadt, Ammersee und Buchloe, Ortsnamen im Text und eine eigene Karte mit beiden Standorten.\n\nHelle Abschnitte stehen auf Weiß oder warmem Stein, dunkle Bänder in Anthrazit tragen Hero, Vertrauensbereich und Navigation. Inhalte sitzen auf weißen Karten mit gelber Oberkante: Das ist das Wiedererkennungsmerkmal und die einzige Dekoration. Bewegung ist knapp: Hero-Texte steigen einmal ein, Abschnitte blenden beim Scrollen in 500 ms ein, Fotos stehen sofort da.",
+    "keyCharacteristics": [
+      "Logo-Gelb (#ffc000) als einzige Handlungs- und Markenfarbe, Text darauf immer in Tinte.",
+      "Anthrazit (#1f1e1c) für Navigation, Hero und Vertrauensbänder; Weiß und warmer Stein (#f3f1ec) für Inhalt.",
+      "Inter in 700 (Überschriften, Buttons) gegen 300 (Fließtext); 400 nur in der Navigation.",
+      "Weiße Karten mit weichem Schatten und gelber Oberkante, 4px Radius.",
+      "Fotos aus der Region, rechteckig, ohne Rahmen; Symbolbilder als solche beschriftet.",
+      "Ruhige Bewegung, die „Bewegung reduzieren“ respektiert und ohne JavaScript nichts versteckt."
+    ],
+    "rules": [
+      {
+        "name": "Die Ein-Gelb-Regel",
+        "body": "Gelb ist Handlung und Markenkante, nie Fließtext oder Fläche hinter Absätzen. Gelber Text auf Weiß erreicht nur 1,6:1 und ist verboten.",
+        "section": "colors"
+      },
+      {
+        "name": "Die Schild-Regel",
+        "body": "Auf Gelb steht immer Tinte (#1d1c1a), nie Weiß.",
+        "section": "colors"
+      },
+      {
+        "name": "Die Zwei-Stimmen-Regel",
+        "body": "Überschriften 700, Fließtext 300. Kein 500, kein fetter Fließtext außer für einzelne Hervorhebungen wie Telefonnummern.",
+        "section": "typography"
+      },
+      {
+        "name": "Die Komposita-Regel",
+        "body": "Deutsche Wörter wie „Haushaltsauflösung“ müssen passen: Überschriften sind ausbalanciert, und unter 22.5rem Viewport-Breite (sehr kleine Geräte oder stark vergrößerte Schrift) rücken Display-Größen eine Stufe herunter und Text darf trennen.",
+        "section": "typography"
+      },
+      {
+        "name": "Die Kanten-Regel",
+        "body": "Jede Karte trägt oben 4px Gelb: 1px Rand plus 3px Innenschatten, damit die Kante dem 4px-Radius folgt. Die Kante ist eine bewusste Markenentscheidung und bleibt, auch wenn ein Detektor sie als „Side Tab“ meldet. Farbige Kanten links oder rechts gibt es nicht.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do Logo-Gelb (#ffc000) für die eine Hauptaktion pro Bereich und für die Kartenkante verwenden.",
+      "Do Text auf Gelb immer in Tinte (#1d1c1a) setzen.",
+      "Do Abschnitte zwischen Weiß, Stein (#f3f1ec) und Anthrazit (#1f1e1c) wechseln.",
+      "Do Fotos aus der Region zeigen und Fremdfotos aus Gewerken als „Symbolbild“ beschriften.",
+      "Do Ortsnamen und echte Firmendaten nennen; offene Angaben im Code als PLATZHALTER markieren.",
+      "Do Touch-Ziele mindestens 44px hoch halten und Breakpoints in rem schreiben."
+    ],
+    "donts": [
+      "Don't gelben Text auf hellem Grund verwenden.",
+      "Don't farbige Kanten links oder rechts an Karten, Hinweisen oder Listen setzen.",
+      "Don't Karten in Karten verschachteln.",
+      "Don't Fotos per Animation verdecken oder verzögert einblenden.",
+      "Don't Bewertungen, Referenzen oder Zahlen erfinden; nur belegte Angaben aus `lib/site.ts`.",
+      "Don't Schriftschnitt 500 oder negative Laufweite einführen."
+    ]
+  }
+}

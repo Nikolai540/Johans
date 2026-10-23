@@ -48,13 +48,13 @@ export function Contact({ initial, formTitle }: { initial?: ServiceId[]; formTit
               ))}
             </dl>
             <p className="mt-lg text-body-md">
-              <a href={site.phone.href} className="link link-underlined block text-title-lg text-ink tabular">
+              <a href={site.phone.href} className="link link-underlined flex min-h-11 items-center text-title-lg text-ink tabular">
                 {site.phone.display}
               </a>
-              <a href={`mailto:${site.email}`} className="link link-underlined mt-xxs inline-block text-ink">
+              <a href={`mailto:${site.email}`} className="link link-underlined inline-flex min-h-11 items-center text-ink">
                 {site.email}
               </a>
-              <a href={site.whatsapp} className="link link-underlined mt-xxs block text-ink" rel="noopener">
+              <a href={site.whatsapp} className="link link-underlined flex min-h-11 items-center text-ink" rel="noopener">
                 Fotos per WhatsApp senden
               </a>
             </p>

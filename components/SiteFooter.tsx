@@ -13,7 +13,7 @@ export function SiteFooter() {
       <div className="page-x mx-auto max-w-page">
         <div className="relative grid gap-xxl bg-canvas p-lg sm:p-xxl lg:grid-cols-2">
           <div>
-            <LogoFull className="mb-xl h-auto w-56 text-ink" title={site.name} />
+            <LogoFull className="mb-xl h-auto w-56 max-w-full text-ink" title={site.name} />
             <p className="text-display-md text-ink">Bis bald in Landsberg.</p>
             <p className="mt-md max-w-[44ch] text-body-md">
               Ob Keller voller Erinnerungen, Altbau mit Zukunft oder Garten nach dem Abriss: Rufen Sie an, wir
@@ -21,11 +21,11 @@ export function SiteFooter() {
             </p>
           </div>
           <div className="flex items-start justify-between gap-lg">
-            <address className="grid gap-sm not-italic text-title-md text-ink">
-              <a href={site.phone.href} className="link tabular">
+            <address className="grid gap-xs not-italic text-title-md text-ink">
+              <a href={site.phone.href} className="link inline-flex min-h-11 items-center tabular">
                 {site.phone.display}
               </a>
-              <a href={`mailto:${site.email}`} className="link break-all">
+              <a href={`mailto:${site.email}`} className="link inline-flex min-h-11 items-center break-all">
                 {site.email}
               </a>
               <span className="font-light">

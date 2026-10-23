@@ -48,6 +48,6 @@ Neue Region veröffentlichen:
 
 ## Bilder
 
-Alle Fotos und das Video stammen aus Wikimedia Commons (CC0 / CC BY / CC BY-SA), Quellen und Lizenzen in
+Alle Fotos stammen aus Wikimedia Commons (CC0 / CC BY / CC BY-SA), Quellen und Lizenzen in
 `lib/images.ts` und im Footer. Die Gewerke-Fotos sind als Symbolbilder gekennzeichnet. Eigene Projektfotos
 können in `lib/images.ts` direkt eingesetzt werden.

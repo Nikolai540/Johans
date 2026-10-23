@@ -8,7 +8,7 @@ export function Network() {
     <section id="netzwerk" aria-labelledby="netzwerk-title" className="bg-surface-dark pt-section">
       <div className="page-x mx-auto max-w-page">
         <div className="mx-auto max-w-[680px]">
-          <div data-reveal className="rounded-sm border-t-8 border-primary bg-canvas px-lg py-xxl text-center text-ink sm:px-xxl">
+          <div data-reveal className="rounded-b-sm border-t-8 border-primary bg-canvas px-lg py-xxl text-center text-ink sm:px-xxl">
             <h2 id="netzwerk-title" className="text-display-md">
               Ein Netzwerk aus Fachbetrieben
             </h2>
@@ -23,13 +23,13 @@ export function Network() {
                   <h3 className="text-center text-title-lg">{group.group}</h3>
                   <ul className="mt-lg flex flex-col gap-md">
                     {group.items.map((item) => (
-                      <li key={item.name} className="flex items-start justify-between gap-md max-[359px]:flex-col max-[359px]:gap-xxs">
+                      <li key={item.name} className="flex items-start justify-between gap-md max-[22.5rem]:flex-col max-[22.5rem]:gap-xxs">
                         <div>
                           <p className="text-title-sm text-ink">{item.name}</p>
                           <p className="text-body-sm text-body">{item.note}</p>
                         </div>
                         <p
-                          className={`shrink-0 text-right text-body-sm max-[359px]:text-left ${
+                          className={`shrink-0 text-right text-body-sm max-[22.5rem]:text-left ${
                             item.by === "J&L Bauprojekte" ? "font-bold text-ink" : "text-body"
                           }`}
                         >

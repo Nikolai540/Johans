@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
   allowedDevOrigins: ["192.168.*.*", "10.*.*.*", "172.16.*.*", "*.local"],
   images: {
     formats: ["image/webp"],
-    qualities: [70, 80],
+    qualities: [70],
     // Weniger Bildbreiten: jede Breite ist eine eigene Umwandlung im Vercel-Bildcache.
     // So sind mehr Anfragen Cache-Treffer, und das Kontingent der Bildoptimierung wird geschont.
     deviceSizes: [640, 828, 1080, 1200, 1920],

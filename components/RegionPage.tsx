@@ -108,7 +108,7 @@ export function RegionPage({ page }: { page: RegionPageData }) {
                 <a href={site.phone.href} className="btn btn-primary">
                   <PhoneIcon className="size-4" />
                   Jetzt anrufen
-                  <span className="font-light tabular max-[359px]:hidden">{site.phone.display}</span>
+                  <span className="font-light tabular max-[22.5rem]:hidden">{site.phone.display}</span>
                 </a>
                 <a href="#kontakt-formular" className="btn btn-secondary">
                   Kostenlose Besichtigung anfragen
@@ -255,7 +255,7 @@ export function RegionPage({ page }: { page: RegionPageData }) {
                 {page.locations.map((key) => {
                   const a = addresses[key];
                   return (
-                    <address key={key} className="border-l-4 border-primary bg-surface-soft p-md not-italic text-body-md text-ink">
+                    <address key={key} className="rounded-sm bg-surface-soft p-md not-italic text-body-md text-ink">
                       <span className="block font-bold">{a.label}</span>
                       {a.lines.map((line) => (
                         <span key={line} className="block">

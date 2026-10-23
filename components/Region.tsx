@@ -48,26 +48,34 @@ export function Region() {
           {regions.map((r, i) => {
             const Icon = icons[r.id];
             return (
-              <li key={r.id} data-reveal style={{ ["--i" as string]: i }} className="flex">
-                <a href={r.href} className="card group flex w-full flex-col p-lg sm:p-xl">
-                  <span className="flex items-start justify-between gap-md">
-                    <span className="flex size-14 items-center justify-center rounded-sm bg-primary text-on-primary">
-                      <Icon className="size-7" />
+              <li
+                key={r.id}
+                data-reveal
+                style={{ ["--i" as string]: i }}
+                className="card group flex flex-col p-lg has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-ink sm:p-xl"
+              >
+                <span className="flex items-start justify-between gap-md">
+                  <span className="flex size-14 items-center justify-center rounded-sm bg-primary text-on-primary">
+                    <Icon className="size-7" />
+                  </span>
+                  {r.badge && (
+                    <span className="rounded-pill bg-surface-dark px-sm py-xxs text-body-sm font-bold text-on-dark">
+                      {r.badge}
                     </span>
-                    {r.badge && (
-                      <span className="rounded-pill bg-surface-dark px-sm py-xxs text-body-sm font-bold text-on-dark">
-                        {r.badge}
-                      </span>
-                    )}
-                  </span>
-                  <h3 className="mt-lg text-display-sm">{r.name}</h3>
-                  <p className="mt-xs text-body-sm text-body">{r.places.join(" · ")}</p>
-                  <p className="mt-md text-body-md">{r.teaser}</p>
-                  <span className="mt-auto pt-lg text-title-sm text-ink">
-                    {r.cta}
-                    <ArrowIcon className="ml-xs inline size-4 align-[-2px] transition-transform duration-[180ms] group-hover:translate-x-1" />
-                  </span>
-                </a>
+                  )}
+                </span>
+                {/* Nur die Überschrift ist der Link (kurzer Linkname für Screenreader), die Klickfläche reicht über die ganze Karte */}
+                <h3 className="mt-lg text-display-sm">
+                  <a href={r.href} className="after:absolute after:inset-0 after:content-[''] focus-visible:outline-none">
+                    {r.name}
+                  </a>
+                </h3>
+                <p className="mt-xs text-body-sm text-body">{r.places.join(" · ")}</p>
+                <p className="mt-md text-body-md">{r.teaser}</p>
+                <span aria-hidden className="mt-auto pt-lg text-title-sm text-balance text-ink">
+                  {r.cta}
+                  <ArrowIcon className="ml-xs inline size-4 align-[-2px] transition-transform duration-[180ms] group-hover:translate-x-1" />
+                </span>
               </li>
             );
           })}

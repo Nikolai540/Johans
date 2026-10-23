@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------
-   Design-Tokens aus DESIGN.md (BMW corporate). Tailwind-Defaults für
+   Design-Tokens, dokumentiert in DESIGN.md. Tailwind-Defaults für
    Farben, Schriftgrößen und Radien sind entfernt – es gibt nur Tokens.
    ------------------------------------------------------------------ */
 @theme {
@@ -93,7 +93,7 @@
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
-  --breakpoint-xl: 90rem;
+  --breakpoint-xl: 72rem; /* Desktop-Navigation passt ab ca. 1140 px */
 
   --container-page: 90rem;
 
@@ -200,29 +200,30 @@
 
   .tabular { font-variant-numeric: tabular-nums; }
 
-  /* Karten: heben sich durch Fläche, Rand, Schatten und gelbe Kante ab */
+  /* Karten: heben sich durch Fläche, Rand, Schatten und gelbe Kante ab.
+     Die Kante ist 1px Rand plus 3px Innenschatten – so folgt sie dem Radius, statt an den Ecken spitz auszulaufen. */
   .card {
     position: relative;
     background-color: var(--color-canvas);
     border: 1px solid var(--color-hairline);
-    border-top: 4px solid var(--color-primary);
+    border-top-color: var(--color-primary);
     border-radius: var(--radius-sm);
-    box-shadow: 0 1px 2px rgb(29 28 26 / 0.06), 0 12px 32px -16px rgb(29 28 26 / 0.28); /* taste-skill-ignore: Karten-Schatten auf Kundenwunsch */
+    box-shadow: inset 0 3px 0 var(--color-primary), 0 1px 2px rgb(29 28 26 / 0.06), 0 12px 32px -16px rgb(29 28 26 / 0.28); /* taste-skill-ignore: Karten-Schatten auf Kundenwunsch */
     transition: transform var(--t-ui) var(--ease-out), box-shadow var(--t-ui) var(--ease-out);
   }
   .card-dark {
     background-color: var(--color-surface-dark-elevated);
     border-color: var(--color-surface-dark-elevated);
     border-top-color: var(--color-primary);
-    box-shadow: 0 12px 32px -16px rgb(0 0 0 / 0.6); /* taste-skill-ignore: Karten-Schatten auf Kundenwunsch */
+    box-shadow: inset 0 3px 0 var(--color-primary), 0 12px 32px -16px rgb(0 0 0 / 0.6); /* taste-skill-ignore: Karten-Schatten auf Kundenwunsch */
   }
   @media (hover: hover) and (pointer: fine) {
-    .card:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgb(29 28 26 / 0.06), 0 20px 40px -18px rgb(29 28 26 / 0.35); } /* taste-skill-ignore */
+    .card:hover { transform: translateY(-3px); box-shadow: inset 0 3px 0 var(--color-primary), 0 2px 4px rgb(29 28 26 / 0.06), 0 20px 40px -18px rgb(29 28 26 / 0.35); } /* taste-skill-ignore */
   }
 
-  /* Neutrale Abdunklung unter Text auf Fotos (Ink #262626 mit Alpha) */
+  /* Neutrale Abdunklung unter Text auf Fotos (Ink mit Alpha) */
   .scrim-bottom {
-    background-image: linear-gradient(to top, rgb(38 38 38 / 0.9), rgb(38 38 38 / 0.55) 45%, rgb(38 38 38 / 0)); /* taste-skill-ignore: Scrim */
+    background-image: linear-gradient(to top, color-mix(in srgb, var(--color-ink) 90%, transparent), color-mix(in srgb, var(--color-ink) 55%, transparent) 45%, transparent); /* taste-skill-ignore: Scrim */
   }
 }
 
@@ -242,16 +243,14 @@
 
 @keyframes rise { to { opacity: 1; transform: none; } }
 
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .drift { animation: drift linear both; animation-timeline: view(); animation-range: entry 0% exit 100%; }
-    @keyframes drift { from { transform: translateY(-5%) scale(1.1); } to { transform: translateY(5%) scale(1.1); } }
-  }
-}
 
-/* Sehr schmale Geräte: Überschriften eine Stufe kleiner, sonst passen lange Komposita
-   wie „Haushaltsauflösung“ oder „Garagenentrümpelung“ nicht in die Zeile */
-@media (width < 360px) {
+/* Sehr schmale Geräte oder stark vergrößerte Schrift (rem folgt der Schriftgröße im Browser):
+   Überschriften eine Stufe kleiner, lange Komposita wie „Haushaltsauflösung“ trennen statt überlaufen */
+@media (width < 22.5rem) {
+  body {
+    hyphens: auto;
+    overflow-wrap: anywhere;
+  }
   .text-display-md {
     font-size: var(--text-display-sm);
     line-height: var(--text-display-sm--line-height);
