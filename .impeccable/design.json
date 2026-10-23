@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-23T12:48:12+00:00",
+  "generatedAt": "2026-10-23T13:15:01+00:00",
   "title": "Design System: J&L Bauprojekte",
   "extensions": {
     "colorMeta": {
@@ -362,18 +362,18 @@
     "shadows": [
       {
         "name": "card",
-        "value": "inset 0 3px 0 #ffc000, 0 1px 2px rgb(29 28 26 / 0.06), 0 12px 32px -16px rgb(29 28 26 / 0.28)",
-        "purpose": "Weiße Karten inklusive gelber Oberkante."
+        "value": "inset 0 0 0 #ffc000, 0 1px 2px rgb(29 28 26 / 0.06), 0 12px 32px -16px rgb(29 28 26 / 0.28)",
+        "purpose": "Weiße Karten in Ruhe, ohne gelbe Kante."
       },
       {
         "name": "card-hover",
         "value": "inset 0 3px 0 #ffc000, 0 2px 4px rgb(29 28 26 / 0.06), 0 20px 40px -18px rgb(29 28 26 / 0.35)",
-        "purpose": "Hover auf Mausgeräten mit translateY(-3px)."
+        "purpose": "Hover auf Mausgeräten mit translateY(-3px) und gelber Oberkante; bei Tastaturfokus ohne Anheben."
       },
       {
         "name": "card-dark",
-        "value": "inset 0 3px 0 #ffc000, 0 12px 32px -16px rgb(0 0 0 / 0.6)",
-        "purpose": "Karten auf Anthrazit."
+        "value": "inset 0 0 0 #ffc000, 0 12px 32px -16px rgb(0 0 0 / 0.6)",
+        "purpose": "Karten auf Anthrazit; beim Überfahren inset 0 3px 0 #ffc000, 0 20px 40px -18px rgb(0 0 0 / 0.7)."
       },
       {
         "name": "scrim-bottom",
@@ -467,9 +467,9 @@
       "name": "Karte",
       "kind": "card",
       "refersTo": "card",
-      "description": "Weiße Karte mit gelber Oberkante für Leistungen, Vorteile und FAQ.",
+      "description": "Weiße Karte für Leistungen, Vorteile und FAQ; gelbe Oberkante erst beim Überfahren.",
       "html": "<article class=\"ds-card\"><h3>Entrümpelung</h3><p>Keller, Dachboden, Garage oder die ganze Wohnung: Wir räumen, trennen nach Wertstoffen und übergeben besenrein.</p></article>",
-      "css": ".ds-card{position:relative;background:#fff;border:1px solid #e7e3da;border-top-color:#ffc000;border-radius:4px;padding:24px;color:#3a3834;font:300 1rem/1.55 Inter,system-ui,sans-serif;box-shadow:inset 0 3px 0 #ffc000,0 1px 2px rgb(29 28 26/.06),0 12px 32px -16px rgb(29 28 26/.28);transition:transform 240ms cubic-bezier(.22,1,.36,1),box-shadow 240ms cubic-bezier(.22,1,.36,1)}.ds-card:hover{transform:translateY(-3px);box-shadow:inset 0 3px 0 #ffc000,0 2px 4px rgb(29 28 26/.06),0 20px 40px -18px rgb(29 28 26/.35)}.ds-card h3{margin:0 0 8px;color:#1d1c1a;font:700 1.5rem/1.25 Inter,system-ui,sans-serif}.ds-card p{margin:0}"
+      "css": ".ds-card{position:relative;background:#fff;border:1px solid #e7e3da;border-radius:4px;padding:24px;color:#3a3834;font:300 1rem/1.55 Inter,system-ui,sans-serif;box-shadow:inset 0 0 0 #ffc000,0 1px 2px rgb(29 28 26/.06),0 12px 32px -16px rgb(29 28 26/.28);transition:transform 240ms cubic-bezier(.22,1,.36,1),box-shadow 240ms cubic-bezier(.22,1,.36,1),border-color 240ms cubic-bezier(.22,1,.36,1)}.ds-card:hover{transform:translateY(-3px);border-top-color:#ffc000;box-shadow:inset 0 3px 0 #ffc000,0 2px 4px rgb(29 28 26/.06),0 20px 40px -18px rgb(29 28 26/.35)}.ds-card h3{margin:0 0 8px;color:#1d1c1a;font:700 1.5rem/1.25 Inter,system-ui,sans-serif}.ds-card p{margin:0}"
     },
     {
       "name": "Karte dunkel",
@@ -477,7 +477,7 @@
       "refersTo": "card-dark",
       "description": "Karte auf Anthrazit-Bändern (Vertrauen, Ablauf).",
       "html": "<div class=\"ds-card-dark\"><h3>Festpreis statt Überraschungen</h3><p>Nach der Besichtigung erhalten Sie einen verbindlichen Festpreis.</p></div>",
-      "css": ".ds-card-dark{background:#2d2b28;border:1px solid #2d2b28;border-top-color:#ffc000;border-radius:4px;padding:24px;color:#fff;font:300 1rem/1.55 Inter,system-ui,sans-serif;box-shadow:inset 0 3px 0 #ffc000,0 12px 32px -16px rgb(0 0 0/.6)}.ds-card-dark h3{margin:0 0 4px;font:700 1.25rem/1.3 Inter,system-ui,sans-serif}.ds-card-dark p{margin:0}"
+      "css": ".ds-card-dark{background:#2d2b28;border:1px solid #2d2b28;border-radius:4px;padding:24px;color:#fff;font:300 1rem/1.55 Inter,system-ui,sans-serif;box-shadow:inset 0 0 0 #ffc000,0 12px 32px -16px rgb(0 0 0/.6);transition:box-shadow 240ms cubic-bezier(.22,1,.36,1),border-color 240ms cubic-bezier(.22,1,.36,1)}.ds-card-dark:hover{border-top-color:#ffc000;box-shadow:inset 0 3px 0 #ffc000,0 20px 40px -18px rgb(0 0 0/.7)}.ds-card-dark h3{margin:0 0 4px;font:700 1.25rem/1.3 Inter,system-ui,sans-serif}.ds-card-dark p{margin:0}"
     },
     {
       "name": "Eingabefeld",
@@ -509,17 +509,17 @@
       "refersTo": "card",
       "description": "Signatur: Verteiler-Karte im Einsatzgebiet mit Icon-Kachel, Abzeichen und über die Karte gespanntem Link.",
       "html": "<article class=\"ds-card ds-region\"><div class=\"ds-region-top\"><span class=\"ds-region-icon\"><svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M4 21h16M6 21V5h2v2h2V5h4v2h2V5h2v16M10 21v-4a2 2 0 0 1 4 0v4\"/></svg></span><span class=\"ds-badge\">Unser Standort</span></div><h3><a href=\"#\">Landsberg am Lech &amp; Umgebung</a></h3><p class=\"ds-region-places\">Landsberg am Lech · Kaufering · Penzing · Igling</p><p>Unser komplettes Leistungsportfolio für Stadt und Umland.</p><span class=\"ds-region-cta\" aria-hidden=\"true\">Leistungen in Landsberg &amp; Umgebung <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M5 12h13M13 6l6 6-6 6\"/></svg></span></article>",
-      "css": ".ds-card{position:relative;background:#fff;border:1px solid #e7e3da;border-top-color:#ffc000;border-radius:4px;padding:24px;color:#3a3834;font:300 1rem/1.55 Inter,system-ui,sans-serif;box-shadow:inset 0 3px 0 #ffc000,0 1px 2px rgb(29 28 26/.06),0 12px 32px -16px rgb(29 28 26/.28);transition:transform 240ms cubic-bezier(.22,1,.36,1),box-shadow 240ms cubic-bezier(.22,1,.36,1)}.ds-card:hover{transform:translateY(-3px);box-shadow:inset 0 3px 0 #ffc000,0 2px 4px rgb(29 28 26/.06),0 20px 40px -18px rgb(29 28 26/.35)}.ds-card h3{margin:0 0 8px;color:#1d1c1a;font:700 1.5rem/1.25 Inter,system-ui,sans-serif}.ds-card p{margin:0}.ds-region{display:flex;flex-direction:column;gap:8px;max-width:380px}.ds-region-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}.ds-region-icon{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:4px;background:#ffc000;color:#1d1c1a}.ds-badge{padding:4px 12px;border-radius:9999px;background:#1f1e1c;color:#fff;font:700 .875rem/1.55 Inter,system-ui,sans-serif}.ds-region h3 a{color:inherit;text-decoration:none}.ds-region h3 a::after{content:'';position:absolute;inset:0}.ds-region:has(a:focus-visible){outline:2px solid #1d1c1a;outline-offset:2px}.ds-region h3 a:focus-visible{outline:none}.ds-region-places{font-size:.875rem;color:#3a3834}.ds-region-cta{display:inline-flex;align-items:center;gap:8px;margin-top:16px;color:#1d1c1a;font:700 1rem/1.4 Inter,system-ui,sans-serif}"
+      "css": ".ds-card{position:relative;background:#fff;border:1px solid #e7e3da;border-radius:4px;padding:24px;color:#3a3834;font:300 1rem/1.55 Inter,system-ui,sans-serif;box-shadow:inset 0 0 0 #ffc000,0 1px 2px rgb(29 28 26/.06),0 12px 32px -16px rgb(29 28 26/.28);transition:transform 240ms cubic-bezier(.22,1,.36,1),box-shadow 240ms cubic-bezier(.22,1,.36,1),border-color 240ms cubic-bezier(.22,1,.36,1)}.ds-card:hover{transform:translateY(-3px);border-top-color:#ffc000;box-shadow:inset 0 3px 0 #ffc000,0 2px 4px rgb(29 28 26/.06),0 20px 40px -18px rgb(29 28 26/.35)}.ds-card h3{margin:0 0 8px;color:#1d1c1a;font:700 1.5rem/1.25 Inter,system-ui,sans-serif}.ds-card p{margin:0}.ds-region{display:flex;flex-direction:column;gap:8px;max-width:380px}.ds-region-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}.ds-region-icon{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:4px;background:#ffc000;color:#1d1c1a}.ds-badge{padding:4px 12px;border-radius:9999px;background:#1f1e1c;color:#fff;font:700 .875rem/1.55 Inter,system-ui,sans-serif}.ds-region h3 a{color:inherit;text-decoration:none}.ds-region h3 a::after{content:'';position:absolute;inset:0}.ds-region:has(a:focus-visible){outline:2px solid #1d1c1a;outline-offset:2px}.ds-region h3 a:focus-visible{outline:none}.ds-region-places{font-size:.875rem;color:#3a3834}.ds-region-cta{display:inline-flex;align-items:center;gap:8px;margin-top:16px;color:#1d1c1a;font:700 1rem/1.4 Inter,system-ui,sans-serif}"
     }
   ],
   "narrative": {
     "northStar": "Die Baustellentafel",
-    "overview": "Die Website spricht wie das Schild am Bauzaun: Logo-Gelb auf Anthrazit, große klare Zeilen, keine Umwege. Sie ist zupackend, ehrlich und regional. Zupackend heißt kräftige 700er-Überschriften neben leichtem 300er-Fließtext und ein Anruf-Button, der immer in Reichweite ist. Ehrlich heißt echte Firmendaten, Fremdfotos als „Symbolbild“ gekennzeichnet, Platzhalter im Code markiert statt erfunden. Regional heißt Fotos von Lechwehr, Altstadt, Ammersee und Buchloe, Ortsnamen im Text und eine eigene Karte mit beiden Standorten.\n\nHelle Abschnitte stehen auf Weiß oder warmem Stein, dunkle Bänder in Anthrazit tragen Hero, Vertrauensbereich und Navigation. Inhalte sitzen auf weißen Karten mit gelber Oberkante: Das ist das Wiedererkennungsmerkmal und die einzige Dekoration. Bewegung ist knapp: Hero-Texte steigen einmal ein, Abschnitte blenden beim Scrollen in 500 ms ein, Fotos stehen sofort da.",
+    "overview": "Die Website spricht wie das Schild am Bauzaun: Logo-Gelb auf Anthrazit, große klare Zeilen, keine Umwege. Sie ist zupackend, ehrlich und regional. Zupackend heißt kräftige 700er-Überschriften neben leichtem 300er-Fließtext und ein Anruf-Button, der immer in Reichweite ist. Ehrlich heißt echte Firmendaten, Fremdfotos als „Symbolbild“ gekennzeichnet, Platzhalter im Code markiert statt erfunden. Regional heißt Fotos von Lechwehr, Altstadt, Ammersee und Buchloe, Ortsnamen im Text und eine eigene Karte mit beiden Standorten.\n\nHelle Abschnitte stehen auf Weiß oder warmem Stein, dunkle Bänder in Anthrazit tragen Hero, Vertrauensbereich und Navigation. Inhalte sitzen auf weißen Karten; erst beim Überfahren hebt sich eine Karte an und zeigt ihre gelbe Oberkante – das Wiedererkennungsmerkmal und die einzige Dekoration. Bewegung ist knapp: Hero-Texte steigen einmal ein, Abschnitte blenden beim Scrollen in 500 ms ein, Fotos stehen sofort da.",
     "keyCharacteristics": [
       "Logo-Gelb (#ffc000) als einzige Handlungs- und Markenfarbe, Text darauf immer in Tinte.",
       "Anthrazit (#1f1e1c) für Navigation, Hero und Vertrauensbänder; Weiß und warmer Stein (#f3f1ec) für Inhalt.",
       "Inter in 700 (Überschriften, Buttons) gegen 300 (Fließtext); 400 nur in der Navigation.",
-      "Weiße Karten mit weichem Schatten und gelber Oberkante, 4px Radius.",
+      "Weiße Karten mit weichem Schatten und 4px Radius; die gelbe Oberkante erscheint erst beim Überfahren.",
       "Fotos aus der Region, rechteckig, ohne Rahmen; Symbolbilder als solche beschriftet.",
       "Ruhige Bewegung, die „Bewegung reduzieren“ respektiert und ohne JavaScript nichts versteckt."
     ],
@@ -546,12 +546,12 @@
       },
       {
         "name": "Die Kanten-Regel",
-        "body": "Jede Karte trägt oben 4px Gelb: 1px Rand plus 3px Innenschatten, damit die Kante dem 4px-Radius folgt. Die Kante ist eine bewusste Markenentscheidung und bleibt, auch wenn ein Detektor sie als „Side Tab“ meldet. Farbige Kanten links oder rechts gibt es nicht.",
+        "body": "In Ruhe haben Karten keine farbige Kante. Beim Überfahren mit der Maus oder bei Tastaturfokus in der Karte erscheint oben 4px Gelb: 1px Rand plus 3px Innenschatten, damit die Kante dem 4px-Radius folgt. Auf Touch-Geräten bleibt sie aus. Farbige Kanten links oder rechts gibt es nicht.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "Do Logo-Gelb (#ffc000) für die eine Hauptaktion pro Bereich und für die Kartenkante verwenden.",
+      "Do Logo-Gelb (#ffc000) für die eine Hauptaktion pro Bereich und für die Kartenkante beim Überfahren verwenden.",
       "Do Text auf Gelb immer in Tinte (#1d1c1a) setzen.",
       "Do Abschnitte zwischen Weiß, Stein (#f3f1ec) und Anthrazit (#1f1e1c) wechseln.",
       "Do Fotos aus der Region zeigen und Fremdfotos aus Gewerken als „Symbolbild“ beschriften.",

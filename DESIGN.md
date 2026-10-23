@@ -171,13 +171,13 @@ components:
 
 Die Website spricht wie das Schild am Bauzaun: Logo-Gelb auf Anthrazit, große klare Zeilen, keine Umwege. Sie ist zupackend, ehrlich und regional. Zupackend heißt kräftige 700er-Überschriften neben leichtem 300er-Fließtext und ein Anruf-Button, der immer in Reichweite ist. Ehrlich heißt echte Firmendaten, Fremdfotos als „Symbolbild“ gekennzeichnet, Platzhalter im Code markiert statt erfunden. Regional heißt Fotos von Lechwehr, Altstadt, Ammersee und Buchloe, Ortsnamen im Text und eine eigene Karte mit beiden Standorten.
 
-Helle Abschnitte stehen auf Weiß oder warmem Stein, dunkle Bänder in Anthrazit tragen Hero, Vertrauensbereich und Navigation. Inhalte sitzen auf weißen Karten mit gelber Oberkante: Das ist das Wiedererkennungsmerkmal und die einzige Dekoration. Bewegung ist knapp: Hero-Texte steigen einmal ein, Abschnitte blenden beim Scrollen in 500 ms ein, Fotos stehen sofort da.
+Helle Abschnitte stehen auf Weiß oder warmem Stein, dunkle Bänder in Anthrazit tragen Hero, Vertrauensbereich und Navigation. Inhalte sitzen auf weißen Karten; erst beim Überfahren hebt sich eine Karte an und zeigt ihre gelbe Oberkante – das Wiedererkennungsmerkmal und die einzige Dekoration. Bewegung ist knapp: Hero-Texte steigen einmal ein, Abschnitte blenden beim Scrollen in 500 ms ein, Fotos stehen sofort da.
 
 **Key Characteristics:**
 - Logo-Gelb (#ffc000) als einzige Handlungs- und Markenfarbe, Text darauf immer in Tinte.
 - Anthrazit (#1f1e1c) für Navigation, Hero und Vertrauensbänder; Weiß und warmer Stein (#f3f1ec) für Inhalt.
 - Inter in 700 (Überschriften, Buttons) gegen 300 (Fließtext); 400 nur in der Navigation.
-- Weiße Karten mit weichem Schatten und gelber Oberkante, 4px Radius.
+- Weiße Karten mit weichem Schatten und 4px Radius; die gelbe Oberkante erscheint erst beim Überfahren.
 - Fotos aus der Region, rechteckig, ohne Rahmen; Symbolbilder als solche beschriftet.
 - Ruhige Bewegung, die „Bewegung reduzieren“ respektiert und ohne JavaScript nichts versteckt.
 
@@ -186,7 +186,7 @@ Helle Abschnitte stehen auf Weiß oder warmem Stein, dunkle Bänder in Anthrazit
 Eine Signalfarbe aus dem Logo, umgeben von warmen Neutraltönen zwischen Stein und Anthrazit.
 
 ### Primary
-- **Logo-Gelb** (#ffc000): Primär-Buttons („Jetzt anrufen“, „Kostenlose Besichtigung anfragen“), die Oberkante jeder Karte, Icon-Kacheln der Regionskarten, Abzeichen „Schwerpunkt in der Region“, Standortpunkte auf der Karte, Textmarkierung und der Fokusrahmen auf dunklen Flächen.
+- **Logo-Gelb** (#ffc000): Primär-Buttons („Jetzt anrufen“, „Kostenlose Besichtigung anfragen“), die Oberkante von Karten beim Überfahren, Icon-Kacheln der Regionskarten, Abzeichen „Schwerpunkt in der Region“, Standortpunkte auf der Karte, Textmarkierung und der Fokusrahmen auf dunklen Flächen.
 - **Gelb gedrückt** (#e6ad00): Hover- und Druckzustand des Primär-Buttons.
 
 ### Neutral
@@ -237,19 +237,19 @@ Abstände nach Token: eng gruppiert mit 4–12px, Kartenpolster 24–32px, Absch
 
 ## Elevation & Depth
 
-Hell ist leicht angehoben, dunkel ist Fläche. Karten schweben mit einem weichen, zweistufigen Schatten über Weiß und Stein; auf Mausgeräten heben sie sich beim Überfahren um 3px. Dunkle Bänder bleiben flach, ihre Karten setzen sich nur durch einen Ton heller ab. Fotos tragen keine Schatten; unter Text auf Fotos liegt ein Verlauf aus Tinte.
+Hell ist leicht angehoben, dunkel ist Fläche. Karten schweben mit einem weichen, zweistufigen Schatten über Weiß und Stein; auf Mausgeräten heben sie sich beim Überfahren um 3px und zeigen die gelbe Kante. Dunkle Bänder bleiben flach, ihre Karten setzen sich nur durch einen Ton heller ab. Fotos tragen keine Schatten; unter Text auf Fotos liegt ein Verlauf aus Tinte.
 
 ### Shadow Vocabulary
-- **Karte** (`box-shadow: inset 0 3px 0 #ffc000, 0 1px 2px rgb(29 28 26 / 0.06), 0 12px 32px -16px rgb(29 28 26 / 0.28)`): alle weißen Karten.
-- **Karte gehoben** (`box-shadow: inset 0 3px 0 #ffc000, 0 2px 4px rgb(29 28 26 / 0.06), 0 20px 40px -18px rgb(29 28 26 / 0.35)`): Hover auf Mausgeräten, zusammen mit `translateY(-3px)`.
-- **Karte dunkel** (`box-shadow: inset 0 3px 0 #ffc000, 0 12px 32px -16px rgb(0 0 0 / 0.6)`): Karten auf Anthrazit.
+- **Karte** (`box-shadow: inset 0 0 0 #ffc000, 0 1px 2px rgb(29 28 26 / 0.06), 0 12px 32px -16px rgb(29 28 26 / 0.28)`): alle weißen Karten in Ruhe; der leere Innenschatten hält die Liste für den Übergang gleich lang.
+- **Karte gehoben** (`box-shadow: inset 0 3px 0 #ffc000, 0 2px 4px rgb(29 28 26 / 0.06), 0 20px 40px -18px rgb(29 28 26 / 0.35)`): Hover auf Mausgeräten, zusammen mit `translateY(-3px)` und gelbem oberem Rand; bei Tastaturfokus dieselbe Kante ohne Anheben.
+- **Karte dunkel** (`box-shadow: inset 0 0 0 #ffc000, 0 12px 32px -16px rgb(0 0 0 / 0.6)`, beim Überfahren `inset 0 3px 0 #ffc000, 0 20px 40px -18px rgb(0 0 0 / 0.7)`): Karten auf Anthrazit.
 
 ### Named Rules
-**Die Kanten-Regel.** Jede Karte trägt oben 4px Gelb: 1px Rand plus 3px Innenschatten, damit die Kante dem 4px-Radius folgt. Die Kante ist eine bewusste Markenentscheidung und bleibt, auch wenn ein Detektor sie als „Side Tab“ meldet. Farbige Kanten links oder rechts gibt es nicht.
+**Die Kanten-Regel.** In Ruhe haben Karten keine farbige Kante. Beim Überfahren mit der Maus oder bei Tastaturfokus in der Karte erscheint oben 4px Gelb: 1px Rand plus 3px Innenschatten, damit die Kante dem 4px-Radius folgt. Auf Touch-Geräten bleibt sie aus. Farbige Kanten links oder rechts gibt es nicht.
 
 ## Shapes
 
-Leicht entschärfte Rechtecke: 4px Radius für Buttons, Karten, Eingabefelder, Leistungs-Chips und Icon-Kacheln. Pillenform nur für kleine Abzeichen und Ortschips. Fotos sind rechteckig ohne Radius. Die Netzwerk-Karte hat eine 8px-Kante und deshalb oben eckige, unten 4px abgerundete Ecken.
+Leicht entschärfte Rechtecke: 4px Radius für Buttons, Karten, Eingabefelder, Leistungs-Chips und Icon-Kacheln. Pillenform nur für kleine Abzeichen und Ortschips. Fotos sind rechteckig ohne Radius. Die Netzwerk-Karte zeigt beim Überfahren eine 8px-Kante und hat deshalb oben eckige, unten 4px abgerundete Ecken.
 
 ## Components
 
@@ -270,7 +270,7 @@ Klar, groß, immer erreichbar.
 - **Corner Style:** 4px.
 - **Background:** Weiß auf hellen Abschnitten, Anthrazit erhöht auf dunklen.
 - **Shadow Strategy:** siehe Elevation & Depth, Kanten-Regel.
-- **Border:** 1px Haarlinie, oben Gelb.
+- **Border:** 1px Haarlinie; beim Überfahren oder bei Tastaturfokus oben Gelb.
 - **Internal Padding:** 24px, ab 40rem bis 32px.
 - **Keine verschachtelten Karten.**
 
@@ -297,7 +297,7 @@ Abschnitte blenden beim Scrollen einmal in 500ms ein (16px nach oben, Ease-out),
 ## Do's and Don'ts
 
 ### Do:
-- **Do** Logo-Gelb (#ffc000) für die eine Hauptaktion pro Bereich und für die Kartenkante verwenden.
+- **Do** Logo-Gelb (#ffc000) für die eine Hauptaktion pro Bereich und für die Kartenkante beim Überfahren verwenden.
 - **Do** Text auf Gelb immer in Tinte (#1d1c1a) setzen.
 - **Do** Abschnitte zwischen Weiß, Stein (#f3f1ec) und Anthrazit (#1f1e1c) wechseln.
 - **Do** Fotos aus der Region zeigen und Fremdfotos aus Gewerken als „Symbolbild“ beschriften.

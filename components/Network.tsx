@@ -8,7 +8,7 @@ export function Network() {
     <section id="netzwerk" aria-labelledby="netzwerk-title" className="bg-surface-dark pt-section">
       <div className="page-x mx-auto max-w-page">
         <div className="mx-auto max-w-[680px]">
-          <div data-reveal className="rounded-b-sm border-t-8 border-primary bg-canvas px-lg py-xxl text-center text-ink sm:px-xxl">
+          <div data-reveal className="rounded-b-sm border-t-8 border-transparent bg-canvas px-lg py-xxl text-center text-ink transition-colors duration-[240ms] hover:border-primary sm:px-xxl">
             <h2 id="netzwerk-title" className="text-display-md">
               Ein Netzwerk aus Fachbetrieben
             </h2>
