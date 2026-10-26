@@ -1,7 +1,7 @@
 import { ArrowIcon, GateIcon, HomeIcon, SailIcon } from "@/components/Icons";
-import { RegionMap } from "@/components/RegionMap";
+import { LocationMap } from "@/components/LocationMap";
 import { regions, type RegionId } from "@/lib/regions";
-import { site } from "@/lib/site";
+import { catchment, locations, site } from "@/lib/site";
 
 const facts = [
   { label: "Standorte", value: `${site.branch.locality} und ${site.address.locality}` },
@@ -17,30 +17,62 @@ export function Region() {
     <section id="einsatzgebiet" aria-labelledby="einsatzgebiet-title" className="bg-canvas py-section">
       <div className="page-x mx-auto max-w-page">
         <div className="grid gap-xxl lg:grid-cols-12 lg:gap-lg">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-6">
             <h2 id="einsatzgebiet-title" data-reveal className="text-display-md lg:text-display-lg">
-              Zwischen Lech und Ammersee
+              Zwischen Augsburg, Ammersee und Allgäu
             </h2>
             <p data-reveal style={{ ["--i" as string]: 1 }} className="mt-lg max-w-[60ch] text-title-md text-ink">
-              Mit Standorten in Landsberg am Lech und Vilgertshofen betreuen wir drei Regionen im Grenzgebiet von
-              Oberbayern und Schwaben – mit kurzen Wegen, die Ihnen Zeit und Geld sparen. Wählen Sie Ihre Region und
-              sehen Sie, was wir dort für Sie tun.
+              Mit unseren Standorten in Landsberg am Lech und Vilgertshofen sind wir schnell bei Ihnen. Kurze Wege sparen
+              Zeit und Geld – bei der Besichtigung genauso wie auf der Baustelle.
             </p>
+            <h3 data-reveal style={{ ["--i" as string]: 2 }} className="mt-xl text-title-md">
+              Unser Einzugsgebiet
+            </h3>
+            <ul data-reveal style={{ ["--i" as string]: 2 }} className="mt-sm flex flex-wrap gap-xs">
+              {catchment.map((place) => (
+                <li key={place} className="rounded-pill bg-surface-soft px-md py-xs text-title-sm text-ink">
+                  {place}
+                </li>
+              ))}
+            </ul>
             <dl className="mt-xl grid max-w-[560px] grid-cols-2 gap-x-md gap-y-lg">
               {facts.map((f, i) => (
-                <div key={f.label} data-reveal style={{ ["--i" as string]: i + 2 }}>
+                <div key={f.label} data-reveal style={{ ["--i" as string]: i + 3 }}>
                   <dt className="text-body-sm text-body">{f.label}</dt>
                   <dd className="text-title-sm text-ink">{f.value}</dd>
                 </div>
               ))}
             </dl>
           </div>
-          <div
-            data-reveal
-            style={{ ["--i" as string]: 1 }}
-            className="flex aspect-[3/2] items-center justify-center self-start bg-surface-dark p-md lg:col-span-5 lg:aspect-[4/3] lg:p-lg"
-          >
-            <RegionMap className="h-full w-full" />
+
+          <div className="lg:col-span-6">
+            <LocationMap className="aspect-[4/3] w-full rounded-sm bg-surface-soft lg:aspect-auto lg:h-[440px]" />
+            <ul className="mt-md grid gap-md sm:grid-cols-2">
+              {locations.map((loc) => (
+                <li key={loc.id} className="rounded-sm bg-surface-soft p-md">
+                  <address className="not-italic text-body-md text-ink">
+                    <span className="flex items-center gap-xs font-bold">
+                      <span aria-hidden className="size-3 shrink-0 rounded-full border-2 border-ink bg-primary" />
+                      {loc.label}
+                    </span>
+                    {loc.lines.map((line) => (
+                      <span key={line} className="block">
+                        {line}
+                      </span>
+                    ))}
+                  </address>
+                  <a
+                    href={loc.route}
+                    target="_blank"
+                    rel="noopener"
+                    className="link link-underlined mt-xs inline-flex min-h-11 items-center gap-xs text-title-sm text-ink"
+                  >
+                    Route planen
+                    <ArrowIcon className="size-4" />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
@@ -82,11 +114,10 @@ export function Region() {
         </ul>
 
         <p data-reveal className="mt-xl text-body-md">
-          Ihr Ort ist nicht dabei? Wir sind auch darüber hinaus im Einsatz –{" "}
-          <a href={site.phone.href} className="link link-underlined font-bold text-ink">
-            rufen Sie uns an
+          Ihr Ort fehlt? Rufen Sie an – wir sagen Ihnen sofort, ob wir kommen:{" "}
+          <a href={site.phone.href} className="link link-underlined font-bold text-ink tabular">
+            {site.phone.display}
           </a>
-          .
         </p>
       </div>
     </section>

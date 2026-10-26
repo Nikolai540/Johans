@@ -1,6 +1,6 @@
 import { places, serviceOrder, services } from "@/lib/content";
 import { regionById } from "@/lib/regions";
-import { site } from "@/lib/site";
+import { catchment, site } from "@/lib/site";
 
 export const businessId = `${site.url}/#business`;
 export const branchId = `${site.url}/#standort-landsberg`;
@@ -42,14 +42,10 @@ export function businessGraph() {
       image: `${site.url}/images/landsberg-lechwehr.jpg`,
       logo: `${site.url}/logo.svg`,
       description:
-        "Entrümpelung, Haushaltsauflösung, Entkernung, Abbruch, Rückbau, Renovierung, Sanierung, Trockenbau, Gartenbau und Vermittlung von Gewerken in Landsberg am Lech und Umgebung.",
+        "Entkernung, Abbruch und Rückbau mit Schadstoffsanierung (Asbest nach TRGS 519), Entrümpelung, Haushaltsauflösung und Renovierung mit Trockenbau, Bodenverlegung und Umzügen in Landsberg am Lech und Umgebung.",
       address,
       geo: { "@type": "GeoCoordinates", latitude: site.geo.latitude, longitude: site.geo.longitude },
-      areaServed: [
-        ...places.map((name) => ({ "@type": "City", name })),
-        { "@type": "Place", name: "Ammersee" },
-        { "@type": "AdministrativeArea", name: "Landkreis Landsberg am Lech" },
-      ],
+      areaServed: areaServed(),
       openingHoursSpecification: site.hours
         .filter((h) => "opens" in h)
         .map((h) => ({
@@ -95,6 +91,17 @@ export function businessGraph() {
       inLanguage: "de-DE",
       publisher: { "@id": businessId },
     },
+  ];
+}
+
+/** Einzugsgebiet für schema.org: Orte der Regionsseiten plus das weitere Gebiet */
+export function areaServed() {
+  const cities = [...new Set([...places, ...catchment.filter((c) => !c.includes("Region") && c !== "Allgäu")])];
+  return [
+    ...cities.map((name) => ({ "@type": "City", name })),
+    { "@type": "Place", name: "Ammersee" },
+    { "@type": "Place", name: "Allgäu" },
+    { "@type": "AdministrativeArea", name: "Landkreis Landsberg am Lech" },
   ];
 }
 

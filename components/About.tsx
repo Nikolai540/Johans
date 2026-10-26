@@ -15,21 +15,22 @@ export function About() {
         <div className="lg:col-span-6 lg:col-start-1">
           <div className="lg:sticky lg:top-[calc(var(--spacing-nav)+var(--spacing-section))] lg:py-section">
             <h2 id="ueber-uns-title" data-reveal className="text-display-md lg:text-display-lg">
-              Ein Ansprechpartner statt zehn Firmen
+              Ein Ansprechpartner statt vieler Firmen
             </h2>
             <p data-reveal style={{ ["--i" as string]: 1 }} className="mt-lg max-w-[34ch] text-display-sm text-ink">
-              Vom ersten Container bis zur letzten Gartenplatte – mit Fachbetrieben aus der Region.
+              Vom ersten Container bis zum fertig verlegten Boden.
             </p>
             <div data-reveal style={{ ["--i" as string]: 2 }} className="mt-xl max-w-[58ch] space-y-md text-body-md">
               <p>
-                Wer ein Haus entrümpelt, eine Wohnung entkernt oder einen Altbau saniert, braucht selten nur ein
-                Gewerk. Bei J&L Bauprojekte laufen die Arbeiten zusammen: Wir räumen, bauen zurück, sanieren und
-                bauen aus – und stimmen alles, was wir nicht selbst ausführen, mit Fachbetrieben aus der Region ab.
+                Wer ein Haus erbt, eine ältere Immobilie kauft oder umbaut, braucht selten nur einen Handgriff. Bei
+                J&L Bauprojekte laufen die Arbeiten zusammen: Wir entrümpeln, entkernen, entfernen Schadstoffe
+                fachgerecht und renovieren anschließend – in einem Zeitplan, mit einem Festpreis nach kostenloser
+                Besichtigung.
               </p>
               <p>
-                Für Sie heißt das: eine Telefonnummer, ein Termin zur Besichtigung, ein Angebot. Ob Eigentümer,
-                Erbengemeinschaft, Hausverwaltung oder Gewerbe – in Landsberg am Lech, Kaufering, Buchloe und am
-                Ammersee.
+                Für Sie heißt das: eine Telefonnummer, ein Termin, ein Angebot. Ob Eigentümer, Erbengemeinschaft,
+                Hausverwaltung oder Gewerbe – in Landsberg am Lech und der ganzen Region zwischen Augsburg, Ammersee
+                und Allgäu.
               </p>
             </div>
           </div>

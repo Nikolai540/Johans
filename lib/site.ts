@@ -38,16 +38,54 @@ export const site = {
   ],
 } as const;
 
-/** Unterseiten (gleiche URLs wie auf der bisherigen Website) */
+const route = (destination: string) =>
+  `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}`;
+
+/** Beide Standorte für Karte und Adressen; der Link öffnet die Routenplanung (auf dem Handy in der Karten-App) */
+export const locations = [
+  {
+    id: "landsberg",
+    label: site.branch.label,
+    lines: [site.branch.street, `${site.branch.postalCode} ${site.branch.locality}`],
+    lat: site.branch.geo.latitude,
+    lng: site.branch.geo.longitude,
+    route: route(`${site.branch.street}, ${site.branch.postalCode} ${site.branch.locality}`),
+  },
+  {
+    id: "vilgertshofen",
+    label: `Firmensitz ${site.address.locality}`,
+    lines: [site.address.street, `${site.address.postalCode} ${site.address.locality}`].filter(Boolean),
+    lat: site.geo.latitude,
+    lng: site.geo.longitude,
+    // Ohne Straße (PLATZHALTER in site.address) führt die Route zu den Koordinaten
+    route: route(site.address.street ? `${site.address.street}, ${site.address.postalCode} ${site.address.locality}` : `${site.geo.latitude},${site.geo.longitude}`),
+  },
+];
+
+/** Leistungsseiten (Entkernung und Entrümpelung mit den URLs der bisherigen Website) */
 export const pages = {
-  entkernung: { href: "/entkernung-abbruch-rueckbau/", label: "Entkernung & Abbruch", full: "Entkernung, Abbruch & Rückbau" },
+  entkernung: { href: "/entkernung-abbruch-rueckbau/", label: "Entkernung", full: "Entkernung, Abbruch & Rückbau" },
   entruempelung: { href: "/entruempelung-haushaltsaufloesung/", label: "Entrümpelung", full: "Entrümpelung & Haushaltsauflösung" },
+  renovierung: { href: "/renovierung/", label: "Renovierung", full: "Renovierung: Trockenbau, Böden & Umzug" },
 } as const;
+
+/** Einzugsgebiet in der Reihenfolge, in der es auf der Website genannt wird */
+export const catchment = [
+  "Landsberg am Lech",
+  "Kaufering",
+  "Buchloe",
+  "Ammersee-Region",
+  "Mindelheim",
+  "Augsburg",
+  "Schongau",
+  "Allgäu",
+] as const;
 
 export const nav = [
   { href: "/#leistungen", label: "Leistungen" },
-  { href: pages.entruempelung.href, label: pages.entruempelung.label },
   { href: pages.entkernung.href, label: pages.entkernung.label },
+  { href: pages.entruempelung.href, label: pages.entruempelung.label },
+  { href: pages.renovierung.href, label: pages.renovierung.label },
   { href: "/#einsatzgebiet", label: "Einsatzgebiet" },
   { href: "/#faq", label: "FAQ" },
   { href: "/#kontakt", label: "Kontakt" },

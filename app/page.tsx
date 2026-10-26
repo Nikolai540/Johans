@@ -1,10 +1,10 @@
 import { About } from "@/components/About";
+import { Asbestos } from "@/components/Asbestos";
 import { Contact } from "@/components/Contact";
 import { Faq } from "@/components/Faq";
 import { faqGraph, JsonLd } from "@/components/JsonLd";
 import { Hero } from "@/components/Hero";
 import { MobileActions } from "@/components/MobileActions";
-import { Network } from "@/components/Network";
 import { Region } from "@/components/Region";
 import { Services } from "@/components/Services";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -27,8 +27,8 @@ export default function Home() {
         <Hero />
         <About />
         <Services />
+        <Asbestos />
         <Region />
-        <Network />
         <Faq />
         <Contact />
       </main>

@@ -169,7 +169,7 @@ components:
 
 **Creative North Star: "Die Baustellentafel"**
 
-Die Website spricht wie das Schild am Bauzaun: Logo-Gelb auf Anthrazit, große klare Zeilen, keine Umwege. Sie ist zupackend, ehrlich und regional. Zupackend heißt kräftige 700er-Überschriften neben leichtem 300er-Fließtext und ein Anruf-Button, der immer in Reichweite ist. Ehrlich heißt echte Firmendaten, Fremdfotos als „Symbolbild“ gekennzeichnet, Platzhalter im Code markiert statt erfunden. Regional heißt Fotos von Lechwehr, Altstadt, Ammersee und Buchloe, Ortsnamen im Text und eine eigene Karte mit beiden Standorten.
+Die Website spricht wie das Schild am Bauzaun: Logo-Gelb auf Anthrazit, große klare Zeilen, keine Umwege. Sie ist zupackend, ehrlich und regional. Zupackend heißt kräftige 700er-Überschriften neben leichtem 300er-Fließtext und ein Anruf-Button, der immer in Reichweite ist. Ehrlich heißt echte Firmendaten, Fremdfotos als „Symbolbild“ gekennzeichnet, Platzhalter im Code markiert statt erfunden. Regional heißt Fotos von Lechwehr, Altstadt, Ammersee und Buchloe, Ortsnamen im Text und eine echte Karte mit beiden Standorten.
 
 Helle Abschnitte stehen auf Weiß oder warmem Stein, dunkle Bänder in Anthrazit tragen Hero, Vertrauensbereich und Navigation. Inhalte sitzen auf weißen Karten; erst beim Überfahren hebt sich eine Karte an und zeigt ihre gelbe Oberkante – das Wiedererkennungsmerkmal und die einzige Dekoration. Bewegung ist knapp: Hero-Texte steigen einmal ein, Abschnitte blenden beim Scrollen in 500 ms ein, Fotos stehen sofort da.
 
@@ -190,7 +190,7 @@ Eine Signalfarbe aus dem Logo, umgeben von warmen Neutraltönen zwischen Stein u
 - **Gelb gedrückt** (#e6ad00): Hover- und Druckzustand des Primär-Buttons.
 
 ### Neutral
-- **Anthrazit** (#1f1e1c): Kopfzeile, Hero, Vertrauens- und Ablaufbänder, mobile Aktionsleiste, Karte im Einsatzgebiet.
+- **Anthrazit** (#1f1e1c): Kopfzeile, Hero, Vertrauens- und Ablaufbänder, mobile Aktionsleiste, Schadstoffband auf Startseite und Entkernungsseite.
 - **Anthrazit erhöht** (#2d2b28): Karten und Kanten auf Anthrazit, Trennlinie unter der Kopfzeile.
 - **Warmer Stein** (#f3f1ec): Wechselnde helle Abschnitte (Leistungen, FAQ, Footer), Adressblöcke.
 - **Papierweiß** (#ffffff) und **Kartenweiß** (#faf9f6): Seitenfläche, Kartenfläche, Platzhalter hinter Fotos.
@@ -249,7 +249,7 @@ Hell ist leicht angehoben, dunkel ist Fläche. Karten schweben mit einem weichen
 
 ## Shapes
 
-Leicht entschärfte Rechtecke: 4px Radius für Buttons, Karten, Eingabefelder, Leistungs-Chips und Icon-Kacheln. Pillenform nur für kleine Abzeichen und Ortschips. Fotos sind rechteckig ohne Radius. Die Netzwerk-Karte zeigt beim Überfahren eine 8px-Kante und hat deshalb oben eckige, unten 4px abgerundete Ecken.
+Leicht entschärfte Rechtecke: 4px Radius für Buttons, Karten, Eingabefelder, Leistungs-Chips und Icon-Kacheln. Pillenform nur für kleine Abzeichen und Ortschips. Fotos sind rechteckig ohne Radius.
 
 ## Components
 
@@ -289,7 +289,7 @@ Klar, groß, immer erreichbar.
 Weiße Karte mit 56px Icon-Kachel in Gelb (Stadttor, Segelboot, Haus), optionalem Abzeichen „Unser Standort“ oder „Unser Firmensitz“, Regionsname als Link mit über die ganze Karte gespannter Klickfläche, Ortsliste, Schwerpunkt-Text und beschreibendem Pfeil-Hinweis.
 
 ### Einsatzgebiet-Karte (Signatur)
-Eigene SVG-Karte auf Anthrazit: Lech als Linie, Ammersee als Fläche, Orte als Punkte, beide Standorte als gelbe Punkte mit Legende „Unsere Standorte“. Beschriftungen überlappen nicht.
+Echte OpenStreetMap-Karte (Leaflet) mit entsättigten Kacheln, damit nur die Standorte Farbe tragen: beide Standorte als gelbe Punkte mit Tintenrand. Ein Klick öffnet Name, Adresse und den gelben Button „Route planen“ (Google Maps, neues Fenster). Mausrad zoomt nicht, auf Touch-Geräten scrollt ein Finger die Seite. Darunter stehen beide Adressen noch einmal als Text mit Routenlink, damit nichts nur in der Karte steckt.
 
 ### Einblendung
 Abschnitte blenden beim Scrollen einmal in 500ms ein (16px nach oben, Ease-out), gestaffelt um 60ms. Hero-Texte steigen ohne Verzögerung ein. Fotos werden nie verdeckt. Bei „Bewegung reduzieren“ entfällt alles.

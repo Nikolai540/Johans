@@ -17,7 +17,6 @@ Alle Platzhalter sind im Code mit `PLATZHALTER` markiert:
 | Was | Wo |
 | --- | --- |
 | Straße, Rechtsform, Erreichbarkeit (Telefon/E-Mail von jlbauprojekte.de übernommen) | `lib/site.ts` |
-| Welche Gewerke selbst / über Partner | `lib/content.ts` → `trades` |
 | Impressum, Datenschutzerklärung | `app/impressum/page.tsx`, `app/datenschutz/page.tsx` |
 | Domain | `.env` → `NEXT_PUBLIC_SITE_URL` |
 
@@ -33,6 +32,19 @@ Ohne JavaScript funktioniert das Formular als normales POST mit Weiterleitung au
 - Metadata, Open Graph, Canonical, Geo-Tags: `app/layout.tsx`
 - Schema.org `GeneralContractor`/`LocalBusiness` + `WebSite` + `FAQPage`: `components/JsonLd.tsx`
 - `sitemap.xml`, `robots.txt`: `app/sitemap.ts`, `app/robots.ts`
+
+## Leistungsseiten
+
+`/entkernung-abbruch-rueckbau/` (mit Bereich Schadstoffsanierung, Sprungmarke `#schadstoffsanierung`),
+`/entruempelung-haushaltsaufloesung/` und `/renovierung/` (Sprungmarken `#trockenbau`, `#bodenverlegung`, `#umzuege`).
+Vorlage: `components/ServicePage.tsx`, Texte in `lib/subpages.ts`, Kurztexte und Formular-Auswahl in `lib/content.ts`.
+
+## Karte
+
+Die Einsatzgebiet-Karte (`components/LocationMap.tsx`) nutzt [Leaflet](https://leafletjs.com) mit Kacheln von
+OpenStreetMap. Leaflet und die Kacheln laden erst, wenn die Karte in Sichtweite kommt. Standorte und
+Routenlinks (Google Maps) stehen in `lib/site.ts` → `locations`. Die Kachelabrufe übertragen die IP-Adresse
+an die OpenStreetMap Foundation – in der Datenschutzerklärung beschrieben.
 
 ## Regionale Landingpages
 

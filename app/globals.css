@@ -267,3 +267,40 @@
     line-height: var(--text-title-lg--line-height);
   }
 }
+
+/* Standortkarte (Leaflet, OpenStreetMap). Außerhalb der Layer, damit sie das ungelayerte Leaflet-CSS übersteuert.
+   Kacheln entsättigt, damit die gelben Standorte hervortreten. */
+.location-map.leaflet-container {
+  background-color: var(--color-surface-soft);
+  font-family: var(--font-sans);
+}
+.location-map .leaflet-tile-pane { filter: grayscale(1) contrast(0.9) brightness(1.04); }
+.location-map img { max-width: none; }
+.location-map .map-pin span {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border: 3px solid var(--color-ink);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary);
+  box-shadow: 0 2px 6px rgb(29 28 26 / 0.35); /* taste-skill-ignore: Kartenmarker */
+}
+.location-map .leaflet-popup-content-wrapper { border-radius: var(--radius-sm); }
+.location-map .leaflet-popup-content {
+  margin: 14px 16px;
+  color: var(--color-body);
+  font: 300 0.875rem/1.5 var(--font-sans);
+}
+.location-map .map-popup-title { margin: 0; color: var(--color-ink); font-weight: 700; }
+.location-map .map-popup-address { margin: 4px 0 10px; }
+.location-map a.map-popup-route {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: 700;
+  text-decoration: none;
+}

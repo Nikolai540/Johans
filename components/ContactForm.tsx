@@ -207,12 +207,6 @@ export function ContactForm({ initial = [], title = "Anfrage senden" }: { initia
                   {site.name}, {site.address.locality}
                 </dd>
               </div>
-              {selected.includes("gewerke") && (
-                <div>
-                  <dt className="text-body-sm text-on-dark-soft">Weitere Gewerke</dt>
-                  <dd className="text-title-md text-on-dark">Fachbetriebe aus unserem Netzwerk</dd>
-                </div>
-              )}
             </dl>
             <p className="mt-lg bg-surface-dark-elevated p-md text-body-md text-on-dark">
               {ordered.length === 0
@@ -233,7 +227,7 @@ export function ContactForm({ initial = [], title = "Anfrage senden" }: { initia
             rows={6}
             minLength={10}
             maxLength={4000}
-            placeholder="z. B. Altbau in Kaufering, Erdgeschoss entkernen, danach neue Wände in Trockenbau"
+            placeholder="z. B. Altbau in Kaufering, Erdgeschoss entkernen, danach Vinylboden verlegen"
             aria-invalid={Boolean(errors.message) || undefined}
             aria-describedby={errors.message ? `${uid}-message-error` : undefined}
             className={`${inputClass} resize-y`}

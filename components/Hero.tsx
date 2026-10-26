@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { PhoneIcon } from "@/components/Icons";
 import { photos } from "@/lib/images";
-import { site } from "@/lib/site";
+import { catchment, site } from "@/lib/site";
 
 export function Hero() {
   const p = photos.landsbergLechwehr;
@@ -27,22 +27,26 @@ export function Hero() {
       <div aria-hidden className="scrim-bottom absolute inset-x-0 bottom-0 -z-10 h-3/4" />
 
       <div className="page-x mx-auto w-full max-w-page pb-xxl lg:pb-section">
-        <h1 id="hero-title" className="text-display-md text-on-dark sm:text-display-lg lg:text-display-xl">
+        <h1 id="hero-title" className="max-w-[22ch] text-display-md text-on-dark sm:text-display-lg">
           <span data-rise className="block" style={{ ["--i" as string]: 0 }}>
-            Bauprojekte in
+            Entkernung, Entrümpelung & Renovierung
           </span>{" "}
           <span data-rise className="block" style={{ ["--i" as string]: 1 }}>
-            Landsberg am Lech
+            in Landsberg am Lech und Umgebung
           </span>
         </h1>
-        <p data-rise style={{ ["--i" as string]: 2 }} className="mt-md max-w-[44ch] text-body-md text-on-dark sm:text-title-md sm:font-light">
-          Entkernung, Abbruch, Sanierung, Trockenbau und Gartenbau aus einer Hand – für Kaufering, Buchloe und
-          die Ammersee-Region.
+        <p data-rise style={{ ["--i" as string]: 2 }} className="mt-md max-w-[52ch] text-body-md text-on-dark sm:text-title-md sm:font-light">
+          Wir räumen, bauen zurück und machen Räume wieder bewohnbar – sauber, termingerecht und mit einem festen
+          Ansprechpartner. Auch dann, wenn Asbest oder andere Schadstoffe im Spiel sind.
+        </p>
+        <p data-rise style={{ ["--i" as string]: 3 }} className="mt-md max-w-[70ch] text-body-sm text-on-dark sm:text-body-md">
+          <span className="font-bold">Im Einsatz in </span>
+          {catchment.join(" · ")}
         </p>
         <div
           data-hero-actions
           data-rise
-          style={{ ["--i" as string]: 3 }}
+          style={{ ["--i" as string]: 4 }}
           className="mt-xl flex flex-col gap-sm sm:flex-row"
         >
           <a href={site.phone.href} className="btn btn-primary">
@@ -51,7 +55,7 @@ export function Hero() {
             <span className="font-light tabular max-[22.5rem]:hidden">{site.phone.display}</span>
           </a>
           <a href="#kontakt-formular" className="btn btn-secondary">
-            Kontakt aufnehmen
+            Kostenlose Besichtigung anfragen
           </a>
         </div>
       </div>

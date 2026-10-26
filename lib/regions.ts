@@ -26,7 +26,7 @@ export const regions: Region[] = [
     href: "/einsatzgebiet/landsberg-am-lech/",
     name: "Landsberg am Lech & Umgebung",
     places: ["Landsberg am Lech", "Kaufering", "Penzing", "Igling", "Hurlach", "Scheuring", "Prittriching"],
-    teaser: "Unser komplettes Leistungsportfolio für Stadt und Umland – von der fachgerechten Entkernung bis zum Trockenbau.",
+    teaser: "Unser komplettes Leistungsportfolio für Stadt und Umland – von der Entrümpelung über Entkernung und Schadstoffsanierung bis zum neuen Boden.",
     cta: "Leistungen in Landsberg & Umgebung",
     badge: "Unser Standort",
   },
@@ -35,7 +35,7 @@ export const regions: Region[] = [
     href: "/einsatzgebiet/ammersee-westufer/",
     name: "Ammersee Westufer",
     places: ["Dießen am Ammersee", "Utting am Ammersee", "Schondorf am Ammersee", "Greifenberg", "Windach", "Geltendorf"],
-    teaser: "Diskrete, besenreine Haushaltsauflösungen sowie Renovierung und Sanierung für Immobilien in Seenähe.",
+    teaser: "Diskrete, besenreine Haushaltsauflösungen und Renovierung für Immobilien in Seenähe.",
     cta: "Leistungen am Ammersee-Westufer",
   },
   {
@@ -43,7 +43,7 @@ export const regions: Region[] = [
     href: "/einsatzgebiet/buchloe-fuchstal/",
     name: "Buchloe, Fuchstal & Region",
     places: ["Vilgertshofen", "Fuchstal", "Denklingen", "Buchloe"],
-    teaser: "Unser Heimvorteil: kurze Wege, schnelle Reaktion und unkomplizierte Abwicklung – für Abbruch, Entrümpelung und Gartenarbeit.",
+    teaser: "Unser Heimvorteil: kurze Wege, schnelle Reaktion und unkomplizierte Abwicklung – für Abbruch, Entrümpelung und Renovierung.",
     cta: "Leistungen in Buchloe, Fuchstal & Region",
     badge: "Unser Firmensitz",
   },
@@ -69,12 +69,12 @@ export type RegionPage = {
 export const landsbergPage: RegionPage = {
   region: "landsberg",
   locations: ["branch", "main"],
-  title: "Entrümpelung, Abbruch & Sanierung in Landsberg am Lech | J&L Bauprojekte",
+  title: "Entrümpelung, Entkernung & Renovierung in Landsberg am Lech | J&L Bauprojekte",
   description:
-    "Entrümpelung, Entkernung, Abbruch, Sanierung & Trockenbau in Landsberg am Lech, Kaufering, Penzing & Umgebung. Kostenlose Besichtigung, Festpreis.",
-  h1: "Ihr Partner für Entrümpelung, Abbruch & Sanierung in Landsberg am Lech",
+    "Entrümpelung, Entkernung, Schadstoffsanierung nach TRGS 519 und Renovierung in Landsberg am Lech, Kaufering, Penzing & Umgebung. Kostenlose Besichtigung, Festpreis.",
+  h1: "Ihr Partner für Entrümpelung, Entkernung & Renovierung in Landsberg am Lech",
   intro:
-    "Von der Entrümpelung über die fachgerechte Entkernung bis zum fertigen Trockenbau: Von unserem Standort in Landsberg aus erledigen wir Ihr Projekt in der Stadt, in Kaufering und Umgebung aus einer Hand – mit festem Ansprechpartner, Festpreis nach kostenloser Besichtigung und besenreiner Übergabe.",
+    "Von der Entrümpelung über die fachgerechte Entkernung bis zum neu verlegten Boden: Von unserem Standort in Landsberg aus erledigen wir Ihr Projekt in der Stadt, in Kaufering und Umgebung aus einer Hand – mit festem Ansprechpartner, Festpreis nach kostenloser Besichtigung und besenreiner Übergabe.",
   hero: "landsbergLuftbild",
   services: {
     h2: "Unsere Leistungen in Landsberg am Lech und Umgebung",
@@ -102,20 +102,20 @@ export const landsbergPage: RegionPage = {
         text: "Treppen, Kamine, Innenwände oder ganze Gebäudeteile bauen wir kontrolliert zurück, während der Rest des Hauses stehen bleibt – gerade in der dichten Bebauung der Landsberger Altstadt entscheidend.",
       },
       {
+        id: "schadstoffsanierung",
+        text: "In Altbauten der Innenstadt und in Häusern aus den 1960er- bis 1980er-Jahren kann Asbest in Böden, Klebern oder Putz stecken. Wir klären den Verdacht vor dem Umbau und bauen belastete Materialien nach TRGS 519 zurück.",
+      },
+      {
         id: "renovierung",
-        text: "Wände, Decken, Böden und Türen: Wir bringen Wohnungen und Häuser im Landkreis wieder in Schuss – vor dem Einzug, nach dem Mieterwechsel oder als Auffrischung des eigenen Zuhauses.",
+        text: "Wände, Decken und neue Raumaufteilung im Trockenbau: Wir bringen Wohnungen und Häuser im Landkreis wieder in Schuss – vor dem Einzug, nach dem Mieterwechsel oder vor dem Verkauf.",
       },
       {
-        id: "sanierung",
-        text: "Von der Entkernung bis zum Innenausbau koordinieren wir die Sanierung von Altbau und Bestand – mit Gespür für alte Bausubstanz, wie sie in Landsberg und den Ortskernen der Umgebung typisch ist.",
+        id: "bodenverlegung",
+        text: "Laminat und Vinyl mit Trittschalldämmung, Sockelleisten und Übergangsprofilen – oft direkt im Anschluss an die Entkernung, damit der Untergrund nicht lange offen liegt.",
       },
       {
-        id: "trockenbau",
-        text: "Neue Raumaufteilung, abgehängte Decken, Vorsatzschalen oder der Ausbau des Dachgeschosses – vom Ständerwerk bis zur streichfertig gespachtelten Wand, oft direkt im Anschluss an die Entkernung.",
-      },
-      {
-        id: "gartenbau",
-        text: "Wege, Terrassen und Einfahrten pflastern, Beete und Rasen neu anlegen, Hecken und Gehölze roden – häufig direkt nach Abbruch oder Sanierung, damit Haus und Garten gemeinsam fertig werden.",
+        id: "umzug",
+        text: "Beim Umzug in eine kleinere Wohnung oder ins Pflegeheim packen wir mit an und verbinden Transport, Räumung und Renovierung der alten Wohnung. Den Umfang klären wir bei der Besichtigung.",
       },
     ],
   },
@@ -134,7 +134,7 @@ export const landsbergPage: RegionPage = {
       },
       {
         title: "Ein Ansprechpartner",
-        text: "Johann Schmidt koordiniert Ihr Projekt persönlich – von der Entrümpelung bis zum Garten. Fachbetriebe aus der Region binden wir bei Bedarf ein.",
+        text: "Johann Schmidt koordiniert Ihr Projekt persönlich – von der Entrümpelung bis zum fertig verlegten Boden.",
       },
       {
         title: "Termingerecht und besenrein",
@@ -146,7 +146,7 @@ export const landsbergPage: RegionPage = {
     h2: "Von der Altstadt bis ins Umland",
     paragraphs: [
       "In der Landsberger Altstadt treffen wir auf historische Bausubstanz, enge Zufahrten und Nachbarn Wand an Wand. Zufahrt, Container-Stellplatz und Arbeitszeiten klären wir deshalb vorab und arbeiten so, dass Bestand und Nachbarschaft geschont werden.",
-      "In Kaufering, Penzing und Igling sind es oft Einfamilien- und Reihenhäuser, die nach einem Generationswechsel entrümpelt, entkernt und saniert werden. Rund um Hurlach, Scheuring und Prittriching kommen häufig Scheunen, Nebengebäude und große Grundstücke dazu – vom Abbruch des alten Schuppens bis zur neuen Pflasterfläche.",
+      "In Kaufering, Penzing und Igling sind es oft Einfamilien- und Reihenhäuser, die nach einem Generationswechsel entrümpelt, entkernt und renoviert werden. Rund um Hurlach, Scheuring und Prittriching kommen häufig Scheunen und Nebengebäude dazu – von der Räumung der Scheune bis zum Abbruch des alten Schuppens.",
     ],
     photo: "landsbergLechUfer",
   },
@@ -168,8 +168,8 @@ export const landsbergPage: RegionPage = {
       a: "Den Besichtigungstermin vereinbaren wir in der Regel innerhalb weniger Tage. Den Starttermin legen wir danach gemeinsam fest – abhängig vom Umfang und davon, ob zum Beispiel ein Verkaufs- oder Übergabetermin feststeht.",
     },
     {
-      q: "Übernehmen Sie Entkernung und Trockenbau im selben Projekt?",
-      a: "Ja. Wir entkernen, bauen zurück und setzen anschließend neue Wände, Decken oder den Dachausbau im Trockenbau um. Für Elektro, Sanitär oder Fliesen binden wir Fachbetriebe aus der Region ein – Sie behalten einen Ansprechpartner.",
+      q: "Übernehmen Sie Entkernung und Renovierung im selben Projekt?",
+      a: "Ja. Wir entkernen, bauen zurück und setzen anschließend neue Wände und Decken im Trockenbau um oder verlegen den neuen Boden. Sie haben dabei einen Ansprechpartner und einen Zeitplan.",
     },
     {
       q: "Kümmern Sie sich um Container und Entsorgung?",
@@ -181,17 +181,17 @@ export const landsbergPage: RegionPage = {
 export const ammerseePage: RegionPage = {
   region: "ammersee",
   locations: ["branch", "main"],
-  title: "Haushaltsauflösung, Renovierung & Sanierung am Ammersee | J&L Bauprojekte",
+  title: "Haushaltsauflösung & Renovierung am Ammersee | J&L Bauprojekte",
   description:
-    "Haushaltsauflösung, Entrümpelung, Renovierung & Sanierung in Dießen, Utting, Schondorf, Greifenberg, Windach & Geltendorf. Diskret, besenrein, Festpreis.",
-  h1: "Ihr Partner für Haushaltsauflösung, Renovierung & Sanierung am Ammersee",
+    "Haushaltsauflösung, Entrümpelung, Renovierung & Bodenverlegung in Dießen, Utting, Schondorf, Greifenberg, Windach & Geltendorf. Diskret, besenrein, Festpreis.",
+  h1: "Ihr Partner für Haushaltsauflösung & Renovierung am Ammersee",
   intro:
-    "Ob Haus mit Seeblick in Utting, Wohnung in Dießen oder Elternhaus in Windach: Wir lösen Haushalte am Westufer des Ammersees diskret und besenrein auf und bringen Immobilien mit Renovierung und Sanierung wieder auf Stand – mit festem Ansprechpartner und Festpreis nach kostenloser Besichtigung.",
+    "Ob Haus mit Seeblick in Utting, Wohnung in Dießen oder Elternhaus in Windach: Wir lösen Haushalte am Westufer des Ammersees diskret und besenrein auf und bringen Immobilien mit Renovierung und neuen Böden wieder auf Stand – mit festem Ansprechpartner und Festpreis nach kostenloser Besichtigung.",
   hero: "uttingAmmersee",
   services: {
     h2: "Unsere Leistungen am Ammersee-Westufer",
     intro:
-      "Am See geht es selten nur um eine Räumung: um ein Elternhaus, das verkauft werden soll, eine Wohnung, die neu vermietet wird, oder ein älteres Haus, das für die nächste Generation saniert wird. Wir begleiten alle Schritte – auch wenn Sie selbst weiter weg wohnen.",
+      "Am See geht es selten nur um eine Räumung: um ein Elternhaus, das verkauft werden soll, eine Wohnung, die neu vermietet wird, oder ein älteres Haus, das für die nächste Generation hergerichtet wird. Wir begleiten alle Schritte – auch wenn Sie selbst weiter weg wohnen.",
     items: [
       {
         id: "haushaltsaufloesung",
@@ -201,24 +201,27 @@ export const ammerseePage: RegionPage = {
       {
         id: "renovierung",
         focus: true,
-        text: "Wände, Decken, Böden und Türen: Wir machen Häuser und Wohnungen in Dießen, Utting und Schondorf wieder bezugsfertig – vor dem Verkauf, der Neuvermietung oder dem eigenen Einzug.",
-      },
-      {
-        id: "sanierung",
-        focus: true,
-        text: "Ältere Häuser am See verdienen einen sorgfältigen Umgang mit der Bausubstanz. Wir koordinieren die Sanierung von der Entkernung bis zum Innenausbau und binden Fachbetriebe für Elektro, Sanitär und Heizung ein.",
+        text: "Wände, Decken und neue Räume im Trockenbau: Wir machen Häuser und Wohnungen in Dießen, Utting und Schondorf wieder bezugsfertig – vor dem Verkauf, der Neuvermietung oder wenn aus dem Ferienhaus ein Hauptwohnsitz wird.",
       },
       {
         id: "entruempelung",
         text: "Keller, Dachboden, Garage oder Nebengebäude: Wir räumen, trennen nach Wertstoffen und entsorgen fachgerecht. Zufahrt und Abtransport planen wir vorab – auch bei engen Grundstücken in Seenähe.",
       },
       {
+        id: "bodenverlegung",
+        text: "Laminat und Vinyl statt abgetretenem Teppich: Wir entfernen den alten Belag und verlegen den neuen mit Trittschalldämmung, Sockelleisten und Übergangsprofilen.",
+      },
+      {
+        id: "umzug",
+        text: "Wenn Eltern in eine kleinere Wohnung oder ins Pflegeheim ziehen, packen wir mit an und verbinden Umzug, Räumung und Renovierung. Den Umfang klären wir bei der Besichtigung.",
+      },
+      {
         id: "entkernung",
         text: "Vor einer Kernsanierung legen wir den Rohbau frei: Bodenbeläge, Putz, nichttragende Wände und alte Installationen – sortenrein getrennt und fachgerecht entsorgt.",
       },
       {
-        id: "trockenbau",
-        text: "Neue Raumaufteilung, Dachgeschossausbau oder abgehängte Decken: Mit Trockenbau entstehen schnell und sauber neue Räume – etwa wenn aus dem Ferienhaus ein Hauptwohnsitz werden soll.",
+        id: "schadstoffsanierung",
+        text: "Viele Häuser am See stammen aus Jahrzehnten, in denen Asbest verbaut wurde – in Bodenbelägen, Klebern oder Eternit-Platten an Garage und Schuppen. Wir klären den Verdacht vor dem Umbau und bauen nach TRGS 519 zurück.",
       },
       {
         id: "rueckbau",
@@ -227,10 +230,6 @@ export const ammerseePage: RegionPage = {
       {
         id: "abbruch",
         text: "Gartenhäuser, Schuppen, Carports und einzelne Wände brechen wir ab und entsorgen den Bauschutt. Wanddurchbrüche bei tragenden Wänden nur gemeinsam mit dem Statiker.",
-      },
-      {
-        id: "gartenbau",
-        text: "Nach Räumung oder Sanierung bringen wir auch den Garten in Form: Hecken und Gehölze zurückschneiden oder roden, Wege und Terrassen pflastern, Rasen neu anlegen.",
       },
     ],
   },
@@ -261,7 +260,7 @@ export const ammerseePage: RegionPage = {
     h2: "Rund um das Westufer des Ammersees",
     paragraphs: [
       "Zwischen Dießen und Schondorf stehen viele ältere Häuser am Hang oder in Seenähe – oft mit schmalen Zufahrten, wenig Platz für einen Container und Nachbarn, die Ruhe schätzen. Anfahrt, Stellplatz und Arbeitszeiten planen wir deshalb vorab und halten den Aufwand vor Ort so gering wie möglich.",
-      "In Greifenberg, Windach und Geltendorf sind es häufiger Einfamilienhäuser und ehemalige Hofstellen, die nach einem Generationswechsel geräumt, renoviert oder saniert werden. Auch hier gilt: ein Ansprechpartner, ein Festpreis, ein fester Termin.",
+      "In Greifenberg, Windach und Geltendorf sind es häufiger Einfamilienhäuser und ehemalige Hofstellen, die nach einem Generationswechsel geräumt, entkernt oder renoviert werden. Auch hier gilt: ein Ansprechpartner, ein Festpreis, ein fester Termin.",
     ],
     photo: "sanierungFachwerk",
   },
@@ -280,7 +279,7 @@ export const ammerseePage: RegionPage = {
     },
     {
       q: "Können Sie das Haus nach der Räumung auch renovieren?",
-      a: "Ja. Nach der Haushaltsauflösung übernehmen wir auf Wunsch Renovierung und Sanierung – von Wänden, Decken und Böden bis zum Trockenbau. Für Elektro, Sanitär oder Fliesen binden wir Fachbetriebe aus der Region ein. So wird das Haus aus einer Hand verkaufs- oder bezugsfertig.",
+      a: "Ja. Nach der Haushaltsauflösung übernehmen wir auf Wunsch die Renovierung – Wände und Decken im Trockenbau und neue Laminat- oder Vinylböden. So wird das Haus aus einer Hand verkaufs- oder bezugsfertig.",
     },
     {
       q: "Wie schnell sind Sie am Ammersee vor Ort?",
@@ -292,17 +291,17 @@ export const ammerseePage: RegionPage = {
 export const buchloePage: RegionPage = {
   region: "buchloe",
   locations: ["main"],
-  title: "Abbruch, Entrümpelung & Gartenarbeit in Buchloe & Fuchstal | J&L Bauprojekte",
+  title: "Abbruch, Entrümpelung & Renovierung in Buchloe & Fuchstal | J&L Bauprojekte",
   description:
-    "Abbruch, Entrümpelung & Gartenarbeit in Buchloe, Fuchstal, Denklingen & Vilgertshofen – vom Firmensitz um die Ecke. Kostenlose Besichtigung, Festpreis.",
-  h1: "Ihr Partner für Abbruch, Entrümpelung & Gartenarbeit in Buchloe und Fuchstal",
+    "Abbruch, Entrümpelung & Renovierung in Buchloe, Fuchstal, Denklingen & Vilgertshofen – vom Firmensitz um die Ecke. Kostenlose Besichtigung, Festpreis.",
+  h1: "Ihr Partner für Abbruch, Entrümpelung & Renovierung in Buchloe und Fuchstal",
   intro:
-    "Unser Firmensitz liegt in Vilgertshofen – mitten in der Region. Das ist Ihr Heimvorteil: kurze Anfahrt, schnelle Reaktion und unkomplizierte Absprachen für Abbruch, Entrümpelung und Gartenarbeit in Fuchstal, Denklingen, Buchloe und Umgebung.",
+    "Unser Firmensitz liegt in Vilgertshofen – mitten in der Region. Das ist Ihr Heimvorteil: kurze Anfahrt, schnelle Reaktion und unkomplizierte Absprachen für Abbruch, Entrümpelung und Renovierung in Fuchstal, Denklingen, Buchloe und Umgebung.",
   hero: "buchloeLuftbild",
   services: {
     h2: "Unsere Leistungen in Buchloe, Fuchstal und Umgebung",
     intro:
-      "Vom alten Schuppen über die volle Scheune bis zum neuen Pflaster im Hof: Wir übernehmen Abbruch, Räumung und Gartenarbeit – und alles, was danach am Haus ansteht.",
+      "Vom alten Schuppen über die volle Scheune bis zum neuen Boden im Wohnhaus: Wir übernehmen Abbruch, Räumung und Renovierung – und alles, was dazwischen am Haus ansteht.",
     items: [
       {
         id: "abbruch",
@@ -315,13 +314,17 @@ export const buchloePage: RegionPage = {
         text: "Scheune, Stadel, Dachboden oder das ganze Haus: Wir räumen auch große Mengen, trennen nach Wertstoffen und organisieren den Container. Weil wir aus der Nähe kommen, geht das oft auch kurzfristig.",
       },
       {
-        id: "gartenbau",
+        id: "renovierung",
         focus: true,
-        text: "Hecken und Gehölze roden, Wege, Terrassen und Hofflächen pflastern, Beete und Rasen neu anlegen – gern direkt im Anschluss an den Abbruch, damit aus der frei gewordenen Fläche ein Garten wird.",
+        text: "Wände, Decken, Dachgeschoss: Mit Trockenbau und frischen Oberflächen machen wir Wohnungen und Häuser in der Region wieder bezugsfertig – vor dem Einzug, nach dem Auszug oder zur Auffrischung.",
       },
       {
         id: "haushaltsaufloesung",
         text: "Nach einem Erbfall oder vor dem Verkauf lösen wir den Haushalt diskret und termingerecht auf – vom Einfamilienhaus in Buchloe bis zum Hof in Fuchstal.",
+      },
+      {
+        id: "schadstoffsanierung",
+        text: "Eternit-Platten auf Schuppen, Garagen und Stallgebäuden sind in der Region häufig. Wir bauen sie nach TRGS 519 zerstörungsfrei aus, verpacken sie staubdicht und entsorgen sie mit Nachweis.",
       },
       {
         id: "rueckbau",
@@ -332,16 +335,12 @@ export const buchloePage: RegionPage = {
         text: "Vor der Kernsanierung legen wir den Rohbau frei: Bodenbeläge, Putz, nichttragende Wände und alte Installationen – sortenrein getrennt und fachgerecht entsorgt.",
       },
       {
-        id: "renovierung",
-        text: "Wände, Decken, Böden und Türen: Wir machen Wohnungen und Häuser in der Region wieder bezugsfertig – vor dem Einzug, nach dem Auszug oder zur Auffrischung.",
+        id: "bodenverlegung",
+        text: "Laminat und Vinyl, inklusive Entfernen des alten Belags, Trittschalldämmung und Sockelleisten – im Wohnhaus wie in der ausgebauten Einliegerwohnung.",
       },
       {
-        id: "sanierung",
-        text: "Ältere Häuser und Hofstellen sanieren wir Schritt für Schritt – von der Entkernung bis zum Innenausbau, mit Fachbetrieben aus unserem Netzwerk.",
-      },
-      {
-        id: "trockenbau",
-        text: "Dachgeschoss ausbauen, Räume neu aufteilen, Decken abhängen: Trockenbau vom Ständerwerk bis zur streichfertig gespachtelten Wand.",
+        id: "umzug",
+        text: "Wir packen mit an, wenn ohnehin geräumt oder renoviert wird, und verbinden Transport und Räumung. Den Umfang klären wir bei der Besichtigung.",
       },
     ],
   },
@@ -360,21 +359,21 @@ export const buchloePage: RegionPage = {
       },
       {
         title: "Kostenlose Besichtigung",
-        text: "Wir schauen uns Abbruch, Räumung oder Garten vor Ort an – kostenlos und unverbindlich. Danach erhalten Sie einen Festpreis.",
+        text: "Wir schauen uns Abbruch, Räumung oder Renovierung vor Ort an – kostenlos und unverbindlich. Danach erhalten Sie einen Festpreis.",
       },
       {
         title: "Aus der Region, für die Region",
-        text: "Johann Schmidt kennt die Orte, die Wege und die Betriebe hier. Für weitere Gewerke greifen wir auf Fachbetriebe aus der Nachbarschaft zurück.",
+        text: "Johann Schmidt kennt die Orte, die Wege und die Gegebenheiten hier – und koordiniert Ihr Projekt persönlich.",
       },
     ],
   },
   local: {
     h2: "Daheim zwischen Fuchstal und Buchloe",
     paragraphs: [
-      "In Vilgertshofen, Fuchstal und Denklingen sind wir zu Hause – bis in Ortsteile wie Leeder, Asch, Seestall oder Epfach. Hier geht es oft um Höfe, Scheunen und Nebengebäude, die nicht mehr gebraucht werden: Wir räumen, brechen ab und machen aus der frei gewordenen Fläche Hof, Garten oder Stellplatz.",
-      "In Buchloe, schon im Landkreis Ostallgäu, sind es eher Einfamilienhäuser, Wohnungen und Gewerbeflächen, die entrümpelt, entkernt oder für neue Nutzer vorbereitet werden. Auch hier gilt: ein Ansprechpartner, ein Festpreis, ein fester Termin.",
+      "In Vilgertshofen, Fuchstal und Denklingen sind wir zu Hause – bis in Ortsteile wie Leeder, Asch, Seestall oder Epfach. Hier geht es oft um Höfe, Scheunen und Nebengebäude, die nicht mehr gebraucht werden: Wir räumen, brechen ab und hinterlassen die Fläche sauber für das, was als Nächstes kommt.",
+      "In Buchloe, schon im Landkreis Ostallgäu, sind es eher Einfamilienhäuser, Wohnungen und Gewerbeflächen, die entrümpelt, entkernt oder für neue Nutzer renoviert werden. Auch hier gilt: ein Ansprechpartner, ein Festpreis, ein fester Termin.",
     ],
-    photo: "pflasterarbeiten",
+    photo: "abbruch",
   },
   faqs: [
     {
@@ -387,11 +386,11 @@ export const buchloePage: RegionPage = {
     },
     {
       q: "Brechen Sie auch Scheunen oder ganze Häuser ab?",
-      a: "Kleine Nebengebäude wie Gartenhäuser, Schuppen oder Carports brechen wir selbst ab. Komplette Hausabrisse übernehmen wir nicht – hier vermitteln wir Ihnen bei Bedarf einen passenden Fachbetrieb. Ob eine Scheune darunter fällt, klären wir bei der kostenlosen Besichtigung.",
+      a: "Kleine Nebengebäude wie Gartenhäuser, Schuppen oder Carports brechen wir selbst ab. Komplette Hausabrisse übernehmen wir nicht. Ob eine Scheune darunter fällt, klären wir bei der kostenlosen Besichtigung.",
     },
     {
-      q: "Übernehmen Sie nach dem Abbruch auch die Gartenarbeit?",
-      a: "Ja. Wir entsorgen den Bauschutt, gleichen die Fläche aus und legen auf Wunsch Pflaster, Wege, Beete oder Rasen an. So haben Sie für Abbruch und Garten einen Ansprechpartner.",
+      q: "Was passiert mit alten Eternit-Platten auf Schuppen und Garagen?",
+      a: "Asbestzementplatten bauen wir zerstörungsfrei aus, verpacken sie staubdicht und geben sie bei zugelassenen Entsorgungsanlagen ab – mit Sachkunde nach TRGS 519 und vorheriger Anzeige bei der Behörde. Die Entsorgungsnachweise erhalten Sie von uns.",
     },
     {
       q: "Was kostet die Besichtigung?",

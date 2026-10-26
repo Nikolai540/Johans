@@ -2,8 +2,9 @@ import Image from "next/image";
 
 import { Contact } from "@/components/Contact";
 import { ChevronIcon, PhoneIcon } from "@/components/Icons";
-import { businessId, faqGraph, JsonLd } from "@/components/JsonLd";
+import { areaServed, businessId, faqGraph, JsonLd } from "@/components/JsonLd";
 import { MobileActions } from "@/components/MobileActions";
+import { Pollutants } from "@/components/Pollutants";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { photos } from "@/lib/images";
@@ -13,7 +14,7 @@ import type { SubPage } from "@/lib/subpages";
 export function ServicePage({ page }: { page: SubPage }) {
   const hero = photos[page.hero];
   const url = `${site.url}${page.path}`;
-  const other = page.path === pages.entkernung.href ? pages.entruempelung : pages.entkernung;
+  const others = Object.values(pages).filter((p) => p.href !== page.path);
 
   const schema = [
     {
@@ -24,13 +25,7 @@ export function ServicePage({ page }: { page: SubPage }) {
       description: page.description,
       url,
       provider: { "@id": businessId },
-      areaServed: [
-        { "@type": "City", name: "Landsberg am Lech" },
-        { "@type": "City", name: "Kaufering" },
-        { "@type": "City", name: "Buchloe" },
-        { "@type": "Place", name: "Ammersee" },
-        { "@type": "AdministrativeArea", name: "Landkreis Landsberg am Lech" },
-      ],
+      areaServed: areaServed(),
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: page.name,
@@ -114,15 +109,33 @@ export function ServicePage({ page }: { page: SubPage }) {
               </p>
               <div className="mt-xxl grid gap-lg sm:grid-cols-2">
                 {page.services.items.map((item, i) => (
-                  <article key={item.h3} data-reveal style={{ ["--i" as string]: i % 2 }} className="card p-lg">
+                  <article
+                    key={item.h3}
+                    id={item.id}
+                    data-reveal
+                    style={{ ["--i" as string]: i % 2 }}
+                    className="card scroll-mt-[calc(var(--spacing-nav)+var(--spacing-lg))] p-lg"
+                  >
                     <h3 className="text-display-sm">{item.h3}</h3>
                     <p className="mt-sm text-body-md">{item.text}</p>
+                    {item.points && (
+                      <ul className="mt-md grid gap-xxs">
+                        {item.points.map((pt) => (
+                          <li key={pt} className="flex gap-sm text-body-md">
+                            <span aria-hidden className="mt-[0.6em] size-1.5 shrink-0 bg-primary" />
+                            {pt}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </article>
                 ))}
               </div>
             </div>
           </div>
         </section>
+
+        {page.pollutants && <Pollutants data={page.pollutants} />}
 
         {/* Anlässe */}
         <section aria-labelledby="anlaesse-titel" className="bg-canvas py-section">
@@ -226,14 +239,14 @@ export function ServicePage({ page }: { page: SubPage }) {
               ))}
               <p>
                 Ebenfalls im Angebot:{" "}
-                <a href={other.href} className="link link-underlined font-bold text-ink">
-                  {other.full}
-                </a>{" "}
-                sowie{" "}
-                <a href="/#leistungen" className="link link-underlined font-bold text-ink">
-                  Renovierung, Sanierung, Trockenbau und Gartenbau
-                </a>
-                .
+                {others.map((o, i) => (
+                  <span key={o.href}>
+                    <a href={o.href} className="link link-underlined font-bold text-ink">
+                      {o.full}
+                    </a>
+                    {i < others.length - 1 ? " und " : "."}
+                  </span>
+                ))}
               </p>
             </div>
           </div>

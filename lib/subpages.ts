@@ -11,7 +11,9 @@ export type SubPage = {
   intro: string;
   hero: PhotoKey;
   preselect: ServiceId[];
-  services: { h2: string; intro: string; items: { h3: string; text: string }[] };
+  /** id: Sprungmarke für Links auf einzelne Leistungen, points: Stichpunkte unter dem Text */
+  services: { h2: string; intro: string; items: { h3: string; text: string; id?: string; points?: string[] }[] };
+  pollutants?: PollutantSection;
   occasions: { h2: string; items: { h3: string; text: string }[] };
   checklist: { h2: string; intro: string; items: string[] };
   steps: { h2: string; items: { title: string; text: string }[] };
@@ -20,15 +22,26 @@ export type SubPage = {
   faqs: { q: string; a: string }[];
 };
 
+export type PollutantSection = {
+  badge: string;
+  h2: string;
+  intro: string;
+  steps: { title: string; text: string }[];
+  binding: { h2: string; items: { title: string; text: string }[]; note: string };
+  areas: { h2: string; items: { title: string; text: string }[] };
+  mineralwool: { title: string; text: string };
+  reasons: { title: string; items: string[] };
+};
+
 export const entkernung: SubPage = {
   path: pages.entkernung.href,
   name: pages.entkernung.full,
-  title: "Entkernung, Abbruch & Rückbau in Landsberg am Lech | J&L Bauprojekte",
+  title: "Entkernung, Rückbau & Asbestsanierung in Landsberg am Lech | J&L Bauprojekte",
   description:
-    "Entkernung, Rückbau, Wanddurchbrüche und kleinere Abbrucharbeiten in Landsberg am Lech, Kaufering, Buchloe und am Ammersee. Festpreis nach Besichtigung, Entsorgung inklusive.",
-  h1: "Entkernung, Abbruch & Rückbau in Landsberg am Lech",
+    "Entkernung bis auf den Rohbau, Abbruch, Rückbau und Schadstoffsanierung nach TRGS 519 – in Landsberg, Kaufering, Buchloe, Augsburg und Umgebung. Festpreis nach Besichtigung.",
+  h1: "Entkernung, Rückbau & Schadstoffsanierung in Landsberg am Lech",
   intro:
-    "Wir schaffen Platz für Ihre Sanierung: J&L Bauprojekte entkernt Wohnungen und Häuser, baut Bauteile zurück und übernimmt kleinere Abbrucharbeiten – sortenrein getrennt, fachgerecht entsorgt und besenrein übergeben.",
+    "Wir schaffen die Grundlage für Ihre Sanierung: J&L Bauprojekte entkernt Wohnungen und Häuser, baut Bauteile kontrolliert zurück und übernimmt kleinere Abbrucharbeiten. Stecken Asbest oder alte Mineralwolle im Bestand, bauen wir sie nach den Technischen Regeln für Gefahrstoffe fachgerecht aus – sortenrein getrennt, sicher entsorgt, besenrein übergeben.",
   hero: "entkernung",
   preselect: ["entkernung"],
   services: {
@@ -58,13 +71,91 @@ export const entkernung: SubPage = {
       },
       {
         h3: "Kleinere Abbrucharbeiten",
-        text: "Gartenhäuser, Schuppen, kleine Nebengebäude und einzelne Wände brechen wir ab und entsorgen den Bauschutt. Komplette Hausabrisse übernehmen wir nicht – hier vermitteln wir Ihnen bei Bedarf einen passenden Fachbetrieb.",
+        text: "Gartenhäuser, Schuppen, kleine Nebengebäude und einzelne Wände brechen wir ab und entsorgen den Bauschutt. Komplette Hausabrisse übernehmen wir nicht.",
       },
       {
         h3: "Entsorgung aus einer Hand",
         text: "Container stellen, Bauschutt, Holz, Metall, Gips und Restmüll sortenrein trennen und fachgerecht entsorgen: Sie haben keinen zusätzlichen Aufwand und erhalten die Räume besenrein zurück.",
       },
+      {
+        h3: "Schadstoffsanierung: Asbest und Mineralwolle",
+        text: "Stecken Asbest oder alte Mineralwolle im Bestand, bauen wir sie nach TRGS 519 und TRGS 521 aus – mit Gefährdungsbeurteilung, festgelegten Schutzmaßnahmen und Entsorgung mit Nachweis. Alles Wichtige dazu lesen Sie im nächsten Abschnitt.",
+      },
     ],
+  },
+  // Vorsichtig formuliert: Laborproben, Raumluftmessungen und Arbeiten mit hoher Exposition werden nicht als eigene Leistung versprochen.
+  // PLATZHALTER: Liegt eine behördliche Zulassung für Arbeiten mit schwach gebundenem Asbest vor, können die Texte zu Isolierungen und Unterdruck konkreter werden.
+  pollutants: {
+    badge: "Sachkunde nach TRGS 519, Anlage 4",
+    h2: "Schadstoffsanierung: Asbest und alte Mineralwolle sicher entfernen",
+    intro:
+      "Viele Häuser aus den 1950er- bis 1990er-Jahren enthalten Asbest – im Boden, im Putz, auf dem Dach. Solange die Materialien unberührt bleiben, merkt man davon nichts. Gefährlich wird es, wenn bei Umbau, Renovierung oder Entkernung Fasern frei werden. Genau dafür sind wir da: mit Sachkunde nach TRGS 519, klaren Abläufen und konsequentem Schutz für Sie, Ihre Nachbarn und unser Team.",
+    steps: [
+      {
+        title: "Verdacht klären",
+        text: "Wir prüfen Baujahr und verbaute Materialien. Bleiben Zweifel, empfehlen wir eine Materialprobe mit Laboranalyse – so wissen Sie vor Beginn, woran Sie sind.",
+      },
+      {
+        title: "Gefährdung beurteilen, Schutz festlegen",
+        text: "Wir erstellen Gefährdungsbeurteilung und Arbeitsplan: Wie fest ist der Asbest gebunden, welches Verfahren ist das richtige? Daraus folgen die Schutzmaßnahmen. Die Arbeiten zeigen wir vorab bei der zuständigen Behörde an.",
+      },
+      {
+        title: "Geschützt zurückbauen",
+        text: "Je nach Gefährdung arbeiten wir staubarm und feucht, saugen mit Industriesaugern der Staubklasse H direkt an der Quelle ab, schotten den Arbeitsbereich ab und tragen Atemschutz und Schutzkleidung.",
+      },
+      {
+        title: "Fachgerecht entsorgen",
+        text: "Asbesthaltige Abfälle verpacken wir staubdicht, kennzeichnen sie und geben sie bei zugelassenen Entsorgungsanlagen ab. Die Entsorgungsnachweise erhalten Sie von uns.",
+      },
+    ],
+    binding: {
+      h2: "Fest gebunden oder schwach gebunden – der Unterschied ist entscheidend",
+      items: [
+        {
+          title: "Fest gebundener Asbest",
+          text: "Bei Asbestzement, etwa Eternit-Platten, sind die Fasern fest im Material eingebunden. Solange die Platten heil sind, ist die Gefahr gering. Beim Brechen, Bohren, Schleifen oder Abstrahlen mit dem Hochdruckreiniger werden jedoch Fasern frei. Deshalb bauen wir solche Platten zerstörungsfrei aus – Stück für Stück, ohne zu brechen.",
+        },
+        {
+          title: "Schwach gebundener Asbest und staubintensive Arbeiten",
+          text: "In Isolierungen, Leichtbauplatten oder der Unterseite mancher alter Bodenbeläge ist Asbest nur locker gebunden. Beim Ausbau können sehr hohe Faserkonzentrationen entstehen. Ähnliches gilt, wenn asbesthaltiger Putz, Spachtel oder Kleber abgeschlagen oder abgeschliffen wird. Dafür gelten die strengsten Vorgaben, bis hin zu Unterdruck, Schleuse und Freimessung. Nach der Besichtigung sagen wir Ihnen offen, welcher Weg in Ihrem Fall vorgeschrieben ist und was das für Ablauf und Kosten bedeutet.",
+        },
+      ],
+      note: "Welcher Fall vorliegt, entscheidet nicht das Bauchgefühl, sondern die Gefährdungsbeurteilung. Danach richtet sich jeder weitere Schritt – immer streng nach den behördlichen Vorgaben.",
+    },
+    areas: {
+      h2: "Hier steckt Asbest am häufigsten",
+      items: [
+        {
+          title: "Estrich, Fliesenkleber und alte Bodenbeläge",
+          text: "Floor-Flex-Platten, Cushion-Vinyl, schwarzer Bitumenkleber und asbesthaltige Ausgleichsmassen: Alte Böden sind in Wohnungen die häufigste Fundstelle. Wir nehmen Beläge und Kleberschichten mit emissionsarmen Verfahren auf und bereiten den Untergrund für den neuen Boden vor.",
+        },
+        {
+          title: "Asbestzementplatten (z. B. Eternit)",
+          text: "Dach- und Fassadenplatten, Garagen- und Schuppendächer, Fensterbänke, Blumenkästen und Lüftungsrohre: fest gebunden, aber nur ungefährlich, solange sie heil bleiben. Wir bauen sie zerstörungsfrei aus, verpacken sie staubdicht und entsorgen sie fachgerecht.",
+        },
+        {
+          title: "Putz und Spachtelmasse",
+          text: "Bis in die 1990er-Jahre wurden manchen Putzen, Spachtelmassen und Fliesenklebern Asbestfasern beigemischt – unsichtbar und nur im Labor nachweisbar. Wer hier schleift, stemmt oder bohrt, setzt Fasern frei. Wir klären den Verdacht vorab und arbeiten mit Verfahren, die den Staub direkt an der Quelle absaugen.",
+        },
+        {
+          title: "Asbesthaltige Isolierungen",
+          text: "Rohr- und Kesselisolierungen, Brandschutzverkleidungen, alte Nachtspeicheröfen: Hier ist Asbest oft schwach gebunden und gibt schon bei Berührung Fasern ab. Fassen Sie solche Bauteile nicht an. Wir sehen sie uns an und sagen Ihnen, welches Vorgehen vorgeschrieben ist.",
+        },
+      ],
+    },
+    mineralwool: {
+      title: "Alte Mineralwolle",
+      text: "Glas- und Steinwolle aus der Zeit vor 1996 – ohne Gütezeichen auch bis zum Jahr 2000 – gilt als krebsverdächtig. Den Ausbau aus Dach, Decken und Wänden erledigen wir nach TRGS 521: staubarm, mit Schutzausrüstung, in reißfesten Säcken verpackt und fachgerecht entsorgt.",
+    },
+    reasons: {
+      title: "Warum J&L Bauprojekte bei Schadstoffen",
+      items: [
+        "Sachkunde nach TRGS 519, Anlage 4 – nachgewiesen, nicht nur behauptet",
+        "Gefährdungsbeurteilung, Arbeitsplan, Anzeige bei der Behörde, Rückbau und Entsorgung aus einer Hand",
+        "Konsequenter Schutz für Sie, Ihre Nachbarn und unser Team",
+        "Nach der Sanierung geht es nahtlos weiter: neuer Boden, neue Wände – ohne Wechsel der Firma",
+      ],
+    },
   },
   occasions: {
     h2: "Wann eine Entkernung sinnvoll ist",
@@ -113,8 +204,8 @@ export const entkernung: SubPage = {
   local: {
     h2: "Entkernung und Rückbau in Landsberg und Umgebung",
     paragraphs: [
-      "Von unseren Standorten in Landsberg am Lech und Vilgertshofen aus sind wir im gesamten Landkreis Landsberg am Lech im Einsatz: in der Landsberger Altstadt genauso wie in Kaufering, Penzing, Igling, Fuchstal, Denklingen, Windach und Geltendorf.",
-      "Auch am Ammersee – in Dießen, Utting und Schondorf – sowie in Buchloe übernehmen wir Entkernung, Rückbau, Wanddurchbrüche und kleinere Abbrucharbeiten. Ihr Ort fehlt? Rufen Sie einfach an.",
+      "Von unseren Standorten in Landsberg am Lech und Vilgertshofen aus sind wir in der ganzen Region im Einsatz: in Landsberg und Kaufering, in Buchloe und der Ammersee-Region, in Mindelheim, Augsburg, Schongau und im Allgäu.",
+      "Ob Altbau in der Landsberger Innenstadt, Reihenhaus in Kaufering oder Gewerbeobjekt in Augsburg: Wir übernehmen Entkernung, Rückbau, Wanddurchbrüche, kleinere Abbrucharbeiten und die Schadstoffsanierung. Ihr Ort fehlt? Rufen Sie einfach an.",
     ],
   },
   faqs: [
@@ -132,7 +223,7 @@ export const entkernung: SubPage = {
     },
     {
       q: "Übernehmen Sie auch den Abriss eines ganzen Hauses?",
-      a: "Nein. Wir übernehmen kleinere Abbrucharbeiten wie Gartenhäuser, Schuppen, Nebengebäude und einzelne Wände. Für komplette Hausabrisse vermitteln wir Ihnen gern einen passenden Fachbetrieb.",
+      a: "Nein. Wir übernehmen kleinere Abbrucharbeiten wie Gartenhäuser, Schuppen, Nebengebäude und einzelne Wände. Komplette Hausabrisse führen wir nicht aus.",
     },
     {
       q: "Was kostet eine Entkernung?",
@@ -142,6 +233,18 @@ export const entkernung: SubPage = {
       q: "Wer kümmert sich um Container und Entsorgung?",
       a: "Das übernehmen wir vollständig: Container stellen, Bauschutt und Wertstoffe sortenrein trennen und fachgerecht entsorgen.",
     },
+    {
+      q: "Darf ich asbesthaltige Platten selbst abbauen?",
+      a: "Davon raten wir dringend ab. Schon kleine Fehler beim Ausbau setzen Fasern frei, die sich im ganzen Haus verteilen können. Außerdem gelten für Verpackung, Transport und Entsorgung strenge Vorgaben. Lassen Sie den Ausbau von einem Betrieb mit Sachkunde erledigen.",
+    },
+    {
+      q: "Müssen Asbestarbeiten angemeldet werden?",
+      a: "In der Regel ja: Arbeiten mit Asbest müssen vorab bei der zuständigen Behörde angezeigt werden. Das übernehmen wir für Sie – zusammen mit Gefährdungsbeurteilung und Arbeitsplan.",
+    },
+    {
+      q: "Was kostet eine Asbestsanierung?",
+      a: "Das hängt von Material, Menge und Gefährdung ab: Fest gebundene Eternit-Platten sind deutlich weniger aufwendig als eine Isolierung mit schwach gebundenem Asbest. Nach der kostenlosen Besichtigung – und wenn nötig einer Laboranalyse – erhalten Sie ein verbindliches Angebot inklusive Schutzmaßnahmen und Entsorgung.",
+    },
   ],
 };
 
@@ -150,7 +253,7 @@ export const entruempelung: SubPage = {
   name: pages.entruempelung.full,
   title: "Entrümpelung & Haushaltsauflösung in Landsberg am Lech | J&L Bauprojekte",
   description:
-    "Entrümpelung, Haushaltsauflösung, Wohnungs- und Nachlassauflösung in Landsberg am Lech und Umgebung. Festpreis, Container und Entsorgung inklusive, besenreine Übergabe.",
+    "Entrümpelung und Haushaltsauflösung in Landsberg am Lech, Kaufering, Buchloe, Augsburg, am Ammersee und im Allgäu. Besenrein, Festpreis nach Besichtigung.",
   h1: "Entrümpelung & Haushaltsauflösung in Landsberg am Lech",
   intro:
     "Wir räumen Wohnungen, Häuser, Keller, Dachböden und Garagen – diskret, termingerecht und zum vorher vereinbarten Festpreis. Container, Abtransport und Entsorgung übernehmen wir selbst.",
@@ -159,7 +262,7 @@ export const entruempelung: SubPage = {
   services: {
     h2: "Wenn ein Haushalt aufgelöst werden muss",
     intro:
-      "Eine Haushaltsauflösung kommt selten geplant. Wir nehmen Ihnen die Arbeit ab – vom ersten Gespräch bis zur besenreinen Übergabe der Räume in Landsberg am Lech und Umgebung.",
+      "Eine Haushaltsauflösung kommt selten geplant. Wir nehmen Ihnen die Arbeit ab – vom ersten Gespräch bis zur besenreinen Übergabe der Räume in Landsberg am Lech und Umgebung. Danach geht es nahtlos weiter: Wir renovieren, verlegen neue Böden und packen auf Wunsch beim Umzug mit an.",
     items: [
       {
         h3: "Wohnungsauflösung",
@@ -235,14 +338,14 @@ export const entruempelung: SubPage = {
   local: {
     h2: "Entrümpelung in Landsberg am Lech und Umgebung",
     paragraphs: [
-      "Wir entrümpeln und lösen Haushalte im gesamten Landkreis Landsberg am Lech auf – von unseren Standorten in Landsberg (Max-Planck-Straße 13) und Vilgertshofen aus, in Landsberg, Kaufering, Penzing, Igling, Fuchstal, Denklingen, Windach und Geltendorf.",
-      "Auch am Ammersee in Dießen, Utting und Schondorf sowie in Buchloe sind wir für Wohnungsauflösungen, Haushaltsauflösungen und Kellerentrümpelungen unterwegs. Weiter entfernte Objekte können Sie gern anfragen.",
+      "Von unseren Standorten in Landsberg am Lech (Max-Planck-Straße 13) und Vilgertshofen aus entrümpeln wir und lösen Haushalte auf: in Landsberg und Kaufering, in Buchloe und der Ammersee-Region, in Mindelheim, Augsburg, Schongau und im Allgäu.",
+      "Ob Kellerabteil in Kaufering, Elternhaus am Ammersee oder Mietwohnung in Augsburg: Wir räumen, sortieren und übergeben besenrein. Ihr Ort fehlt? Rufen Sie an – wir sagen Ihnen sofort, ob wir kommen.",
     ],
   },
   faqs: [
     {
       q: "In welchem Umkreis arbeiten Sie?",
-      a: "Wir sind im Landkreis Landsberg am Lech und in den angrenzenden Gemeinden im Einsatz, unter anderem in Kaufering, Buchloe und am Ammersee. Auch weiter entfernte Objekte können Sie anfragen.",
+      a: "Wir sind in Landsberg am Lech und Kaufering, in Buchloe, in der Ammersee-Region, in Mindelheim, Augsburg, Schongau und im Allgäu im Einsatz. Ihr Ort ist nicht dabei? Fragen Sie gern nach.",
     },
     {
       q: "Was kostet eine Entrümpelung?",
@@ -263,6 +366,133 @@ export const entruempelung: SubPage = {
     {
       q: "Muss ich bei der Räumung anwesend sein?",
       a: "Nicht unbedingt. Nach der Besichtigung und der Schlüsselübergabe können wir die Räumung selbstständig durchführen und uns per Telefon oder WhatsApp mit Ihnen abstimmen.",
+    },
+  ],
+};
+
+// Umzüge und Klebevinyl bewusst vorsichtig formuliert: Umfang, Fahrzeuge und Verlegeart werden bei der Besichtigung geklärt.
+export const renovierung: SubPage = {
+  path: pages.renovierung.href,
+  name: pages.renovierung.full,
+  title: "Renovierung in Landsberg am Lech: Trockenbau, Boden & Umzug | J&L Bauprojekte",
+  description:
+    "Renovierung aus einer Hand: Trockenbau, Laminat- und Vinylböden, Umzüge – in Landsberg, Kaufering, Buchloe, Augsburg, am Ammersee und im Allgäu. Festpreis nach Besichtigung.",
+  h1: "Renovierung in Landsberg am Lech – Trockenbau, Böden & Umzug aus einer Hand",
+  intro:
+    "Ob vor dem Einzug, nach dem Auszug der Mieter oder vor dem Verkauf: Wir bringen Wohnungen und Häuser wieder in Schuss. Neue Wände und Decken im Trockenbau, frisch verlegte Laminat- und Vinylböden und auf Wunsch der Umzug – mit einem Ansprechpartner und einem Festpreis nach kostenloser Besichtigung.",
+  hero: "trockenbau",
+  preselect: ["renovierung"],
+  services: {
+    h2: "Unsere Leistungen in der Renovierung",
+    intro:
+      "Wände, Decken und Böden – und wenn es sein muss, der Umzug gleich dazu. Sie beauftragen einzeln oder alles zusammen, mit einem Ansprechpartner und einem Zeitplan.",
+    items: [
+      {
+        id: "trockenbau",
+        h3: "Trockenbau: neue Räume, schnell und sauber",
+        text: "Mit Trockenbau verändern Sie Räume ohne großen Aufwand: neue Wände für eine andere Raumaufteilung, abgehängte Decken, Vorsatzschalen für Leitungen und Dämmung oder der Ausbau des Dachgeschosses. Wir bauen vom Ständerwerk bis zur streichfertig gespachtelten Oberfläche.",
+        points: [
+          "Trennwände und neue Raumaufteilung",
+          "Abgehängte Decken",
+          "Vorsatzschalen und Installationswände",
+          "Dachgeschossausbau",
+          "Spachtelung in der gewünschten Qualitätsstufe",
+        ],
+      },
+      {
+        id: "bodenverlegung",
+        h3: "Bodenverlegung: Laminat und Vinyl",
+        text: "Ein neuer Boden verändert einen Raum am schnellsten. Wir verlegen Laminat und Vinyl inklusive Trittschalldämmung, Sockelleisten und Übergangsprofilen und entfernen vorher den alten Belag. Welche Verlegeart zu Ihrem Untergrund passt, klären wir bei der Besichtigung. Alte Beläge aus der Zeit vor 1993 prüfen wir vor dem Herausreißen auf Asbestverdacht.",
+        points: ["Laminat", "Vinyl", "Alten Belag entfernen", "Trittschalldämmung, Sockelleisten, Übergangsprofile"],
+      },
+      {
+        id: "umzuege",
+        h3: "Umzüge: ein Team für Räumen, Transport und Aufbau",
+        text: "Wenn ohnehin geräumt oder renoviert wird, liegt der Umzug nahe. Wir packen mit an, bauen Möbel ab und wieder auf, transportieren Ihr Hab und Gut und entsorgen, was nicht mitsoll. Was genau dazugehört, besprechen wir bei der Besichtigung.",
+        points: [
+          "Möbel ab- und aufbauen",
+          "Transport in der Region",
+          "Kombiniert mit Entrümpelung und Renovierung",
+          "Besenreine Übergabe der alten Wohnung",
+        ],
+      },
+      {
+        h3: "Vorher: Platz schaffen",
+        text: "Bevor renoviert wird, muss oft erst etwas raus: alte Böden, Verkleidungen, Einbauten oder ein ganzer Hausrat. Das übernehmen wir gleich mit – von der Entrümpelung bis zur Entkernung, bei Asbestverdacht nach TRGS 519.",
+      },
+    ],
+  },
+  occasions: {
+    h2: "Wann sich eine Renovierung lohnt",
+    items: [
+      { h3: "Vor dem Einzug", text: "Nach dem Kauf einer Bestandsimmobilie machen wir die Räume bezugsfertig, bevor die Möbel kommen." },
+      { h3: "Nach dem Mieterwechsel", text: "Neuer Boden, glatte Wände: Die Wohnung ist schnell wieder vermietbar." },
+      { h3: "Vor dem Verkauf", text: "Frische Böden und saubere Wände machen Besichtigungen leichter." },
+      { h3: "Neue Raumaufteilung", text: "Aus einem großen Raum werden zwei – oder umgekehrt. Mit Trockenbau geht das ohne viel Schmutz." },
+      { h3: "Dachgeschoss ausbauen", text: "Aus dem ungenutzten Dachboden wird Wohnraum, mit Trockenbau und neuem Boden." },
+      { h3: "Umzug in eine kleinere Wohnung", text: "Räumung, Umzug und Renovierung der alten Wohnung kommen aus einer Hand – auch beim Umzug ins Pflegeheim." },
+    ],
+  },
+  checklist: {
+    h2: "Was wir bei einer Renovierung übernehmen",
+    intro: "Je nach Vorhaben kombinieren wir:",
+    items: [
+      "Trennwände im Trockenbau",
+      "Abgehängte Decken",
+      "Vorsatzschalen und Installationswände",
+      "Dachgeschossausbau",
+      "Spachteln bis streichfertig",
+      "Laminat verlegen",
+      "Vinyl verlegen",
+      "Alten Bodenbelag entfernen",
+      "Sockelleisten und Übergangsprofile",
+      "Möbel ab- und aufbauen",
+    ],
+  },
+  steps: {
+    h2: "So läuft Ihre Renovierung ab",
+    items: [
+      { title: "Anruf oder Anfrage", text: "Sie beschreiben kurz Ihr Vorhaben, gern mit Fotos per WhatsApp." },
+      { title: "Kostenlose Besichtigung", text: "Wir sehen uns Räume, Böden und Wände vor Ort an." },
+      { title: "Festpreis und Termin", text: "Sie erhalten ein verbindliches Angebot und einen festen Starttermin." },
+      { title: "Ausführung und Übergabe", text: "Wir arbeiten sauber und übergeben besenrein." },
+    ],
+  },
+  benefits: {
+    h2: "Was für J&L Bauprojekte spricht",
+    items: [
+      { title: "Alles aus einer Hand", text: "Entrümpelung, Entkernung, Schadstoffsanierung, Renovierung und Umzug über einen Ansprechpartner." },
+      { title: "Festpreis nach Besichtigung", text: "Was im Angebot steht, gilt – ohne spätere Nachforderung." },
+      { title: "Termintreu und sauber", text: "Wir nennen einen Termin, halten ihn und übergeben besenrein – bereit für Einzug oder Verkauf." },
+    ],
+  },
+  local: {
+    h2: "Renovierung in Landsberg am Lech und Umgebung",
+    paragraphs: [
+      "Von unseren Standorten in Landsberg am Lech und Vilgertshofen aus renovieren wir in der ganzen Region: in Landsberg und Kaufering, in Buchloe und der Ammersee-Region, in Mindelheim, Augsburg, Schongau und im Allgäu.",
+      "Ob Mietwohnung in Kaufering, Reihenhaus in Buchloe oder Dachgeschoss am Ammersee: Wir übernehmen Trockenbau und Bodenverlegung, auf Wunsch den Umzug – und vorher, wenn nötig, die Entrümpelung oder Entkernung. Ihr Ort fehlt? Rufen Sie einfach an.",
+    ],
+  },
+  faqs: [
+    {
+      q: "Verlegen Sie auch Parkett oder Fliesen?",
+      a: "Nein. Wir haben uns auf Laminat und Vinyl spezialisiert – dafür mit allem, was dazugehört, vom Entfernen des alten Belags bis zur letzten Sockelleiste.",
+    },
+    {
+      q: "Können Sie Renovierung und Umzug verbinden?",
+      a: "Ja. Gerade beim Umzug in eine kleinere Wohnung oder ins Pflegeheim übernehmen wir Räumung, Transport und die Renovierung der alten Wohnung in einem Zug. Den genauen Umfang klären wir bei der Besichtigung.",
+    },
+    {
+      q: "Wie lange dauert eine Trockenbauwand?",
+      a: "Das hängt von Größe, Dämmung und Spachtelstufe ab. Den Zeitplan bekommen Sie zusammen mit dem Festpreis nach der Besichtigung.",
+    },
+    {
+      q: "Was kostet eine Renovierung?",
+      a: "Das hängt von Fläche, Material und Zustand des Untergrunds ab. Nach der kostenlosen Besichtigung erhalten Sie einen verbindlichen Festpreis und einen festen Starttermin.",
+    },
+    {
+      q: "Was passiert mit dem alten Boden?",
+      a: "Den alten Belag entfernen wir und entsorgen ihn fachgerecht. Stammt er aus der Zeit vor 1993, klären wir vorher, ob Asbest im Spiel sein kann.",
     },
   ],
 };

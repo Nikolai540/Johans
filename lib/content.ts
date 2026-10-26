@@ -1,5 +1,6 @@
 import type { PhotoKey } from "./images";
 import { regions } from "./regions";
+import { pages } from "./site";
 
 export type ServiceId =
   | "entruempelung"
@@ -7,11 +8,11 @@ export type ServiceId =
   | "entkernung"
   | "abbruch"
   | "rueckbau"
+  | "schadstoffsanierung"
   | "renovierung"
-  | "sanierung"
   | "trockenbau"
-  | "gartenbau"
-  | "gewerke";
+  | "bodenverlegung"
+  | "umzug";
 
 export type Service = { id: ServiceId; name: string; short: string; text: string };
 
@@ -32,7 +33,7 @@ export const services: Record<ServiceId, Service> = {
     id: "entkernung",
     name: "Entkernung",
     short: "Zurück auf den Rohbau",
-    text: "Vor jeder Kernsanierung steht die Entkernung: Wir entfernen Bodenbeläge, Putz, nichttragende Wände, Decken und alte Installationen, bis nur noch der Rohbau steht. Verdächtige Baustoffe sprechen wir vorab an und lassen sie fachgerecht prüfen, bevor es losgeht.",
+    text: "Vor jeder Kernsanierung steht die Entkernung: Wir entfernen Bodenbeläge, Putz, nichttragende Wände, Decken und alte Installationen, bis nur noch der Rohbau steht. Verdächtige Baustoffe sprechen wir vorab an und klären sie, bevor es losgeht.",
   },
   abbruch: {
     id: "abbruch",
@@ -46,110 +47,98 @@ export const services: Record<ServiceId, Service> = {
     short: "Kontrolliert, Bauteil für Bauteil",
     text: "Rückbau heißt kontrolliert und Schritt für Schritt: Treppen, Kamine, Innenwände oder ganze Gebäudeteile, während der Rest des Hauses stehen bleibt. So entsteht Platz für Umbau und Neuanfang, ohne dass Bestand und Nachbarschaft leiden.",
   },
+  schadstoffsanierung: {
+    id: "schadstoffsanierung",
+    name: "Schadstoffsanierung",
+    short: "Asbest nach TRGS 519, alte Mineralwolle",
+    text: "Asbest in alten Bodenbelägen, Klebern, Putz oder Eternit-Platten und alte Mineralwolle bauen wir fachgerecht aus – mit Sachkunde nach TRGS 519 (Anlage 4), Gefährdungsbeurteilung, festgelegten Schutzmaßnahmen und Entsorgung mit Nachweis.",
+  },
   renovierung: {
     id: "renovierung",
     name: "Renovierung",
-    short: "Wände, Decken, Böden, Türen",
-    text: "Wände, Decken, Böden und Türen: Wir bringen Wohnungen und Häuser in Landsberg und im Umland wieder in Schuss – vor dem Einzug, nach dem Auszug von Mietern oder als Auffrischung des eigenen Zuhauses.",
-  },
-  sanierung: {
-    id: "sanierung",
-    name: "Sanierung",
-    short: "Altbau und Bestand, koordiniert",
-    text: "Bei der Sanierung von Altbauten und Bestandsimmobilien koordinieren wir alle Schritte von der Entkernung bis zum Innenausbau. Gerade in den historischen Ortskernen von Landsberg, Dießen am Ammersee oder Buchloe zählt dabei ein sorgfältiger Umgang mit alter Bausubstanz.",
+    short: "Wände, Decken, Böden",
+    text: "Wände, Decken und Böden: Wir machen Wohnungen und Häuser wieder bezugsfertig – vor dem Einzug, nach dem Mieterwechsel oder vor dem Verkauf.",
   },
   trockenbau: {
     id: "trockenbau",
     name: "Trockenbau",
     short: "Wände, Decken, Dachausbau",
-    text: "Neue Raumaufteilung, abgehängte Decken, Vorsatzschalen oder der Ausbau des Dachgeschosses: Trockenbau ist schnell, sauber und flexibel. Ihr Ansprechpartner für Trockenbau in Landsberg am Lech – vom Ständerwerk bis zur gespachtelten, streichfertigen Wand.",
+    text: "Neue Raumaufteilung, abgehängte Decken, Vorsatzschalen oder der Ausbau des Dachgeschosses – vom Ständerwerk bis zur streichfertig gespachtelten Wand.",
   },
-  gartenbau: {
-    id: "gartenbau",
-    name: "Gartenbau",
-    short: "Pflaster, Wege, Beete, Rasen",
-    text: "Wege, Terrassen und Einfahrten pflastern, Beete anlegen, Rasen neu aufbauen, Hecken und Gehölze roden: Wir gestalten Gärten in Landsberg, Kaufering und rund um den Ammersee – oft direkt im Anschluss an Abbruch oder Sanierung.",
+  bodenverlegung: {
+    id: "bodenverlegung",
+    name: "Bodenverlegung",
+    short: "Laminat und Vinyl",
+    text: "Laminat und Vinyl, mit Trittschalldämmung, Sockelleisten und Übergangsprofilen. Den alten Belag entfernen wir auf Wunsch gleich mit.",
   },
-  gewerke: {
-    id: "gewerke",
-    name: "Vermittlung von Gewerken",
-    short: "Fachbetriebe aus der Region",
-    text: "Was wir nicht selbst ausführen, vermitteln wir an Fachbetriebe aus der Region, mit denen wir zusammenarbeiten: Elektro, Sanitär und Heizung, Fliesen, Maler, Estrich und mehr. Sie behalten einen Ansprechpartner, wir stimmen die Termine ab.",
+  umzug: {
+    id: "umzug",
+    name: "Umzug",
+    short: "Zusammen mit Räumung und Renovierung",
+    text: "Wir packen mit an, tragen und transportieren – besonders praktisch in Verbindung mit einer Entrümpelung oder Renovierung. Was genau dazugehört, besprechen wir bei der Besichtigung.",
   },
 };
 
+/** Reihenfolge im Formular und im schema.org-Leistungskatalog */
 export const serviceOrder: ServiceId[] = [
   "entruempelung",
   "haushaltsaufloesung",
   "entkernung",
   "abbruch",
   "rueckbau",
+  "schadstoffsanierung",
   "renovierung",
-  "sanierung",
   "trockenbau",
-  "gartenbau",
-  "gewerke",
+  "bodenverlegung",
+  "umzug",
 ];
 
-/** Zeilen der Leistungssektion: verwandte Leistungen teilen sich ein Bild. */
-export const serviceRows: { ids: ServiceId[]; photo?: PhotoKey; shape: "portrait" | "landscape" | "square" }[] = [
-  { ids: ["entruempelung", "haushaltsaufloesung"], photo: "sperrmuell", shape: "portrait" },
-  { ids: ["entkernung"], photo: "entkernung", shape: "landscape" },
-  { ids: ["abbruch", "rueckbau"], photo: "abbruch", shape: "square" },
-  { ids: ["renovierung", "sanierung"], photo: "sanierungFachwerk", shape: "landscape" },
-  { ids: ["trockenbau"], photo: "trockenbau", shape: "portrait" },
-  { ids: ["gartenbau"], photo: "pflasterarbeiten", shape: "square" },
-  { ids: ["gewerke"], shape: "landscape" },
+/** Die drei Hauptleistungen auf der Startseite */
+export const serviceCategories: {
+  id: "entkernung" | "entruempelung" | "renovierung";
+  name: string;
+  text: string;
+  items: ServiceId[];
+  photo: PhotoKey;
+  shape: "portrait" | "landscape" | "square";
+  page: { href: string; cta: string };
+}[] = [
+  {
+    id: "entkernung",
+    name: "Entkernung, Abbruch & Rückbau",
+    text: "Vor jeder Kernsanierung steht die Entkernung: Wir entfernen Bodenbeläge, Putz, nichttragende Wände, Decken und alte Installationen bis auf den Rohbau, bauen Bauteile kontrolliert zurück und übernehmen kleinere Abbrucharbeiten. Stecken Asbest oder alte Mineralwolle im Bestand, bauen wir sie nach den Technischen Regeln für Gefahrstoffe aus.",
+    items: ["entkernung", "abbruch", "rueckbau", "schadstoffsanierung"],
+    photo: "entkernung",
+    shape: "landscape",
+    page: { href: pages.entkernung.href, cta: "Alles zu Entkernung & Schadstoffsanierung" },
+  },
+  {
+    id: "entruempelung",
+    name: "Entrümpelung & Haushaltsauflösung",
+    text: "Keller, Dachboden, Garage oder die ganze Wohnung: Wir räumen, trennen nach Wertstoffen und entsorgen fachgerecht. Haushaltsauflösungen nach einem Erbfall, beim Umzug ins Pflegeheim oder vor dem Verkauf erledigen wir diskret und termingerecht – und übergeben besenrein.",
+    items: ["entruempelung", "haushaltsaufloesung"],
+    photo: "sperrmuell",
+    shape: "portrait",
+    page: { href: pages.entruempelung.href, cta: "Alles zu Entrümpelung & Haushaltsauflösung" },
+  },
+  {
+    id: "renovierung",
+    name: "Renovierung",
+    text: "Wände, Decken, Böden: Wir machen Wohnungen und Häuser wieder bezugsfertig – vor dem Einzug, nach dem Mieterwechsel oder vor dem Verkauf.",
+    items: ["trockenbau", "bodenverlegung", "umzug"],
+    photo: "trockenbau",
+    shape: "portrait",
+    page: { href: pages.renovierung.href, cta: "Alles zur Renovierung" },
+  },
 ];
 
 /** Alle Orte des Einsatzgebiets, gruppiert nach Region in lib/regions.ts */
 export const places = regions.flatMap((r) => r.places);
 
-// PLATZHALTER: Welche Gewerke selbst ausgeführt und welche vermittelt werden, vor dem Livegang bestätigen.
-export const trades: { group: string; items: { name: string; note: string; by: "J&L Bauprojekte" | "Partnerbetrieb" }[] }[] = [
-  {
-    group: "Räumen & Rückbau",
-    items: [
-      { name: "Entrümpelung & Haushaltsauflösung", note: "Räumen, sortieren, entsorgen", by: "J&L Bauprojekte" },
-      { name: "Entkernung, Abbruch & Rückbau", note: "Bis auf den Rohbau, Wanddurchbrüche", by: "J&L Bauprojekte" },
-      { name: "Container & Entsorgung", note: "Mulden, Bauschutt, Wertstoffe", by: "J&L Bauprojekte" },
-      { name: "Statik bei tragenden Wänden", note: "Berechnung und Abfangung", by: "Partnerbetrieb" },
-    ],
-  },
-  {
-    group: "Rohbau & Gebäudehülle",
-    items: [
-      { name: "Maurer- und Betonarbeiten", note: "Durchbrüche, Stürze, neue Wände", by: "Partnerbetrieb" },
-      { name: "Zimmerer & Dachdecker", note: "Dachstuhl, Eindeckung, Gauben", by: "Partnerbetrieb" },
-      { name: "Fenster & Türen", note: "Austausch und Einbau", by: "Partnerbetrieb" },
-      { name: "Gerüstbau", note: "Fassade und Dach", by: "Partnerbetrieb" },
-    ],
-  },
-  {
-    group: "Innenausbau & Technik",
-    items: [
-      { name: "Renovierung & Sanierung", note: "Koordination bis zur Übergabe", by: "J&L Bauprojekte" },
-      { name: "Trockenbau", note: "Wände, Decken, Dachgeschoss", by: "J&L Bauprojekte" },
-      { name: "Elektroinstallation", note: "Leitungen, Verteiler, Anschlüsse", by: "Partnerbetrieb" },
-      { name: "Sanitär & Heizung", note: "Bad, Leitungen, Heiztechnik", by: "Partnerbetrieb" },
-      { name: "Estrich & Bodenbeläge", note: "Unterbau, Parkett, Vinyl", by: "Partnerbetrieb" },
-      { name: "Fliesen", note: "Bad, Küche, Boden", by: "Partnerbetrieb" },
-      { name: "Maler & Lackierer", note: "Wände, Decken, Fassade", by: "Partnerbetrieb" },
-    ],
-  },
-  {
-    group: "Außenanlagen",
-    items: [
-      { name: "Gartenbau, Pflaster & Wege", note: "Terrasse, Einfahrt, Beete, Rasen", by: "J&L Bauprojekte" },
-      { name: "Baumpflege & Fällungen", note: "Mit Genehmigung, wo nötig", by: "Partnerbetrieb" },
-    ],
-  },
-];
-
 export const faqs: { q: string; a: string }[] = [
   {
     q: "In welchen Orten sind Sie im Einsatz?",
-    a: "Wir sind in Vilgertshofen und in Landsberg am Lech (Max-Planck-Straße 13) zu Hause. Wir arbeiten im gesamten Landkreis – unter anderem in Kaufering, Penzing, Igling und Fuchstal –, in der Ammersee-Region mit Dießen, Utting und Schondorf sowie in Buchloe und Umgebung. Fragen Sie gern auch für Orte, die hier nicht stehen.",
+    a: "Unsere Standorte sind Landsberg am Lech (Max-Planck-Straße 13) und Vilgertshofen. Wir arbeiten in Landsberg und Kaufering, in Buchloe, in der Ammersee-Region, in Mindelheim, Augsburg, Schongau und im Allgäu. Ihr Ort ist nicht dabei? Fragen Sie gern nach.",
   },
   {
     q: "Was ist der Unterschied zwischen Entkernung, Rückbau und Abbruch?",
@@ -160,6 +149,10 @@ export const faqs: { q: string; a: string }[] = [
     a: "Ja – in Zusammenarbeit mit einem Statiker. Er legt fest, wie die Last abgefangen wird, zum Beispiel mit einem Stahlträger. Erst danach öffnen wir die Wand. Nichttragende Wände und Wanddurchbrüche für neue Türen erledigen wir direkt.",
   },
   {
+    q: "Woran erkenne ich, ob in meinem Haus Asbest verbaut ist?",
+    a: "Mit bloßem Auge meist gar nicht. Ein erster Hinweis ist das Baujahr: Bis 1993 wurde Asbest in vielen Baustoffen verwendet – in Bodenplatten und deren Kleber, in Putz, Spachtel und Fliesenkleber, in Dach- und Fassadenplatten und in Isolierungen. Gewissheit bringt eine Materialprobe aus dem Labor. Bei der Besichtigung sagen wir Ihnen, wo eine Probe sinnvoll ist.",
+  },
+  {
     q: "Was kostet eine Entrümpelung oder Haushaltsauflösung?",
     a: "Der Preis richtet sich nach Menge, Zugänglichkeit, Stockwerk und Entsorgungsart. Nach einer Besichtigung – oder anhand von Fotos per WhatsApp – erhalten Sie einen verbindlichen Festpreis. Spätere Nachforderungen gibt es nicht.",
   },
@@ -168,7 +161,7 @@ export const faqs: { q: string; a: string }[] = [
     a: "Ja. Wir trennen Holz, Metall, Bauschutt und Restmüll vor Ort und organisieren Container und Abfuhr. Den Stellplatz für die Mulde auf öffentlichem Grund stimmen wir bei Bedarf mit der Gemeinde ab.",
   },
   {
-    q: "Können Sie Handwerker für andere Gewerke vermitteln?",
-    a: "Ja. Für Elektro, Sanitär, Heizung, Fliesen, Estrich, Maler und weitere Gewerke arbeiten wir mit Fachbetrieben aus der Region zusammen. Wir stimmen Termine und Reihenfolge ab, damit Ihr Projekt ohne Leerlauf vorankommt.",
+    q: "Übernehmen Sie auch Umzüge?",
+    a: "Ja – vor allem in Verbindung mit einer Entrümpelung oder Renovierung, etwa beim Wechsel in eine kleinere Wohnung oder ins Pflegeheim. Was genau dazugehört, besprechen wir bei der Besichtigung.",
   },
 ];

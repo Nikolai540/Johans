@@ -8,7 +8,6 @@ import landsbergLechUfer from "@/public/images/landsberg-lech-ufer.jpg";
 import landsbergLechwehr from "@/public/images/landsberg-lechwehr.jpg";
 import landsbergLuftbild from "@/public/images/landsberg-luftbild.jpg";
 import lechBlickNorden from "@/public/images/lech-blick-norden.jpg";
-import pflasterarbeiten from "@/public/images/pflasterarbeiten.jpg";
 import sanierungFachwerk from "@/public/images/sanierung-fachwerk.jpg";
 import sperrmuell from "@/public/images/sperrmuell.jpg";
 import trockenbau from "@/public/images/trockenbau.jpg";
@@ -97,12 +96,6 @@ export const photos = {
     alt: "Gipskartonplatten auf Arbeitsböcken vor einer gedämmten Ständerwand",
     caption: "Symbolbild: Trockenbau",
     credit: { title: "Gipsskivor", author: "Jorchr", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0", source: "https://commons.wikimedia.org/wiki/File:Gipsskivor.jpg" },
-  },
-  pflasterarbeiten: {
-    src: pflasterarbeiten,
-    alt: "Handwerker verlegt Natursteinpflaster in einem Sandbett",
-    caption: "Symbolbild: Pflasterarbeiten",
-    credit: { title: "Krems ad Donau Obere Landstraße Pflasterarbeiten DSC4578", author: "Isiwal", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/", source: "https://commons.wikimedia.org/w/index.php?curid=168447764" },
   },
 } satisfies Record<string, Photo>;
 
