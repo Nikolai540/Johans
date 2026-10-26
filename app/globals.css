@@ -6,8 +6,8 @@
    ------------------------------------------------------------------ */
 @theme {
   --color-*: initial;
-  --color-primary: #ff6b36; /* Logo-Gelb */
-  --color-primary-active: #e6ad00;
+  --color-primary: #ff6b36; /* Signal-Orange */
+  --color-primary-active: #e5582a;
   --color-primary-disabled: #e2ded4;
   --color-ink: #1d1c1a;
   --color-body: #3a3834;

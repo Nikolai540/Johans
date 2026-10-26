@@ -291,8 +291,8 @@ Weiße Karte mit 56px Icon-Kachel in Gelb (Stadttor, Segelboot, Haus, Turm, Stad
 ### Einsatzgebiet-Karte (Signatur)
 Echte OpenStreetMap-Karte (Leaflet) mit entsättigten Kacheln, damit nur die Standorte Farbe tragen: beide Standorte als gelbe Punkte mit Tintenrand. Ein Klick öffnet Name, Adresse und den gelben Button „Route planen“ (Google Maps, neues Fenster). Mausrad zoomt nicht, auf Touch-Geräten scrollt ein Finger die Seite. Darunter stehen beide Adressen noch einmal als Text mit Routenlink, damit nichts nur in der Karte steckt.
 
-### Baustellen-Raster
-Bildersammlung auf Anthrazit: dichtes Raster ohne Lücken, auf dem Smartphone 2, ab 1024px 4 Spalten. Bild 1 groß (2×2), Bild 6 breit (2×1), alle anderen einfach. Fotos ohne Radius und ohne Schatten; der Bildtext steht als kleines Anthrazit-Schild unten links im Foto. Bis echte Fotos vorliegen, stehen einfarbige Platzhalter mit „Platzhalter:“ im Bildtext.
+### Baustellen-Karussell
+Fotos auf Anthrazit, ein Bild pro Ansicht im Rahmen 4:3 (Standardformat von Handykameras). Querformat füllt den Rahmen, Hochkant wird ganz gezeigt. Blättern per Wischen, mit den Pfeil-Buttons (48px, weiß) und den Pfeiltasten; Zähler „3 / 8“ und ab 640px Balken zur Direktwahl, aktiver Balken in der Akzentfarbe. Kein automatisches Weiterlaufen. Der Bildtext steht als kleines Anthrazit-Schild unten links im Foto. Bis echte Fotos vorliegen, stehen einfarbige Platzhalter mit „Platzhalter:“ im Bildtext.
 
 ### Einblendung
 Abschnitte blenden beim Scrollen einmal in 500ms ein (16px nach oben, Ease-out), gestaffelt um 60ms. Hero-Texte steigen ohne Verzögerung ein. Fotos werden nie verdeckt. Bei „Bewegung reduzieren“ entfällt alles.

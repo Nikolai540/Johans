@@ -13,7 +13,8 @@ export type GalleryItem = { src: StaticImageData; alt: string; caption: string; 
 
 // PLATZHALTER: Einfarbige Testbilder. Eigene Baustellenfotos in public/images/galerie/ ablegen,
 // Import, Alternativtext und Bildtext anpassen und "placeholder" entfernen.
-// Die Reihenfolge bestimmt das Raster: Bild 1 groß, Bild 6 breit.
+// Format: Handyfotos quer im Standardformat 4:3 füllen den Rahmen ganz, Hochkant-Fotos werden
+// vollständig mit Rand gezeigt. Vor dem Ablegen auf 2000 px an der langen Seite verkleinern (JPG, Qualität 80).
 export const gallery: GalleryItem[] = [
   { src: p1, alt: "Entkernter Altbau mit freigelegtem Mauerwerk", caption: "Entkernung im Altbau", placeholder: true },
   { src: p2, alt: "Geräumte Wohnung nach einer Haushaltsauflösung", caption: "Haushaltsauflösung", placeholder: true },
