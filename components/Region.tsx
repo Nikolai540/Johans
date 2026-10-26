@@ -1,4 +1,4 @@
-import { ArrowIcon, GateIcon, HomeIcon, SailIcon } from "@/components/Icons";
+import { ArrowIcon, GateIcon, HomeIcon, MountainIcon, SailIcon, TowerIcon, WallIcon } from "@/components/Icons";
 import { LocationMap } from "@/components/LocationMap";
 import { regions, type RegionId } from "@/lib/regions";
 import { catchment, locations, site } from "@/lib/site";
@@ -10,7 +10,14 @@ const facts = [
   { label: "Ansprechpartner", value: site.owner },
 ];
 
-const icons: Record<RegionId, typeof GateIcon> = { landsberg: GateIcon, ammersee: SailIcon, buchloe: HomeIcon };
+const icons: Record<RegionId, typeof GateIcon> = {
+  landsberg: GateIcon,
+  ammersee: SailIcon,
+  buchloe: HomeIcon,
+  augsburg: TowerIcon,
+  schongau: WallIcon,
+  allgaeu: MountainIcon,
+};
 
 export function Region() {
   return (
@@ -102,7 +109,8 @@ export function Region() {
                     {r.name}
                   </a>
                 </h3>
-                <p className="mt-xs text-body-sm text-body">{r.places.join(" · ")}</p>
+                {/* Ortsnamen nicht in sich umbrechen (Bad Wörishofen, Dießen am Ammersee) */}
+                <p className="mt-xs text-body-sm text-body">{r.places.map((p) => p.replaceAll(" ", "\u00a0")).join(" · ")}</p>
                 <p className="mt-md text-body-md">{r.teaser}</p>
                 <span aria-hidden className="mt-auto pt-lg text-title-sm text-balance text-ink">
                   {r.cta}

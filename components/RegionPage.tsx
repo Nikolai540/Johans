@@ -50,7 +50,7 @@ export function RegionPage({ page }: { page: RegionPageData }) {
     {
       "@type": "Service",
       "@id": `${url}#service`,
-      name: page.h1,
+      name: page.h1.replaceAll("\u00ad", ""),
       description: page.description,
       url,
       provider: { "@id": addresses[page.locations[0]].id },
@@ -109,7 +109,7 @@ export function RegionPage({ page }: { page: RegionPageData }) {
               <p data-rise style={{ ["--i" as string]: 1 }} className="mt-lg max-w-[52ch] text-body-md text-on-dark sm:text-title-md sm:font-light">
                 {page.intro}
               </p>
-              <div data-hero-actions data-rise style={{ ["--i" as string]: 2 }} className="mt-xl flex flex-col gap-sm sm:flex-row">
+              <div data-hero-actions data-rise style={{ ["--i" as string]: 2 }} className="mt-xl flex flex-col gap-sm sm:flex-row sm:flex-wrap sm:[&>.btn]:whitespace-nowrap">
                 <a href={site.phone.href} className="btn btn-primary">
                   <PhoneIcon className="size-4" />
                   Jetzt anrufen
@@ -249,7 +249,7 @@ export function RegionPage({ page }: { page: RegionPageData }) {
                     <a href={r.href} className="link link-underlined font-bold text-ink">
                       {r.name}
                     </a>
-                    {i < others.length - 1 ? " und " : "."}
+                    {i < others.length - 2 ? ", " : i === others.length - 2 ? " und " : "."}
                   </span>
                 ))}
               </p>

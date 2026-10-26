@@ -5,7 +5,7 @@ import type { PhotoKey } from "./images";
 // nur den Ortsnamen auszutauschen wertet Google als Brückenseite (Doorway Page).
 // Neue Region: Datensatz unten ergänzen und den Ordner app/einsatzgebiet/landsberg-am-lech kopieren.
 
-export type RegionId = "landsberg" | "ammersee" | "buchloe";
+export type RegionId = "landsberg" | "ammersee" | "buchloe" | "augsburg" | "schongau" | "allgaeu";
 
 export type Region = {
   id: RegionId;
@@ -26,7 +26,7 @@ export const regions: Region[] = [
     href: "/einsatzgebiet/landsberg-am-lech/",
     name: "Landsberg am Lech & Umgebung",
     places: ["Landsberg am Lech", "Kaufering", "Penzing", "Igling", "Hurlach", "Scheuring", "Prittriching"],
-    teaser: "Unser komplettes Leistungsportfolio für Stadt und Umland – von der Entrümpelung über Entkernung und Schadstoffsanierung bis zum neuen Boden.",
+    teaser: "Unser komplettes Leistungsportfolio für Stadt und Umland – von der Entrümpelung über die Entkernung bis zum neuen Boden.",
     cta: "Leistungen in Landsberg & Umgebung",
     badge: "Unser Standort",
   },
@@ -47,6 +47,30 @@ export const regions: Region[] = [
     cta: "Leistungen in Buchloe, Fuchstal & Region",
     badge: "Unser Firmensitz",
   },
+  {
+    id: "augsburg",
+    href: "/einsatzgebiet/augsburg/",
+    name: "Augsburg & Umgebung",
+    places: ["Augsburg", "Königsbrunn", "Bobingen", "Schwabmünchen", "Friedberg", "Mering"],
+    teaser: "Wohnungsauflösungen, Entkernung und Renovierung für Eigentümer, Vermieter und Hausverwaltungen in der Stadt und im Umland.",
+    cta: "Leistungen in Augsburg & Umgebung",
+  },
+  {
+    id: "schongau",
+    href: "/einsatzgebiet/schongau/",
+    name: "Schongau & Pfaffenwinkel",
+    places: ["Schongau", "Peiting", "Altenstadt", "Hohenfurch", "Schwabsoien", "Peißenberg"],
+    teaser: "Haushaltsauflösung, Rückbau und Renovierung für Altstadthäuser, Höfe und Einfamilienhäuser – über die B17 schnell erreicht.",
+    cta: "Leistungen in Schongau & Pfaffenwinkel",
+  },
+  {
+    id: "allgaeu",
+    href: "/einsatzgebiet/allgaeu/",
+    name: "Allgäu",
+    places: ["Kaufbeuren", "Marktoberdorf", "Mindelheim", "Bad Wörishofen", "Türkheim"],
+    teaser: "Entkernung, Entrümpelung und neue Böden in Kaufbeuren, Mindelheim, Marktoberdorf und Umgebung.",
+    cta: "Leistungen im Allgäu",
+  },
 ];
 
 export type RegionPage = {
@@ -65,13 +89,14 @@ export type RegionPage = {
   faqs: { q: string; a: string }[];
 };
 
-// PLATZHALTER: Aussagen zu Reaktionszeiten und Abläufen (alle drei Regionen) vor dem Livegang bestätigen.
+// PLATZHALTER: Aussagen zu Reaktionszeiten und Abläufen (alle Regionen) vor dem Livegang bestätigen.
+// Augsburg, Schongau und Allgäu zeigen vorerst Symbolbilder – Ortsfotos in lib/images.ts ergänzen und hier eintragen.
 export const landsbergPage: RegionPage = {
   region: "landsberg",
   locations: ["branch", "main"],
   title: "Entrümpelung, Entkernung & Renovierung in Landsberg am Lech | J&L Bauprojekte",
   description:
-    "Entrümpelung, Entkernung, Schadstoffsanierung nach TRGS 519 und Renovierung in Landsberg am Lech, Kaufering, Penzing & Umgebung. Kostenlose Besichtigung, Festpreis.",
+    "Entrümpelung, Entkernung, Abbruch und Renovierung in Landsberg am Lech, Kaufering, Penzing & Umgebung. Kostenlose Besichtigung, Festpreis.",
   h1: "Ihr Partner für Entrümpelung, Entkernung & Renovierung in Landsberg am Lech",
   intro:
     "Von der Entrümpelung über die fachgerechte Entkernung bis zum neu verlegten Boden: Von unserem Standort in Landsberg aus erledigen wir Ihr Projekt in der Stadt, in Kaufering und Umgebung aus einer Hand – mit festem Ansprechpartner, Festpreis nach kostenloser Besichtigung und besenreiner Übergabe.",
@@ -102,10 +127,6 @@ export const landsbergPage: RegionPage = {
         text: "Treppen, Kamine, Innenwände oder ganze Gebäudeteile bauen wir kontrolliert zurück, während der Rest des Hauses stehen bleibt – gerade in der dichten Bebauung der Landsberger Altstadt entscheidend.",
       },
       {
-        id: "schadstoffsanierung",
-        text: "In Altbauten der Innenstadt und in Häusern aus den 1960er- bis 1980er-Jahren kann Asbest in Böden, Klebern oder Putz stecken. Wir klären den Verdacht vor dem Umbau und bauen belastete Materialien nach TRGS 519 zurück.",
-      },
-      {
         id: "renovierung",
         text: "Wände, Decken und neue Raumaufteilung im Trockenbau: Wir bringen Wohnungen und Häuser im Landkreis wieder in Schuss – vor dem Einzug, nach dem Mieterwechsel oder vor dem Verkauf.",
       },
@@ -116,6 +137,10 @@ export const landsbergPage: RegionPage = {
       {
         id: "umzug",
         text: "Beim Umzug in eine kleinere Wohnung oder ins Pflegeheim packen wir mit an und verbinden Transport, Räumung und Renovierung der alten Wohnung. Den Umfang klären wir bei der Besichtigung.",
+      },
+      {
+        id: "schadstoffsanierung",
+        text: "In Altbauten der Innenstadt und in Häusern aus den 1960er- bis 1980er-Jahren kann Asbest in Böden, Klebern oder Putz stecken. Wir klären den Verdacht vor dem Umbau und bauen belastete Materialien nach TRGS 519 zurück.",
       },
     ],
   },
@@ -184,7 +209,7 @@ export const ammerseePage: RegionPage = {
   title: "Haushaltsauflösung & Renovierung am Ammersee | J&L Bauprojekte",
   description:
     "Haushaltsauflösung, Entrümpelung, Renovierung & Bodenverlegung in Dießen, Utting, Schondorf, Greifenberg, Windach & Geltendorf. Diskret, besenrein, Festpreis.",
-  h1: "Ihr Partner für Haushaltsauflösung & Renovierung am Ammersee",
+  h1: "Ihr Partner für Haushalts\u00adauflösung & Renovierung am Ammersee",
   intro:
     "Ob Haus mit Seeblick in Utting, Wohnung in Dießen oder Elternhaus in Windach: Wir lösen Haushalte am Westufer des Ammersees diskret und besenrein auf und bringen Immobilien mit Renovierung und neuen Böden wieder auf Stand – mit festem Ansprechpartner und Festpreis nach kostenloser Besichtigung.",
   hero: "uttingAmmersee",
@@ -220,16 +245,16 @@ export const ammerseePage: RegionPage = {
         text: "Vor einer Kernsanierung legen wir den Rohbau frei: Bodenbeläge, Putz, nichttragende Wände und alte Installationen – sortenrein getrennt und fachgerecht entsorgt.",
       },
       {
-        id: "schadstoffsanierung",
-        text: "Viele Häuser am See stammen aus Jahrzehnten, in denen Asbest verbaut wurde – in Bodenbelägen, Klebern oder Eternit-Platten an Garage und Schuppen. Wir klären den Verdacht vor dem Umbau und bauen nach TRGS 519 zurück.",
-      },
-      {
         id: "rueckbau",
         text: "Alte Kachelöfen, Kamine, Treppen oder Innenwände bauen wir kontrolliert zurück, während der Rest des Hauses unangetastet bleibt.",
       },
       {
         id: "abbruch",
         text: "Gartenhäuser, Schuppen, Carports und einzelne Wände brechen wir ab und entsorgen den Bauschutt. Wanddurchbrüche bei tragenden Wänden nur gemeinsam mit dem Statiker.",
+      },
+      {
+        id: "schadstoffsanierung",
+        text: "Viele Häuser am See stammen aus Jahrzehnten, in denen Asbest verbaut wurde – in Bodenbelägen, Klebern oder Eternit-Platten an Garage und Schuppen. Wir klären den Verdacht vor dem Umbau und bauen nach TRGS 519 zurück.",
       },
     ],
   },
@@ -323,10 +348,6 @@ export const buchloePage: RegionPage = {
         text: "Nach einem Erbfall oder vor dem Verkauf lösen wir den Haushalt diskret und termingerecht auf – vom Einfamilienhaus in Buchloe bis zum Hof in Fuchstal.",
       },
       {
-        id: "schadstoffsanierung",
-        text: "Eternit-Platten auf Schuppen, Garagen und Stallgebäuden sind in der Region häufig. Wir bauen sie nach TRGS 519 zerstörungsfrei aus, verpacken sie staubdicht und entsorgen sie mit Nachweis.",
-      },
-      {
         id: "rueckbau",
         text: "Kamine, Treppen, Zwischenwände oder alte Anbauten bauen wir kontrolliert zurück, während der Rest des Gebäudes stehen bleibt.",
       },
@@ -341,6 +362,10 @@ export const buchloePage: RegionPage = {
       {
         id: "umzug",
         text: "Wir packen mit an, wenn ohnehin geräumt oder renoviert wird, und verbinden Transport und Räumung. Den Umfang klären wir bei der Besichtigung.",
+      },
+      {
+        id: "schadstoffsanierung",
+        text: "Eternit-Platten auf Schuppen, Garagen und Stallgebäuden sind in der Region häufig. Wir bauen sie nach TRGS 519 zerstörungsfrei aus, verpacken sie staubdicht und entsorgen sie mit Nachweis.",
       },
     ],
   },
@@ -389,8 +414,8 @@ export const buchloePage: RegionPage = {
       a: "Kleine Nebengebäude wie Gartenhäuser, Schuppen oder Carports brechen wir selbst ab. Komplette Hausabrisse übernehmen wir nicht. Ob eine Scheune darunter fällt, klären wir bei der kostenlosen Besichtigung.",
     },
     {
-      q: "Was passiert mit alten Eternit-Platten auf Schuppen und Garagen?",
-      a: "Asbestzementplatten bauen wir zerstörungsfrei aus, verpacken sie staubdicht und geben sie bei zugelassenen Entsorgungsanlagen ab – mit Sachkunde nach TRGS 519 und vorheriger Anzeige bei der Behörde. Die Entsorgungsnachweise erhalten Sie von uns.",
+      q: "Übernehmen Sie nach Abbruch oder Räumung auch die Renovierung?",
+      a: "Ja. Wir bauen auf Wunsch neue Wände im Trockenbau, verlegen Laminat oder Vinyl und übergeben besenrein – mit einem Ansprechpartner für alles.",
     },
     {
       q: "Was kostet die Besichtigung?",
@@ -399,8 +424,333 @@ export const buchloePage: RegionPage = {
   ],
 };
 
+export const augsburgPage: RegionPage = {
+  region: "augsburg",
+  locations: ["branch", "main"],
+  title: "Wohnungsauflösung, Entkernung & Renovierung in Augsburg | J&L Bauprojekte",
+  description:
+    "Wohnungsauflösung, Entrümpelung, Entkernung & Renovierung in Augsburg, Königsbrunn, Bobingen, Schwabmünchen & Friedberg. Kostenlose Besichtigung, Festpreis.",
+  h1: "Ihr Partner für Wohnungs\u00adauflösung, Entkernung & Renovierung in Augsburg",
+  intro:
+    "Ob Mietwohnung in der Innenstadt, Reihenhaus in Königsbrunn oder Gewerbefläche in Friedberg: Wir räumen, entkernen und renovieren in Augsburg und Umgebung – für Eigentümer, Vermieter und Hausverwaltungen, mit festem Ansprechpartner und Festpreis nach kostenloser Besichtigung.",
+  hero: "sperrmuell",
+  services: {
+    h2: "Unsere Leistungen in Augsburg und Umgebung",
+    intro:
+      "In der Stadt geht es oft um Tempo: Die Wohnung muss bis zum Monatsende leer sein, der neue Mieter wartet, der Käufer will übernehmen. Wir planen Räumung, Rückbau und Renovierung so, dass Termine halten.",
+    items: [
+      {
+        id: "haushaltsaufloesung",
+        focus: true,
+        text: "Wohnungs- und Haushaltsauflösungen in Augsburg, auch im dritten Stock ohne Aufzug: Wir räumen, trennen nach Wertstoffen und übergeben besenrein – rechtzeitig zum Termin mit Vermieter oder Käufer.",
+      },
+      {
+        id: "entkernung",
+        focus: true,
+        text: "Vor der Sanierung einer Altbauwohnung oder eines Mehrfamilienhauses legen wir den Rohbau frei: Böden, Fliesen, Verkleidungen und nichttragende Wände – mit Rücksicht auf die Nachbarn im Haus.",
+      },
+      {
+        id: "renovierung",
+        focus: true,
+        text: "Nach dem Mieterwechsel bringen wir die Wohnung wieder in Schuss: neue Wände und Decken im Trockenbau, saubere Oberflächen, bezugsfertig für den nächsten Mieter.",
+      },
+      {
+        id: "entruempelung",
+        text: "Keller, Dachboden, Garage oder Abstellraum: Auch kleine Aufträge in Augsburg und den Nachbarorten übernehmen wir – mit Abtransport und fachgerechter Entsorgung.",
+      },
+      {
+        id: "bodenverlegung",
+        text: "Laminat und Vinyl statt alter Teppich- oder PVC-Beläge: Wir entfernen den alten Boden und verlegen den neuen mit Trittschalldämmung, Sockelleisten und Übergangsprofilen.",
+      },
+      {
+        id: "umzug",
+        text: "Beim Umzug innerhalb Augsburgs oder ins Umland packen wir mit an und verbinden ihn auf Wunsch mit Räumung und Renovierung der alten Wohnung. Den Umfang klären wir bei der Besichtigung.",
+      },
+      {
+        id: "rueckbau",
+        text: "Einbauten, Zwischenwände, Treppen oder Kamine bauen wir kontrolliert zurück, während der Rest des Gebäudes genutzt wird – wichtig in bewohnten Mehrfamilienhäusern.",
+      },
+      {
+        id: "abbruch",
+        text: "Garagen, Schuppen, Gartenhäuser und einzelne Wände in Königsbrunn, Bobingen oder Friedberg brechen wir ab. Wanddurchbrüche bei tragenden Wänden nur gemeinsam mit dem Statiker.",
+      },
+      {
+        id: "schadstoffsanierung",
+        text: "In Wohnungen aus den 1960er- bis 1980er-Jahren können alte Bodenbeläge und Kleber Asbest enthalten. Wir sprechen den Verdacht bei der Besichtigung an und bauen nach TRGS 519 aus.",
+      },
+    ],
+  },
+  trust: {
+    h2: "Termintreu für Eigentümer, Vermieter und Hausverwaltungen",
+    intro:
+      "Von unserem Standort in Landsberg am Lech ist Augsburg über die B17 schnell erreicht. Wir kennen die Abläufe in Mehrfamilienhäusern: Hausverwaltung informieren, Treppenhaus schützen, Stellplatz für den Container klären, Ruhezeiten einhalten.",
+    items: [
+      {
+        title: "Feste Übergabetermine",
+        text: "Wir planen rückwärts vom Übergabetermin und halten ihn – damit Kaution, Verkauf oder Neuvermietung nicht warten müssen.",
+      },
+      {
+        title: "Kostenlose Besichtigung",
+        text: "Wir sehen uns die Wohnung in Augsburg oder Umgebung an – kostenlos und unverbindlich, auf Wunsch gemeinsam mit der Hausverwaltung.",
+      },
+      {
+        title: "Festpreis inklusive Entsorgung",
+        text: "Nach der Besichtigung erhalten Sie einen verbindlichen Festpreis. Abtransport und Entsorgung sind darin enthalten.",
+      },
+      {
+        title: "Rücksicht im Haus",
+        text: "Treppenhaus schützen, Ruhezeiten einhalten, Einfahrten freihalten: Wir arbeiten so, dass es im Haus keinen Ärger gibt.",
+      },
+    ],
+  },
+  local: {
+    h2: "Von der Innenstadt bis ins Umland",
+    paragraphs: [
+      "In der Augsburger Innenstadt und den Stadtvierteln drumherum sind es oft Altbau- und Nachkriegswohnungen in Mehrfamilienhäusern: enge Treppenhäuser, wenig Platz vor dem Haus, Nachbarn Tür an Tür. Stellplatz für den Container und Zeitplan klären wir deshalb vorab.",
+      "In Königsbrunn, Bobingen, Schwabmünchen, Friedberg und Mering überwiegen Einfamilien- und Reihenhäuser. Hier geht es häufig um ganze Haushalte nach einem Generationswechsel, um die Entkernung vor der Sanierung und um neue Böden vor dem Einzug.",
+    ],
+    photo: "trockenbau",
+  },
+  faqs: [
+    {
+      q: "Kommen Sie für eine Wohnungsauflösung nach Augsburg?",
+      a: "Ja. Augsburg und die Nachbarorte Königsbrunn, Bobingen, Schwabmünchen, Friedberg und Mering gehören zu unserem Einsatzgebiet. Von unserem Standort in Landsberg am Lech sind wir über die B17 schnell vor Ort.",
+    },
+    {
+      q: "Schaffen Sie die Räumung bis zum Übergabetermin?",
+      a: "Nennen Sie uns den Termin bei der Anfrage. Wir planen die Räumung so, dass die Wohnung rechtzeitig besenrein ist – oft innerhalb weniger Tage nach der Besichtigung.",
+    },
+    {
+      q: "Arbeiten Sie auch für Hausverwaltungen?",
+      a: "Ja. Für Hausverwaltungen und Vermieter übernehmen wir Räumung, Entkernung und Renovierung von Wohnungen – mit festem Ansprechpartner und schriftlichem Festpreis.",
+    },
+    {
+      q: "Was ist, wenn es keinen Aufzug gibt?",
+      a: "Kein Problem. Wir tragen auch aus dem dritten oder vierten Stock. Der Aufwand fließt in den Festpreis ein, den Sie nach der Besichtigung erhalten.",
+    },
+    {
+      q: "Was kostet die Besichtigung in Augsburg?",
+      a: "Nichts. Die Besichtigung ist kostenlos und unverbindlich, auch in Augsburg und den Nachbarorten.",
+    },
+  ],
+};
+
+export const schongauPage: RegionPage = {
+  region: "schongau",
+  locations: ["main", "branch"],
+  title: "Haushaltsauflösung, Rückbau & Renovierung in Schongau | J&L Bauprojekte",
+  description:
+    "Haushaltsauflösung, Entrümpelung, Rückbau & Renovierung in Schongau, Peiting, Altenstadt, Hohenfurch & Peißenberg. Kostenlose Besichtigung, Festpreis.",
+  h1: "Ihr Partner für Haushalts\u00adauflösung, Rückbau & Renovierung in Schongau",
+  intro:
+    "Vom Altstadthaus innerhalb der Stadtmauer bis zum Hof in Hohenfurch: Wir lösen Haushalte auf, bauen kontrolliert zurück und renovieren in Schongau und im Pfaffenwinkel – von unserem Firmensitz in Vilgertshofen aus, mit festem Ansprechpartner und Festpreis nach kostenloser Besichtigung.",
+  hero: "sanierungFachwerk",
+  services: {
+    h2: "Unsere Leistungen in Schongau und im Pfaffenwinkel",
+    intro:
+      "Alte Häuser, gewachsene Höfe und oft mehrere Generationen unter einem Dach: Im Pfaffenwinkel geht es selten nur um eine Räumung. Wir begleiten Sie vom vollen Dachboden bis zum neu verlegten Boden.",
+    items: [
+      {
+        id: "haushaltsaufloesung",
+        focus: true,
+        text: "Nach einem Erbfall oder vor dem Verkauf lösen wir Haushalte in Schongau, Peiting und Umgebung auf – diskret, termingerecht und mit Blick auf das, was noch verwertet werden kann.",
+      },
+      {
+        id: "rueckbau",
+        focus: true,
+        text: "In der Schongauer Altstadt stehen die Häuser dicht an dicht. Treppen, Kamine, Zwischenwände oder alte Anbauten bauen wir kontrolliert zurück, ohne Bestand und Nachbarn zu belasten.",
+      },
+      {
+        id: "renovierung",
+        focus: true,
+        text: "Wände, Decken und Dachgeschoss: Mit Trockenbau und frischen Oberflächen machen wir ältere Häuser wieder bewohnbar – für die nächste Generation oder neue Mieter.",
+      },
+      {
+        id: "entruempelung",
+        text: "Scheune, Stadel, Dachboden oder Werkstatt: Wir räumen auch große Mengen, trennen nach Wertstoffen und organisieren den Abtransport.",
+      },
+      {
+        id: "entkernung",
+        text: "Vor einer Kernsanierung legen wir den Rohbau frei: Bodenbeläge, Putz, nichttragende Wände und alte Installationen – sortenrein getrennt und fachgerecht entsorgt.",
+      },
+      {
+        id: "bodenverlegung",
+        text: "Laminat und Vinyl statt alter Teppiche und PVC-Beläge: Wir entfernen den alten Belag und verlegen den neuen mit Trittschalldämmung, Sockelleisten und Übergangsprofilen.",
+      },
+      {
+        id: "abbruch",
+        text: "Schuppen, Carports, Gartenhäuser und kleine Nebengebäude brechen wir ab und entsorgen den Bauschutt. Komplette Hausabrisse übernehmen wir nicht.",
+      },
+      {
+        id: "umzug",
+        text: "Wenn Eltern ins Pflegeheim oder in eine kleinere Wohnung ziehen, packen wir mit an und verbinden Umzug, Räumung und Renovierung. Den Umfang klären wir bei der Besichtigung.",
+      },
+      {
+        id: "schadstoffsanierung",
+        text: "Eternit-Platten an Schuppen und Nebengebäuden oder alte Bodenbeläge mit Asbestverdacht sprechen wir bei der Besichtigung an und bauen sie nach TRGS 519 aus.",
+      },
+    ],
+  },
+  trust: {
+    h2: "Kurze Wege über die B17",
+    intro:
+      "Unser Firmensitz in Vilgertshofen liegt zwischen Landsberg und Schongau. Für Sie heißt das: kurze Anfahrt, schnelle Besichtigung und ein Ansprechpartner, der die Gegend kennt.",
+    items: [
+      {
+        title: "Schnell vor Ort",
+        text: "Besichtigung und Rückfragen klären wir in kurzer Zeit vor Ort – auch für kleinere Aufträge.",
+      },
+      {
+        title: "Kostenlose Besichtigung",
+        text: "Wir sehen uns Haus, Hof oder Wohnung in Schongau und Umgebung an – kostenlos und unverbindlich.",
+      },
+      {
+        title: "Festpreis inklusive Entsorgung",
+        text: "Nach der Besichtigung erhalten Sie einen verbindlichen Festpreis. Abtransport und Entsorgung sind darin enthalten.",
+      },
+      {
+        title: "Diskret im Erbfall",
+        text: "Persönliche Unterlagen und Erinnerungsstücke legen wir beiseite. Wenn Sie nicht in der Region wohnen, stimmen wir alles per Telefon und Fotos ab.",
+      },
+    ],
+  },
+  local: {
+    h2: "Zwischen Lech und Pfaffenwinkel",
+    paragraphs: [
+      "Innerhalb der Schongauer Stadtmauer sind die Gassen schmal und Stellflächen knapp. Zufahrt, Container-Stellplatz und Arbeitszeiten stimmen wir deshalb vorab ab und arbeiten so, dass die Nachbarschaft möglichst wenig davon merkt.",
+      "In Peiting, Altenstadt, Hohenfurch und Schwabsoien sind es oft Einfamilienhäuser und ehemalige Höfe mit Scheune und Nebengebäuden. Hier räumen wir, bauen zurück und renovieren – Schritt für Schritt oder als ein Projekt.",
+    ],
+    photo: "abbruch",
+  },
+  faqs: [
+    {
+      q: "Kommen Sie auch nach Peiting, Altenstadt oder Peißenberg?",
+      a: "Ja. Neben Schongau sind wir in Peiting, Altenstadt, Hohenfurch, Schwabsoien und Peißenberg im Einsatz. Von unserem Firmensitz in Vilgertshofen sind die Wege kurz.",
+    },
+    {
+      q: "Können Sie auch in der engen Altstadt arbeiten?",
+      a: "Ja. Wo kein Container Platz hat, planen wir den Abtransport anders. Zufahrt und Stellplatz klären wir bei der Besichtigung.",
+    },
+    {
+      q: "Räumen Sie auch Scheunen und Nebengebäude?",
+      a: "Ja. Scheunen, Stadel, Werkstätten und Nebengebäude räumen wir auch bei großen Mengen. Kleine Nebengebäude brechen wir auf Wunsch anschließend ab.",
+    },
+    {
+      q: "Was kostet die Besichtigung?",
+      a: "Nichts. Die Besichtigung ist kostenlos und unverbindlich. Danach erhalten Sie einen Festpreis, in dem Abtransport und Entsorgung enthalten sind.",
+    },
+  ],
+};
+
+export const allgaeuPage: RegionPage = {
+  region: "allgaeu",
+  locations: ["main", "branch"],
+  title: "Entkernung, Entrümpelung & Bodenverlegung im Allgäu | J&L Bauprojekte",
+  description:
+    "Entkernung, Entrümpelung, Renovierung & Bodenverlegung in Kaufbeuren, Mindelheim, Marktoberdorf, Bad Wörishofen & Türkheim. Kostenlose Besichtigung, Festpreis.",
+  h1: "Ihr Partner für Entkernung, Entrümpelung & neue Böden im Allgäu",
+  intro:
+    "Kaufbeuren, Mindelheim, Marktoberdorf, Bad Wörishofen und Türkheim: Wir entkernen, räumen und verlegen neue Böden im nahen Allgäu – von unseren Standorten in Vilgertshofen und Landsberg am Lech aus, mit festem Ansprechpartner und Festpreis nach kostenloser Besichtigung.",
+  hero: "entkernung",
+  services: {
+    h2: "Unsere Leistungen im Allgäu",
+    intro:
+      "Ob Elternhaus in Kaufbeuren, Wohnung in Bad Wörishofen oder Gewerbefläche in Mindelheim: Wir übernehmen die Arbeiten, die vor und nach dem Umbau anfallen – einzeln oder als ein Projekt.",
+    items: [
+      {
+        id: "entkernung",
+        focus: true,
+        text: "Vor der Kernsanierung legen wir den Rohbau frei: Bodenbeläge, Fliesen, Putz, nichttragende Wände und alte Installationen – sortenrein getrennt und fachgerecht entsorgt.",
+      },
+      {
+        id: "entruempelung",
+        focus: true,
+        text: "Keller, Dachboden, Garage oder das ganze Haus: Wir räumen in Kaufbeuren, Marktoberdorf und Umgebung, trennen nach Wertstoffen und übergeben besenrein.",
+      },
+      {
+        id: "bodenverlegung",
+        focus: true,
+        text: "Laminat und Vinyl für Wohnung, Ferienwohnung oder Büro: Wir entfernen den alten Belag und verlegen den neuen mit Trittschalldämmung, Sockelleisten und Übergangsprofilen.",
+      },
+      {
+        id: "haushaltsaufloesung",
+        text: "Nach einem Erbfall oder vor dem Verkauf lösen wir den Haushalt diskret auf – auch wenn Sie selbst nicht im Allgäu wohnen.",
+      },
+      {
+        id: "renovierung",
+        text: "Neue Wände und Decken im Trockenbau, Dachgeschossausbau und frische Oberflächen: Wir machen Häuser und Wohnungen wieder bezugsfertig.",
+      },
+      {
+        id: "rueckbau",
+        text: "Treppen, Kamine, Zwischenwände oder alte Anbauten bauen wir kontrolliert zurück, während der Rest des Hauses stehen bleibt.",
+      },
+      {
+        id: "abbruch",
+        text: "Gartenhäuser, Schuppen, Carports und einzelne Wände brechen wir ab und entsorgen den Bauschutt. Wanddurchbrüche bei tragenden Wänden nur gemeinsam mit dem Statiker.",
+      },
+      {
+        id: "umzug",
+        text: "Wir packen beim Umzug mit an und verbinden ihn auf Wunsch mit Räumung und Renovierung. Den Umfang klären wir bei der Besichtigung.",
+      },
+      {
+        id: "schadstoffsanierung",
+        text: "Alte Bodenbeläge, Kleber oder Eternit-Platten mit Asbestverdacht sprechen wir bei der Besichtigung an und bauen sie nach TRGS 519 aus.",
+      },
+    ],
+  },
+  trust: {
+    h2: "Aus der Nachbarschaft ins Allgäu",
+    intro:
+      "Von Vilgertshofen und Landsberg am Lech aus sind Kaufbeuren, Mindelheim und Marktoberdorf gut erreichbar. Sie bekommen eine schnelle Besichtigung, einen festen Ansprechpartner und einen Preis, der hält.",
+    items: [
+      {
+        title: "Kostenlose Besichtigung",
+        text: "Wir kommen zu Ihnen nach Kaufbeuren, Mindelheim, Marktoberdorf oder in die Nachbarorte – kostenlos und unverbindlich.",
+      },
+      {
+        title: "Festpreis inklusive Entsorgung",
+        text: "Nach der Besichtigung erhalten Sie einen verbindlichen Festpreis. Abtransport und Entsorgung sind darin enthalten.",
+      },
+      {
+        title: "Ein Ansprechpartner",
+        text: "Johann Schmidt koordiniert Ihr Projekt persönlich – von der Entkernung bis zum fertig verlegten Boden.",
+      },
+      {
+        title: "Besenrein übergeben",
+        text: "Am Ende übergeben wir besenrein – bereit für die nächsten Handwerker, den Einzug oder den Verkauf.",
+      },
+    ],
+  },
+  local: {
+    h2: "Im nahen Allgäu unterwegs",
+    paragraphs: [
+      "In Kaufbeuren und Marktoberdorf treffen wir auf alles vom Altstadthaus bis zum Einfamilienhaus aus den 1970er-Jahren. Viele dieser Häuser stehen nach einem Generationswechsel vor der Sanierung – und die beginnt mit Räumung und Entkernung.",
+      "In Mindelheim, Bad Wörishofen und Türkheim sind es oft Wohnungen, Ferienwohnungen und kleinere Gewerbeflächen, die geräumt, renoviert und mit neuem Boden ausgestattet werden. Weitere Orte im Allgäu können Sie gern anfragen.",
+    ],
+    photo: "sperrmuell",
+  },
+  faqs: [
+    {
+      q: "Kommen Sie auch nach Kaufbeuren und Mindelheim?",
+      a: "Ja. Kaufbeuren, Marktoberdorf, Mindelheim, Bad Wörishofen und Türkheim gehören zu unserem Einsatzgebiet. Weiter entfernte Orte im Allgäu können Sie gern anfragen.",
+    },
+    {
+      q: "Verlegen Sie auch Böden in Ferienwohnungen?",
+      a: "Ja. Laminat und Vinyl verlegen wir in Wohnungen, Ferienwohnungen und Büros. Den Termin stimmen wir so ab, dass die Ausfallzeit möglichst kurz bleibt.",
+    },
+    {
+      q: "Übernehmen Sie Entkernung und neuen Boden in einem Projekt?",
+      a: "Ja. Wir entkernen, entfernen den alten Belag und verlegen anschließend Laminat oder Vinyl – mit einem Ansprechpartner und einem Zeitplan.",
+    },
+    {
+      q: "Was kostet die Besichtigung im Allgäu?",
+      a: "Nichts. Die Besichtigung ist kostenlos und unverbindlich. Danach erhalten Sie einen Festpreis, in dem Abtransport und Entsorgung enthalten sind.",
+    },
+  ],
+};
+
 /** Alle regionalen Landingpages, die bereits veröffentlicht sind (Sitemap) */
-export const regionPages: RegionPage[] = [landsbergPage, ammerseePage, buchloePage];
+export const regionPages: RegionPage[] = [landsbergPage, ammerseePage, buchloePage, augsburgPage, schongauPage, allgaeuPage];
 
 export function regionById(id: RegionId) {
   return regions.find((r) => r.id === id)!;

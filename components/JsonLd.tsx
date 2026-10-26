@@ -42,7 +42,7 @@ export function businessGraph() {
       image: `${site.url}/images/landsberg-lechwehr.jpg`,
       logo: `${site.url}/logo.svg`,
       description:
-        "Entkernung, Abbruch und Rückbau mit Schadstoffsanierung (Asbest nach TRGS 519), Entrümpelung, Haushaltsauflösung und Renovierung mit Trockenbau, Bodenverlegung und Umzügen in Landsberg am Lech und Umgebung.",
+        "Entkernung, Abbruch und Rückbau, Entrümpelung, Haushaltsauflösung und Renovierung mit Trockenbau, Bodenverlegung und Umzügen in Landsberg am Lech und Umgebung.",
       address,
       geo: { "@type": "GeoCoordinates", latitude: site.geo.latitude, longitude: site.geo.longitude },
       areaServed: areaServed(),

@@ -17,7 +17,7 @@ const inter = localFont({
 
 const title = "Entkernung, Entrümpelung & Renovierung in Landsberg am Lech | J&L Bauprojekte";
 const description =
-  "Entkernung inkl. Asbestsanierung, Entrümpelung und Renovierung aus einer Hand – in Landsberg, Kaufering, Buchloe, Augsburg, am Ammersee und im Allgäu.";
+  "Entkernung, Entrümpelung und Renovierung aus einer Hand – in Landsberg, Kaufering, Buchloe, Augsburg, Schongau, am Ammersee und im Allgäu. Festpreis nach kostenloser Besichtigung.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
     "Entkernung Landsberg am Lech",
     "Entrümpelung Landsberg",
     "Haushaltsauflösung Landsberg",
-    "Asbestsanierung Landsberg",
-    "Schadstoffsanierung Augsburg",
     "Renovierung Landsberg",
     "Trockenbau Landsberg",
     "Vinylboden verlegen Landsberg",
     "Umzug Landsberg",
     "Entrümpelung Buchloe",
     "Entkernung Augsburg",
+    "Entrümpelung Schongau",
+    "Renovierung Kaufbeuren",
   ],
   openGraph: {
     type: "website",

@@ -13,7 +13,6 @@ export type SubPage = {
   preselect: ServiceId[];
   /** id: Sprungmarke für Links auf einzelne Leistungen, points: Stichpunkte unter dem Text */
   services: { h2: string; intro: string; items: { h3: string; text: string; id?: string; points?: string[] }[] };
-  pollutants?: PollutantSection;
   occasions: { h2: string; items: { h3: string; text: string }[] };
   checklist: { h2: string; intro: string; items: string[] };
   steps: { h2: string; items: { title: string; text: string }[] };
@@ -22,26 +21,15 @@ export type SubPage = {
   faqs: { q: string; a: string }[];
 };
 
-export type PollutantSection = {
-  badge: string;
-  h2: string;
-  intro: string;
-  steps: { title: string; text: string }[];
-  binding: { h2: string; items: { title: string; text: string }[]; note: string };
-  areas: { h2: string; items: { title: string; text: string }[] };
-  mineralwool: { title: string; text: string };
-  reasons: { title: string; items: string[] };
-};
-
 export const entkernung: SubPage = {
   path: pages.entkernung.href,
   name: pages.entkernung.full,
-  title: "Entkernung, Rückbau & Asbestsanierung in Landsberg am Lech | J&L Bauprojekte",
+  title: "Entkernung, Abbruch & Rückbau in Landsberg am Lech | J&L Bauprojekte",
   description:
-    "Entkernung bis auf den Rohbau, Abbruch, Rückbau und Schadstoffsanierung nach TRGS 519 – in Landsberg, Kaufering, Buchloe, Augsburg und Umgebung. Festpreis nach Besichtigung.",
-  h1: "Entkernung, Rückbau & Schadstoffsanierung in Landsberg am Lech",
+    "Entkernung bis auf den Rohbau, Abbruch und Rückbau in Landsberg, Kaufering, Buchloe, Augsburg und Umgebung – sortenrein entsorgt, besenrein übergeben, Festpreis nach Besichtigung.",
+  h1: "Entkernung, Abbruch & Rückbau in Landsberg am Lech",
   intro:
-    "Wir schaffen die Grundlage für Ihre Sanierung: J&L Bauprojekte entkernt Wohnungen und Häuser, baut Bauteile kontrolliert zurück und übernimmt kleinere Abbrucharbeiten. Stecken Asbest oder alte Mineralwolle im Bestand, bauen wir sie nach den Technischen Regeln für Gefahrstoffe fachgerecht aus – sortenrein getrennt, sicher entsorgt, besenrein übergeben.",
+    "Wir schaffen die Grundlage für Ihre Sanierung: J&L Bauprojekte entkernt Wohnungen und Häuser, baut Bauteile kontrolliert zurück und übernimmt kleinere Abbrucharbeiten – sortenrein getrennt, sicher entsorgt, besenrein übergeben.",
   hero: "entkernung",
   preselect: ["entkernung"],
   services: {
@@ -78,84 +66,11 @@ export const entkernung: SubPage = {
         text: "Container stellen, Bauschutt, Holz, Metall, Gips und Restmüll sortenrein trennen und fachgerecht entsorgen: Sie haben keinen zusätzlichen Aufwand und erhalten die Räume besenrein zurück.",
       },
       {
-        h3: "Schadstoffsanierung: Asbest und Mineralwolle",
-        text: "Stecken Asbest oder alte Mineralwolle im Bestand, bauen wir sie nach TRGS 519 und TRGS 521 aus – mit Gefährdungsbeurteilung, festgelegten Schutzmaßnahmen und Entsorgung mit Nachweis. Alles Wichtige dazu lesen Sie im nächsten Abschnitt.",
+        id: "schadstoffsanierung",
+        h3: "Asbest und alte Mineralwolle",
+        text: "Stecken Asbest oder alte Mineralwolle im Bestand, bauen wir sie fachgerecht aus – mit Sachkunde nach TRGS 519, festgelegten Schutzmaßnahmen und Entsorgung mit Nachweis. Verdächtige Baustoffe sprechen wir schon bei der Besichtigung an.",
       },
     ],
-  },
-  // Vorsichtig formuliert: Laborproben, Raumluftmessungen und Arbeiten mit hoher Exposition werden nicht als eigene Leistung versprochen.
-  // PLATZHALTER: Liegt eine behördliche Zulassung für Arbeiten mit schwach gebundenem Asbest vor, können die Texte zu Isolierungen und Unterdruck konkreter werden.
-  pollutants: {
-    badge: "Sachkunde nach TRGS 519, Anlage 4",
-    h2: "Schadstoffsanierung: Asbest und alte Mineralwolle sicher entfernen",
-    intro:
-      "Viele Häuser aus den 1950er- bis 1990er-Jahren enthalten Asbest – im Boden, im Putz, auf dem Dach. Solange die Materialien unberührt bleiben, merkt man davon nichts. Gefährlich wird es, wenn bei Umbau, Renovierung oder Entkernung Fasern frei werden. Genau dafür sind wir da: mit Sachkunde nach TRGS 519, klaren Abläufen und konsequentem Schutz für Sie, Ihre Nachbarn und unser Team.",
-    steps: [
-      {
-        title: "Verdacht klären",
-        text: "Wir prüfen Baujahr und verbaute Materialien. Bleiben Zweifel, empfehlen wir eine Materialprobe mit Laboranalyse – so wissen Sie vor Beginn, woran Sie sind.",
-      },
-      {
-        title: "Gefährdung beurteilen, Schutz festlegen",
-        text: "Wir erstellen Gefährdungsbeurteilung und Arbeitsplan: Wie fest ist der Asbest gebunden, welches Verfahren ist das richtige? Daraus folgen die Schutzmaßnahmen. Die Arbeiten zeigen wir vorab bei der zuständigen Behörde an.",
-      },
-      {
-        title: "Geschützt zurückbauen",
-        text: "Je nach Gefährdung arbeiten wir staubarm und feucht, saugen mit Industriesaugern der Staubklasse H direkt an der Quelle ab, schotten den Arbeitsbereich ab und tragen Atemschutz und Schutzkleidung.",
-      },
-      {
-        title: "Fachgerecht entsorgen",
-        text: "Asbesthaltige Abfälle verpacken wir staubdicht, kennzeichnen sie und geben sie bei zugelassenen Entsorgungsanlagen ab. Die Entsorgungsnachweise erhalten Sie von uns.",
-      },
-    ],
-    binding: {
-      h2: "Fest gebunden oder schwach gebunden – der Unterschied ist entscheidend",
-      items: [
-        {
-          title: "Fest gebundener Asbest",
-          text: "Bei Asbestzement, etwa Eternit-Platten, sind die Fasern fest im Material eingebunden. Solange die Platten heil sind, ist die Gefahr gering. Beim Brechen, Bohren, Schleifen oder Abstrahlen mit dem Hochdruckreiniger werden jedoch Fasern frei. Deshalb bauen wir solche Platten zerstörungsfrei aus – Stück für Stück, ohne zu brechen.",
-        },
-        {
-          title: "Schwach gebundener Asbest und staubintensive Arbeiten",
-          text: "In Isolierungen, Leichtbauplatten oder der Unterseite mancher alter Bodenbeläge ist Asbest nur locker gebunden. Beim Ausbau können sehr hohe Faserkonzentrationen entstehen. Ähnliches gilt, wenn asbesthaltiger Putz, Spachtel oder Kleber abgeschlagen oder abgeschliffen wird. Dafür gelten die strengsten Vorgaben, bis hin zu Unterdruck, Schleuse und Freimessung. Nach der Besichtigung sagen wir Ihnen offen, welcher Weg in Ihrem Fall vorgeschrieben ist und was das für Ablauf und Kosten bedeutet.",
-        },
-      ],
-      note: "Welcher Fall vorliegt, entscheidet nicht das Bauchgefühl, sondern die Gefährdungsbeurteilung. Danach richtet sich jeder weitere Schritt – immer streng nach den behördlichen Vorgaben.",
-    },
-    areas: {
-      h2: "Hier steckt Asbest am häufigsten",
-      items: [
-        {
-          title: "Estrich, Fliesenkleber und alte Bodenbeläge",
-          text: "Floor-Flex-Platten, Cushion-Vinyl, schwarzer Bitumenkleber und asbesthaltige Ausgleichsmassen: Alte Böden sind in Wohnungen die häufigste Fundstelle. Wir nehmen Beläge und Kleberschichten mit emissionsarmen Verfahren auf und bereiten den Untergrund für den neuen Boden vor.",
-        },
-        {
-          title: "Asbestzementplatten (z. B. Eternit)",
-          text: "Dach- und Fassadenplatten, Garagen- und Schuppendächer, Fensterbänke, Blumenkästen und Lüftungsrohre: fest gebunden, aber nur ungefährlich, solange sie heil bleiben. Wir bauen sie zerstörungsfrei aus, verpacken sie staubdicht und entsorgen sie fachgerecht.",
-        },
-        {
-          title: "Putz und Spachtelmasse",
-          text: "Bis in die 1990er-Jahre wurden manchen Putzen, Spachtelmassen und Fliesenklebern Asbestfasern beigemischt – unsichtbar und nur im Labor nachweisbar. Wer hier schleift, stemmt oder bohrt, setzt Fasern frei. Wir klären den Verdacht vorab und arbeiten mit Verfahren, die den Staub direkt an der Quelle absaugen.",
-        },
-        {
-          title: "Asbesthaltige Isolierungen",
-          text: "Rohr- und Kesselisolierungen, Brandschutzverkleidungen, alte Nachtspeicheröfen: Hier ist Asbest oft schwach gebunden und gibt schon bei Berührung Fasern ab. Fassen Sie solche Bauteile nicht an. Wir sehen sie uns an und sagen Ihnen, welches Vorgehen vorgeschrieben ist.",
-        },
-      ],
-    },
-    mineralwool: {
-      title: "Alte Mineralwolle",
-      text: "Glas- und Steinwolle aus der Zeit vor 1996 – ohne Gütezeichen auch bis zum Jahr 2000 – gilt als krebsverdächtig. Den Ausbau aus Dach, Decken und Wänden erledigen wir nach TRGS 521: staubarm, mit Schutzausrüstung, in reißfesten Säcken verpackt und fachgerecht entsorgt.",
-    },
-    reasons: {
-      title: "Warum J&L Bauprojekte bei Schadstoffen",
-      items: [
-        "Sachkunde nach TRGS 519, Anlage 4 – nachgewiesen, nicht nur behauptet",
-        "Gefährdungsbeurteilung, Arbeitsplan, Anzeige bei der Behörde, Rückbau und Entsorgung aus einer Hand",
-        "Konsequenter Schutz für Sie, Ihre Nachbarn und unser Team",
-        "Nach der Sanierung geht es nahtlos weiter: neuer Boden, neue Wände – ohne Wechsel der Firma",
-      ],
-    },
   },
   occasions: {
     h2: "Wann eine Entkernung sinnvoll ist",
@@ -205,7 +120,7 @@ export const entkernung: SubPage = {
     h2: "Entkernung und Rückbau in Landsberg und Umgebung",
     paragraphs: [
       "Von unseren Standorten in Landsberg am Lech und Vilgertshofen aus sind wir in der ganzen Region im Einsatz: in Landsberg und Kaufering, in Buchloe und der Ammersee-Region, in Mindelheim, Augsburg, Schongau und im Allgäu.",
-      "Ob Altbau in der Landsberger Innenstadt, Reihenhaus in Kaufering oder Gewerbeobjekt in Augsburg: Wir übernehmen Entkernung, Rückbau, Wanddurchbrüche, kleinere Abbrucharbeiten und die Schadstoffsanierung. Ihr Ort fehlt? Rufen Sie einfach an.",
+      "Ob Altbau in der Landsberger Innenstadt, Reihenhaus in Kaufering oder Gewerbeobjekt in Augsburg: Wir übernehmen Entkernung, Rückbau, Wanddurchbrüche, kleinere Abbrucharbeiten und auch den Ausbau von Asbest. Ihr Ort fehlt? Rufen Sie einfach an.",
     ],
   },
   faqs: [
@@ -234,16 +149,8 @@ export const entkernung: SubPage = {
       a: "Das übernehmen wir vollständig: Container stellen, Bauschutt und Wertstoffe sortenrein trennen und fachgerecht entsorgen.",
     },
     {
-      q: "Darf ich asbesthaltige Platten selbst abbauen?",
-      a: "Davon raten wir dringend ab. Schon kleine Fehler beim Ausbau setzen Fasern frei, die sich im ganzen Haus verteilen können. Außerdem gelten für Verpackung, Transport und Entsorgung strenge Vorgaben. Lassen Sie den Ausbau von einem Betrieb mit Sachkunde erledigen.",
-    },
-    {
-      q: "Müssen Asbestarbeiten angemeldet werden?",
-      a: "In der Regel ja: Arbeiten mit Asbest müssen vorab bei der zuständigen Behörde angezeigt werden. Das übernehmen wir für Sie – zusammen mit Gefährdungsbeurteilung und Arbeitsplan.",
-    },
-    {
-      q: "Was kostet eine Asbestsanierung?",
-      a: "Das hängt von Material, Menge und Gefährdung ab: Fest gebundene Eternit-Platten sind deutlich weniger aufwendig als eine Isolierung mit schwach gebundenem Asbest. Nach der kostenlosen Besichtigung – und wenn nötig einer Laboranalyse – erhalten Sie ein verbindliches Angebot inklusive Schutzmaßnahmen und Entsorgung.",
+      q: "Was passiert, wenn bei der Entkernung Asbest auftaucht?",
+      a: "Bei Häusern, die vor 1993 gebaut oder modernisiert wurden, sprechen wir verdächtige Baustoffe schon bei der Besichtigung an. Asbesthaltige Bauteile wie Eternit-Platten bauen wir mit Sachkunde nach TRGS 519 aus und entsorgen sie mit Nachweis.",
     },
   ],
 };
@@ -418,7 +325,7 @@ export const renovierung: SubPage = {
       },
       {
         h3: "Vorher: Platz schaffen",
-        text: "Bevor renoviert wird, muss oft erst etwas raus: alte Böden, Verkleidungen, Einbauten oder ein ganzer Hausrat. Das übernehmen wir gleich mit – von der Entrümpelung bis zur Entkernung, bei Asbestverdacht nach TRGS 519.",
+        text: "Bevor renoviert wird, muss oft erst etwas raus: alte Böden, Verkleidungen, Einbauten oder ein ganzer Hausrat. Das übernehmen wir gleich mit – von der Entrümpelung bis zur Entkernung.",
       },
     ],
   },
@@ -461,7 +368,7 @@ export const renovierung: SubPage = {
   benefits: {
     h2: "Was für J&L Bauprojekte spricht",
     items: [
-      { title: "Alles aus einer Hand", text: "Entrümpelung, Entkernung, Schadstoffsanierung, Renovierung und Umzug über einen Ansprechpartner." },
+      { title: "Alles aus einer Hand", text: "Entrümpelung, Entkernung, Renovierung und Umzug über einen Ansprechpartner." },
       { title: "Festpreis nach Besichtigung", text: "Was im Angebot steht, gilt – ohne spätere Nachforderung." },
       { title: "Termintreu und sauber", text: "Wir nennen einen Termin, halten ihn und übergeben besenrein – bereit für Einzug oder Verkauf." },
     ],

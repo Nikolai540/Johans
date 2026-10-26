@@ -37,7 +37,7 @@ export function Hero() {
         </h1>
         <p data-rise style={{ ["--i" as string]: 2 }} className="mt-md max-w-[52ch] text-body-md text-on-dark sm:text-title-md sm:font-light">
           Wir räumen, bauen zurück und machen Räume wieder bewohnbar – sauber, termingerecht und mit einem festen
-          Ansprechpartner. Auch dann, wenn Asbest oder andere Schadstoffe im Spiel sind.
+          Ansprechpartner.
         </p>
         <p data-rise style={{ ["--i" as string]: 3 }} className="mt-md max-w-[70ch] text-body-sm text-on-dark sm:text-body-md">
           <span className="font-bold">Im Einsatz in </span>

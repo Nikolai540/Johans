@@ -190,7 +190,7 @@ Eine Signalfarbe aus dem Logo, umgeben von warmen Neutraltönen zwischen Stein u
 - **Gelb gedrückt** (#e6ad00): Hover- und Druckzustand des Primär-Buttons.
 
 ### Neutral
-- **Anthrazit** (#1f1e1c): Kopfzeile, Hero, Vertrauens- und Ablaufbänder, mobile Aktionsleiste, Schadstoffband auf Startseite und Entkernungsseite.
+- **Anthrazit** (#1f1e1c): Kopfzeile, Hero, Vertrauens- und Ablaufbänder, mobile Aktionsleiste, Bildersammlung „Einblicke in unsere Baustellen“ auf der Startseite.
 - **Anthrazit erhöht** (#2d2b28): Karten und Kanten auf Anthrazit, Trennlinie unter der Kopfzeile.
 - **Warmer Stein** (#f3f1ec): Wechselnde helle Abschnitte (Leistungen, FAQ, Footer), Adressblöcke.
 - **Papierweiß** (#ffffff) und **Kartenweiß** (#faf9f6): Seitenfläche, Kartenfläche, Platzhalter hinter Fotos.
@@ -286,10 +286,13 @@ Klar, groß, immer erreichbar.
 - **Aktionsleiste (unter 64rem):** Anthrazit am unteren Rand mit Anruf- und Kontakt-Button.
 
 ### Regionskarte (Signatur)
-Weiße Karte mit 56px Icon-Kachel in Gelb (Stadttor, Segelboot, Haus), optionalem Abzeichen „Unser Standort“ oder „Unser Firmensitz“, Regionsname als Link mit über die ganze Karte gespannter Klickfläche, Ortsliste, Schwerpunkt-Text und beschreibendem Pfeil-Hinweis.
+Weiße Karte mit 56px Icon-Kachel in Gelb (Stadttor, Segelboot, Haus, Turm, Stadtmauer, Berge), optionalem Abzeichen „Unser Standort“ oder „Unser Firmensitz“, Regionsname als Link mit über die ganze Karte gespannter Klickfläche, Ortsliste, Schwerpunkt-Text und beschreibendem Pfeil-Hinweis.
 
 ### Einsatzgebiet-Karte (Signatur)
 Echte OpenStreetMap-Karte (Leaflet) mit entsättigten Kacheln, damit nur die Standorte Farbe tragen: beide Standorte als gelbe Punkte mit Tintenrand. Ein Klick öffnet Name, Adresse und den gelben Button „Route planen“ (Google Maps, neues Fenster). Mausrad zoomt nicht, auf Touch-Geräten scrollt ein Finger die Seite. Darunter stehen beide Adressen noch einmal als Text mit Routenlink, damit nichts nur in der Karte steckt.
+
+### Baustellen-Raster
+Bildersammlung auf Anthrazit: dichtes Raster ohne Lücken, auf dem Smartphone 2, ab 1024px 4 Spalten. Bild 1 groß (2×2), Bild 6 breit (2×1), alle anderen einfach. Fotos ohne Radius und ohne Schatten; der Bildtext steht als kleines Anthrazit-Schild unten links im Foto. Bis echte Fotos vorliegen, stehen einfarbige Platzhalter mit „Platzhalter:“ im Bildtext.
 
 ### Einblendung
 Abschnitte blenden beim Scrollen einmal in 500ms ein (16px nach oben, Ease-out), gestaffelt um 60ms. Hero-Texte steigen ohne Verzögerung ein. Fotos werden nie verdeckt. Bei „Bewegung reduzieren“ entfällt alles.

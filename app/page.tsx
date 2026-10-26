@@ -1,7 +1,7 @@
 import { About } from "@/components/About";
-import { Asbestos } from "@/components/Asbestos";
 import { Contact } from "@/components/Contact";
 import { Faq } from "@/components/Faq";
+import { Gallery } from "@/components/Gallery";
 import { faqGraph, JsonLd } from "@/components/JsonLd";
 import { Hero } from "@/components/Hero";
 import { MobileActions } from "@/components/MobileActions";
@@ -27,7 +27,7 @@ export default function Home() {
         <Hero />
         <About />
         <Services />
-        <Asbestos />
+        <Gallery />
         <Region />
         <Faq />
         <Contact />

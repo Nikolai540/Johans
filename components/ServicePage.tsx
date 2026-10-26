@@ -4,7 +4,6 @@ import { Contact } from "@/components/Contact";
 import { ChevronIcon, PhoneIcon } from "@/components/Icons";
 import { areaServed, businessId, faqGraph, JsonLd } from "@/components/JsonLd";
 import { MobileActions } from "@/components/MobileActions";
-import { Pollutants } from "@/components/Pollutants";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { photos } from "@/lib/images";
@@ -135,8 +134,6 @@ export function ServicePage({ page }: { page: SubPage }) {
           </div>
         </section>
 
-        {page.pollutants && <Pollutants data={page.pollutants} />}
-
         {/* Anlässe */}
         <section aria-labelledby="anlaesse-titel" className="bg-canvas py-section">
           <div className="page-x mx-auto max-w-page">
@@ -244,7 +241,7 @@ export function ServicePage({ page }: { page: SubPage }) {
                     <a href={o.href} className="link link-underlined font-bold text-ink">
                       {o.full}
                     </a>
-                    {i < others.length - 1 ? " und " : "."}
+                    {i < others.length - 2 ? ", " : i === others.length - 2 ? " und " : "."}
                   </span>
                 ))}
               </p>

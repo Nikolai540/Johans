@@ -50,7 +50,7 @@ export const services: Record<ServiceId, Service> = {
   schadstoffsanierung: {
     id: "schadstoffsanierung",
     name: "Schadstoffsanierung",
-    short: "Asbest nach TRGS 519, alte Mineralwolle",
+    short: "Asbest und alte Mineralwolle",
     text: "Asbest in alten Bodenbelägen, Klebern, Putz oder Eternit-Platten und alte Mineralwolle bauen wir fachgerecht aus – mit Sachkunde nach TRGS 519 (Anlage 4), Gefährdungsbeurteilung, festgelegten Schutzmaßnahmen und Entsorgung mit Nachweis.",
   },
   renovierung: {
@@ -106,11 +106,11 @@ export const serviceCategories: {
   {
     id: "entkernung",
     name: "Entkernung, Abbruch & Rückbau",
-    text: "Vor jeder Kernsanierung steht die Entkernung: Wir entfernen Bodenbeläge, Putz, nichttragende Wände, Decken und alte Installationen bis auf den Rohbau, bauen Bauteile kontrolliert zurück und übernehmen kleinere Abbrucharbeiten. Stecken Asbest oder alte Mineralwolle im Bestand, bauen wir sie nach den Technischen Regeln für Gefahrstoffe aus.",
-    items: ["entkernung", "abbruch", "rueckbau", "schadstoffsanierung"],
+    text: "Vor jeder Kernsanierung steht die Entkernung: Wir entfernen Bodenbeläge, Putz, nichttragende Wände, Decken und alte Installationen bis auf den Rohbau, bauen Bauteile kontrolliert zurück und übernehmen kleinere Abbrucharbeiten. Auch Asbest oder alte Mineralwolle bauen wir fachgerecht aus.",
+    items: ["entkernung", "abbruch", "rueckbau"],
     photo: "entkernung",
     shape: "landscape",
-    page: { href: pages.entkernung.href, cta: "Alles zu Entkernung & Schadstoffsanierung" },
+    page: { href: pages.entkernung.href, cta: "Alles zu Entkernung, Abbruch & Rückbau" },
   },
   {
     id: "entruempelung",
@@ -147,10 +147,6 @@ export const faqs: { q: string; a: string }[] = [
   {
     q: "Können Sie auch tragende Wände entfernen?",
     a: "Ja – in Zusammenarbeit mit einem Statiker. Er legt fest, wie die Last abgefangen wird, zum Beispiel mit einem Stahlträger. Erst danach öffnen wir die Wand. Nichttragende Wände und Wanddurchbrüche für neue Türen erledigen wir direkt.",
-  },
-  {
-    q: "Woran erkenne ich, ob in meinem Haus Asbest verbaut ist?",
-    a: "Mit bloßem Auge meist gar nicht. Ein erster Hinweis ist das Baujahr: Bis 1993 wurde Asbest in vielen Baustoffen verwendet – in Bodenplatten und deren Kleber, in Putz, Spachtel und Fliesenkleber, in Dach- und Fassadenplatten und in Isolierungen. Gewissheit bringt eine Materialprobe aus dem Labor. Bei der Besichtigung sagen wir Ihnen, wo eine Probe sinnvoll ist.",
   },
   {
     q: "Was kostet eine Entrümpelung oder Haushaltsauflösung?",
