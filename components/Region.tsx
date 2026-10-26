@@ -37,7 +37,7 @@ export function Region() {
             </h3>
             <ul data-reveal style={{ ["--i" as string]: 2 }} className="mt-sm flex flex-wrap gap-xs">
               {catchment.map((place) => (
-                <li key={place} className="rounded-pill bg-surface-soft px-md py-xs text-title-sm text-ink">
+                <li key={place} className="pill bg-surface-soft px-md py-xs text-title-sm text-ink">
                   {place}
                 </li>
               ))}
@@ -94,11 +94,11 @@ export function Region() {
                 className="card group flex flex-col p-lg has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-ink sm:p-xl"
               >
                 <span className="flex items-start justify-between gap-md">
-                  <span className="flex size-14 items-center justify-center rounded-sm bg-primary text-on-primary">
+                  <span className="flex size-14 items-center justify-center rounded-sm bg-surface-soft text-on-primary">
                     <Icon className="size-7" />
                   </span>
                   {r.badge && (
-                    <span className="rounded-pill bg-surface-dark px-sm py-xxs text-body-sm font-bold text-on-dark">
+                    <span className="pill bg-surface-dark px-sm py-xxs text-body-sm font-bold text-on-dark">
                       {r.badge}
                     </span>
                   )}
