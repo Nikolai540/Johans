@@ -14,7 +14,7 @@ export const site = {
   whatsapp: "https://wa.me/4915155450377",
   email: "info@jlbauprojekte.de",
   address: {
-    street: "", // PLATZHALTER: Straße und Hausnummer
+    street: "Schmuzerstr 6", // PLATZHALTER: Straße und Hausnummer
     postalCode: "86946",
     locality: "Vilgertshofen",
     region: "Bayern",
