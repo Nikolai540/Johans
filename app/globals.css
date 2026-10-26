@@ -6,7 +6,7 @@
    ------------------------------------------------------------------ */
 @theme {
   --color-*: initial;
-  --color-primary: #ffc000; /* Logo-Gelb */
+  --color-primary: #ff6b36; /* Logo-Gelb */
   --color-primary-active: #e6ad00;
   --color-primary-disabled: #e2ded4;
   --color-ink: #1d1c1a;
