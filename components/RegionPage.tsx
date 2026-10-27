@@ -19,7 +19,7 @@ const detailPage: Partial<Record<ServiceId, string>> = {
   entkernung: pages.entkernung.href,
   abbruch: pages.entkernung.href,
   rueckbau: pages.entkernung.href,
-  schadstoffsanierung: `${pages.entkernung.href}#schadstoffsanierung`,
+  schadstoffsanierung: pages.schadstoffe.href,
   renovierung: pages.renovierung.href,
   trockenbau: `${pages.renovierung.href}#trockenbau`,
   bodenverlegung: `${pages.renovierung.href}#bodenverlegung`,

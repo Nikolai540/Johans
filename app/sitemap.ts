@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { regionById, regionPages } from "@/lib/regions";
-import { pages, site } from "@/lib/site";
+import { aboutPage, pages, site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -10,6 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${site.url}${pages.entruempelung.href}`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${site.url}${pages.entkernung.href}`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${site.url}${pages.renovierung.href}`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${site.url}${pages.schadstoffe.href}`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${site.url}${aboutPage.href}`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
     ...regionPages.map((p) => ({
       url: `${site.url}${regionById(p.region).href}`,
       lastModified: now,

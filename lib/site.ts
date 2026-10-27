@@ -67,7 +67,10 @@ export const pages = {
   entkernung: { href: "/entkernung-abbruch-rueckbau/", label: "Entkernung", full: "Entkernung, Abbruch & Rückbau" },
   entruempelung: { href: "/entruempelung-haushaltsaufloesung/", label: "Entrümpelung", full: "Entrümpelung & Haushaltsauflösung" },
   renovierung: { href: "/renovierung/", label: "Renovierung", full: "Renovierung: Trockenbau, Böden & Umzug" },
+  schadstoffe: { href: "/schadstoffe/", label: "Schadstoffe", full: "Schadstoffsanierung: Asbest, KMF & PAK" },
 } as const;
+
+export const aboutPage = { href: "/ueber-uns/", label: "Über uns" } as const;
 
 /** Einzugsgebiet in der Reihenfolge, in der es auf der Website genannt wird */
 export const catchment = [
