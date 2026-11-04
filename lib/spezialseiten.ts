@@ -1,8 +1,7 @@
 import type { SubPage } from "./subpages";
 
 // Spezialseiten zu Haushaltsauflösung (Gewerbe, Messie, Container) und Entkernung (Wanddurchbruch).
-// PLATZHALTER vor dem Livegang bestätigen: Containergrößen und ob eigene Container oder Partner,
-// Aktenvernichtung mit Nachweis, Geruchsneutralisation bei Messie-Wohnungen.
+// Container stellen Partnerbetriebe, J&L organisiert. PLATZHALTER: konkrete Containergrößen ergänzen, falls gewünscht.
 
 const region =
   "in Landsberg am Lech, Kaufering, Buchloe, Augsburg, am Ammersee und im Allgäu";
@@ -37,7 +36,7 @@ export const gewerbeaufloesung: SubPage = {
       },
       {
         h3: "Akten und Datenträger",
-        text: "Geschäftsunterlagen gehören nicht in den Container. Akten und Datenträger entsorgen wir getrennt und datenschutzgerecht – sprechen Sie uns bei der Besichtigung darauf an.",
+        text: "Geschäftsunterlagen gehören nicht in den Container. Akten und Datenträger entsorgen wir getrennt und datenschutzgerecht.",
       },
       {
         h3: "Fachgerechte Entsorgung",
@@ -109,7 +108,7 @@ export const gewerbeaufloesung: SubPage = {
     },
     {
       q: "Was passiert mit Akten und Datenträgern?",
-      a: "Wir entsorgen sie getrennt vom übrigen Inventar und datenschutzgerecht. Die Einzelheiten klären wir bei der Besichtigung.",
+      a: "Wir entsorgen sie getrennt vom übrigen Inventar und datenschutzgerecht.",
     },
     {
       q: "Können Sie auch während des laufenden Betriebs räumen?",
@@ -245,7 +244,7 @@ export const containerdienst: SubPage = {
     "Container mieten in Landsberg am Lech, Augsburg und im Allgäu: Container für Bauschutt, Sperrmüll und Mischabfall, flexible Stell- und Abholzeiten, transparente Festpreise inklusive Entsorgung.",
   h1: "Containerdienst in Landsberg am Lech und Augsburg – Container mieten zum Festpreis",
   intro:
-    "Bauschutt entsorgen, Sperrmüll loswerden oder Mischabfall von der Baustelle: Wir stellen den passenden Container, holen ihn zum vereinbarten Termin ab und entsorgen den Inhalt fachgerecht. Der Preis steht vorher fest – inklusive Stellung, Abholung und Entsorgung.",
+    "Bauschutt entsorgen, Sperrmüll loswerden oder Mischabfall von der Baustelle: Wir organisieren den passenden Container über unsere Partner aus der Region – gestellt und abgeholt zum vereinbarten Termin, der Inhalt fachgerecht entsorgt. Der Preis steht vorher fest – inklusive Stellung, Abholung und Entsorgung.",
   hero: "abbruch",
   preselect: ["containerdienst"],
   services: {
@@ -271,7 +270,7 @@ export const containerdienst: SubPage = {
       },
       {
         h3: "Flexible Stell- und Abholzeiten",
-        text: "Wir stellen den Container zu Ihrem Wunschtermin und holen ihn ab, sobald er voll ist – oder zum vereinbarten Tag.",
+        text: "Der Container kommt zu Ihrem Wunschtermin und wird abgeholt, sobald er voll ist – oder zum vereinbarten Tag.",
       },
       {
         h3: "Transparente Preise",
@@ -309,8 +308,8 @@ export const containerdienst: SubPage = {
     items: [
       { title: "Anfrage", text: "Abfallart, ungefähre Menge, Adresse und Wunschtermin nennen – gern mit Fotos." },
       { title: "Festpreis", text: "Wir empfehlen die passende Größe und nennen Ihnen den Festpreis inklusive Entsorgung." },
-      { title: "Stellung", text: "Wir stellen den Container zum Wunschtermin. Steht er auf öffentlichem Grund, sagen wir Ihnen, welche Genehmigung nötig ist." },
-      { title: "Abholung und Entsorgung", text: "Wir holen ab und entsorgen fachgerecht über zugelassene Anlagen." },
+      { title: "Stellung", text: "Der Container wird zum Wunschtermin gestellt. Steht er auf öffentlichem Grund, sagen wir Ihnen, welche Genehmigung nötig ist." },
+      { title: "Abholung und Entsorgung", text: "Der Container wird abgeholt und fachgerecht über zugelassene Anlagen entsorgt." },
     ],
   },
   benefits: {
@@ -347,7 +346,7 @@ export const containerdienst: SubPage = {
     },
     {
       q: "Wie lange darf der Container stehen?",
-      a: "Die Mietdauer legen wir mit Ihnen fest. Ist er früher voll, holen wir ihn früher ab.",
+      a: "Die Mietdauer legen wir mit Ihnen fest. Ist er früher voll, wird er früher abgeholt.",
     },
   ],
 };
