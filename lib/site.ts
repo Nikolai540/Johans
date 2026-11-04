@@ -34,8 +34,8 @@ export const site = {
   // PLATZHALTER: Erreichbarkeit bestätigen
   hours: [
     { label: "Montag – Freitag", value: "8:00 – 20:00", days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "08:00", closes: "20:00" },
-    { label: "Samstag", value: "8:00-17:00" },
-    { label: "Sonntag" , value: "Geschlossen"}, 
+    { label: "Samstag", value: "8:00 – 17:00", days: ["Saturday"], opens: "08:00", closes: "17:00" },
+    { label: "Sonntag", value: "geschlossen" },
   ],
 } as const;
 
@@ -69,7 +69,6 @@ export const pages = {
   entruempelung: { href: "/entruempelung-haushaltsaufloesung/", label: "Entrümpelung", full: "Entrümpelung & Haushaltsauflösung" },
   renovierung: { href: "/renovierung/", label: "Renovierung", full: "Renovierung: Trockenbau, Böden & Umzug" },
   schadstoffe: { href: "/schadstoffe/", label: "Schadstoffe", full: "Schadstoffsanierung: Asbest, KMF & PAK" },
-  aboutPage: { href: "/ueber-uns/", label: "Über uns"},
 } as const;
 
 export const aboutPage = { href: "/ueber-uns/", label: "Über uns" } as const;
@@ -94,5 +93,5 @@ export const nav = [
   { href: "/#einsatzgebiet", label: "Einsatzgebiet" },
   { href: "/#faq", label: "FAQ" },
   { href: "/#kontakt", label: "Kontakt" },
-  { href: pages.aboutPage.href, label: pages.aboutPage.label}
+  { href: aboutPage.href, label: aboutPage.label },
 ] as const;

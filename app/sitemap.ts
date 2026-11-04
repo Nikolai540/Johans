@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 
 import { regionById, regionPages } from "@/lib/regions";
 import { aboutPage, pages, site } from "@/lib/site";
+import { containerdienst, gewerbeaufloesung, messie, wanddurchbruch } from "@/lib/spezialseiten";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -12,6 +13,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${site.url}${pages.renovierung.href}`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${site.url}${pages.schadstoffe.href}`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${site.url}${aboutPage.href}`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
+    ...[gewerbeaufloesung, messie, containerdienst, wanddurchbruch].map((p) => ({
+      url: `${site.url}${p.path}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
     ...regionPages.map((p) => ({
       url: `${site.url}${regionById(p.region).href}`,
       lastModified: now,

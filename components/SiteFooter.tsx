@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { LogoFull } from "@/components/Logo";
 import { photos } from "@/lib/images";
-import { aboutPage, nav, pages, site } from "@/lib/site";
+import { nav, pages, site } from "@/lib/site";
 
 export function SiteFooter() {
   const stamp = photos.landsbergBayertor;
@@ -59,11 +59,6 @@ export function SiteFooter() {
               <li>
                 <a href={pages.schadstoffe.href} className="link inline-flex min-h-11 items-center">
                   {pages.schadstoffe.label}
-                </a>
-              </li>
-              <li>
-                <a href={aboutPage.href} className="link inline-flex min-h-11 items-center">
-                  {aboutPage.label}
                 </a>
               </li>
               <li>

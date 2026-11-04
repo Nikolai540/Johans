@@ -12,7 +12,8 @@ export type ServiceId =
   | "renovierung"
   | "trockenbau"
   | "bodenverlegung"
-  | "umzug";
+  | "umzug"
+  | "containerdienst";
 
 export type Service = { id: ServiceId; name: string; short: string; text: string };
 
@@ -71,6 +72,12 @@ export const services: Record<ServiceId, Service> = {
     short: "Laminat und Vinyl",
     text: "Laminat und Vinyl, mit Trittschalldämmung, Sockelleisten und Übergangsprofilen. Den alten Belag entfernen wir auf Wunsch gleich mit.",
   },
+  containerdienst: {
+    id: "containerdienst",
+    name: "Containerdienst",
+    short: "Container für Bauschutt, Sperrmüll, Mischabfall",
+    text: "Container in passender Größe für Bauschutt, Sperrmüll oder Mischabfall – gestellt, abgeholt und fachgerecht entsorgt, zum Festpreis.",
+  },
   umzug: {
     id: "umzug",
     name: "Umzug",
@@ -91,6 +98,7 @@ export const serviceOrder: ServiceId[] = [
   "trockenbau",
   "bodenverlegung",
   "umzug",
+  "containerdienst",
 ];
 
 /** Die drei Hauptleistungen auf der Startseite */

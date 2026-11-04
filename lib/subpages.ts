@@ -19,6 +19,8 @@ export type SubPage = {
   benefits: { h2: string; items: { title: string; text: string }[] };
   local: { h2: string; paragraphs: string[] };
   faqs: { q: string; a: string }[];
+  /** Spezialseiten zu diesem Bereich, verlinkt im Abschnitt "Lokal" */
+  related?: { href: string; label: string }[];
 };
 
 export const entkernung: SubPage = {
@@ -32,6 +34,7 @@ export const entkernung: SubPage = {
     "Wir schaffen die Grundlage für Ihre Sanierung: J&L Bauprojekte entkernt Wohnungen und Häuser, baut Bauteile kontrolliert zurück und übernimmt kleinere Abbrucharbeiten – sortenrein getrennt, sicher entsorgt, besenrein übergeben.",
   hero: "entkernung",
   preselect: ["entkernung"],
+  related: [{ href: "/wanddurchbruch/", label: "Wanddurchbruch & Stahlträger" }],
   services: {
     h2: "Unsere Leistungen rund um Entkernung und Rückbau",
     intro:
@@ -166,6 +169,11 @@ export const entruempelung: SubPage = {
     "Wir räumen Wohnungen, Häuser, Keller, Dachböden und Garagen – diskret, termingerecht und zum vorher vereinbarten Festpreis. Container, Abtransport und Entsorgung übernehmen wir selbst.",
   hero: "sperrmuell",
   preselect: ["entruempelung", "haushaltsaufloesung"],
+  related: [
+    { href: "/gewerbeaufloesung/", label: "Gewerbeauflösung" },
+    { href: "/messie-wohnung-entruempeln/", label: "Messie-Wohnung räumen" },
+    { href: "/containerdienst/", label: "Containerdienst" },
+  ],
   services: {
     h2: "Wenn ein Haushalt aufgelöst werden muss",
     intro:

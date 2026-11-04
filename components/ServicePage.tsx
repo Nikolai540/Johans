@@ -234,6 +234,19 @@ export function ServicePage({ page }: { page: SubPage }) {
               {page.local.paragraphs.map((p) => (
                 <p key={p}>{p}</p>
               ))}
+              {page.related && (
+                <p>
+                  Speziell für Sie:{" "}
+                  {page.related.map((r, i) => (
+                    <span key={r.href}>
+                      <a href={r.href} className="link link-underlined font-bold text-ink">
+                        {r.label}
+                      </a>
+                      {i < page.related!.length - 2 ? ", " : i === page.related!.length - 2 ? " und " : "."}
+                    </span>
+                  ))}
+                </p>
+              )}
               <p>
                 Ebenfalls im Angebot:{" "}
                 {others.map((o, i) => (
