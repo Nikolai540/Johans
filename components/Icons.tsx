@@ -71,6 +71,33 @@ export function SailIcon({ className }: IconProps) {
   );
 }
 
+/** Turm mit Kuppel (Perlachturm) – Augsburg */
+export function TowerIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M8 21V9h8v12M6 21h12M9 9V7a3 3 0 0 1 6 0v2M12 4V2M11 21v-3a1 1 0 0 1 2 0v3M10.5 12h3" />
+    </svg>
+  );
+}
+
+/** Stadtmauer mit Zinnen – Schongau */
+export function WallIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M3 21V9h3v2h3V9h3v2h3V9h3v2h3V9M3 21h18M21 9v12M9 21v-4a3 3 0 0 1 6 0v4" />
+    </svg>
+  );
+}
+
+/** Berge – Allgäu */
+export function MountainIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M2 20l7-12 4 6 3-4 6 10H2M7.5 10.5l1.5 1.5 1.5-1.5" />
+    </svg>
+  );
+}
+
 /** Haus – Firmensitz */
 export function HomeIcon({ className }: IconProps) {
   return (

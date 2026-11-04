@@ -1,4 +1,4 @@
-import { ArrowIcon, GateIcon, HomeIcon, SailIcon } from "@/components/Icons";
+import { ArrowIcon, GateIcon, HomeIcon, MountainIcon, SailIcon, TowerIcon, WallIcon } from "@/components/Icons";
 import { LocationMap } from "@/components/LocationMap";
 import { regions, type RegionId } from "@/lib/regions";
 import { catchment, locations, site } from "@/lib/site";
@@ -10,7 +10,14 @@ const facts = [
   { label: "Ansprechpartner", value: site.owner },
 ];
 
-const icons: Record<RegionId, typeof GateIcon> = { landsberg: GateIcon, ammersee: SailIcon, buchloe: HomeIcon };
+const icons: Record<RegionId, typeof GateIcon> = {
+  landsberg: GateIcon,
+  ammersee: SailIcon,
+  buchloe: HomeIcon,
+  augsburg: TowerIcon,
+  schongau: WallIcon,
+  allgaeu: MountainIcon,
+};
 
 export function Region() {
   return (
@@ -30,7 +37,7 @@ export function Region() {
             </h3>
             <ul data-reveal style={{ ["--i" as string]: 2 }} className="mt-sm flex flex-wrap gap-xs">
               {catchment.map((place) => (
-                <li key={place} className="rounded-pill bg-surface-soft px-md py-xs text-title-sm text-ink">
+                <li key={place} className="pill bg-surface-soft px-md py-xs text-title-sm text-ink">
                   {place}
                 </li>
               ))}
@@ -87,11 +94,11 @@ export function Region() {
                 className="card group flex flex-col p-lg has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-ink sm:p-xl"
               >
                 <span className="flex items-start justify-between gap-md">
-                  <span className="flex size-14 items-center justify-center rounded-sm bg-primary text-on-primary">
+                  <span className="flex size-14 items-center justify-center rounded-sm bg-surface-soft text-on-primary">
                     <Icon className="size-7" />
                   </span>
                   {r.badge && (
-                    <span className="rounded-pill bg-surface-dark px-sm py-xxs text-body-sm font-bold text-on-dark">
+                    <span className="pill bg-surface-dark px-sm py-xxs text-body-sm font-bold text-on-dark">
                       {r.badge}
                     </span>
                   )}
@@ -102,7 +109,8 @@ export function Region() {
                     {r.name}
                   </a>
                 </h3>
-                <p className="mt-xs text-body-sm text-body">{r.places.join(" · ")}</p>
+                {/* Ortsnamen nicht in sich umbrechen (Bad Wörishofen, Dießen am Ammersee) */}
+                <p className="mt-xs text-body-sm text-body">{r.places.map((p) => p.replaceAll(" ", "\u00a0")).join(" · ")}</p>
                 <p className="mt-md text-body-md">{r.teaser}</p>
                 <span aria-hidden className="mt-auto pt-lg text-title-sm text-balance text-ink">
                   {r.cta}

@@ -1,6 +1,8 @@
 import Image from "next/image";
 
+import { ArrowIcon } from "@/components/Icons";
 import { photos, type PhotoKey } from "@/lib/images";
+import { aboutPage } from "@/lib/site";
 
 const passing: { key: PhotoKey; ratio: string; frame: string }[] = [
   { key: "landsbergLuftbild", ratio: "aspect-[4/5]", frame: "w-[64%] lg:w-[62%]" },
@@ -33,6 +35,10 @@ export function About() {
                 und Allgäu.
               </p>
             </div>
+            <a data-reveal style={{ ["--i" as string]: 3 }} href={aboutPage.href} className="link link-underlined mt-lg inline-flex min-h-11 items-center gap-xs text-title-sm text-ink">
+              Mehr über J&L Bauprojekte
+              <ArrowIcon className="size-4" />
+            </a>
           </div>
         </div>
 

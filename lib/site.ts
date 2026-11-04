@@ -14,7 +14,7 @@ export const site = {
   whatsapp: "https://wa.me/4915155450377",
   email: "info@jlbauprojekte.de",
   address: {
-    street: "", // PLATZHALTER: Straße und Hausnummer
+    street: "Schmuzerstr 6", // PLATZHALTER: Straße und Hausnummer
     postalCode: "86946",
     locality: "Vilgertshofen",
     region: "Bayern",
@@ -33,8 +33,9 @@ export const site = {
   proof: { years: 7, projects: 270, rating: "4,8", reviews: 42 },
   // PLATZHALTER: Erreichbarkeit bestätigen
   hours: [
-    { label: "Montag – Freitag", value: "7:00 – 18:00", days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "07:00", closes: "18:00" },
-    { label: "Samstag", value: "nach Vereinbarung" },
+    { label: "Montag – Freitag", value: "8:00 – 20:00", days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "08:00", closes: "20:00" },
+    { label: "Samstag", value: "8:00 – 17:00", days: ["Saturday"], opens: "08:00", closes: "17:00" },
+    { label: "Sonntag", value: "geschlossen" },
   ],
 } as const;
 
@@ -67,7 +68,10 @@ export const pages = {
   entkernung: { href: "/entkernung-abbruch-rueckbau/", label: "Entkernung", full: "Entkernung, Abbruch & Rückbau" },
   entruempelung: { href: "/entruempelung-haushaltsaufloesung/", label: "Entrümpelung", full: "Entrümpelung & Haushaltsauflösung" },
   renovierung: { href: "/renovierung/", label: "Renovierung", full: "Renovierung: Trockenbau, Böden & Umzug" },
+  schadstoffe: { href: "/schadstoffe/", label: "Schadstoffe", full: "Schadstoffsanierung: Asbest, KMF & PAK" },
 } as const;
+
+export const aboutPage = { href: "/ueber-uns/", label: "Über uns" } as const;
 
 /** Einzugsgebiet in der Reihenfolge, in der es auf der Website genannt wird */
 export const catchment = [
@@ -89,4 +93,5 @@ export const nav = [
   { href: "/#einsatzgebiet", label: "Einsatzgebiet" },
   { href: "/#faq", label: "FAQ" },
   { href: "/#kontakt", label: "Kontakt" },
+  { href: aboutPage.href, label: aboutPage.label },
 ] as const;

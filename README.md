@@ -17,6 +17,8 @@ Alle Platzhalter sind im Code mit `PLATZHALTER` markiert:
 | Was | Wo |
 | --- | --- |
 | Straße, Rechtsform, Erreichbarkeit (Telefon/E-Mail von jlbauprojekte.de übernommen) | `lib/site.ts` |
+| Baustellenfotos der Bildersammlung (einfarbige Platzhalter) | `lib/gallery.ts`, `public/images/galerie/` |
+| Fotos Schadstoffe und Über uns (einfarbige Platzhalter) | `lib/placeholders.ts`, `public/images/platzhalter/` |
 | Impressum, Datenschutzerklärung | `app/impressum/page.tsx`, `app/datenschutz/page.tsx` |
 | Domain | `.env` → `NEXT_PUBLIC_SITE_URL` |
 
@@ -35,9 +37,14 @@ Ohne JavaScript funktioniert das Formular als normales POST mit Weiterleitung au
 
 ## Leistungsseiten
 
-`/entkernung-abbruch-rueckbau/` (mit Bereich Schadstoffsanierung, Sprungmarke `#schadstoffsanierung`),
+`/entkernung-abbruch-rueckbau/` (Sprungmarke `#schadstoffsanierung` für Asbest und Mineralwolle),
 `/entruempelung-haushaltsaufloesung/` und `/renovierung/` (Sprungmarken `#trockenbau`, `#bodenverlegung`, `#umzuege`).
 Vorlage: `components/ServicePage.tsx`, Texte in `lib/subpages.ts`, Kurztexte und Formular-Auswahl in `lib/content.ts`.
+
+## Ratgeber und Über uns
+
+`/schadstoffe/` (Asbest, KMF, PAK/PCB, Ablauf nach TRGS 519; Texte in `lib/schadstoffe.ts`) und `/ueber-uns/`
+(`app/ueber-uns/page.tsx`). Beide nutzen `components/PageHero.tsx`; Bild-Platzhalter in `lib/placeholders.ts`.
 
 ## Karte
 
@@ -48,8 +55,9 @@ an die OpenStreetMap Foundation – in der Datenschutzerklärung beschrieben.
 
 ## Regionale Landingpages
 
-Die Sektion „Einsatzgebiet“ auf der Startseite verteilt auf drei Regionen (`lib/regions.ts` → `regions`):
-`/einsatzgebiet/landsberg-am-lech/`, `/einsatzgebiet/ammersee-westufer/`, `/einsatzgebiet/buchloe-fuchstal/`.
+Die Sektion „Einsatzgebiet“ auf der Startseite verteilt auf sechs Regionen (`lib/regions.ts` → `regions`):
+`/einsatzgebiet/landsberg-am-lech/`, `/einsatzgebiet/ammersee-westufer/`, `/einsatzgebiet/buchloe-fuchstal/`,
+`/einsatzgebiet/augsburg/`, `/einsatzgebiet/schongau/`, `/einsatzgebiet/allgaeu/`.
 Vorlage: `components/RegionPage.tsx`, Texte in `lib/regions.ts`. Standorte (Vilgertshofen, Landsberg) in `lib/site.ts`.
 
 Neue Region veröffentlichen:
