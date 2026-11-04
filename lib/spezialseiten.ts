@@ -1,7 +1,7 @@
 import type { SubPage } from "./subpages";
 
 // Spezialseiten zu Haushaltsauflösung (Gewerbe, Messie, Container) und Entkernung (Wanddurchbruch).
-// Container stellen Partnerbetriebe, J&L organisiert. PLATZHALTER: konkrete Containergrößen ergänzen, falls gewünscht.
+// Container stellen Partnerbetriebe, J&L organisiert. Größen sind übliche Standardgrößen, keine Zusage für jede Größe.
 
 const region =
   "in Landsberg am Lech, Kaufering, Buchloe, Augsburg, am Ammersee und im Allgäu";
@@ -266,7 +266,14 @@ export const containerdienst: SubPage = {
       },
       {
         h3: "Passende Containergröße",
-        text: "Vom kleinen Container für die Kellerentrümpelung bis zur großen Mulde für den Umbau. Welche Größe passt, klären wir anhand von Fotos oder bei der Besichtigung.",
+        text: "Üblich sind Absetzcontainer mit 3, 5, 7 oder 10 m³, für große Mengen Abrollcontainer mit 10 bis 40 m³. Welche Größe passt, klären wir anhand von Fotos oder bei der Besichtigung. Als Faustregel:",
+        points: [
+          "Keller oder Garage: 3 m³",
+          "Wohnungsentrümpelung: 5–7 m³",
+          "Haushaltsauflösung (Haus): 7–10 m³",
+          "Bauschutt (Bad, Fliesen, Estrich): 3–5 m³",
+          "Gewerbe, große Entkernung: Abrollcontainer ab 10 m³",
+        ],
       },
       {
         h3: "Flexible Stell- und Abholzeiten",
@@ -334,7 +341,7 @@ export const containerdienst: SubPage = {
     },
     {
       q: "Welche Containergröße brauche ich?",
-      a: "Schicken Sie uns Fotos oder beschreiben Sie Abfallart und Menge. Wir empfehlen die Größe, die passt – ohne Reserve, die Sie bezahlen müssen.",
+      a: "Für Keller oder Garage reichen meist 3 m³, für eine Wohnung 5 bis 7 m³, für ein ganzes Haus 7 bis 10 m³. Bauschutt ist schwer, dafür nimmt man kleinere Container mit 3 bis 5 m³. Schicken Sie uns Fotos, dann empfehlen wir die passende Größe.",
     },
     {
       q: "Brauche ich eine Genehmigung für den Container?",
