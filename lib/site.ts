@@ -86,10 +86,11 @@ export const catchment = [
 ] as const;
 
 export const nav = [
-  { href: "/#leistungen", label: "Leistungen" },
   { href: pages.entkernung.href, label: pages.entkernung.label },
   { href: pages.entruempelung.href, label: pages.entruempelung.label },
   { href: pages.renovierung.href, label: pages.renovierung.label },
+  { href: pages.schadstoffe.href, label: pages.schadstoffe.label },
+  { href: "/containerdienst/", label: "Container" },
   { href: "/#einsatzgebiet", label: "Einsatzgebiet" },
   { href: "/#faq", label: "FAQ" },
   { href: "/#kontakt", label: "Kontakt" },

@@ -94,7 +94,8 @@
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
-  --breakpoint-xl: 72rem; /* Desktop-Navigation passt ab ca. 1140 px */
+  --breakpoint-xl: 72rem;
+  --breakpoint-nav: 80rem; /* Desktop-Navigation mit allen Leistungen braucht ca. 1255 px */
 
   --container-page: 90rem;
 

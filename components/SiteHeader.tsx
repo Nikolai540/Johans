@@ -64,14 +64,14 @@ export function SiteHeader() {
           <span className="max-[22.5rem]:hidden">J&amp;L Bauprojekte</span>
         </a>
 
-        <nav aria-label="Hauptnavigation" className="hidden xl:block">
-          <ul className="flex items-center gap-lg">
+        <nav aria-label="Hauptnavigation" className="hidden nav:block">
+          <ul className="flex items-center gap-sm">
             {nav.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
                   aria-current={isActive(l.href) ? (l.href.startsWith("/#") ? "location" : "page") : undefined}
-                  className={`link inline-flex min-h-11 items-center text-nav-link ${
+                  className={`link inline-flex min-h-11 items-center whitespace-nowrap text-nav-link ${
                     isActive(l.href) ? "font-bold text-on-dark link-underlined" : "text-on-dark-soft"
                   }`}
                 >
@@ -83,13 +83,13 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-xs">
-          <a href={site.phone.href} className="btn btn-primary hidden xl:inline-flex">
+          <a href={site.phone.href} className="btn btn-primary hidden nav:inline-flex">
             <PhoneIcon className="size-4" />
             Jetzt anrufen
           </a>
           <a
             href={site.phone.href}
-            className="btn btn-primary size-11 min-h-11 p-0 xl:hidden"
+            className="btn btn-primary size-11 min-h-11 p-0 nav:hidden"
             aria-label={`Jetzt anrufen: ${site.phone.display}`}
           >
             <PhoneIcon className="size-5" />
@@ -97,7 +97,7 @@ export function SiteHeader() {
           <button
             ref={toggleRef}
             type="button"
-            className="inline-flex size-11 items-center justify-center xl:hidden"
+            className="inline-flex size-11 items-center justify-center nav:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Menü schließen" : "Menü öffnen"}
@@ -108,7 +108,7 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <div id="mobile-menu" hidden={!open} className="fixed inset-x-0 top-nav bottom-0 overflow-y-auto bg-surface-dark xl:hidden">
+      <div id="mobile-menu" hidden={!open} className="fixed inset-x-0 top-nav bottom-0 overflow-y-auto bg-surface-dark nav:hidden">
         <nav aria-label="Mobile Navigation" className="page-x flex min-h-full flex-col pb-xl pt-lg">
           <ul className="flex flex-col">
             {nav.map((l) => (
