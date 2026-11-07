@@ -120,13 +120,6 @@ export function Region() {
             );
           })}
         </ul>
-
-        <p data-reveal className="mt-xl text-body-md">
-          Ihr Ort fehlt? Rufen Sie an – wir sagen Ihnen sofort, ob wir kommen:{" "}
-          <a href={site.phone.href} className="link link-underlined font-bold text-ink tabular">
-            {site.phone.display}
-          </a>
-        </p>
       </div>
     </section>
   );
