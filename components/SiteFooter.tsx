@@ -21,8 +21,8 @@ export function SiteFooter() {
               Ammersee und im Allgäu.
             </p>
           </div>
-          <div className="flex items-start justify-between gap-lg">
-            <address className="grid gap-xs not-italic text-title-md text-ink">
+          <div className="flex gap-lg lg:items-center lg:justify-end">
+            <address className="grid gap-xs not-italic text-title-md text-ink lg:justify-items-end lg:text-right">
               <a href={site.phone.href} className="link inline-flex min-h-11 items-center tabular">
                 {site.phone.display}
               </a>
@@ -38,11 +38,6 @@ export function SiteFooter() {
                 {site.branch.postalCode} {site.branch.locality}
               </span>
             </address>
-            <div className="w-16 shrink-0 bg-canvas p-[6px] sm:w-[88px]">
-              <div className="relative aspect-[3/4] overflow-hidden">
-                <Image src={stamp.src} alt="" fill sizes="88px" className="object-cover object-[60%_50%]" />
-              </div>
-            </div>
           </div>
         </div>
 
