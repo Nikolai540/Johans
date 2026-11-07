@@ -30,7 +30,7 @@ export default function Home() {
         <Gallery />
         <Region />
         <Faq />
-        {/* <Contact /> */}
+        <Contact />
       </main>
       <SiteFooter />
       <MobileActions />

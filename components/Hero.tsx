@@ -42,7 +42,7 @@ export function Hero() {
             Abbruch, Entkernung & Haushaltsauflösung
           </span>{" "}
           <span data-rise className="block" style={{ ["--i" as string]: 1 }}>
-            in Landsberg am Lech und Augsburg
+            in Landsberg am Lech und Umgebung
           </span>
         </h1>
         <p data-rise style={{ ["--i" as string]: 2 }} className="mt-md max-w-[52ch] text-body-md text-on-dark sm:text-title-md sm:font-light">
