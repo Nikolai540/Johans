@@ -2,6 +2,17 @@ import type { ServiceId } from "./content";
 import type { PhotoKey } from "./images";
 import { pages } from "./site";
 
+/** Maße in cm sind Richtwerte und dienen nur der maßstäblichen Zeichnung */
+export type ContainerSize = {
+  volume: string;
+  kind: "Absetzcontainer" | "Abrollcontainer";
+  use: string;
+  length: number;
+  /** Bodenlänge, nur beim Absetzcontainer mit schrägen Stirnseiten */
+  base?: number;
+  height: number;
+};
+
 export type SubPage = {
   path: string;
   name: string;
@@ -13,6 +24,8 @@ export type SubPage = {
   preselect: ServiceId[];
   /** id: Sprungmarke für Links auf einzelne Leistungen, points: Stichpunkte unter dem Text */
   services: { h2: string; intro: string; items: { h3: string; text: string; id?: string; points?: string[] }[] };
+  /** Containergrößen als Grafik, zwischen Leistungen und Anlässen */
+  sizes?: { h2: string; intro: string; items: ContainerSize[] };
   occasions: { h2: string; items: { h3: string; text: string }[] };
   checklist: { h2: string; intro: string; items: string[] };
   steps: { h2: string; items: { title: string; text: string }[] };
@@ -172,7 +185,7 @@ export const entruempelung: SubPage = {
   related: [
     { href: "/gewerbeaufloesung/", label: "Gewerbeauflösung" },
     { href: "/messie-wohnung-entruempeln/", label: "Messie-Wohnung räumen" },
-    { href: "/containerdienst/", label: "Containerdienst" },
+    { href: "/containerdienst/", label: "Container & Entsorgung" },
   ],
   services: {
     h2: "Wenn ein Haushalt aufgelöst werden muss",

@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Contact } from "@/components/Contact";
+import { ContainerSizes } from "@/components/ContainerSizes";
 import { ChevronIcon, PhoneIcon } from "@/components/Icons";
 import { areaServed, businessId, faqGraph, JsonLd } from "@/components/JsonLd";
 import { MobileActions } from "@/components/MobileActions";
@@ -14,6 +15,8 @@ export function ServicePage({ page }: { page: SubPage }) {
   const hero = photos[page.hero];
   const url = `${site.url}${page.path}`;
   const others = Object.values(pages).filter((p) => p.href !== page.path);
+  // Mit Containergrößen tauschen Anlässe und Checkliste die Fläche
+  const [occasionsBg, checklistBg] = page.sizes ? ["bg-surface-soft", "bg-canvas"] : ["bg-canvas", "bg-surface-soft"];
 
   const schema = [
     {
@@ -134,8 +137,26 @@ export function ServicePage({ page }: { page: SubPage }) {
           </div>
         </section>
 
+        {/* Containergrößen: schließt an die Leistungen auf gleicher Fläche an */}
+        {page.sizes && (
+          <section id="containergroessen" aria-labelledby="groessen-titel" className="bg-surface-soft pb-section">
+            {/* Volle Seitenbreite wie die Karten der Anlässe darunter */}
+            <div className="page-x mx-auto max-w-page">
+              <h2 id="groessen-titel" data-reveal className="text-display-md lg:text-display-lg">
+                {page.sizes.h2}
+              </h2>
+              <p data-reveal style={{ ["--i" as string]: 1 }} className="mt-md max-w-[60ch] text-title-md text-ink">
+                {page.sizes.intro}
+              </p>
+              <div data-reveal style={{ ["--i" as string]: 2 }} className="card mt-xxl p-lg">
+                <ContainerSizes sizes={page.sizes.items} />
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Anlässe */}
-        <section aria-labelledby="anlaesse-titel" className="bg-canvas py-section">
+        <section aria-labelledby="anlaesse-titel" className={`${occasionsBg} py-section`}>
           <div className="page-x mx-auto max-w-page">
             <h2 id="anlaesse-titel" data-reveal className="text-display-md lg:text-display-lg">
               {page.occasions.h2}
@@ -152,7 +173,7 @@ export function ServicePage({ page }: { page: SubPage }) {
         </section>
 
         {/* Checkliste */}
-        <section aria-labelledby="checkliste-titel" className="bg-surface-soft py-section">
+        <section aria-labelledby="checkliste-titel" className={`${checklistBg} py-section`}>
           <div className="page-x mx-auto grid max-w-page gap-xl lg:grid-cols-12 lg:gap-lg">
             <div className="lg:col-span-4">
               <h2 id="checkliste-titel" data-reveal className="text-display-md">

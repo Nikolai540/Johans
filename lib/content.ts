@@ -1,6 +1,7 @@
 import type { PhotoKey } from "./images";
 import { regions } from "./regions";
 import { pages } from "./site";
+import { containerdienst } from "./spezialseiten";
 
 export type ServiceId =
   | "entruempelung"
@@ -12,8 +13,7 @@ export type ServiceId =
   | "renovierung"
   | "trockenbau"
   | "bodenverlegung"
-  | "umzug"
-  | "containerdienst";
+  | "umzug";
 
 export type Service = { id: ServiceId; name: string; short: string; text: string };
 
@@ -72,12 +72,6 @@ export const services: Record<ServiceId, Service> = {
     short: "Laminat und Vinyl",
     text: "Laminat und Vinyl, mit Trittschalldämmung, Sockelleisten und Übergangsprofilen. Den alten Belag entfernen wir auf Wunsch gleich mit.",
   },
-  containerdienst: {
-    id: "containerdienst",
-    name: "Containerdienst",
-    short: "Container für Bauschutt, Sperrmüll, Mischabfall",
-    text: "Container in passender Größe für Bauschutt, Sperrmüll oder Mischabfall – gestellt, abgeholt und fachgerecht entsorgt, zum Festpreis.",
-  },
   umzug: {
     id: "umzug",
     name: "Umzug",
@@ -98,15 +92,15 @@ export const serviceOrder: ServiceId[] = [
   "trockenbau",
   "bodenverlegung",
   "umzug",
-  "containerdienst",
 ];
 
-/** Die drei Hauptleistungen auf der Startseite */
+/** Die Leistungsbereiche auf der Startseite */
 export const serviceCategories: {
-  id: "entkernung" | "entruempelung" | "renovierung";
+  id: "entkernung" | "entruempelung" | "renovierung" | "schadstoffe" | "containerdienst";
   name: string;
   text: string;
-  items: ServiceId[];
+  /** Leistungen aus `services` oder eigene Stichpunkte */
+  items: (ServiceId | { name: string; short: string })[];
   photo: PhotoKey;
   shape: "portrait" | "landscape" | "square";
   page: { href: string; cta: string };
@@ -137,6 +131,32 @@ export const serviceCategories: {
     photo: "trockenbau",
     shape: "portrait",
     page: { href: pages.renovierung.href, cta: "Alles zur Renovierung" },
+  },
+  {
+    id: "schadstoffe",
+    name: "Schadstoffsanierung",
+    text: "In vielen Häusern, die zwischen 1950 und 1995 gebaut oder modernisiert wurden, stecken heute verbotene Baustoffe. Kritisch wird es beim Umbau: Wir bauen Asbest und alte Mineralwolle fachgerecht aus – mit Sachkunde nach TRGS 519, Schutzmaßnahmen und Entsorgung mit Nachweis.",
+    items: [
+      { name: "Asbest", short: "Bodenbeläge, Kleber, Putz, Eternit-Platten" },
+      { name: "Alte Mineralwolle (KMF)", short: "Dämmung aus der Zeit vor 1996" },
+      { name: "Entsorgung", short: "Fachgerecht und mit Nachweis" },
+    ],
+    photo: "sanierungFachwerk",
+    shape: "landscape",
+    page: { href: pages.schadstoffe.href, cta: "Alles zur Schadstoffsanierung" },
+  },
+  {
+    id: "containerdienst",
+    name: "Container & Entsorgung",
+    text: "Bei jeder Entrümpelung und Entkernung kümmern wir uns auch um den Abfall: Wir organisieren den passenden Container über unsere Partner aus der Region, befüllen ihn selbst und lassen alles fachgerecht entsorgen – im Festpreis enthalten.",
+    items: [
+      { name: "Bauschutt", short: "Aus Entkernung, Abbruch und Rückbau" },
+      { name: "Sperrmüll", short: "Aus Entrümpelung und Haushaltsauflösung" },
+      { name: "Mischabfall", short: "Gemischte Bau- und Gewerbeabfälle" },
+    ],
+    photo: "abbruch",
+    shape: "square",
+    page: { href: containerdienst.path, cta: "Alles zu Container & Entsorgung" },
   },
 ];
 

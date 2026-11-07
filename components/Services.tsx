@@ -24,8 +24,8 @@ export function Services() {
             Unsere Leistungen
           </h2>
           <p data-reveal style={{ ["--i" as string]: 1 }} className="mt-md max-w-[40ch] text-body-md">
-            Drei Leistungsbereiche, ein Ansprechpartner: Wir schaffen Platz, bauen fachgerecht zurück und bringen
-            Ihre Räume wieder in Schuss – einzeln beauftragt oder als ein Projekt.
+            Ein Ansprechpartner für alles: Wir schaffen Platz, bauen fachgerecht zurück, sanieren Schadstoffe und
+            bringen Ihre Räume wieder in Schuss – Container und Entsorgung inklusive, einzeln beauftragt oder als ein Projekt.
           </p>
           {/* Nur das Verzeichnis bleibt stehen – es markiert den Bereich, der gerade gelesen wird */}
           <div className="hidden lg:sticky lg:top-[calc(var(--spacing-nav)+var(--spacing-xxl))] lg:mt-xl lg:block">
@@ -56,14 +56,17 @@ export function Services() {
                     {cat.text}
                   </p>
                   <ul data-reveal style={{ ["--i" as string]: 2 }} className="mt-lg grid gap-sm">
-                    {cat.items.map((id) => (
-                      <li key={id} className="flex gap-sm">
-                        <span aria-hidden className="mt-[0.55em] size-2 shrink-0 bg-primary" />
-                        <span className="text-body-md">
-                          <span className="font-bold text-ink">{services[id].name}</span> – {services[id].short}
-                        </span>
-                      </li>
-                    ))}
+                    {cat.items.map((entry) => {
+                      const item = typeof entry === "string" ? services[entry] : entry;
+                      return (
+                        <li key={item.name} className="flex gap-sm">
+                          <span aria-hidden className="mt-[0.55em] size-2 shrink-0 bg-primary" />
+                          <span className="text-body-md">
+                            <span className="font-bold text-ink">{item.name}</span> – {item.short}
+                          </span>
+                        </li>
+                      );
+                    })}
                   </ul>
                   <a href={cat.page.href} className="btn btn-primary mt-xl self-start">
                     {cat.page.cta}

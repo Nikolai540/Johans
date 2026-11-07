@@ -236,124 +236,122 @@ export const messie: SubPage = {
   ],
 };
 
+// Kein eigenständiger Containerdienst: Container gibt es nur bei Entrümpelungen und Entkernungen, die wir selbst ausführen.
 export const containerdienst: SubPage = {
   path: "/containerdienst/",
-  name: "Containerdienst",
-  title: "Containerdienst in Landsberg am Lech – Container mieten | J&L Bauprojekte",
+  name: "Container & Entsorgung",
+  title: "Container & Entsorgung bei Entrümpelung und Entkernung in Landsberg | J&L Bauprojekte",
   description:
-    "Container mieten in Landsberg am Lech, Augsburg und im Allgäu: Container für Bauschutt, Sperrmüll und Mischabfall, flexible Stell- und Abholzeiten, transparente Festpreise inklusive Entsorgung.",
-  h1: "Containerdienst in Landsberg am Lech und Augsburg – Container mieten zum Festpreis",
+    "Container und Entsorgung inklusive: Bei jeder Entrümpelung und Entkernung in Landsberg am Lech, Augsburg und im Allgäu organisieren wir den passenden Container, befüllen ihn selbst und entsorgen fachgerecht – im Festpreis enthalten.",
+  h1: "Container & Entsorgung bei Entrümpelung und Entkernung",
   intro:
-    "Bauschutt entsorgen, Sperrmüll loswerden oder Mischabfall von der Baustelle: Wir organisieren den passenden Container über unsere Partner aus der Region – gestellt und abgeholt zum vereinbarten Termin, der Inhalt fachgerecht entsorgt. Der Preis steht vorher fest – inklusive Stellung, Abholung und Entsorgung.",
+    "Wenn wir entrümpeln oder entkernen, kümmern wir uns auch um den Abfall: Wir organisieren den passenden Container über unsere Partner aus der Region, befüllen ihn selbst und lassen alles fachgerecht entsorgen. Das ist im Festpreis enthalten. Container ohne unsere Arbeiten vermieten wir nicht.",
   hero: "abbruch",
-  preselect: ["containerdienst"],
+  preselect: ["entruempelung", "entkernung"],
   services: {
     h2: "Container für jeden Abfall",
     intro:
-      "Welcher Container passt, hängt von Abfallart und Menge ab. Wir beraten Sie vorher, damit Sie weder zu viel bezahlen noch nachbestellen müssen.",
+      "Welcher Container passt, hängt von Abfallart und Menge ab. Das schätzen wir bei der Besichtigung ein und bestellen die passende Größe – Sie müssen sich um nichts kümmern.",
     items: [
       {
         h3: "Bauschutt-Container",
-        text: "Für Ziegel, Beton, Fliesen, Mörtel und Steine aus Abbruch oder Umbau. Sauberer Bauschutt wird günstiger entsorgt – wir sagen Ihnen, was hinein darf.",
+        text: "Für Ziegel, Beton, Fliesen, Mörtel und Estrich aus Entkernung, Abbruch und Rückbau. Sauberer Bauschutt wird günstiger entsorgt – deshalb trennen wir schon beim Ausbau.",
       },
       {
         h3: "Sperrmüll-Container",
-        text: "Für Möbel, Matratzen, Teppiche und Hausrat bei Entrümpelung, Umzug oder Haushaltsauflösung.",
+        text: "Für Möbel, Matratzen, Teppiche und Hausrat bei Entrümpelung und Haushaltsauflösung.",
       },
       {
         h3: "Mischabfall-Container",
-        text: "Für gemischte Bau- und Gewerbeabfälle, wenn die Trennung vor Ort nicht möglich ist.",
+        text: "Für gemischte Bau- und Gewerbeabfälle, wenn sich nicht alles vor Ort trennen lässt.",
       },
       {
-        h3: "Passende Containergröße",
-        text: "Üblich sind Absetzcontainer mit 3, 5, 7 oder 10 m³, für große Mengen Abrollcontainer mit 10 bis 40 m³. Welche Größe passt, klären wir anhand von Fotos oder bei der Besichtigung. Als Faustregel:",
-        points: [
-          "Keller oder Garage: 3 m³",
-          "Wohnungsentrümpelung: 5–7 m³",
-          "Haushaltsauflösung (Haus): 7–10 m³",
-          "Bauschutt (Bad, Fliesen, Estrich): 3–5 m³",
-          "Gewerbe, große Entkernung: Abrollcontainer ab 10 m³",
-        ],
+        h3: "Im Festpreis enthalten",
+        text: "Container, Abholung und Entsorgung sind Teil unseres Angebots für die Entrümpelung oder Entkernung. Sie bekommen keine zweite Rechnung.",
       },
-      {
-        h3: "Flexible Stell- und Abholzeiten",
-        text: "Der Container kommt zu Ihrem Wunschtermin und wird abgeholt, sobald er voll ist – oder zum vereinbarten Tag.",
-      },
-      {
-        h3: "Transparente Preise",
-        text: "Ein Festpreis für Stellung, Mietzeit, Abholung und Entsorgung. Keine versteckten Zuschläge.",
-      },
+    ],
+  },
+  sizes: {
+    h2: "Welche Containergröße wir einsetzen",
+    intro:
+      "Üblich sind Absetzcontainer mit 3, 5, 7 oder 10 m³, für große Mengen Abrollcontainer mit 10 bis 40 m³. Welche Größe wir für Ihr Projekt bestellen, hängt von der Menge ab. Wählen Sie eine Größe, um zu sehen, wofür sie typischerweise reicht.",
+    items: [
+      { volume: "3 m³", kind: "Absetzcontainer", use: "Keller oder Garage, Bauschutt aus Bad, Fliesen oder Estrich", length: 260, base: 170, height: 100 },
+      { volume: "5 m³", kind: "Absetzcontainer", use: "Wohnungsentrümpelung, Bauschutt aus Bad, Fliesen oder Estrich", length: 310, base: 200, height: 120 },
+      { volume: "7 m³", kind: "Absetzcontainer", use: "Wohnungsentrümpelung, Haushaltsauflösung (Haus)", length: 360, base: 240, height: 140 },
+      { volume: "10 m³", kind: "Absetzcontainer", use: "Haushaltsauflösung (Haus)", length: 390, base: 260, height: 165 },
+      { volume: "10–40 m³", kind: "Abrollcontainer", use: "Gewerbeauflösung, große Entkernung", length: 600, height: 150 },
     ],
   },
   occasions: {
-    h2: "Wofür Sie einen Container brauchen",
+    h2: "Bei welchen Arbeiten wir Container stellen",
     items: [
-      { h3: "Umbau und Sanierung", text: "Bauschutt aus Abbruch und Entkernung direkt vor Ort entsorgen." },
-      { h3: "Entrümpelung", text: "Keller, Dachboden oder ganze Wohnungen räumen, ohne zehnmal zum Wertstoffhof zu fahren." },
-      { h3: "Haushaltsauflösung", text: "Sperrmüll aus dem ganzen Haushalt auf einmal loswerden." },
-      { h3: "Gewerbe", text: "Gewerbeabfall und alte Einrichtung bei Umzug oder Betriebsauflösung." },
-      { h3: "Abriss im Garten", text: "Gartenhaus, Schuppen oder Carport abbrechen und den Schutt gleich abfahren." },
-      { h3: "Renovierung", text: "Alte Böden, Fliesen und Verkleidungen sammeln, solange renoviert wird." },
+      { h3: "Entkernung", text: "Böden, Fliesen, Putz und Installationen bis auf den Rohbau – der Bauschutt geht direkt vor Ort in den Container." },
+      { h3: "Abbruch und Rückbau", text: "Wände, Treppen oder Kamine kontrolliert zurückbauen und den Schutt gleich abfahren lassen." },
+      { h3: "Abriss im Garten", text: "Gartenhaus, Schuppen oder Carport abbrechen – mit Container für Holz und Bauschutt." },
+      { h3: "Entrümpelung", text: "Keller, Dachboden, Garage oder die ganze Wohnung räumen, ohne dass Sie zum Wertstoffhof fahren." },
+      { h3: "Haushaltsauflösung", text: "Den kompletten Haushalt auflösen und den Sperrmüll auf einmal entsorgen." },
+      { h3: "Gewerbeauflösung", text: "Büros, Lager und Ladenflächen räumen – bei großen Mengen mit Abrollcontainer." },
     ],
   },
   checklist: {
-    h2: "Was in welchen Container darf",
-    intro: "Die wichtigsten Regeln für die Abfallentsorgung:",
+    h2: "Wie wir den Abfall trennen",
+    intro: "Die Container befüllen wir selbst und trennen dabei so, wie es die Entsorgung verlangt:",
     items: [
       "Bauschutt: Beton, Ziegel, Fliesen, Steine",
       "Sperrmüll: Möbel, Matratzen, Teppiche",
       "Mischabfall: gemischte Bau- und Gewerbeabfälle",
-      "Holz: unbehandeltes und behandeltes Holz getrennt",
-      "Nicht hinein: Farben, Lacke, Öle, Batterien",
-      "Nicht hinein: Asbest und alte Mineralwolle",
-      "Nicht hinein: Elektroaltgeräte",
-      "Im Zweifel vorher fragen",
+      "Holz: unbehandelt und behandelt getrennt",
+      "Metall: getrennt zur Verwertung",
+      "Farben, Lacke, Öle, Batterien: gesondert",
+      "Elektroaltgeräte: gesondert",
+      "Asbest und alte Mineralwolle: verpackt und gesondert",
     ],
   },
   steps: {
-    h2: "So einfach mieten Sie einen Container",
+    h2: "So läuft es ab",
     items: [
-      { title: "Anfrage", text: "Abfallart, ungefähre Menge, Adresse und Wunschtermin nennen – gern mit Fotos." },
-      { title: "Festpreis", text: "Wir empfehlen die passende Größe und nennen Ihnen den Festpreis inklusive Entsorgung." },
-      { title: "Stellung", text: "Der Container wird zum Wunschtermin gestellt. Steht er auf öffentlichem Grund, sagen wir Ihnen, welche Genehmigung nötig ist." },
-      { title: "Abholung und Entsorgung", text: "Der Container wird abgeholt und fachgerecht über zugelassene Anlagen entsorgt." },
+      { title: "Besichtigung", text: "Wir sehen uns Räume und Menge an – vor Ort oder anhand Ihrer Fotos per WhatsApp." },
+      { title: "Festpreis", text: "Sie erhalten einen Festpreis für die Arbeiten, Container und Entsorgung inklusive." },
+      { title: "Container und Arbeiten", text: "Wir lassen den Container zum Starttermin stellen und befüllen ihn selbst. Steht er auf öffentlichem Grund, klären wir die Genehmigung mit Ihnen." },
+      { title: "Abholung und Entsorgung", text: "Der Container wird abgeholt und über zugelassene Anlagen entsorgt. Die Räume übergeben wir besenrein." },
     ],
   },
   benefits: {
     h2: "Was für J&L Bauprojekte spricht",
     items: [
-      { title: "Alles aus einer Hand", text: "Auf Wunsch füllen wir den Container auch selbst – bei Entrümpelung, Abbruch oder Entkernung." },
-      { title: "Flexibel", text: "Stell- und Abholtermine richten sich nach Ihrem Projekt, nicht nach unserem Fahrplan." },
-      { title: "Festpreis", text: "Was im Angebot steht, gilt – inklusive Entsorgung." },
+      { title: "Alles aus einer Hand", text: "Wir räumen oder entkernen, befüllen den Container und kümmern uns um die Entsorgung. Sie haben einen Ansprechpartner." },
+      { title: "Die richtige Größe", text: "Weil wir die Menge bei der Besichtigung selbst einschätzen, wird weder zu groß bestellt noch nachbestellt." },
+      { title: "Festpreis", text: "Was im Angebot steht, gilt – inklusive Container und Entsorgung." },
     ],
   },
   local: {
-    h2: "Container mieten in Landsberg, Augsburg und Umgebung",
+    h2: "Container und Entsorgung in Landsberg, Augsburg und Umgebung",
     paragraphs: [
-      `Unseren Containerdienst bieten wir ${region} an – von unseren Standorten in Landsberg am Lech und Vilgertshofen aus.`,
-      "Ob Muldendienst für die Baustelle in Kaufering, Sperrmüll-Container für die Haushaltsauflösung in Augsburg oder Bauschutt-Container im Allgäu: Rufen Sie an, wir nennen Ihnen Größe, Termin und Preis.",
+      `Entrümpelungen und Entkernungen mit Container und Entsorgung übernehmen wir ${region} – von unseren Standorten in Landsberg am Lech und Vilgertshofen aus.`,
+      "Ob Bauschutt aus der Entkernung in Kaufering, Sperrmüll aus der Haushaltsauflösung in Augsburg oder Holz vom Abriss eines Schuppens im Allgäu: Rufen Sie an, wir besprechen Ihr Projekt.",
     ],
   },
   faqs: [
     {
-      q: "Was kostet es, einen Container zu mieten?",
-      a: "Das hängt von Größe, Abfallart und Mietdauer ab. Sie erhalten vorab einen Festpreis inklusive Stellung, Abholung und Entsorgung.",
+      q: "Kann ich bei Ihnen nur einen Container mieten?",
+      a: "Nein. Container stellen wir nur bei Entrümpelungen und Entkernungen, die wir selbst ausführen. Dann sind Container, Abholung und Entsorgung im Festpreis enthalten.",
     },
     {
-      q: "Welche Containergröße brauche ich?",
-      a: "Für Keller oder Garage reichen meist 3 m³, für eine Wohnung 5 bis 7 m³, für ein ganzes Haus 7 bis 10 m³. Bauschutt ist schwer, dafür nimmt man kleinere Container mit 3 bis 5 m³. Schicken Sie uns Fotos, dann empfehlen wir die passende Größe.",
+      q: "Was kostet der Container?",
+      a: "Er ist Teil unseres Festpreises für die Entrümpelung oder Entkernung. Wie hoch der Anteil ist, hängt von Größe, Abfallart und Menge ab – nachträgliche Aufschläge gibt es nicht.",
     },
     {
-      q: "Brauche ich eine Genehmigung für den Container?",
+      q: "Welche Containergröße wird gebraucht?",
+      a: "Für Keller oder Garage reichen meist 3 m³, für eine Wohnung 5 bis 7 m³, für ein ganzes Haus 7 bis 10 m³. Bauschutt ist schwer, dafür nehmen wir kleinere Container mit 3 bis 5 m³. Die passende Größe legen wir bei der Besichtigung fest.",
+    },
+    {
+      q: "Braucht es eine Genehmigung für den Container?",
       a: "Auf Ihrem Grundstück nicht. Auf öffentlichem Grund braucht es meist eine Erlaubnis der Gemeinde. Wir sagen Ihnen, was in Ihrem Fall zu tun ist.",
     },
     {
-      q: "Darf Asbest in den Bauschutt-Container?",
-      a: "Nein. Asbest und alte Mineralwolle müssen getrennt verpackt und gesondert entsorgt werden. Das übernehmen wir mit Sachkunde nach TRGS 519.",
-    },
-    {
-      q: "Wie lange darf der Container stehen?",
-      a: "Die Mietdauer legen wir mit Ihnen fest. Ist er früher voll, wird er früher abgeholt.",
+      q: "Was passiert mit Asbest und alter Mineralwolle?",
+      a: "Sie kommen nicht in den Bauschutt-Container, sondern werden getrennt verpackt und gesondert entsorgt. Den Ausbau übernehmen wir mit Sachkunde nach TRGS 519.",
     },
   ],
 };
