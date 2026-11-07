@@ -9,6 +9,7 @@
   --color-primary: #00E5FF; /* Signal-Orange */
   --color-primary-active: #00B8CC;
   --color-primary-disabled: #e2ded4;
+  --color-secondary: #0093A6; /* Petrol: dunklere Stufe von primary, für helle Flächen */
   --color-ink: #1d1c1a;
   --color-body: #3a3834;
   --color-body-strong: #1a1a1a;

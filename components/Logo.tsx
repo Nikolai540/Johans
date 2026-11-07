@@ -13,7 +13,7 @@ export function LogoMark({ className, title }: { className?: string; title?: str
         </clipPath>
       </defs>
       <g clipPath="url(#logo-mark-clip)">
-        <path d={MARK} className="fill-primary" fillRule="evenodd" />
+        <path d={MARK} className="fill-accent" fillRule="nonzero" />
         <path d={LETTERS} fill="currentColor" fillRule="evenodd" />
       </g>
     </svg>
@@ -29,12 +29,12 @@ export function LogoIcon({ className }: { className?: string }) {
   );
 }
 
-/** Vollständiges Logo mit Schriftzug */
+/** Vollständiges Logo mit Schriftzug. Bagger in secondary (Petrol): auf hellem Grund ruhiger als das leuchtende primary */
 export function LogoFull({ className, title }: { className?: string; title?: string }) {
   return (
     <svg viewBox="70 195 1115 828" className={className} role={title ? "img" : undefined} aria-hidden={title ? undefined : true}>
       {title && <title>{title}</title>}
-      <path d={MARK} className="fill-primary" fillRule="evenodd" />
+      <path d={MARK} className="fill-secondary" fillRule="evenodd" />
       <path d={LETTERS} fill="currentColor" fillRule="evenodd" />
     </svg>
   );
