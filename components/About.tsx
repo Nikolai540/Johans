@@ -25,14 +25,14 @@ export function About() {
             <div data-reveal style={{ ["--i" as string]: 2 }} className="mt-xl max-w-[58ch] space-y-md text-body-md">
               <p>
                 Wer ein Haus erbt, eine ältere Immobilie kauft oder umbaut, braucht selten nur einen Handgriff. Bei
-                J&L Bauprojekte laufen die Arbeiten zusammen: Wir entrümpeln, entkernen, entfernen Schadstoffe
-                fachgerecht und renovieren anschließend – in einem Zeitplan, mit einem Festpreis nach kostenloser
-                Besichtigung.
+                uns läuft alles zusammen: Wir entrümpeln, entkernen, bauen Asbest und andere Schadstoffe aus und
+                renovieren danach. In einem Zeitplan und zum Festpreis, den Sie nach der kostenlosen Besichtigung
+                bekommen.
               </p>
               <p>
-                Für Sie heißt das: eine Telefonnummer, ein Termin, ein Angebot. Ob Eigentümer, Erbengemeinschaft,
-                Hausverwaltung oder Gewerbe – in Landsberg am Lech und der ganzen Region zwischen Augsburg, Ammersee
-                und Allgäu.
+                Sie rufen eine Nummer an und bekommen ein Angebot für alles. Für Eigentümer, Erbengemeinschaften,
+                Hausverwaltungen und Gewerbe in Landsberg am Lech und der Region zwischen Augsburg, Ammersee und
+                Allgäu.
               </p>
             </div>
             <a data-reveal style={{ ["--i" as string]: 3 }} href={aboutPage.href} className="link link-underlined mt-lg inline-flex min-h-11 items-center gap-xs text-title-sm text-ink">

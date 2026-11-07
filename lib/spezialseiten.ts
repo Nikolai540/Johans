@@ -14,13 +14,13 @@ export const gewerbeaufloesung: SubPage = {
     "Gewerbeauflösung, Firmenauflösung und Büroentrümpelung in Landsberg am Lech, Augsburg und im Allgäu: Lager räumen, Demontage, Akten fachgerecht entsorgen, besenreine Übergabe zum Festpreis.",
   h1: "Gewerbeauflösung & Betriebsauflösung in Landsberg am Lech und Augsburg",
   intro:
-    "Büro, Praxis, Werkstatt oder Lager: Wir lösen Ihren Betrieb diskret und termingerecht auf. Inventar raus, Einbauten demontiert, Akten und Wertstoffe fachgerecht entsorgt – und die Fläche besenrein zum Übergabetermin. Mit festem Ansprechpartner und Festpreis nach kostenloser Besichtigung.",
+    "Büro, Praxis, Werkstatt oder Lager: Wir lösen Ihren Betrieb diskret und pünktlich auf. Inventar raus, Einbauten abbauen, Akten und Wertstoffe fachgerecht entsorgen. Zum Übergabetermin ist die Fläche besenrein. Den Festpreis bekommen Sie nach der kostenlosen Besichtigung.",
   hero: "entkernung",
   preselect: ["entruempelung"],
   services: {
     h2: "Was zu einer Gewerbeauflösung gehört",
     intro:
-      "Bei einer Firmenauflösung zählt jeder Tag Miete. Wir planen die Räumung rückwärts vom Übergabetermin und erledigen alles mit einem Team – vom ersten Karton bis zur besenreinen Fläche.",
+      "Bei einer Firmenauflösung kostet jeder Tag Miete. Wir planen rückwärts vom Übergabetermin und erledigen alles mit einem Team, vom ersten Karton bis zur besenreinen Fläche.",
     items: [
       {
         h3: "Büroentrümpelung",
@@ -28,11 +28,11 @@ export const gewerbeaufloesung: SubPage = {
       },
       {
         h3: "Lager räumen",
-        text: "Regale voller Restbestände, Paletten, Verpackungen und Altmaterial – wir räumen Lager und Hallen auch bei großen Mengen und organisieren den Abtransport.",
+        text: "Regale voller Restbestände, Paletten, Verpackungen und Altmaterial: Wir räumen Lager und Hallen auch bei großen Mengen und kümmern uns um den Abtransport.",
       },
       {
         h3: "Demontage und Industrie-Demontage",
-        text: "Regalanlagen, Werkbänke, Einbauküchen, Trennwände und kleinere Anlagen bauen wir fachgerecht ab. Was weiterverkauft oder mitgenommen werden soll, demontieren wir schonend.",
+        text: "Regalanlagen, Werkbänke, Einbauküchen, Trennwände und kleinere Anlagen bauen wir ab. Was verkauft oder mitgenommen werden soll, bauen wir vorsichtig aus.",
       },
       {
         h3: "Akten und Datenträger",
@@ -44,7 +44,7 @@ export const gewerbeaufloesung: SubPage = {
       },
       {
         h3: "Besenreine Übergabe",
-        text: "Am Ende übergeben wir die Fläche besenrein – bereit für den Vermieter, den Nachmieter oder den Umbau.",
+        text: "Am Ende ist die Fläche besenrein, fertig für Vermieter, Nachmieter oder Umbau.",
       },
     ],
   },
@@ -52,11 +52,11 @@ export const gewerbeaufloesung: SubPage = {
     h2: "Wann Unternehmen uns rufen",
     items: [
       { h3: "Betriebsaufgabe", text: "Ruhestand ohne Nachfolger oder Geschäftsaufgabe: Wir räumen, damit Sie sich um den Rest kümmern können." },
-      { h3: "Umzug in neue Räume", text: "Was nicht mitkommt, räumen wir aus den alten Räumen – termingenau zum Mietende." },
+      { h3: "Umzug in neue Räume", text: "Was nicht mitkommt, räumen wir aus den alten Räumen, pünktlich zum Mietende." },
       { h3: "Insolvenz und Nachlass", text: "Für Insolvenzverwalter, Erben und Vermieter räumen wir diskret und dokumentieren auf Wunsch den Ablauf." },
       { h3: "Mieterwechsel", text: "Vermieter von Gewerbeflächen bekommen die Fläche schnell wieder leer und vermietbar." },
       { h3: "Umbau", text: "Vor der Sanierung räumen wir die Fläche und übernehmen auf Wunsch gleich die Entkernung." },
-      { h3: "Verkleinerung", text: "Lagerflächen reduzieren, Archive auflösen, alte Technik loswerden – auch in Etappen." },
+      { h3: "Verkleinerung", text: "Lagerfläche verkleinern, Archive auflösen, alte Technik loswerden. Auch in Etappen." },
     ],
   },
   checklist: {
@@ -76,9 +76,9 @@ export const gewerbeaufloesung: SubPage = {
   steps: {
     h2: "So läuft Ihre Gewerbeauflösung ab",
     items: [
-      { title: "Anfrage", text: "Sie nennen uns Fläche, Art des Betriebs und Ihren Übergabetermin – telefonisch, per WhatsApp oder über das Formular." },
+      { title: "Anfrage", text: "Sie nennen uns Fläche, Art des Betriebs und Übergabetermin. Per Telefon, WhatsApp oder Formular." },
       { title: "Besichtigung", text: "Wir sehen uns die Räume an und klären, was entsorgt, demontiert oder übernommen wird." },
-      { title: "Festpreis und Zeitplan", text: "Sie erhalten ein schriftliches Angebot mit festem Preis und einem Zeitplan, der zum Übergabetermin passt." },
+      { title: "Festpreis und Zeitplan", text: "Sie bekommen ein schriftliches Angebot mit festem Preis und einem Zeitplan, der zum Übergabetermin passt." },
       { title: "Räumung und Übergabe", text: "Wir räumen, demontieren, entsorgen und übergeben besenrein." },
     ],
   },
@@ -86,25 +86,25 @@ export const gewerbeaufloesung: SubPage = {
     h2: "Was für J&L Bauprojekte spricht",
     items: [
       { title: "Diskret", text: "Neutrales Auftreten, kein Aufsehen bei Kunden, Nachbarn oder Mitarbeitenden." },
-      { title: "Schnell", text: "Besichtigung meist kurzfristig, die Räumung oft innerhalb weniger Tage – auch kurz vor dem Mietende." },
-      { title: "Alles aus einer Hand", text: "Räumen, Demontage, Entsorgung und auf Wunsch die Entkernung – ein Ansprechpartner, ein Festpreis." },
+      { title: "Schnell", text: "Besichtigung meist kurzfristig, Räumung oft innerhalb weniger Tage. Auch kurz vor Mietende." },
+      { title: "Alles aus einer Hand", text: "Räumen, Abbau, Entsorgung und auf Wunsch die Entkernung, mit einem Ansprechpartner und einem Festpreis." },
     ],
   },
   local: {
     h2: "Gewerbeauflösung in Landsberg, Augsburg und Umgebung",
     paragraphs: [
       `Von unseren Standorten in Landsberg am Lech und Vilgertshofen aus übernehmen wir Gewerbeauflösungen ${region}.`,
-      "Ob Arztpraxis in Landsberg, Handwerksbetrieb im Allgäu oder Lagerhalle in Augsburg: Wir räumen termingenau und übergeben besenrein.",
+      "Arztpraxis in Landsberg, Handwerksbetrieb im Allgäu oder Lagerhalle in Augsburg: Wir räumen zum Termin und übergeben besenrein.",
     ],
   },
   faqs: [
     {
       q: "Was kostet eine Gewerbeauflösung?",
-      a: "Das hängt von Fläche, Menge, Demontageaufwand und Entsorgung ab. Nach der kostenlosen Besichtigung erhalten Sie einen verbindlichen Festpreis.",
+      a: "Das hängt von Fläche, Menge, Abbauaufwand und Entsorgung ab. Nach der kostenlosen Besichtigung bekommen Sie einen verbindlichen Festpreis.",
     },
     {
       q: "Wie schnell können Sie räumen?",
-      a: "Die Besichtigung ist meist kurzfristig möglich, die Räumung oft innerhalb weniger Tage. Nennen Sie uns Ihren Übergabetermin, wir planen danach.",
+      a: "Die Besichtigung geht meist kurzfristig, die Räumung oft innerhalb weniger Tage. Nennen Sie uns den Übergabetermin, wir planen danach.",
     },
     {
       q: "Was passiert mit Akten und Datenträgern?",
@@ -124,18 +124,18 @@ export const gewerbeaufloesung: SubPage = {
 export const messie: SubPage = {
   path: "/messie-wohnung-entruempeln/",
   name: "Messie-Wohnung entrümpeln",
-  title: "Messie-Wohnung räumen in Landsberg und Augsburg – diskret | J&L Bauprojekte",
+  title: "Messie-Wohnung räumen in Landsberg und Augsburg, diskret | J&L Bauprojekte",
   description:
     "Messie-Entrümpelung und Spezialentrümpelung in Landsberg am Lech, Augsburg und im Allgäu: diskrete Räumung, komplette Entsorgung auch bei Extrem-Müll, fachgerechte Mülltrennung, Festpreis.",
-  h1: "Messie-Wohnung räumen in Landsberg am Lech und Augsburg – diskret und respektvoll",
+  h1: "Messie-Wohnung räumen in Landsberg am Lech und Augsburg: diskret und respektvoll",
   intro:
-    "Eine stark vermüllte Wohnung ist für Betroffene, Angehörige und Vermieter eine Belastung. Wir räumen diskret, ohne Vorwürfe und ohne Aufsehen in der Nachbarschaft – komplett, sortiert und fachgerecht entsorgt. Danach ist die Wohnung bereit für Reinigung und Renovierung.",
+    "Eine stark vermüllte Wohnung belastet Betroffene, Angehörige und Vermieter. Wir räumen diskret und ohne Vorwürfe, die Nachbarn bekommen wenig mit. Alles wird sortiert und fachgerecht entsorgt. Danach kann gereinigt und renoviert werden.",
   hero: "sperrmuell",
   preselect: ["entruempelung"],
   services: {
     h2: "Unsere Messie-Entrümpelung",
     intro:
-      "Bei einer Spezialentrümpelung geht es um mehr als Möbel tragen. Wir arbeiten mit Schutzausrüstung, in Ruhe und so, dass die Würde der Bewohner gewahrt bleibt.",
+      "Eine Spezialentrümpelung ist mehr als Möbel tragen. Wir arbeiten mit Schutzausrüstung, in Ruhe und mit Respekt vor den Bewohnern.",
     items: [
       {
         h3: "Diskrete Räumung",
@@ -147,7 +147,7 @@ export const messie: SubPage = {
       },
       {
         h3: "Komplette Räumung",
-        text: "Wir räumen die Wohnung vollständig – auch bei Extrem-Müll, verdorbenen Lebensmitteln und zugestellten Räumen bis unter die Decke.",
+        text: "Wir räumen die Wohnung komplett, auch bei Extrem-Müll, verdorbenen Lebensmitteln und Räumen, die bis unter die Decke zugestellt sind.",
       },
       {
         h3: "Fachgerechte Mülltrennung",
@@ -155,7 +155,7 @@ export const messie: SubPage = {
       },
       {
         h3: "Vorbereitung für Reinigung",
-        text: "Am Ende ist die Wohnung leer und besenrein – bereit für Grundreinigung, Geruchsneutralisation und Renovierung. Wie es danach weitergeht, besprechen wir bei der Besichtigung.",
+        text: "Am Ende ist die Wohnung leer und besenrein, fertig für Grundreinigung, Geruchsneutralisation und Renovierung. Wie es danach weitergeht, besprechen wir bei der Besichtigung.",
       },
       {
         h3: "Danach renovieren",
@@ -193,7 +193,7 @@ export const messie: SubPage = {
     items: [
       { title: "Vertrauliches Gespräch", text: "Sie schildern die Lage am Telefon oder per WhatsApp, gern mit Fotos. Alles bleibt vertraulich." },
       { title: "Besichtigung", text: "Wir sehen uns die Wohnung an und klären, was bleiben soll und was beiseitegelegt wird." },
-      { title: "Festpreis", text: "Sie erhalten ein verbindliches Angebot – keine Überraschungen, auch nicht bei Extrem-Müll." },
+      { title: "Festpreis", text: "Sie bekommen ein verbindliches Angebot. Das gilt auch bei Extrem-Müll." },
       { title: "Räumung und Übergabe", text: "Wir räumen diskret, trennen und entsorgen fachgerecht und übergeben besenrein." },
     ],
   },
@@ -201,14 +201,14 @@ export const messie: SubPage = {
     h2: "Was für J&L Bauprojekte spricht",
     items: [
       { title: "Diskret", text: "Kein Aufsehen in der Nachbarschaft und Stillschweigen über das, was wir sehen." },
-      { title: "Erfahren", text: "Über 270 Projekte in der Region – auch schwierige Räumungen gehören dazu." },
+      { title: "Erfahren", text: "Über 270 Projekte in der Region, schwierige Räumungen eingeschlossen." },
       { title: "Ein Festpreis", text: "Der Preis steht nach der Besichtigung fest, inklusive Abtransport und Entsorgung." },
     ],
   },
   local: {
     h2: "Messie-Entrümpelung in Landsberg, Augsburg und Umgebung",
     paragraphs: [
-      `Wir räumen Messie-Wohnungen ${region} – von unseren Standorten in Landsberg am Lech und Vilgertshofen aus.`,
+      `Von Landsberg am Lech und Vilgertshofen aus räumen wir Messie-Wohnungen ${region}.`,
       "Sie wohnen weiter weg? Schlüsselübergabe, Fotos vom Zwischenstand und Abnahme stimmen wir per Telefon oder WhatsApp ab.",
     ],
   },
@@ -227,7 +227,7 @@ export const messie: SubPage = {
     },
     {
       q: "Was passiert mit Dokumenten und Wertsachen?",
-      a: "Was wir beim Räumen finden – Papiere, Fotos, Schmuck, Bargeld – legen wir beiseite und übergeben es Ihnen.",
+      a: "Papiere, Fotos, Schmuck oder Bargeld, die wir beim Räumen finden, legen wir beiseite und geben sie Ihnen.",
     },
     {
       q: "Reinigen Sie die Wohnung auch?",
@@ -242,20 +242,20 @@ export const containerdienst: SubPage = {
   name: "Container & Entsorgung",
   title: "Container & Entsorgung bei Entrümpelung und Entkernung in Landsberg | J&L Bauprojekte",
   description:
-    "Container und Entsorgung inklusive: Bei jeder Entrümpelung und Entkernung in Landsberg am Lech, Augsburg und im Allgäu organisieren wir den passenden Container, befüllen ihn selbst und entsorgen fachgerecht – im Festpreis enthalten.",
+    "Container und Entsorgung inklusive: Bei jeder Entrümpelung und Entkernung in Landsberg am Lech, Augsburg und im Allgäu bestellen wir den passenden Container, befüllen ihn selbst und entsorgen fachgerecht. Im Festpreis enthalten.",
   h1: "Container & Entsorgung bei Entrümpelung und Entkernung",
   intro:
-    "Wenn wir entrümpeln oder entkernen, kümmern wir uns auch um den Abfall: Wir organisieren den passenden Container über unsere Partner aus der Region, befüllen ihn selbst und lassen alles fachgerecht entsorgen. Das ist im Festpreis enthalten. Container ohne unsere Arbeiten vermieten wir nicht.",
+    "Wenn wir entrümpeln oder entkernen, kümmern wir uns auch um den Abfall. Den Container bestellen wir bei Partnern aus der Region, befüllen ihn selbst und lassen alles fachgerecht entsorgen. Das ist im Festpreis enthalten. Container ohne unsere Arbeiten vermieten wir nicht.",
   hero: "abbruch",
   preselect: ["entruempelung", "entkernung"],
   services: {
     h2: "Container für jeden Abfall",
     intro:
-      "Welcher Container passt, hängt von Abfallart und Menge ab. Das schätzen wir bei der Besichtigung ein und bestellen die passende Größe – Sie müssen sich um nichts kümmern.",
+      "Welcher Container passt, hängt von Abfallart und Menge ab. Das schätzen wir bei der Besichtigung ein und bestellen die passende Größe.",
     items: [
       {
         h3: "Bauschutt-Container",
-        text: "Für Ziegel, Beton, Fliesen, Mörtel und Estrich aus Entkernung, Abbruch und Rückbau. Sauberer Bauschutt wird günstiger entsorgt – deshalb trennen wir schon beim Ausbau.",
+        text: "Für Ziegel, Beton, Fliesen, Mörtel und Estrich aus Entkernung, Abbruch und Rückbau. Sauberer Bauschutt ist günstiger zu entsorgen, deshalb trennen wir schon beim Ausbau.",
       },
       {
         h3: "Sperrmüll-Container",
@@ -286,12 +286,12 @@ export const containerdienst: SubPage = {
   occasions: {
     h2: "Bei welchen Arbeiten wir Container stellen",
     items: [
-      { h3: "Entkernung", text: "Böden, Fliesen, Putz und Installationen bis auf den Rohbau – der Bauschutt geht direkt vor Ort in den Container." },
+      { h3: "Entkernung", text: "Böden, Fliesen, Putz und Leitungen bis auf den Rohbau. Der Schutt geht direkt in den Container." },
       { h3: "Abbruch und Rückbau", text: "Wände, Treppen oder Kamine kontrolliert zurückbauen und den Schutt gleich abfahren lassen." },
-      { h3: "Abriss im Garten", text: "Gartenhaus, Schuppen oder Carport abbrechen – mit Container für Holz und Bauschutt." },
+      { h3: "Abriss im Garten", text: "Gartenhaus, Schuppen oder Carport abbrechen, mit Container für Holz und Bauschutt." },
       { h3: "Entrümpelung", text: "Keller, Dachboden, Garage oder die ganze Wohnung räumen, ohne dass Sie zum Wertstoffhof fahren." },
       { h3: "Haushaltsauflösung", text: "Den kompletten Haushalt auflösen und den Sperrmüll auf einmal entsorgen." },
-      { h3: "Gewerbeauflösung", text: "Büros, Lager und Ladenflächen räumen – bei großen Mengen mit Abrollcontainer." },
+      { h3: "Gewerbeauflösung", text: "Büros, Lager und Ladenflächen räumen, bei großen Mengen mit Abrollcontainer." },
     ],
   },
   checklist: {
@@ -311,8 +311,8 @@ export const containerdienst: SubPage = {
   steps: {
     h2: "So läuft es ab",
     items: [
-      { title: "Besichtigung", text: "Wir sehen uns Räume und Menge an – vor Ort oder anhand Ihrer Fotos per WhatsApp." },
-      { title: "Festpreis", text: "Sie erhalten einen Festpreis für die Arbeiten, Container und Entsorgung inklusive." },
+      { title: "Besichtigung", text: "Wir sehen uns Räume und Menge an, vor Ort oder anhand Ihrer Fotos per WhatsApp." },
+      { title: "Festpreis", text: "Sie bekommen einen Festpreis für die Arbeiten, Container und Entsorgung inklusive." },
       { title: "Container und Arbeiten", text: "Wir lassen den Container zum Starttermin stellen und befüllen ihn selbst. Steht er auf öffentlichem Grund, klären wir die Genehmigung mit Ihnen." },
       { title: "Abholung und Entsorgung", text: "Der Container wird abgeholt und über zugelassene Anlagen entsorgt. Die Räume übergeben wir besenrein." },
     ],
@@ -322,14 +322,14 @@ export const containerdienst: SubPage = {
     items: [
       { title: "Alles aus einer Hand", text: "Wir räumen oder entkernen, befüllen den Container und kümmern uns um die Entsorgung. Sie haben einen Ansprechpartner." },
       { title: "Die richtige Größe", text: "Weil wir die Menge bei der Besichtigung selbst einschätzen, wird weder zu groß bestellt noch nachbestellt." },
-      { title: "Festpreis", text: "Was im Angebot steht, gilt – inklusive Container und Entsorgung." },
+      { title: "Festpreis", text: "Was im Angebot steht, gilt. Container und Entsorgung sind drin." },
     ],
   },
   local: {
     h2: "Container und Entsorgung in Landsberg, Augsburg und Umgebung",
     paragraphs: [
-      `Entrümpelungen und Entkernungen mit Container und Entsorgung übernehmen wir ${region} – von unseren Standorten in Landsberg am Lech und Vilgertshofen aus.`,
-      "Ob Bauschutt aus der Entkernung in Kaufering, Sperrmüll aus der Haushaltsauflösung in Augsburg oder Holz vom Abriss eines Schuppens im Allgäu: Rufen Sie an, wir besprechen Ihr Projekt.",
+      `Von Landsberg am Lech und Vilgertshofen aus übernehmen wir Entrümpelungen und Entkernungen mit Container und Entsorgung ${region}.`,
+      "Bauschutt aus der Entkernung in Kaufering, Sperrmüll aus der Haushaltsauflösung in Augsburg oder Holz vom Schuppen-Abriss im Allgäu: Rufen Sie an, wir besprechen Ihr Projekt.",
     ],
   },
   faqs: [
@@ -339,7 +339,7 @@ export const containerdienst: SubPage = {
     },
     {
       q: "Was kostet der Container?",
-      a: "Er ist Teil unseres Festpreises für die Entrümpelung oder Entkernung. Wie hoch der Anteil ist, hängt von Größe, Abfallart und Menge ab – nachträgliche Aufschläge gibt es nicht.",
+      a: "Er steckt im Festpreis für die Entrümpelung oder Entkernung. Wie hoch der Anteil ist, hängt von Größe, Abfallart und Menge ab. Aufschläge im Nachhinein gibt es nicht.",
     },
     {
       q: "Welche Containergröße wird gebraucht?",
@@ -361,24 +361,24 @@ export const wanddurchbruch: SubPage = {
   name: "Wanddurchbruch & Stahlträger",
   title: "Wanddurchbruch & tragende Wand entfernen in Landsberg | J&L Bauprojekte",
   description:
-    "Wanddurchbruch in Landsberg am Lech, Augsburg und im Allgäu: tragende Wand entfernen mit Statiker, Stahlträger und Sturz einbauen, Grundrissänderung im Altbau – staubarm, inklusive Bauschutt-Entsorgung.",
-  h1: "Wanddurchbruch in Landsberg am Lech – tragende Wände öffnen, Stahlträger einbauen",
+    "Wanddurchbruch in Landsberg am Lech, Augsburg und im Allgäu: tragende Wand entfernen mit Statiker, Stahlträger und Sturz einbauen, Grundriss im Altbau ändern. Staubarm, Entsorgung des Bauschutts inklusive.",
+  h1: "Wanddurchbruch in Landsberg am Lech: tragende Wände öffnen, Stahlträger einbauen",
   intro:
-    "Offene Küche, größeres Wohnzimmer, neue Tür: Mit einem Wanddurchbruch ändern Sie den Grundriss Ihres Hauses. Wir öffnen nichttragende Wände sauber und tragende Wände nur mit statischer Absicherung – mit Stahlträger oder Sturz, staubarm und inklusive Abtransport des Bauschutts.",
+    "Offene Küche, größeres Wohnzimmer, neue Tür: Mit einem Wanddurchbruch ändern Sie den Grundriss. Nichttragende Wände öffnen wir direkt. Tragende Wände nur mit Statik, also mit Stahlträger oder Sturz. Wir arbeiten staubarm und fahren den Bauschutt ab.",
   hero: "entkernung",
   preselect: ["abbruch"],
   services: {
     h2: "Unsere Leistungen rund um den Wanddurchbruch",
     intro:
-      "Ob ein neuer Türdurchgang oder die komplette Grundrissänderung: Entscheidend ist, ob die Wand trägt. Danach richtet sich jeder Schritt.",
+      "Neuer Türdurchgang oder kompletter Umbau des Grundrisses: Alles hängt davon ab, ob die Wand trägt.",
     items: [
       {
         h3: "Nichttragende Wand entfernen",
-        text: "Leichte Trennwände und nichttragende Mauern brechen wir ab oder öffnen sie für einen Durchgang – sauber geschnitten, Kanten vorbereitet für Putz und Zarge.",
+        text: "Leichte Trennwände und nichttragende Mauern brechen wir ab oder öffnen sie für einen Durchgang. Sauber geschnitten, die Kanten vorbereitet für Putz und Zarge.",
       },
       {
         h3: "Tragende Wand entfernen",
-        text: "Tragende Wände öffnen wir nur nach der Berechnung eines Statikers. Er legt fest, wie die Last abgefangen wird – erst dann fangen wir ab und brechen durch.",
+        text: "Tragende Wände öffnen wir nur nach der Berechnung eines Statikers. Er legt fest, wie die Last abgefangen wird. Erst dann stützen wir ab und brechen durch.",
       },
       {
         h3: "Stahlträger einbauen",
@@ -386,11 +386,11 @@ export const wanddurchbruch: SubPage = {
       },
       {
         h3: "Sturz einbauen",
-        text: "Für Tür- und Fensteröffnungen setzen wir einen Sturz als Abfangung – passend zur Wand und zur Öffnungsbreite.",
+        text: "Über Tür- und Fensteröffnungen setzen wir einen Sturz, passend zur Wand und zur Breite der Öffnung.",
       },
       {
         h3: "Staubschutz",
-        text: "Wir schotten den Arbeitsbereich mit Staubschutzwänden ab, schützen Böden und arbeiten mit Absaugung – damit der Rest des Hauses bewohnbar bleibt.",
+        text: "Wir schotten den Arbeitsbereich mit Staubschutzwänden ab, decken Böden ab und saugen direkt ab. Im Rest des Hauses können Sie weiter wohnen.",
       },
       {
         h3: "Bauschutt abtransportieren",
@@ -401,7 +401,7 @@ export const wanddurchbruch: SubPage = {
   occasions: {
     h2: "Wann sich ein Wanddurchbruch lohnt",
     items: [
-      { h3: "Offene Küche", text: "Küche und Wohnzimmer verbinden – der häufigste Wunsch bei der Altbausanierung." },
+      { h3: "Offene Küche", text: "Küche und Wohnzimmer verbinden. Das ist der häufigste Wunsch bei der Altbausanierung." },
       { h3: "Größere Räume", text: "Zwei kleine Zimmer zu einem großen zusammenlegen." },
       { h3: "Neue Türöffnung", text: "Einen zusätzlichen Durchgang schaffen oder eine Tür versetzen." },
       { h3: "Grundrissänderung nach dem Kauf", text: "Einen älteren Grundriss an die eigene Familie anpassen." },
@@ -427,23 +427,23 @@ export const wanddurchbruch: SubPage = {
     h2: "So läuft Ihr Wanddurchbruch ab",
     items: [
       { title: "Besichtigung", text: "Wir sehen uns Wand, Decke und Leitungen an und klären, ob die Wand trägt." },
-      { title: "Statik", text: "Bei tragenden Wänden berechnet ein Statiker die Abfangung – etwa Stahlträger oder Sturz." },
-      { title: "Festpreis", text: "Sie erhalten ein verbindliches Angebot inklusive Staubschutz und Entsorgung." },
+      { title: "Statik", text: "Bei tragenden Wänden berechnet ein Statiker die Abfangung, etwa mit Stahlträger oder Sturz." },
+      { title: "Festpreis", text: "Sie bekommen ein verbindliches Angebot, Staubschutz und Entsorgung inklusive." },
       { title: "Durchbruch und Übergabe", text: "Wir sichern ab, brechen durch, setzen den Träger und übergeben besenrein." },
     ],
   },
   benefits: {
     h2: "Was für J&L Bauprojekte spricht",
     items: [
-      { title: "Sicher", text: "Tragende Wände nur mit Statiker – keine Experimente an Ihrem Haus." },
+      { title: "Sicher", text: "Tragende Wände nur mit Statiker. An Ihrem Haus wird nicht experimentiert." },
       { title: "Sauber", text: "Staubschutz, Bodenschutz und Absaugung, damit der Rest des Hauses bewohnbar bleibt." },
-      { title: "Aus einer Hand", text: "Durchbruch, Entsorgung und auf Wunsch der neue Boden – ein Ansprechpartner." },
+      { title: "Aus einer Hand", text: "Durchbruch, Entsorgung und auf Wunsch der neue Boden, alles mit einem Ansprechpartner." },
     ],
   },
   local: {
     h2: "Wanddurchbruch in Landsberg, Augsburg und Umgebung",
     paragraphs: [
-      `Wanddurchbrüche übernehmen wir ${region} – im Altbau in der Landsberger Innenstadt genauso wie im Reihenhaus in Kaufering oder im Einfamilienhaus im Allgäu.`,
+      `Wanddurchbrüche machen wir ${region}: im Altbau in der Landsberger Innenstadt genauso wie im Reihenhaus in Kaufering oder im Einfamilienhaus im Allgäu.`,
       "Altbausanierung mit Durchbruch? Auf Wunsch entkernen wir vorher und verlegen danach den neuen Boden.",
     ],
   },
@@ -454,11 +454,11 @@ export const wanddurchbruch: SubPage = {
     },
     {
       q: "Woran erkenne ich, ob eine Wand trägt?",
-      a: "Hinweise sind Dicke, Material und Lage der Wand – etwa unter einem Deckenbalken oder einer Wand im Stockwerk darüber. Sicher sagt es erst die Prüfung vor Ort.",
+      a: "Hinweise sind Dicke, Material und Lage der Wand, etwa unter einem Deckenbalken oder unter einer Wand im Stockwerk darüber. Sicher sagt es erst die Prüfung vor Ort.",
     },
     {
       q: "Was kostet ein Wanddurchbruch?",
-      a: "Das hängt von Wandart, Öffnungsbreite und Statik ab. Nach der Besichtigung erhalten Sie einen Festpreis inklusive Staubschutz und Entsorgung.",
+      a: "Das hängt von Wandart, Öffnungsbreite und Statik ab. Nach der Besichtigung bekommen Sie einen Festpreis, Staubschutz und Entsorgung inklusive.",
     },
     {
       q: "Wie viel Staub entsteht?",
@@ -466,7 +466,7 @@ export const wanddurchbruch: SubPage = {
     },
     {
       q: "Wie lange dauert ein Wanddurchbruch?",
-      a: "Ein einfacher Durchgang in einer nichttragenden Wand ist oft an einem Tag erledigt. Mit Stahlträger planen wir mehr Zeit ein – den Zeitplan erhalten Sie mit dem Angebot.",
+      a: "Ein einfacher Durchgang in einer nichttragenden Wand ist oft an einem Tag erledigt. Mit Stahlträger dauert es länger. Den Zeitplan bekommen Sie mit dem Angebot.",
     },
   ],
 };

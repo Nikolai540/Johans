@@ -15,7 +15,7 @@ import { aboutPage, locations, pages, site } from "@/lib/site";
 const path = aboutPage.href;
 const firstName = site.owner.split(" ")[0];
 const title = `Über uns: ${site.name} aus Landsberg am Lech | Abbruch, Entkernung & Sanierung`;
-const description = `${site.owner} und ${site.name}: Entrümpelung, Entkernung, Abbruch, Schadstoffsanierung nach TRGS 519 und neue Böden aus einer Hand – zuverlässig, sauber und zum Festpreis. Aus Landsberg am Lech für die Region bis ins Allgäu.`;
+const description = `${site.owner} und ${site.name}: Entrümpelung, Entkernung, Abbruch, Asbestsanierung nach TRGS 519 und neue Böden aus einer Hand, zum Festpreis. Aus Landsberg am Lech für die Region bis ins Allgäu.`;
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -28,22 +28,22 @@ export const metadata: Metadata = {
 const principles = [
   {
     title: "Anpacken statt verwalten",
-    text: `${firstName} Schmidt besichtigt selbst, plant selbst und ist Ihr Ansprechpartner von der ersten Begehung bis zur Übergabe. Ein Gesicht, eine Telefonnummer, keine Warteschleife.`,
+    text: `${firstName} Schmidt besichtigt selbst, plant selbst und ist Ihr Ansprechpartner von der ersten Begehung bis zur Übergabe. Sie haben eine Nummer und landen nie in der Warteschleife.`,
   },
   {
     title: "Zusagen, die halten",
-    text: "Abbruch und Entkernung sind Vertrauenssache: Sie lassen uns in Ihr Haus. Deshalb gilt bei uns, was besprochen ist – Termin, Umfang und Preis stehen schriftlich fest, bevor es losgeht.",
+    text: "Abbruch und Entkernung sind Vertrauenssache: Sie lassen uns in Ihr Haus. Deshalb gilt, was besprochen ist. Termin, Umfang und Preis stehen schriftlich fest, bevor es losgeht.",
   },
   {
     title: "Sauber hinterlassen",
-    text: "Eine Baustelle darf laut sein, aber nicht chaotisch. Wir schützen Treppenhaus und Böden, trennen den Abfall sortenrein und übergeben besenrein – so, dass die nächsten Schritte sofort beginnen können.",
+    text: "Eine Baustelle darf laut sein, aber nicht chaotisch. Wir schützen Treppenhaus und Böden, trennen den Abfall sortenrein und übergeben besenrein. Danach kann es sofort weitergehen.",
   },
 ];
 
 const reasons = [
   {
     title: "Alles aus einer Hand",
-    text: "Entrümpelung, Entkernung, Abbruch, Schadstoffsanierung, Renovierung, neue Böden und Umzug – ein Ansprechpartner statt vieler Firmen.",
+    text: "Entrümpelung, Entkernung, Abbruch, Schadstoffsanierung, Renovierung, neue Böden und Umzug mit einem Ansprechpartner statt vieler Firmen.",
   },
   {
     title: "Sachkunde nach TRGS 519",
@@ -55,14 +55,14 @@ const reasons = [
   },
   {
     title: "Saubere Baustellen",
-    text: "Staubarm arbeiten, Wege schützen, sortenrein entsorgen und besenrein übergeben – bereit für Einzug, Verkauf oder die nächsten Handwerker.",
+    text: "Wir arbeiten staubarm, schützen die Wege, entsorgen sortenrein und übergeben besenrein. Fertig für Einzug, Verkauf oder die nächsten Handwerker.",
   },
   {
     title: "Aus der Region",
-    text: `Mit Standorten in ${site.branch.locality} und ${site.address.locality} sind wir schnell vor Ort – von Augsburg über den Ammersee bis ins Allgäu.`,
+    text: `Mit Standorten in ${site.branch.locality} und ${site.address.locality} sind wir schnell vor Ort, in Augsburg, am Ammersee und im Allgäu.`,
   },
   {
-    title: "Ausgezeichnet bewertet",
+    title: "Gut bewertet",
     text: `${site.proof.rating} von 5 Sternen bei ${site.proof.reviews} Google-Bewertungen und über ${site.proof.projects} abgeschlossene Projekte in ${site.proof.years} Jahren.`,
   },
 ];
@@ -91,8 +91,8 @@ export default function UeberUns() {
       <main id="inhalt">
         <PageHero
           crumb={aboutPage.label}
-          h1="Ihr Partner für sauberen Abbruch und sichere Sanierung – von Landsberg bis ins Allgäu"
-          intro={`${site.name} ist der Betrieb von ${site.owner} aus dem Landkreis Landsberg am Lech. Wir räumen, entkernen, brechen ab, bauen Schadstoffe fachgerecht aus und bringen Räume mit neuen Böden wieder in Schuss – zuverlässig, sauber und zum Festpreis.`}
+          h1="Abbruch, Entkernung und Sanierung aus Landsberg am Lech"
+          intro={`${site.name} ist der Betrieb von ${site.owner} aus dem Landkreis Landsberg am Lech. Wir räumen, entkernen, brechen ab, bauen Schadstoffe fachgerecht aus und verlegen neue Böden. Zum Festpreis und mit sauberer Übergabe.`}
           cta="Kostenlose Besichtigung anfragen"
           photo={placeholders.johann}
           portrait
@@ -227,11 +227,11 @@ export default function UeberUns() {
           <div className="page-x mx-auto grid max-w-page gap-xl lg:grid-cols-12 lg:items-end lg:gap-lg">
             <div className="lg:col-span-7">
               <h2 id="cta-titel" data-reveal className="text-display-md text-on-dark lg:text-display-lg">
-                Lernen Sie uns kennen – am besten direkt auf Ihrer Baustelle.
+                Am besten lernen wir uns auf Ihrer Baustelle kennen.
               </h2>
               <p data-reveal style={{ ["--i" as string]: 1 }} className="mt-md max-w-[56ch] text-body-md text-on-dark sm:text-title-md sm:font-light">
-                Rufen Sie an oder schreiben Sie uns. {firstName} Schmidt kommt zur kostenlosen Besichtigung und Sie
-                erhalten einen Festpreis.
+                Rufen Sie an oder schreiben Sie uns. {firstName} Schmidt kommt zur kostenlosen Besichtigung, danach
+                bekommen Sie einen Festpreis.
               </p>
             </div>
             <div data-reveal style={{ ["--i" as string]: 2 }} className="flex flex-col gap-sm sm:flex-row sm:flex-wrap sm:[&>.btn]:whitespace-nowrap lg:col-span-5 lg:justify-end">

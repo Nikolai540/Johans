@@ -29,8 +29,8 @@ export function Region() {
               Zwischen Augsburg, Ammersee und Allgäu
             </h2>
             <p data-reveal style={{ ["--i" as string]: 1 }} className="mt-lg max-w-[60ch] text-title-md text-ink">
-              Mit unseren Standorten in Landsberg am Lech und Vilgertshofen sind wir schnell bei Ihnen. Kurze Wege sparen
-              Zeit und Geld – bei der Besichtigung genauso wie auf der Baustelle.
+              Unsere Standorte sind Landsberg am Lech und Vilgertshofen. Von dort sind wir schnell bei Ihnen, zur
+              Besichtigung genauso wie auf der Baustelle. Kurze Wege sparen Ihnen Geld.
             </p>
             <h3 data-reveal style={{ ["--i" as string]: 2 }} className="mt-xl text-title-md">
               Unser Einzugsgebiet

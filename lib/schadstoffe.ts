@@ -4,17 +4,17 @@
 // PLATZHALTER: Bestätigen, ob J&L PAK- und PCB-haltige Bauteile selbst ausbaut – dann den Abschnitt "Unser Part" dort konkreter fassen.
 
 export const schadstoffe = {
-  title: "Schadstoffsanierung in Landsberg: Asbest, KMF & PAK erkennen | J&L Bauprojekte",
+  title: "Asbestsanierung nach TRGS 519 in Landsberg: Asbest, KMF & PAK | J&L Bauprojekte",
   description:
-    "Asbest erkennen, KMF-Mineralwolle entsorgen, PAK im Parkettkleber: Wo Schadstoffe im Altbau stecken und wie eine Sanierung nach TRGS 519 abläuft. Schadstoffsanierung in Landsberg, Augsburg und im Allgäu.",
-  h1: "Schadstoffe im Altbau: erkennen, richtig handeln, sicher sanieren",
+    "Asbest erkennen, KMF-Mineralwolle entsorgen, PAK im Parkettkleber: Wo Schadstoffe im Altbau stecken und wie eine Asbestsanierung nach TRGS 519 abläuft. Schadstoffsanierung in Landsberg am Lech, Augsburg und im Allgäu.",
+  h1: "Asbest und andere Schadstoffe im Altbau: erkennen und sicher sanieren",
   intro:
-    "In vielen Häusern, die zwischen 1950 und 1995 gebaut oder modernisiert wurden, stecken Baustoffe, die heute verboten sind. Solange sie unberührt bleiben, merkt man davon meist nichts. Kritisch wird es beim Umbau. Hier lesen Sie, worauf Sie beim Hauskauf und vor der Sanierung achten sollten – und wie wir Schadstoffe in Landsberg am Lech, Augsburg und im Allgäu fachgerecht ausbauen.",
+    "Viele Häuser, die zwischen 1950 und 1995 gebaut oder modernisiert wurden, enthalten Baustoffe, die heute verboten sind. Solange niemand daran rührt, merkt man meist nichts. Kritisch wird es beim Umbau. Hier steht, worauf Sie beim Hauskauf und vor der Sanierung achten sollten und wie wir die Asbestsanierung in Landsberg am Lech, Augsburg und im Allgäu angehen.",
 
   why: {
-    h2: "Warum Schadstoffe im Altbau in Profihände gehören",
+    h2: "Warum Sie Schadstoffe nicht selbst ausbauen sollten",
     intro:
-      "Gefährlich sind die meisten Altlasten nicht, solange sie fest verbaut sind. Gefährlich wird es, wenn beim Schleifen, Stemmen oder Herausreißen Fasern und Stäube frei werden – und sich unbemerkt im ganzen Haus verteilen.",
+      "Fest verbaut sind die meisten Altlasten harmlos. Gefährlich wird es, wenn beim Schleifen, Stemmen oder Herausreißen Fasern und Staub frei werden und sich unbemerkt im ganzen Haus verteilen.",
     items: [
       {
         title: "Unsichtbar",
@@ -22,7 +22,7 @@ export const schadstoffe = {
       },
       {
         title: "Langfristig",
-        text: "Eingeatmete Fasern bleiben in der Lunge. Erkrankungen zeigen sich oft erst Jahrzehnte später – deshalb gibt es bei Schadstoffen kein „kurz mal schnell“.",
+        text: "Eingeatmete Fasern bleiben in der Lunge. Krank wird man oft erst Jahrzehnte später. Bei Schadstoffen gibt es deshalb kein „kurz mal schnell“.",
       },
       {
         title: "Streng geregelt",
@@ -30,13 +30,13 @@ export const schadstoffe = {
       },
       {
         title: "Teuer, wenn es schiefgeht",
-        text: "Einmal im Haus verteilte Fasern lassen sich nur mit großem Aufwand wieder entfernen. Eine fachgerechte Sanierung von Anfang an ist fast immer die günstigere Lösung.",
+        text: "Sind die Fasern erst im Haus verteilt, kriegt man sie nur mit großem Aufwand wieder raus. Gleich richtig sanieren ist fast immer günstiger.",
       },
     ],
     years: [
       { value: "1993", label: "Seitdem sind Herstellung und Verwendung von Asbest in Deutschland verboten." },
       { value: "1996", label: "Mineralwolle, die vorher hergestellt wurde, gilt als krebsverdächtig." },
-      { value: "1989", label: "Seitdem ist PCB verboten – vorher steckte es in dauerelastischen Fugen." },
+      { value: "1989", label: "Seitdem ist PCB verboten. Vorher steckte es in dauerelastischen Fugen." },
     ],
   },
 
@@ -55,15 +55,15 @@ export const schadstoffe = {
           "Nachtspeicheröfen, Rohrisolierungen, Brandschutzplatten",
         ],
         danger:
-          "Asbestfasern sind so fein, dass sie tief in die Lunge gelangen und dort bleiben. Sie können Asbestose, Lungenkrebs und Mesotheliom (Krebs des Rippenfells) auslösen – oft erst 20 bis 40 Jahre später.",
+          "Asbestfasern sind so fein, dass sie tief in die Lunge gelangen und dort bleiben. Sie können Asbestose, Lungenkrebs und Mesotheliom (Krebs des Rippenfells) auslösen, oft erst 20 bis 40 Jahre später.",
         recognize:
-          "Ein erster Hinweis ist das Baujahr: Gebaut oder modernisiert vor 1993? Dann besteht Verdacht. Typisch sind graue Faserzementplatten und quadratische Bodenplatten von 25 oder 30 cm. Gewissheit bringt nur eine Laborprobe – Asbest erkennen kann man mit bloßem Auge nicht.",
+          "Ein erster Hinweis ist das Baujahr: Gebaut oder modernisiert vor 1993? Dann besteht Verdacht. Typisch sind graue Faserzementplatten und quadratische Bodenplatten von 25 oder 30 cm. Gewissheit bringt nur eine Laborprobe. Mit bloßem Auge kann man Asbest nicht erkennen.",
         ours:
-          "Mit Sachkunde nach TRGS 519 (Anlage 4) bauen wir asbesthaltige Bauteile wie Eternit-Platten, alte Bodenbeläge und Kleber aus und entsorgen sie mit Nachweis. Für schwach gebundenen Asbest, etwa in Isolierungen, gelten strengere Vorgaben – was in Ihrem Fall vorgeschrieben ist, sagen wir Ihnen nach der Besichtigung offen.",
+          "Mit Sachkunde nach TRGS 519 (Anlage 4) bauen wir asbesthaltige Bauteile wie Eternit-Platten, alte Bodenbeläge und Kleber aus und entsorgen sie mit Nachweis. Für schwach gebundenen Asbest, etwa in Isolierungen, gelten strengere Vorgaben. Was in Ihrem Fall vorgeschrieben ist, sagen wir Ihnen nach der Besichtigung.",
       },
       {
         id: "kmf",
-        name: "KMF – alte Mineralwolle",
+        name: "KMF: alte Mineralwolle",
         lead: "Glas- und Steinwolle aus der Zeit vor 1996.",
         where: [
           "Dämmung im Dach, zwischen den Sparren und in Decken",
@@ -76,7 +76,7 @@ export const schadstoffe = {
         recognize:
           "Entscheidend ist das Herstellungsjahr. Mineralwolle, die zwischen 1996 und 2000 ohne RAL-Gütezeichen eingebaut wurde, ist ebenfalls verdächtig. Lässt sich das Alter nicht klären, wird sie wie alte Mineralwolle behandelt.",
         ours:
-          "Den Ausbau erledigen wir nach TRGS 521: staubarm, mit Schutzausrüstung, direkt in reißfeste Säcke verpackt. Alte KMF-Mineralwolle entsorgen wir über zugelassene Annahmestellen – über den normalen Bauschutt oder Wertstoffhof geht das nicht.",
+          "Den Ausbau erledigen wir nach TRGS 521: staubarm, mit Schutzausrüstung, direkt in reißfeste Säcke verpackt. Alte KMF-Mineralwolle geben wir bei zugelassenen Annahmestellen ab. In den Bauschutt oder auf den Wertstoffhof darf sie nicht.",
       },
       {
         id: "pak-pcb",
@@ -100,7 +100,7 @@ export const schadstoffe = {
 
   checklist: {
     h2: "Schadstoffprüfung im Altbau: Checkliste vor dem Hauskauf",
-    intro: "Wer ein älteres Haus kauft, sollte diese Punkte vor der Unterschrift klären – und mögliche Sanierungskosten in den Kaufpreis einrechnen.",
+    intro: "Wer ein älteres Haus kauft, sollte diese Punkte vor der Unterschrift klären und mögliche Sanierungskosten in den Kaufpreis einrechnen.",
     items: [
       "Baujahr und Jahr der letzten Modernisierung erfragen",
       "Alte Bodenbeläge anheben lassen: Sind darunter schwarzer Kleber oder kleine quadratische Platten?",
@@ -113,9 +113,9 @@ export const schadstoffe = {
   },
 
   process: {
-    h2: "So läuft eine Sanierung nach TRGS 519 bei uns ab",
+    h2: "So läuft eine Asbestsanierung nach TRGS 519 bei uns ab",
     intro:
-      "Die TRGS 519 regelt, wie mit Asbest gearbeitet werden muss. Unser Sachkundenachweis – oft als „TRGS 519 Zertifizierung“ bezeichnet – ist die Voraussetzung dafür. Jeder Schritt ist dokumentiert.",
+      "Die TRGS 519 regelt, wie mit Asbest gearbeitet werden muss. Voraussetzung ist ein Sachkundenachweis, oft „TRGS 519 Zertifizierung“ genannt. Den haben wir. Jeder Schritt wird dokumentiert.",
     steps: [
       {
         title: "Kostenlose Erstbesichtigung",
@@ -123,7 +123,7 @@ export const schadstoffe = {
       },
       {
         title: "Gefährdungs\u00adbeurteilung und Arbeitsplan",
-        text: "Wie fest ist der Schadstoff gebunden, welches Verfahren ist zulässig? Daraus legen wir die Schutzmaßnahmen fest – Sie erhalten ein verbindliches Angebot.",
+        text: "Wie fest ist der Schadstoff gebunden, welches Verfahren ist zulässig? Daraus ergeben sich die Schutzmaßnahmen, und Sie bekommen ein verbindliches Angebot.",
       },
       {
         title: "Anzeige bei der Behörde",
@@ -135,15 +135,15 @@ export const schadstoffe = {
       },
       {
         title: "Professionelle Entsorgung",
-        text: "Belastete Abfälle verpacken wir staubdicht, kennzeichnen sie und geben sie bei zugelassenen Anlagen ab. Sie erhalten die Entsorgungsnachweise und eine besenreine Baustelle.",
+        text: "Belastete Abfälle verpacken wir staubdicht, kennzeichnen sie und geben sie bei zugelassenen Anlagen ab. Sie bekommen die Entsorgungsnachweise und eine besenreine Baustelle.",
       },
     ],
-    note: "Fest gebunden oder schwach gebunden? Für schwach gebundenen Asbest, etwa in Isolierungen oder Leichtbauplatten, gelten noch strengere Vorgaben bis hin zu Unterdruck und Freimessung. Welcher Weg in Ihrem Fall vorgeschrieben ist, sagen wir Ihnen nach der Besichtigung offen.",
+    note: "Fest gebunden oder schwach gebunden? Für schwach gebundenen Asbest, etwa in Isolierungen oder Leichtbauplatten, gelten noch strengere Vorgaben bis hin zu Unterdruck und Freimessung. Welcher Weg in Ihrem Fall vorgeschrieben ist, sagen wir Ihnen nach der Besichtigung.",
   },
 
   after: {
     h2: "Nach der Sanierung geht es direkt weiter",
-    text: "Sind die Schadstoffe raus, verlegen wir auf Wunsch gleich den neuen Laminat- oder Vinylboden, renovieren die Räume und übernehmen den Umzug. Ein Ansprechpartner, ein Zeitplan, keine Wartezeit zwischen zwei Firmen.",
+    text: "Sind die Schadstoffe raus, verlegen wir auf Wunsch gleich den neuen Laminat- oder Vinylboden, renovieren die Räume oder übernehmen den Umzug. Sie warten nicht auf die nächste Firma.",
   },
 
   faqs: [
@@ -153,7 +153,7 @@ export const schadstoffe = {
     },
     {
       q: "Darf ich asbesthaltige Platten selbst entfernen?",
-      a: "Davon raten wir dringend ab. Schon kleine Fehler setzen Fasern frei, die sich im ganzen Haus verteilen. Für Ausbau, Verpackung, Transport und Entsorgung gelten strenge Vorgaben – lassen Sie die Arbeiten von einem Betrieb mit Sachkunde nach TRGS 519 erledigen.",
+      a: "Davon raten wir dringend ab. Schon kleine Fehler setzen Fasern frei, die sich im ganzen Haus verteilen. Für Ausbau, Verpackung, Transport und Entsorgung gelten strenge Vorgaben. Lassen Sie das einen Betrieb mit Sachkunde nach TRGS 519 machen.",
     },
     {
       q: "Was bedeutet TRGS 519?",
@@ -161,7 +161,7 @@ export const schadstoffe = {
     },
     {
       q: "Wie entsorge ich alte KMF-Mineralwolle?",
-      a: "Alte Mineralwolle muss staubdicht in reißfesten Säcken verpackt und bei einer zugelassenen Annahmestelle abgegeben werden – in den normalen Bauschutt oder auf den Wertstoffhof darf sie nicht. Den Ausbau und die Entsorgung übernehmen wir für Sie.",
+      a: "Alte Mineralwolle muss staubdicht in reißfesten Säcken verpackt und bei einer zugelassenen Annahmestelle abgegeben werden. In den Bauschutt oder auf den Wertstoffhof darf sie nicht. Ausbau und Entsorgung übernehmen wir.",
     },
     {
       q: "Ist schwarzer Parkettkleber gefährlich?",
@@ -169,7 +169,7 @@ export const schadstoffe = {
     },
     {
       q: "Was kostet eine Schadstoffsanierung?",
-      a: "Das hängt von Schadstoff, Menge und Gefährdung ab: Fest gebundene Eternit-Platten sind deutlich weniger aufwendig als belastete Isolierungen. Nach der kostenlosen Besichtigung – und wenn nötig einer Laboranalyse – erhalten Sie ein verbindliches Angebot inklusive Schutzmaßnahmen und Entsorgung.",
+      a: "Das hängt von Schadstoff, Menge und Gefährdung ab: Fest gebundene Eternit-Platten sind deutlich weniger aufwendig als belastete Isolierungen. Nach der kostenlosen Besichtigung und, wenn nötig, einer Laboranalyse bekommen Sie ein verbindliches Angebot mit Schutzmaßnahmen und Entsorgung.",
     },
   ],
 };
