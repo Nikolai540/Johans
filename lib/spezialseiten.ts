@@ -1,6 +1,7 @@
 import type { SubPage } from "./subpages";
 
-// Spezialseiten zu Haushaltsauflösung (Gewerbe, Messie, Wohnung, Nachlass, Keller, Container) und Entkernung (Wanddurchbruch).
+// Spezialseiten zu Haushaltsauflösung (Gewerbe, Messie, Wohnung, Nachlass, Keller, Container) und Entkernung
+// (Wanddurchbruch, Demontage, Fliesen und Boden, Rückbau, kleinere Abbrucharbeiten).
 // Container stellen Partnerbetriebe, J&L organisiert. Größen sind übliche Standardgrößen, keine Zusage für jede Größe.
 
 const region =
@@ -812,6 +813,474 @@ export const wanddurchbruch: SubPage = {
     {
       q: "Wie lange dauert ein Wanddurchbruch?",
       a: "Ein einfacher Durchgang in einer nichttragenden Wand ist oft an einem Tag erledigt. Mit Stahlträger dauert es länger. Den Zeitplan bekommen Sie mit dem Angebot.",
+    },
+  ],
+};
+
+export const demontage: SubPage = {
+  path: "/demontage-einbauten/",
+  name: "Demontage von Einbauten",
+  title: "Demontage von Einbauten in Landsberg am Lech | J&L Bauprojekte",
+  description:
+    "Küche, Einbauschränke, Türen, Heizkörper und Sanitärobjekte abbauen lassen in Landsberg am Lech, Augsburg, am Ammersee und im Allgäu. Abtransport und Entsorgung inklusive, Festpreis nach Besichtigung.",
+  h1: "Demontage von Einbauten in Landsberg am Lech: Küche, Türen, Schränke und mehr",
+  intro:
+    "Bevor umgebaut oder renoviert wird, muss das Alte raus. Wir bauen Küchen, Einbauschränke, Türen und Zargen, Heizkörper und Sanitärobjekte ab und fahren alles weg. Was Sie wiederverwenden möchten, bauen wir vorsichtig aus.",
+  hero: "entkernung",
+  preselect: ["rueckbau"],
+  services: {
+    h2: "Was wir abbauen",
+    intro:
+      "Ob ein einzelner Raum oder das ganze Haus: Wir demontieren, tragen raus und entsorgen, mit einem Ansprechpartner und einem Festpreis.",
+    items: [
+      {
+        h3: "Küchen und Küchenzeilen",
+        text: "Oberschränke, Unterschränke und Arbeitsplatte bauen wir ab. Herd, Kühlschrank und Spülmaschine geben wir getrennt als Elektroaltgeräte zur Entsorgung.",
+      },
+      {
+        h3: "Einbauschränke und Möbel",
+        text: "Einbauschränke, Regale und Möbel bauen wir auseinander und tragen sie aus dem Haus.",
+      },
+      {
+        h3: "Türen und Zargen",
+        text: "Innentüren bauen wir samt Zargen aus, zum Beispiel wenn neue Türen kommen oder ein Durchgang breiter werden soll.",
+      },
+      {
+        h3: "Heizkörper und Sanitärobjekte",
+        text: "Heizkörper, Waschbecken, WC, Dusche und Badewanne bauen wir aus, damit Installateur und Fliesenleger direkt anfangen können.",
+      },
+      {
+        h3: "Vorsichtig ausbauen",
+        text: "Was Sie behalten, verkaufen oder woanders einbauen möchten, bauen wir vorsichtig aus und stellen es für Sie zur Seite.",
+      },
+      {
+        h3: "Büro, Praxis und Werkstatt",
+        text: "Regalanlagen, Werkbänke, Einbauküchen und Trennwände in Gewerbeflächen bauen wir genauso ab, auf Wunsch zum Übergabetermin.",
+        link: { href: "/gewerbeaufloesung/", label: "Alles zur Gewerbeauflösung" },
+      },
+    ],
+  },
+  occasions: {
+    h2: "Wann eine Demontage ansteht",
+    items: [
+      { h3: "Neue Küche", text: "Die alte Küche kommt raus, damit der Küchenbauer am vereinbarten Tag aufbauen kann." },
+      { h3: "Badsanierung", text: "Sanitärobjekte und Heizkörper raus, danach können Fliesen und Leitungen erneuert werden." },
+      { h3: "Mieterwechsel", text: "Alte Einbauten raus, damit die Wohnung schnell wieder vermietet werden kann." },
+      { h3: "Nach dem Kauf", text: "Bevor Sie einziehen, bauen wir aus, was nicht zu Ihren Plänen passt." },
+      { h3: "Vor dem Umbau", text: "Türen, Schränke und Verkleidungen weg, damit die Handwerker freie Räume vorfinden." },
+      { h3: "Auszug aus Gewerbeflächen", text: "Einbauten raus, Fläche besenrein, pünktlich zum Mietende." },
+    ],
+  },
+  checklist: {
+    h2: "Was wir typischerweise demontieren",
+    intro: "Wir bauen ab, tragen raus und entsorgen zum Beispiel:",
+    items: [
+      "Einbauküchen und Küchenzeilen",
+      "Einbauschränke und Regale",
+      "Innentüren und Zargen",
+      "Heizkörper",
+      "Waschbecken, WC, Dusche und Badewanne",
+      "Möbel",
+      "Regalanlagen und Werkbänke",
+      "Trennwände in Gewerbeflächen",
+    ],
+  },
+  steps: {
+    h2: "So läuft die Demontage ab",
+    items: [
+      { title: "Anfrage", text: "Sie sagen uns, was raus soll und bis wann. Per Telefon, WhatsApp oder Formular, gern mit Fotos." },
+      { title: "Besichtigung", text: "Wir sehen uns die Einbauten an und klären, was entsorgt und was vorsichtig ausgebaut wird." },
+      { title: "Festpreis", text: "Sie bekommen ein schriftliches Angebot mit festem Preis und Termin." },
+      { title: "Demontage und Übergabe", text: "Wir bauen ab, trennen und entsorgen fachgerecht und übergeben die Räume besenrein." },
+    ],
+  },
+  benefits: {
+    h2: "Was für J&L Bauprojekte spricht",
+    items: [
+      { title: "Alles aus einer Hand", text: "Abbauen, raustragen, entsorgen und auf Wunsch die Entkernung, mit einem Ansprechpartner." },
+      { title: "Vorsichtig, wo nötig", text: "Was weiterverwendet werden soll, bauen wir so aus, dass es heil bleibt." },
+      { title: "Klare Kosten", text: "Der Preis steht nach der Besichtigung fest, Abtransport und Entsorgung inklusive." },
+    ],
+  },
+  local: {
+    h2: "Demontage in Landsberg, Augsburg und Umgebung",
+    paragraphs: [
+      `Von Landsberg am Lech und Vilgertshofen aus bauen wir Einbauten ab, ${region}.`,
+      "Küche im Reihenhaus in Kaufering, Bad im Altbau in Landsberg oder Praxis in Augsburg: Wir bauen ab und übergeben besenrein.",
+    ],
+  },
+  faqs: [
+    {
+      q: "Was kostet die Demontage einer Küche?",
+      a: "Das hängt von Größe, Zugang und Entsorgung ab. Nach der Besichtigung oder anhand von Fotos bekommen Sie einen verbindlichen Festpreis.",
+    },
+    {
+      q: "Können Sie Teile so ausbauen, dass ich sie wiederverwenden kann?",
+      a: "Ja. Sagen Sie uns vorher, was bleiben soll. Diese Teile bauen wir vorsichtig aus und stellen sie zur Seite.",
+    },
+    {
+      q: "Übernehmen Sie auch einzelne Räume?",
+      a: "Ja. Ob nur die Küche oder das ganze Haus: Wir richten uns nach Ihrem Vorhaben.",
+    },
+    {
+      q: "Wer kümmert sich um die Entsorgung?",
+      a: "Wir. Abtransport, Trennung und fachgerechte Entsorgung sind im Festpreis enthalten.",
+    },
+    {
+      q: "Was passiert nach der Demontage?",
+      a: "Auf Wunsch machen wir weiter: Fliesen und Böden raus, Wände zurückbauen oder renovieren mit Trockenbau und neuem Boden.",
+    },
+  ],
+};
+
+export const bodenEntfernen: SubPage = {
+  path: "/fliesen-boden-entfernen/",
+  name: "Fliesen und Boden entfernen",
+  title: "Fliesen & Boden entfernen in Landsberg am Lech | J&L Bauprojekte",
+  description:
+    "Fliesen, Estrich, Parkett, Laminat, Teppich und PVC entfernen lassen in Landsberg am Lech, Augsburg, am Ammersee und im Allgäu. Mit Kleber- und Spachtelresten, Entsorgung inklusive, Festpreis nach Besichtigung.",
+  h1: "Fliesen und Boden entfernen in Landsberg am Lech",
+  intro:
+    "Alte Fliesen, Estrich oder Bodenbeläge müssen raus, bevor Neues kommt. Wir brechen sie ab, entfernen Kleber- und Spachtelreste und entsorgen den Schutt. Danach ist der Untergrund bereit für neuen Estrich, eine Fußbodenheizung oder den neuen Belag.",
+  hero: "entkernung",
+  preselect: ["entkernung"],
+  services: {
+    h2: "Was wir entfernen",
+    intro:
+      "Ob ein Bad oder die ganze Wohnung: Wir nehmen den alten Boden heraus und hinterlassen einen sauberen Untergrund für die nächsten Handwerker.",
+    items: [
+      {
+        h3: "Fliesen an Wand und Boden",
+        text: "In Bad, Küche und Flur schlagen wir alte Fliesen ab, an der Wand genauso wie am Boden, samt Kleber.",
+      },
+      {
+        h3: "Estrich und Trittschalldämmung",
+        text: "Soll der Bodenaufbau komplett neu werden, entfernen wir Estrich und Trittschalldämmung, bis der Rohbau frei liegt.",
+      },
+      {
+        h3: "Parkett und Laminat",
+        text: "Parkett und Laminat nehmen wir auf und entfernen die Reste, damit der neue Belag auf glattem Untergrund liegt.",
+      },
+      {
+        h3: "Teppich und PVC",
+        text: "Teppich und PVC lösen wir vom Untergrund und entfernen Kleber- und Spachtelreste.",
+      },
+      {
+        h3: "Vorsicht bei altem Kleber",
+        text: "Schwarzer Kleber unter Parkett oder kleine quadratische Bodenplatten können PAK oder Asbest enthalten. Verdachtsstellen sprechen wir bei der Besichtigung an und klären die Schutzmaßnahmen, bevor der alte Boden herauskommt.",
+        link: { href: "/schadstoffe/", label: "Alles zur Schadstoffsanierung" },
+      },
+      {
+        h3: "Danach der neue Boden",
+        text: "Auf Wunsch verlegen wir anschließend Laminat oder Vinyl, mit Trittschalldämmung, Sockelleisten und Übergangsprofilen.",
+        link: { href: "/renovierung/", label: "Alles zur Renovierung" },
+      },
+    ],
+  },
+  occasions: {
+    h2: "Wann der alte Boden raus muss",
+    items: [
+      { h3: "Badsanierung", text: "Fliesen an Wand und Boden raus, damit Installateur und Fliesenleger direkt loslegen können." },
+      { h3: "Fußbodenheizung", text: "Für eine neue Fußbodenheizung muss oft der alte Aufbau samt Estrich weichen." },
+      { h3: "Neuer Bodenbelag", text: "Alter Teppich, PVC oder Laminat raus, bevor der neue Boden verlegt wird." },
+      { h3: "Mieterwechsel", text: "Abgenutzte Böden raus, neuer Belag rein, und die Wohnung ist schnell wieder vermietbar." },
+      { h3: "Kernsanierung im Altbau", text: "Bei der Entkernung kommt der komplette Bodenaufbau mit raus." },
+      { h3: "Nach dem Kauf", text: "Bevor Sie einziehen, kommt raus, was Ihnen nicht gefällt." },
+    ],
+  },
+  checklist: {
+    h2: "Was wir entfernen",
+    intro: "Typischerweise entfernen und entsorgen wir:",
+    items: [
+      "Wandfliesen und Bodenfliesen",
+      "Fliesenkleber und Mörtelreste",
+      "Estrich",
+      "Trittschalldämmung",
+      "Parkett und Laminat",
+      "Teppich",
+      "PVC-Beläge",
+      "Kleber- und Spachtelreste",
+    ],
+  },
+  steps: {
+    h2: "So läuft es ab",
+    items: [
+      { title: "Anfrage", text: "Sie sagen uns, welche Böden raus sollen und wie groß die Fläche ist. Gern mit Fotos per WhatsApp." },
+      { title: "Besichtigung", text: "Wir sehen uns Belag, Aufbau und Untergrund an und sprechen verdächtige Materialien an." },
+      { title: "Festpreis", text: "Sie bekommen ein schriftliches Angebot mit festem Preis und Termin." },
+      { title: "Ausbau und Übergabe", text: "Wir entfernen den Boden, entsorgen den Schutt fachgerecht und übergeben besenrein." },
+    ],
+  },
+  benefits: {
+    h2: "Was für J&L Bauprojekte spricht",
+    items: [
+      { title: "Raus und neu aus einer Hand", text: "Alten Boden entfernen und neuen verlegen, mit einem Ansprechpartner." },
+      { title: "Sachkunde bei Schadstoffen", text: "Asbesthaltige Beläge und Kleber bauen wir mit Sachkunde nach TRGS 519 aus." },
+      { title: "Klare Kosten", text: "Der Preis steht nach der Besichtigung fest, die Entsorgung ist enthalten." },
+    ],
+  },
+  local: {
+    h2: "Fliesen und Böden entfernen in Landsberg und Umgebung",
+    paragraphs: [
+      `Von Landsberg am Lech und Vilgertshofen aus entfernen wir Fliesen und Böden, ${region}.`,
+      "Bad in Kaufering, Altbauwohnung in Landsberg oder Einfamilienhaus am Ammersee: Wir nehmen den alten Boden raus und bereiten den Untergrund für das Neue vor.",
+    ],
+  },
+  faqs: [
+    {
+      q: "Was kostet es, Fliesen oder einen Boden entfernen zu lassen?",
+      a: "Das hängt von Fläche, Belag, Aufbau und Entsorgung ab. Nach der Besichtigung oder anhand von Fotos bekommen Sie einen verbindlichen Festpreis.",
+    },
+    {
+      q: "Muss der Estrich mit raus?",
+      a: "Das klären wir bei der Besichtigung. Ist er in Ordnung, entfernen wir nur den Belag. Soll der Aufbau neu werden, etwa für eine Fußbodenheizung, kommt er mit raus.",
+    },
+    {
+      q: "Was ist, wenn im alten Boden Asbest steckt?",
+      a: "Bei Häusern, die vor 1993 gebaut oder modernisiert wurden, sprechen wir verdächtige Beläge und Kleber schon bei der Besichtigung an. Asbesthaltige Materialien bauen wir mit Sachkunde nach TRGS 519 aus und entsorgen sie mit Nachweis.",
+    },
+    {
+      q: "Verlegen Sie danach auch den neuen Boden?",
+      a: "Ja, Laminat und Vinyl verlegen wir selbst. Welche Verlegeart zum Untergrund passt, klären wir bei der Besichtigung.",
+    },
+    {
+      q: "Wer entsorgt den Schutt?",
+      a: "Wir. Container, Abtransport und fachgerechte Entsorgung sind im Festpreis enthalten.",
+    },
+  ],
+};
+
+export const rueckbau: SubPage = {
+  path: "/rueckbau-innenausbau/",
+  name: "Rückbau von Innenausbau",
+  title: "Rückbau von Innenausbau & Trockenbau in Landsberg | J&L Bauprojekte",
+  description:
+    "Trockenbauwände, abgehängte Decken, Verkleidungen, Putz und nichttragende Wände zurückbauen in Landsberg am Lech, Augsburg, am Ammersee und im Allgäu. Schritt für Schritt, Entsorgung inklusive, Festpreis nach Besichtigung.",
+  h1: "Rückbau von Innenausbau in Landsberg am Lech: Wände, Decken, Verkleidungen",
+  intro:
+    "Nicht jedes Projekt braucht eine komplette Entkernung. Oft müssen nur einzelne Bauteile weg, etwa eine Trockenbauwand, eine abgehängte Decke oder alte Verkleidungen. Wir bauen genau das zurück, Schritt für Schritt und ohne den Bestand zu beschädigen.",
+  hero: "trockenbau",
+  preselect: ["rueckbau"],
+  services: {
+    h2: "Was wir zurückbauen",
+    intro:
+      "Wir bauen so viel zurück, wie Ihr Vorhaben braucht, und lassen stehen, was bleiben soll. Danach können Elektriker, Installateur und Trockenbauer sofort anfangen.",
+    items: [
+      {
+        h3: "Trockenbauwände",
+        text: "Ständerwände aus Gipskarton bauen wir samt Unterkonstruktion und Dämmung zurück, zum Beispiel für eine neue Raumaufteilung.",
+      },
+      {
+        h3: "Abgehängte Decken",
+        text: "Abgehängte Decken nehmen wir ab, damit die alte Decke wieder frei liegt oder neue Leitungen verlegt werden können.",
+      },
+      {
+        h3: "Verkleidungen an Wand und Decke",
+        text: "Alte Verkleidungen an Wänden und Decken bauen wir ab und entsorgen sie getrennt nach Material.",
+      },
+      {
+        h3: "Tapeten und Putz",
+        text: "Tapeten und alten Putz entfernen wir, wenn die Wände neu aufgebaut oder gespachtelt werden sollen.",
+      },
+      {
+        h3: "Nichttragende Innenwände",
+        text: "Gemauerte Innenwände ohne tragende Funktion brechen wir ab. Ob eine Wand trägt, klären wir vorher, bei tragenden Wänden mit einem Statiker.",
+        link: { href: "/wanddurchbruch/", label: "Alles zum Wanddurchbruch" },
+      },
+      {
+        h3: "Einzelne Bauteile",
+        text: "Auch einzelne Bauteile wie eine Treppe oder einen Kamin bauen wir zurück, wenn sie dem Umbau im Weg sind.",
+      },
+    ],
+  },
+  occasions: {
+    h2: "Wann sich ein Rückbau lohnt",
+    items: [
+      { h3: "Neue Raumaufteilung", text: "Wände versetzen, Räume zusammenlegen, Durchgänge schaffen. Wo nötig mit Statiker." },
+      { h3: "Vor den Handwerkern", text: "Wir machen den Weg frei für Elektro, Sanitär, Heizung und Trockenbau, damit niemand warten muss." },
+      { h3: "Mieterwechsel", text: "Einbauten des Vormieters zurückbauen, damit die Fläche wieder vermietbar ist." },
+      { h3: "Umbau von Gewerbeflächen", text: "Trennwände und Decken raus, damit die Fläche neu geplant werden kann." },
+      { h3: "Teilsanierung", text: "Nur ein Raum oder ein Stockwerk wird erneuert, der Rest bleibt unberührt." },
+      { h3: "Nach dem Kauf", text: "Bevor Sie einziehen, bauen wir zurück, was nicht zu Ihren Plänen passt." },
+    ],
+  },
+  checklist: {
+    h2: "Was wir typischerweise zurückbauen",
+    intro: "Je nach Vorhaben bauen wir aus:",
+    items: [
+      "Trockenbauwände",
+      "Abgehängte Decken",
+      "Wand- und Deckenverkleidungen",
+      "Tapeten",
+      "Putz",
+      "Nichttragende Innenwände",
+      "Dämmung in Wänden und Decken",
+      "Treppen und Kamine",
+    ],
+  },
+  steps: {
+    h2: "So läuft der Rückbau ab",
+    items: [
+      { title: "Anfrage", text: "Sie sagen uns, was weg soll und was stehen bleibt. Per Telefon, WhatsApp oder Formular." },
+      { title: "Besichtigung", text: "Wir sehen uns die Bauteile an, klären die Statik und sprechen verdächtige Materialien an." },
+      { title: "Festpreis", text: "Sie bekommen ein schriftliches Angebot mit festem Preis und Termin." },
+      { title: "Rückbau und Übergabe", text: "Wir bauen zurück, trennen und entsorgen fachgerecht und übergeben besenrein." },
+    ],
+  },
+  benefits: {
+    h2: "Was für J&L Bauprojekte spricht",
+    items: [
+      { title: "Schritt für Schritt", text: "Wir bauen kontrolliert zurück, damit der Bestand keinen Schaden nimmt." },
+      { title: "Alles aus einer Hand", text: "Zurückbauen, entsorgen und auf Wunsch neu aufbauen im Trockenbau." },
+      { title: "Klare Kosten", text: "Der Preis steht nach der Besichtigung fest, die Entsorgung ist enthalten." },
+    ],
+  },
+  local: {
+    h2: "Rückbau in Landsberg, Augsburg und Umgebung",
+    paragraphs: [
+      `Von Landsberg am Lech und Vilgertshofen aus bauen wir Innenausbau zurück, ${region}.`,
+      "Altbauwohnung in Landsberg, Büro in Augsburg oder Einfamilienhaus im Allgäu: Wir bauen zurück, was weg muss, und übergeben besenrein.",
+    ],
+  },
+  faqs: [
+    {
+      q: "Was ist der Unterschied zur Entkernung?",
+      a: "Bei der Entkernung kommt fast der ganze Innenausbau raus, bis der Rohbau frei liegt. Beim Rückbau entfernen wir nur einzelne Bauteile, zum Beispiel eine Wand, eine Decke, eine Treppe oder einen Kamin.",
+    },
+    {
+      q: "Woher wissen Sie, ob eine Wand trägt?",
+      a: "Das klären wir bei der Besichtigung. Bei tragenden Wänden arbeiten wir mit einem Statiker, der festlegt, wie die Last abgefangen wird.",
+    },
+    {
+      q: "Was ist mit alter Mineralwolle in Wänden und Decken?",
+      a: "Alte Mineralwolle kann gesundheitsschädliche Fasern enthalten. Wir sprechen sie bei der Besichtigung an und bauen sie mit den nötigen Schutzmaßnahmen aus.",
+    },
+    {
+      q: "Was kostet ein Rückbau?",
+      a: "Das hängt von Bauteilen, Material, Zugang und Schuttmenge ab. Nach der Besichtigung bekommen Sie einen verbindlichen Festpreis.",
+    },
+    {
+      q: "Bauen Sie danach auch neu auf?",
+      a: "Ja. Neue Wände und Decken im Trockenbau und neue Böden übernehmen wir auf Wunsch gleich mit.",
+    },
+  ],
+};
+
+export const abbrucharbeiten: SubPage = {
+  path: "/kleinere-abbrucharbeiten/",
+  name: "Kleinere Abbrucharbeiten",
+  title: "Gartenhaus, Schuppen & Nebengebäude abreißen in Landsberg | J&L Bauprojekte",
+  description:
+    "Gartenhaus abreißen, Schuppen abbrechen, kleine Nebengebäude und einzelne Wände abbrechen in Landsberg am Lech, Augsburg, am Ammersee und im Allgäu. Bauschutt entsorgen wir mit, Festpreis nach Besichtigung.",
+  h1: "Kleinere Abbrucharbeiten in Landsberg am Lech: Gartenhaus, Schuppen, Nebengebäude",
+  intro:
+    "Das alte Gartenhaus, ein baufälliger Schuppen oder eine einzelne Wand: Wir brechen kleinere Gebäude und Bauteile ab und entsorgen den Bauschutt. Komplette Hausabrisse übernehmen wir nicht.",
+  hero: "abbruch",
+  preselect: ["abbruch"],
+  services: {
+    h2: "Was wir abbrechen",
+    intro:
+      "Kleine Abbrüche erledigen wir mit einem Team, vom Ausräumen bis zum letzten Schuttsack. Sie haben einen Ansprechpartner und einen Festpreis.",
+    items: [
+      {
+        h3: "Gartenhäuser",
+        text: "Gartenhäuser räumen wir aus, brechen sie ab und fahren alles weg. Danach ist der Platz frei für Neues.",
+      },
+      {
+        h3: "Schuppen",
+        text: "Baufällige oder überflüssige Schuppen brechen wir ab, den Inhalt räumen wir auf Wunsch vorher mit.",
+        link: { href: "/keller-dachboden-garage-entruempeln/", label: "Alles zu Keller, Dachboden & Garage" },
+      },
+      {
+        h3: "Kleine Nebengebäude",
+        text: "Kleine Nebengebäude auf dem Grundstück brechen wir ab. Was dafür vorher zu klären ist, besprechen wir bei der Besichtigung.",
+      },
+      {
+        h3: "Einzelne Wände",
+        text: "Einzelne Wände brechen wir ab und entsorgen den Schutt. Bei tragenden Wänden arbeiten wir mit einem Statiker.",
+        link: { href: "/wanddurchbruch/", label: "Alles zum Wanddurchbruch" },
+      },
+      {
+        h3: "Dächer aus Asbestzement",
+        text: "Viele alte Schuppen und Gartenhäuser haben Dachplatten aus Asbestzement (Eternit). Diese Platten bauen wir mit Sachkunde nach TRGS 519 aus und entsorgen sie mit Nachweis.",
+        link: { href: "/schadstoffe/", label: "Alles zur Schadstoffsanierung" },
+      },
+      {
+        h3: "Bauschutt und Entsorgung",
+        text: "Holz, Metall, Bauschutt und Restmüll trennen wir und entsorgen sie fachgerecht. Den Container organisieren wir.",
+        link: { href: "/containerdienst/", label: "Alles zu Container & Entsorgung" },
+      },
+    ],
+  },
+  occasions: {
+    h2: "Wann ein kleiner Abbruch ansteht",
+    items: [
+      { h3: "Garten neu gestalten", text: "Das alte Gartenhaus muss weg, damit Platz für Neues ist." },
+      { h3: "Baufällige Gebäude", text: "Morsches Holz, undichtes Dach: Bevor etwas einstürzt, brechen wir es kontrolliert ab." },
+      { h3: "Vor dem Hausverkauf", text: "Ein aufgeräumtes Grundstück ohne baufällige Schuppen verkauft sich leichter." },
+      { h3: "Anbau oder Neubau", text: "Ein altes Nebengebäude steht im Weg? Wir machen den Platz frei." },
+      { h3: "Im Erbfall", text: "Wir räumen Haus und Garten und brechen auf Wunsch auch alte Nebengebäude ab." },
+      { h3: "Bei Asbestverdacht", text: "Graue Faserzementplatten auf dem Dach bauen wir mit Sachkunde aus." },
+    ],
+  },
+  checklist: {
+    h2: "Was wir abbrechen und entsorgen",
+    intro: "Typischerweise übernehmen wir:",
+    items: [
+      "Gartenhäuser aus Holz",
+      "Schuppen",
+      "Kleine Nebengebäude",
+      "Einzelne Wände",
+      "Dachplatten aus Asbestzement",
+      "Inhalt von Gartenhaus und Schuppen",
+      "Holz und Altmetall",
+      "Bauschutt",
+    ],
+  },
+  steps: {
+    h2: "So läuft der Abbruch ab",
+    items: [
+      { title: "Anfrage", text: "Sie sagen uns, was weg soll. Am besten mit Fotos per WhatsApp." },
+      { title: "Besichtigung", text: "Wir sehen uns Gebäude, Material und Zufahrt an und sprechen verdächtige Baustoffe an." },
+      { title: "Festpreis", text: "Sie bekommen ein schriftliches Angebot mit festem Preis und Termin." },
+      { title: "Abbruch und Übergabe", text: "Wir brechen ab, trennen und entsorgen fachgerecht und hinterlassen den Platz aufgeräumt." },
+    ],
+  },
+  benefits: {
+    h2: "Was für J&L Bauprojekte spricht",
+    items: [
+      { title: "Alles aus einer Hand", text: "Ausräumen, abbrechen, Asbest ausbauen und entsorgen, mit einem Ansprechpartner." },
+      { title: "Sachkunde nach TRGS 519", text: "Eternit-Platten und andere asbesthaltige Bauteile bauen wir vorschriftsgemäß aus." },
+      { title: "Klare Kosten", text: "Der Preis steht nach der Besichtigung fest, die Entsorgung ist enthalten." },
+    ],
+  },
+  local: {
+    h2: "Kleinere Abbrucharbeiten in Landsberg und Umgebung",
+    paragraphs: [
+      `Von Landsberg am Lech und Vilgertshofen aus übernehmen wir kleinere Abbrucharbeiten, ${region}.`,
+      "Gartenhaus in Kaufering, Schuppen am Ammersee oder Nebengebäude im Allgäu: Schicken Sie uns Fotos, wir melden uns mit einem Preis.",
+    ],
+  },
+  faqs: [
+    {
+      q: "Reißen Sie auch ganze Häuser ab?",
+      a: "Nein. Wir übernehmen kleinere Abbrucharbeiten wie Gartenhäuser, Schuppen, Nebengebäude und einzelne Wände. Komplette Hausabrisse führen wir nicht aus.",
+    },
+    {
+      q: "Brauche ich für den Abbruch eine Genehmigung?",
+      a: "Das hängt vom Gebäude ab. Für kleine Gartenhäuser und Schuppen ist oft keine nötig, für größere Gebäude kann eine Anzeige oder Genehmigung bei der Gemeinde vorgeschrieben sein. Im Zweifel fragen Sie beim Bauamt nach, wir sprechen das bei der Besichtigung an.",
+    },
+    {
+      q: "Was passiert mit einem Dach aus Eternit?",
+      a: "Asbestzementplatten bauen wir mit Sachkunde nach TRGS 519 aus und entsorgen sie mit Nachweis. Nicht zerbrechen und nicht selbst abbauen, denn dabei werden Fasern frei.",
+    },
+    {
+      q: "Räumen Sie das Gartenhaus vorher aus?",
+      a: "Ja. Den Inhalt von Gartenhaus oder Schuppen räumen wir auf Wunsch mit und entsorgen ihn.",
+    },
+    {
+      q: "Was kostet der Abriss eines Gartenhauses?",
+      a: "Das hängt von Größe, Material, Zufahrt und Entsorgung ab. Anhand von Fotos oder nach der Besichtigung bekommen Sie einen verbindlichen Festpreis.",
     },
   ],
 };

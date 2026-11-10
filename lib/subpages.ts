@@ -47,7 +47,13 @@ export const entkernung: SubPage = {
     "Bevor saniert wird, muss das Alte raus. Wir entkernen Wohnungen und Häuser, bauen Bauteile kontrolliert zurück und übernehmen kleinere Abbrucharbeiten. Den Schutt trennen und entsorgen wir selbst, übergeben wird besenrein.",
   hero: "entkernung",
   preselect: ["entkernung"],
-  related: [{ href: "/wanddurchbruch/", label: "Wanddurchbruch & Stahlträger" }],
+  related: [
+    { href: "/demontage-einbauten/", label: "Demontage von Einbauten" },
+    { href: "/fliesen-boden-entfernen/", label: "Fliesen & Boden entfernen" },
+    { href: "/rueckbau-innenausbau/", label: "Rückbau von Innenausbau" },
+    { href: "/wanddurchbruch/", label: "Wanddurchbruch & Stahlträger" },
+    { href: "/kleinere-abbrucharbeiten/", label: "Kleinere Abbrucharbeiten" },
+  ],
   services: {
     h2: "Unsere Leistungen rund um Entkernung und Rückbau",
     intro:
@@ -60,14 +66,17 @@ export const entkernung: SubPage = {
       {
         h3: "Demontage von Einbauten",
         text: "Heizkörper, Türen und Zargen, Einbauschränke, Küchenzeilen und Möbel bauen wir ab und fahren sie weg. Was Sie wiederverwenden wollen, bauen wir vorsichtig aus.",
+        link: { href: "/demontage-einbauten/", label: "Alles zur Demontage von Einbauten" },
       },
       {
         h3: "Fliesen- und Bodenabbruch",
         text: "Fliesen, Estrich, Laminat, Parkett, Teppich und PVC, samt Kleber- und Spachtelresten. Danach ist der Untergrund bereit für neuen Estrich, Fußbodenheizung oder neuen Belag.",
+        link: { href: "/fliesen-boden-entfernen/", label: "Alles zu Fliesen & Boden entfernen" },
       },
       {
         h3: "Rückbau von Bauteilen und Innenausbau",
         text: "Wir bauen einzelne Bauteile oder den ganzen Innenausbau zurück, zum Beispiel vor Umbau, Mieterwechsel oder bevor Elektriker, Installateur und Trockenbauer kommen. Schritt für Schritt, ohne den Bestand zu beschädigen.",
+        link: { href: "/rueckbau-innenausbau/", label: "Alles zum Rückbau von Innenausbau" },
       },
       {
         h3: "Wanddurchbrüche und tragende Wände",
@@ -77,6 +86,7 @@ export const entkernung: SubPage = {
       {
         h3: "Kleinere Abbrucharbeiten",
         text: "Gartenhäuser, Schuppen, kleine Nebengebäude und einzelne Wände brechen wir ab und entsorgen den Bauschutt. Komplette Hausabrisse übernehmen wir nicht.",
+        link: { href: "/kleinere-abbrucharbeiten/", label: "Alles zu kleineren Abbrucharbeiten" },
       },
       {
         h3: "Entsorgung aus einer Hand",
