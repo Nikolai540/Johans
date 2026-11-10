@@ -1,7 +1,8 @@
 import { ArrowIcon, GateIcon, HomeIcon, MountainIcon, SailIcon, TowerIcon, WallIcon } from "@/components/Icons";
 import { LocationMap } from "@/components/LocationMap";
 import { regions, type RegionId } from "@/lib/regions";
-import { catchment, locationById, locations, site, type LocationId } from "@/lib/site";
+import { homeCopy } from "@/lib/homes";
+import { locationById, locations, site, type LocationId } from "@/lib/site";
 
 const facts = [
   { label: "Standorte", value: `${site.branch.locality} und ${site.address.locality}` },
@@ -23,23 +24,23 @@ const icons: Record<RegionId, typeof GateIcon> = {
 export function Region({ location }: { location: LocationId }) {
   const loc = locationById(location);
   const other = locations.find((l) => l.id !== location)!;
+  const copy = homeCopy[location];
   return (
     <section id="einsatzgebiet" aria-labelledby="einsatzgebiet-title" className="bg-canvas py-section">
       <div className="page-x mx-auto max-w-page">
         <div className="grid gap-xxl lg:grid-cols-12 lg:gap-lg">
           <div className="lg:col-span-6">
             <h2 id="einsatzgebiet-title" data-reveal className="text-display-md lg:text-display-lg">
-              Zwischen Augsburg, Ammersee und Allgäu
+              {copy.regionTitle}
             </h2>
             <p data-reveal style={{ ["--i" as string]: 1 }} className="mt-lg max-w-[60ch] text-title-md text-ink">
-              Unsere Standorte sind Landsberg am Lech und Vilgertshofen. Von dort sind wir schnell bei Ihnen, zur
-              Besichtigung genauso wie auf der Baustelle. Kurze Wege sparen Ihnen Geld.
+              {copy.regionIntro}
             </p>
             <h3 data-reveal style={{ ["--i" as string]: 2 }} className="mt-xl text-title-md">
               Unser Einzugsgebiet
             </h3>
             <ul data-reveal style={{ ["--i" as string]: 2 }} className="mt-sm flex flex-wrap gap-xs">
-              {catchment.map((place) => (
+              {copy.places.map((place) => (
                 <li key={place} className="pill bg-surface-soft px-md py-xs text-title-sm text-ink">
                   {place}
                 </li>

@@ -1,12 +1,14 @@
 import Image from "next/image";
 
 import { photos } from "@/lib/images";
-import { catchment } from "@/lib/site";
+import { homeCopy } from "@/lib/homes";
+import { locationById, type LocationId } from "@/lib/site";
 
 // Überblendung der vorhandenen Fotos; nur das erste lädt sofort, die anderen danach
 const slides = [photos.landsbergLechwehr, photos.entkernung, photos.sperrmuell, photos.abbruch];
 
-export function Hero({ town }: { town: string }) {
+export function Hero({ location }: { location: LocationId }) {
+  const copy = homeCopy[location];
   return (
     <section
       id="top"
@@ -42,16 +44,15 @@ export function Hero({ town }: { town: string }) {
             Abbruch, Entkernung & Haushaltsauflösung
           </span>{" "}
           <span data-rise className="block" style={{ ["--i" as string]: 1 }}>
-            in {town} und Umgebung
+            in {locationById(location).town} und Umgebung
           </span>
         </h1>
         <p data-rise style={{ ["--i" as string]: 2 }} className="mt-md max-w-[52ch] text-body-md text-on-dark sm:text-title-md sm:font-light">
-          Wir räumen, bauen zurück und machen Räume wieder bewohnbar. Sauber, pünktlich und mit einem festen
-          Ansprechpartner.
+          {copy.heroIntro}
         </p>
         <p data-rise style={{ ["--i" as string]: 3 }} className="mt-md max-w-[70ch] text-body-sm text-on-dark sm:text-body-md">
           <span className="font-bold">Im Einsatz in </span>
-          {catchment.join(" · ")}
+          {copy.places.join(" · ")}
         </p>
         <div
           data-hero-actions

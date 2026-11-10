@@ -1,6 +1,5 @@
 import { places, serviceOrder, services } from "@/lib/content";
-import { regionById } from "@/lib/regions";
-import { catchment, site } from "@/lib/site";
+import { catchment, locationById, site } from "@/lib/site";
 
 export const businessId = `${site.url}/#business`;
 export const branchId = `${site.url}/#standort-landsberg`;
@@ -36,13 +35,15 @@ export function businessGraph() {
       legalName: site.legalName,
       founder: { "@type": "Person", name: site.owner },
       subOrganization: { "@id": branchId },
-      url: `${site.url}/`,
+      // Jeder Standort verweist auf seine eigene Startseite
+      url: `${site.url}${locationById("vilgertshofen").home}`,
+      hasMap: mapUrl(site.address.street, site.address.postalCode, site.address.locality),
       telephone: site.phone.e164,
       email: site.email,
       image: `${site.url}/images/landsberg-lechwehr.jpg`,
       logo: `${site.url}/logo.svg`,
       description:
-        "Entkernung, Abbruch und Rückbau, Entrümpelung, Haushaltsauflösung und Renovierung mit Trockenbau, Bodenverlegung und Umzügen in Landsberg am Lech und Umgebung.",
+        "Entkernung, Abbruch und Rückbau, Entrümpelung, Haushaltsauflösung und Renovierung mit Trockenbau, Bodenverlegung und Umzügen. Firmensitz in Vilgertshofen, Standort in Landsberg am Lech.",
       address,
       geo: { "@type": "GeoCoordinates", latitude: site.geo.latitude, longitude: site.geo.longitude },
       areaServed: areaServed(),
@@ -68,8 +69,8 @@ export function businessGraph() {
       "@id": branchId,
       name: `${site.name} – ${site.branch.label}`,
       parentOrganization: { "@id": businessId },
-      // Die Regionsseite Landsberg dient als Standortseite
-      url: `${site.url}${regionById("landsberg").href}`,
+      url: `${site.url}${locationById("landsberg").home}`,
+      hasMap: mapUrl(site.branch.street, site.branch.postalCode, site.branch.locality),
       telephone: site.phone.e164,
       email: site.email,
       image: `${site.url}/images/landsberg-lechwehr.jpg`,
@@ -93,6 +94,9 @@ export function businessGraph() {
     },
   ];
 }
+
+const mapUrl = (...parts: string[]) =>
+  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${site.name}, ${parts.filter(Boolean).join(" ")}`)}`;
 
 /** Einzugsgebiet für schema.org: Orte der Regionsseiten plus das weitere Gebiet */
 export function areaServed() {

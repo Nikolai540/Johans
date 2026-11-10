@@ -10,7 +10,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { services, type ServiceId } from "@/lib/content";
 import { photos } from "@/lib/images";
 import { regionById, regions, type RegionPage as RegionPageData } from "@/lib/regions";
-import { pages, site } from "@/lib/site";
+import { locationById, pages, site } from "@/lib/site";
 
 // Leistungen mit eigener Unterseite verlinken dorthin, alle anderen wählen die Leistung im Formular vor
 const detailPage: Partial<Record<ServiceId, string>> = {
@@ -29,11 +29,13 @@ const detailPage: Partial<Record<ServiceId, string>> = {
 const addresses = {
   main: {
     id: businessId,
+    home: locationById("vilgertshofen").home,
     label: `Firmensitz ${site.address.locality}`,
     lines: [site.address.street, `${site.address.postalCode} ${site.address.locality}`].filter(Boolean),
   },
   branch: {
     id: branchId,
+    home: locationById("landsberg").home,
     label: site.branch.label,
     lines: [site.branch.street, `${site.branch.postalCode} ${site.branch.locality}`],
   },
@@ -267,6 +269,10 @@ export function RegionPage({ page }: { page: RegionPageData }) {
                           {line}
                         </span>
                       ))}
+                      <a href={a.home} className="link link-underlined mt-xs inline-flex min-h-11 items-center gap-xs text-title-sm">
+                        Zur Standortseite
+                        <ArrowIcon className="size-4" />
+                      </a>
                     </address>
                   );
                 })}

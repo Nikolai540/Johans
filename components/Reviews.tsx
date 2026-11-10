@@ -1,10 +1,11 @@
 import { ArrowIcon } from "@/components/Icons";
 import { ReviewCarousel, Stars } from "@/components/ReviewCarousel";
 import { getReviews } from "@/lib/reviews";
+import type { LocationId } from "@/lib/site";
 
 // Aktuelle Google-Bewertungen als Karussell
-export async function Reviews() {
-  const reviews = await getReviews();
+export async function Reviews({ location }: { location: LocationId }) {
+  const reviews = await getReviews(location);
   if (!reviews) return null;
 
   // overflow-x-clip: Karten, die seitlich hereinfliegen, verbreitern sonst kurz die Seite

@@ -1,5 +1,7 @@
 // Google-Bewertungen über die Places API (New). Der Abruf läuft auf dem Server, der Browser spricht nicht mit Google.
-// Ohne GOOGLE_PLACES_API_KEY und GOOGLE_PLACE_ID oder bei einem Fehler gibt es null, der Abschnitt entfällt dann.
+// Ohne GOOGLE_PLACES_API_KEY und Place ID oder bei einem Fehler gibt es null, der Abschnitt entfällt dann.
+// Jeder Standort zeigt die Bewertungen seines eigenen Google-Profils, Vilgertshofen sonst die aus GOOGLE_PLACE_ID.
+import type { LocationId } from "./site";
 
 export type Review = { author: string; authorUri?: string; rating: number; text: string; when: string };
 export type Reviews = { rating: number; count: number; mapsUri: string; items: Review[] };
@@ -12,9 +14,9 @@ type ApiReview = {
   authorAttribution?: { displayName?: string; uri?: string };
 };
 
-export async function getReviews(): Promise<Reviews | null> {
+export async function getReviews(location: LocationId): Promise<Reviews | null> {
   const key = process.env.GOOGLE_PLACES_API_KEY;
-  const id = process.env.GOOGLE_PLACE_ID;
+  const id = location === "vilgertshofen" ? (process.env.GOOGLE_PLACE_ID_VILGERTSHOFEN ?? process.env.GOOGLE_PLACE_ID) : process.env.GOOGLE_PLACE_ID;
   if (!key || !id) return null;
 
   try {

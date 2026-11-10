@@ -5,7 +5,8 @@ import { LogoFull } from "@/components/Logo";
 import { photos } from "@/lib/images";
 import { nav, serviceNav, site } from "@/lib/site";
 
-export function SiteFooter() {
+/** home: Startseite, auf der der Footer steht – Sprungmarken wie "/#faq" bleiben dann auf dieser Seite */
+export function SiteFooter({ home = "/" }: { home?: string }) {
   const stamp = photos.landsbergBayertor;
   const credits = Object.values(photos).map((p) => p.credit);
 
@@ -49,7 +50,7 @@ export function SiteFooter() {
             <ul className="grid grid-cols-2 gap-x-lg text-body-md text-ink">
               {[...serviceNav, ...nav].map((l) => (
                 <li key={l.href}>
-                  <a href={l.href} className="link inline-flex min-h-11 items-center">
+                  <a href={l.href.startsWith("/#") ? home + l.href.slice(1) : l.href} className="link inline-flex min-h-11 items-center">
                     {l.label}
                   </a>
                 </li>

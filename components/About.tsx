@@ -2,7 +2,8 @@ import Image from "next/image";
 
 import { ArrowIcon } from "@/components/Icons";
 import { photos, type PhotoKey } from "@/lib/images";
-import { aboutPage } from "@/lib/site";
+import { homeCopy } from "@/lib/homes";
+import { aboutPage, type LocationId } from "@/lib/site";
 
 const passing: { key: PhotoKey; ratio: string; frame: string }[] = [
   { key: "landsbergLuftbild", ratio: "aspect-[4/5]", frame: "w-[64%] lg:w-[62%]" },
@@ -10,7 +11,7 @@ const passing: { key: PhotoKey; ratio: string; frame: string }[] = [
   { key: "buchloeLuftbild", ratio: "aspect-square", frame: "w-[52%] lg:ml-[18%] lg:w-[46%]" },
 ];
 
-export function About() {
+export function About({ location }: { location: LocationId }) {
   return (
     <section id="ueber-uns" aria-labelledby="ueber-uns-title" className="bg-canvas py-section lg:py-0">
       <div className="page-x mx-auto grid max-w-page gap-xxl lg:grid-cols-12 lg:gap-lg">
@@ -29,11 +30,7 @@ export function About() {
                 renovieren danach. In einem Zeitplan und zum Festpreis, den Sie nach der kostenlosen Besichtigung
                 bekommen.
               </p>
-              <p>
-                Sie rufen eine Nummer an und bekommen ein Angebot für alles. Für Eigentümer, Erbengemeinschaften,
-                Hausverwaltungen und Gewerbe in Landsberg am Lech und der Region zwischen Augsburg, Ammersee und
-                Allgäu.
-              </p>
+              <p>{homeCopy[location].aboutRegion}</p>
             </div>
             <a data-reveal style={{ ["--i" as string]: 3 }} href={aboutPage.href} className="link link-underlined mt-lg inline-flex min-h-11 items-center gap-xs text-title-sm text-ink">
               Mehr über J&L Bauprojekte

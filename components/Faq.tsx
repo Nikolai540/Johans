@@ -5,7 +5,8 @@ import { faqs } from "@/lib/content";
 import { photos } from "@/lib/images";
 import { site } from "@/lib/site";
 
-export function Faq() {
+/** extra: Fragen nur für diese Seite, vor den allgemeinen */
+export function Faq({ extra = [] }: { extra?: { q: string; a: string }[] }) {
   const tall = photos.landsbergBayertor;
   const square = photos.landsbergLechwehr;
   const place = [site.address.street, `${site.address.postalCode} ${site.address.locality}`].filter(Boolean).join(", ");
@@ -26,7 +27,7 @@ export function Faq() {
             Häufige Fragen
           </h2>
           <div className="mt-xxl flex flex-col gap-sm">
-            {faqs.map((f, i) => (
+            {[...extra, ...faqs].map((f, i) => (
               <details key={f.q} name="faq" data-reveal style={{ ["--i" as string]: i + 2 }} className="card group px-lg py-xs">
                 <summary className="flex min-h-11 cursor-pointer items-start justify-between gap-md py-xs text-title-md text-ink">
                   <h3 className="text-title-md">{f.q}</h3>

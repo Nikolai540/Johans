@@ -11,6 +11,7 @@ import { Services } from "@/components/Services";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { faqs } from "@/lib/content";
+import { homeCopy } from "@/lib/homes";
 import { locationById, site, type LocationId } from "@/lib/site";
 
 // Startseite, je Standort eine: "/" für Landsberg am Lech, "/vilgertshofen/" für den Firmensitz
@@ -24,19 +25,19 @@ export function HomePage({ location }: { location: LocationId }) {
       >
         Zum Inhalt springen
       </a>
-      <JsonLd data={faqGraph(`${site.url}${loc.home}#faq`, faqs)} />
+      <JsonLd data={faqGraph(`${site.url}${loc.home}#faq`, [...homeCopy[location].faqs, ...faqs])} />
       <SiteHeader />
       <main id="inhalt">
-        <Hero town={loc.town} />
-        <About />
+        <Hero location={location} />
+        <About location={location} />
         <Services />
         <Gallery />
-        <Reviews />
+        <Reviews location={location} />
         <Region location={location} />
-        <Faq />
+        <Faq extra={homeCopy[location].faqs} />
         <Contact />
       </main>
-      <SiteFooter />
+      <SiteFooter home={loc.home} />
       <MobileActions />
     </>
   );

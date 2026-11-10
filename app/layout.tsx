@@ -54,8 +54,8 @@ export const metadata: Metadata = {
   other: {
     "geo.region": "DE-BY",
     "geo.placename": "Landsberg am Lech",
-    "geo.position": `${site.geo.latitude};${site.geo.longitude}`,
-    ICBM: `${site.geo.latitude}, ${site.geo.longitude}`,
+    "geo.position": `${site.branch.geo.latitude};${site.branch.geo.longitude}`,
+    ICBM: `${site.branch.geo.latitude}, ${site.branch.geo.longitude}`,
   },
 };
 
