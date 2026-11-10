@@ -186,6 +186,9 @@ export const entruempelung: SubPage = {
   hero: "sperrmuell",
   preselect: ["entruempelung", "haushaltsaufloesung"],
   related: [
+    { href: "/wohnungsaufloesung/", label: "Wohnungsauflösung" },
+    { href: "/nachlassaufloesung/", label: "Nachlassauflösung" },
+    { href: "/keller-dachboden-garage-entruempeln/", label: "Keller, Dachboden & Garage" },
     { href: "/gewerbeaufloesung/", label: "Gewerbeauflösung" },
     { href: "/messie-wohnung-entruempeln/", label: "Messie-Wohnung räumen" },
     { href: "/containerdienst/", label: "Container & Entsorgung" },
@@ -198,6 +201,7 @@ export const entruempelung: SubPage = {
       {
         h3: "Wohnungsauflösung",
         text: "Wir räumen Miet- und Eigentumswohnungen komplett, zum Beispiel vor der Übergabe an den Vermieter. Die Wohnung ist danach leer und besenrein.",
+        link: { href: "/wohnungsaufloesung/", label: "Alles zur Wohnungsauflösung" },
       },
       {
         h3: "Haushaltsauflösung",
@@ -206,6 +210,7 @@ export const entruempelung: SubPage = {
       {
         h3: "Nachlassauflösung nach einem Todesfall",
         text: "Für Erben und Angehörige räumen wir den Nachlass in Ruhe und mit Rücksicht. Was Sie behalten möchten, legen wir vorher gemeinsam fest.",
+        link: { href: "/nachlassaufloesung/", label: "Alles zur Nachlassauflösung" },
       },
       {
         h3: "Entrümpelung von Messie-Wohnungen",
@@ -215,6 +220,7 @@ export const entruempelung: SubPage = {
       {
         h3: "Keller-, Dachboden- und Garagenentrümpelung",
         text: "Kleine Aufträge nehmen wir gern: einzelne Keller, Dachböden, Garagen, Abstellräume, Gartenhäuser und Schuppen.",
+        link: { href: "/keller-dachboden-garage-entruempeln/", label: "Alles zu Keller, Dachboden & Garage" },
       },
       {
         h3: "Gewerbe- und Objekträumung",

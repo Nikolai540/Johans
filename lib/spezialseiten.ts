@@ -1,6 +1,6 @@
 import type { SubPage } from "./subpages";
 
-// Spezialseiten zu Haushaltsauflösung (Gewerbe, Messie, Container) und Entkernung (Wanddurchbruch).
+// Spezialseiten zu Haushaltsauflösung (Gewerbe, Messie, Wohnung, Nachlass, Keller, Container) und Entkernung (Wanddurchbruch).
 // Container stellen Partnerbetriebe, J&L organisiert. Größen sind übliche Standardgrößen, keine Zusage für jede Größe.
 
 const region =
@@ -232,6 +232,351 @@ export const messie: SubPage = {
     {
       q: "Reinigen Sie die Wohnung auch?",
       a: "Wir übergeben die Wohnung leer und besenrein, vorbereitet für Grundreinigung und Geruchsneutralisation. Wie die Reinigung danach erfolgt, klären wir bei der Besichtigung.",
+    },
+  ],
+};
+
+export const wohnungsaufloesung: SubPage = {
+  path: "/wohnungsaufloesung/",
+  name: "Wohnungsauflösung",
+  title: "Wohnungsauflösung in Landsberg am Lech und Augsburg | J&L Bauprojekte",
+  description:
+    "Wohnungsauflösung in Landsberg am Lech, Kaufering, Augsburg, am Ammersee und im Allgäu: Mietwohnung oder Eigentumswohnung komplett räumen, Entsorgung inklusive, besenrein zum Übergabetermin, Festpreis nach Besichtigung.",
+  h1: "Wohnungsauflösung in Landsberg am Lech: leer und besenrein zum Übergabetermin",
+  intro:
+    "Wir räumen Miet- und Eigentumswohnungen komplett, vom Wohnzimmer bis zum Kellerabteil. Container, Abtransport und Entsorgung übernehmen wir. Zum vereinbarten Termin ist die Wohnung leer und besenrein. Den Festpreis kennen Sie vorher.",
+  hero: "sperrmuell",
+  preselect: ["haushaltsaufloesung"],
+  services: {
+    h2: "Was zu einer Wohnungsauflösung gehört",
+    intro:
+      "Bei einer Wohnungsauflösung drängt meist ein Termin, etwa die Übergabe an den Vermieter oder der Verkauf. Wir planen vom Übergabetermin aus und erledigen alles mit einem Team.",
+    items: [
+      {
+        h3: "Möbel und Hausrat",
+        text: "Schränke, Betten, Sofas, Geschirr, Kleidung und Bücher: Wir räumen alles, was nicht mehr gebraucht wird, und tragen es aus der Wohnung.",
+      },
+      {
+        h3: "Küche und Elektrogeräte",
+        text: "Einbauküchen bauen wir ab, Herd, Kühlschrank und Waschmaschine geben wir als Elektroaltgeräte getrennt zur Entsorgung.",
+      },
+      {
+        h3: "Keller, Dachboden und Balkon",
+        text: "Zur Wohnung gehörende Kellerabteile, Dachbodenverschläge und Balkone räumen wir mit, damit bei der Übergabe nichts übrig bleibt.",
+      },
+      {
+        h3: "Was bleibt, legen wir fest",
+        text: "Vor der Räumung klären wir gemeinsam, was Sie behalten möchten. Papiere, Fotos und Wertsachen, die wir beim Räumen finden, legen wir für Sie beiseite.",
+      },
+      {
+        h3: "Fachgerechte Entsorgung",
+        text: "Holz, Metall, Elektrogeräte und Restmüll trennen wir und geben sie bei zugelassenen Entsorgern ab.",
+      },
+      {
+        h3: "Danach renovieren",
+        text: "Auf Wunsch entfernen wir alte Böden und Verkleidungen, verlegen neue Böden oder übernehmen Trockenbauarbeiten. So ist die Wohnung schnell wieder vermietbar.",
+      },
+    ],
+  },
+  occasions: {
+    h2: "Wann eine Wohnungsauflösung ansteht",
+    items: [
+      { h3: "Umzug ins Pflegeheim", text: "Wenn Eltern oder Angehörige in ein Heim ziehen, räumen wir die bisherige Wohnung vollständig." },
+      { h3: "Kündigung und Auszug", text: "Vor der Übergabe an den Vermieter räumen wir die Wohnung leer und besenrein." },
+      { h3: "Verkauf", text: "Leere Räume braucht es für Besichtigungen, Fotos und die Übergabe an die Käufer." },
+      { h3: "Mieterwechsel", text: "Vermieter bekommen die Wohnung nach dem Auszug schnell wieder leer, auch wenn der Vormieter viel zurückgelassen hat." },
+      { h3: "Zusammenziehen", text: "Zwei Haushalte werden einer. Was doppelt ist, holen wir ab und entsorgen es." },
+      { h3: "Vor einer Sanierung", text: "Erst räumen, dann entkernen. Beides machen wir auf Wunsch nacheinander." },
+    ],
+  },
+  checklist: {
+    h2: "Was wir aus der Wohnung räumen",
+    intro: "Typischerweise räumen und entsorgen wir:",
+    items: [
+      "Möbel und Sperrmüll",
+      "Einbauküchen",
+      "Elektrogeräte",
+      "Teppiche und Gardinen",
+      "Kleidung und Textilien",
+      "Geschirr, Bücher und Hausrat",
+      "Kellerabteil und Dachbodenverschlag",
+      "Balkonmöbel und Pflanzkübel",
+    ],
+  },
+  steps: {
+    h2: "So läuft Ihre Wohnungsauflösung ab",
+    items: [
+      { title: "Besichtigung oder Fotos", text: "Wir kommen vorbei, oder Sie schicken Fotos per WhatsApp für eine erste Einschätzung." },
+      { title: "Festpreis", text: "Sie bekommen ein verbindliches Angebot mit festem Preis, Entsorgung inklusive." },
+      { title: "Termin", text: "Wir planen die Räumung passend zum Übergabetermin, oft schon innerhalb weniger Tage." },
+      { title: "Räumung und Übergabe", text: "Wir räumen, trennen und entsorgen und übergeben die Wohnung besenrein." },
+    ],
+  },
+  benefits: {
+    h2: "Was für J&L Bauprojekte spricht",
+    items: [
+      { title: "Pünktlich zum Termin", text: "Wir richten uns nach dem Übergabetermin, auch wenn es kurzfristig wird." },
+      { title: "Ein Festpreis", text: "Der Preis steht nach der Besichtigung fest, Abtransport und Entsorgung sind enthalten." },
+      { title: "Alles aus einer Hand", text: "Räumen, entsorgen und auf Wunsch renovieren, mit einem Ansprechpartner." },
+    ],
+  },
+  local: {
+    h2: "Wohnungsauflösung in Landsberg, Augsburg und Umgebung",
+    paragraphs: [
+      `Von Landsberg am Lech und Vilgertshofen aus lösen wir Wohnungen auf, ${region}.`,
+      "Sie wohnen weiter weg? Schlüsselübergabe, Fotos vom Zwischenstand und Abnahme stimmen wir per Telefon oder WhatsApp ab.",
+    ],
+  },
+  faqs: [
+    {
+      q: "Was kostet eine Wohnungsauflösung?",
+      a: "Das hängt von Größe, Menge, Stockwerk und Entsorgung ab. Nach der Besichtigung oder anhand von Fotos bekommen Sie einen verbindlichen Festpreis.",
+    },
+    {
+      q: "Wie schnell können Sie räumen?",
+      a: "Eine Besichtigung geht meist kurzfristig, die Räumung oft innerhalb weniger Tage. Nennen Sie uns den Übergabetermin, wir planen danach.",
+    },
+    {
+      q: "Muss ich bei der Räumung dabei sein?",
+      a: "Nein. Nach Besichtigung und Schlüsselübergabe räumen wir allein und halten Sie per Telefon oder WhatsApp auf dem Laufenden.",
+    },
+    {
+      q: "Bauen Sie auch die Einbauküche ab?",
+      a: "Ja. Wir bauen Küchen und andere Einbauten ab und entsorgen sie, auf Wunsch auch alte Böden und Verkleidungen.",
+    },
+    {
+      q: "Räumen Sie Keller und Dachboden mit?",
+      a: "Ja. Kellerabteil, Dachbodenverschlag und Balkon gehören bei uns zur Wohnungsauflösung dazu, wenn Sie das möchten.",
+    },
+  ],
+};
+
+export const nachlassaufloesung: SubPage = {
+  path: "/nachlassaufloesung/",
+  name: "Nachlassauflösung nach einem Todesfall",
+  title: "Nachlassauflösung in Landsberg am Lech und Augsburg | J&L Bauprojekte",
+  description:
+    "Nachlassauflösung und Haushaltsauflösung im Todesfall in Landsberg am Lech, Augsburg, am Ammersee und im Allgäu: Wir räumen mit Rücksicht, legen Dokumente und Erinnerungsstücke beiseite und übergeben besenrein zum Festpreis.",
+  h1: "Nachlassauflösung in Landsberg am Lech: in Ruhe und mit Rücksicht",
+  intro:
+    "Nach einem Todesfall müssen Erben und Angehörige oft eine ganze Wohnung oder ein Haus räumen, neben allem anderen, was gerade zu tun ist. Wir nehmen Ihnen diese Arbeit ab. Was Sie behalten möchten, legen wir vorher gemeinsam fest. Den Rest räumen und entsorgen wir, und am Ende sind die Räume besenrein.",
+  hero: "sperrmuell",
+  preselect: ["haushaltsaufloesung"],
+  services: {
+    h2: "Was wir bei einer Nachlassauflösung übernehmen",
+    intro:
+      "Ein Nachlass ist mehr als Möbel. Wir arbeiten in Ruhe, sprechen jeden Schritt mit Ihnen ab und gehen mit den Sachen des Verstorbenen sorgfältig um.",
+    items: [
+      {
+        h3: "Erst sichten, dann räumen",
+        text: "Bei der Besichtigung gehen wir mit Ihnen durch die Räume. Was in der Familie bleiben soll, markieren wir oder stellen es zur Seite.",
+      },
+      {
+        h3: "Dokumente und Erinnerungsstücke",
+        text: "Papiere, Fotos, Briefe, Schmuck oder Bargeld, die wir beim Räumen finden, legen wir beiseite und geben sie Ihnen.",
+      },
+      {
+        h3: "Haus oder Wohnung komplett",
+        text: "Wir räumen alle Zimmer, Keller, Dachboden, Garage und Gartenhaus. Danach ist das Gebäude leer.",
+      },
+      {
+        h3: "Fachgerechte Entsorgung",
+        text: "Möbel, Hausrat, Elektrogeräte und Restmüll trennen wir und geben sie bei zugelassenen Entsorgern ab. Container und Abtransport organisieren wir.",
+      },
+      {
+        h3: "Auch aus der Ferne",
+        text: "Sie wohnen weit weg? Wir stimmen uns per Telefon oder WhatsApp ab und schicken Ihnen Fotos vom Zwischenstand und von der fertigen Räumung.",
+      },
+      {
+        h3: "Vorbereiten für Verkauf oder Vermietung",
+        text: "Auf Wunsch entfernen wir anschließend alte Böden und Verkleidungen oder renovieren, damit das Haus oder die Wohnung verkauft oder vermietet werden kann.",
+      },
+    ],
+  },
+  occasions: {
+    h2: "Wer uns ruft",
+    items: [
+      { h3: "Erben", text: "Wir räumen die geerbte Wohnung oder das Elternhaus, auch wenn Sie selbst nicht vor Ort sein können." },
+      { h3: "Angehörige", text: "Wenn die Kraft fehlt, alles selbst durchzugehen, übernehmen wir die Arbeit in Absprache mit der Familie." },
+      { h3: "Vermieter", text: "Nach dem Tod eines Mieters räumen wir die Wohnung in Abstimmung mit den Erben." },
+      { h3: "Betreuer", text: "Für gesetzliche Betreuer übernehmen wir die Räumung und stimmen jeden Schritt ab." },
+      { h3: "Vor dem Hausverkauf", text: "Leere Räume braucht es für Besichtigungen und die Übergabe an die Käufer." },
+      { h3: "Bei stark vermüllten Wohnungen", text: "Auch wenn eine Wohnung im Nachlass stark vermüllt ist, räumen wir sie diskret." },
+    ],
+  },
+  checklist: {
+    h2: "Was wir im Nachlass räumen",
+    intro: "Wir räumen alles, was nicht in der Familie bleibt:",
+    items: [
+      "Möbel und Sperrmüll",
+      "Küchen und Elektrogeräte",
+      "Kleidung und Wäsche",
+      "Geschirr, Bücher und Hausrat",
+      "Teppiche und Gardinen",
+      "Keller und Dachboden",
+      "Garage, Werkstatt und Gartenhaus",
+      "Kleinteile, Kartons und Restmüll",
+    ],
+  },
+  steps: {
+    h2: "So läuft die Nachlassauflösung ab",
+    items: [
+      { title: "Gespräch", text: "Sie schildern uns die Lage am Telefon oder per WhatsApp, gern mit Fotos." },
+      { title: "Besichtigung", text: "Wir sehen uns die Räume an und legen mit Ihnen fest, was bleibt und was beiseitegelegt wird." },
+      { title: "Festpreis", text: "Sie bekommen ein verbindliches Angebot. Der Preis steht vorher fest." },
+      { title: "Räumung und Übergabe", text: "Wir räumen, trennen und entsorgen und übergeben die Räume besenrein." },
+    ],
+  },
+  benefits: {
+    h2: "Was für J&L Bauprojekte spricht",
+    items: [
+      { title: "Mit Rücksicht", text: "Wir nehmen uns Zeit und gehen sorgfältig mit dem um, was der Verstorbene hinterlassen hat." },
+      { title: "Erfahren", text: "Über 270 Projekte in der Region." },
+      { title: "Ein Festpreis", text: "Der Preis steht nach der Besichtigung fest, Abtransport und Entsorgung sind enthalten." },
+    ],
+  },
+  local: {
+    h2: "Nachlassauflösung in Landsberg, Augsburg und Umgebung",
+    paragraphs: [
+      `Von Landsberg am Lech und Vilgertshofen aus übernehmen wir Nachlassauflösungen ${region}.`,
+      "Elternhaus am Ammersee, Wohnung in Augsburg oder Bauernhaus im Allgäu: Wir räumen und übergeben besenrein, auch wenn Sie selbst weit weg wohnen.",
+    ],
+  },
+  faqs: [
+    {
+      q: "Was kostet eine Nachlassauflösung?",
+      a: "Das hängt von Größe, Menge, Zugang und Entsorgung ab. Nach der Besichtigung oder anhand von Fotos bekommen Sie einen verbindlichen Festpreis.",
+    },
+    {
+      q: "Muss ich bei der Räumung dabei sein?",
+      a: "Nein. Nach Besichtigung und Schlüsselübergabe räumen wir allein und halten Sie per Telefon oder WhatsApp auf dem Laufenden.",
+    },
+    {
+      q: "Was passiert mit persönlichen Dokumenten und Fotos?",
+      a: "Papiere, Fotos, Briefe und Wertsachen, die wir finden, legen wir beiseite und geben sie Ihnen. Was Sie vorab markiert haben, bleibt ohnehin stehen.",
+    },
+    {
+      q: "Wie schnell können Sie räumen?",
+      a: "Eine Besichtigung geht meist kurzfristig. Den Räumtermin legen wir nach Ihren Wünschen fest, oft sind es nur wenige Tage.",
+    },
+    {
+      q: "Räumen Sie auch ein ganzes Haus?",
+      a: "Ja. Wir räumen Wohnungen und Häuser komplett, mit Keller, Dachboden, Garage und Gartenhaus.",
+    },
+  ],
+};
+
+export const kellerEntruempelung: SubPage = {
+  path: "/keller-dachboden-garage-entruempeln/",
+  name: "Keller, Dachboden und Garage entrümpeln",
+  title: "Keller, Dachboden & Garage entrümpeln in Landsberg | J&L Bauprojekte",
+  description:
+    "Kellerentrümpelung, Dachboden räumen und Garage entrümpeln in Landsberg am Lech, Kaufering, Augsburg, am Ammersee und im Allgäu. Auch kleine Aufträge, Entsorgung inklusive, Festpreis nach Fotos oder Besichtigung.",
+  h1: "Keller, Dachboden und Garage entrümpeln in Landsberg am Lech",
+  intro:
+    "Ein voller Keller, ein zugestellter Dachboden oder eine Garage, in die kein Auto mehr passt: Wir räumen auch einzelne Räume. Sie zeigen uns, was raus soll, wir tragen es weg und entsorgen es fachgerecht. Den Festpreis bekommen Sie vorher, oft schon anhand von Fotos.",
+  hero: "sperrmuell",
+  preselect: ["entruempelung"],
+  services: {
+    h2: "Was wir für Sie räumen",
+    intro:
+      "Kleine Aufträge nehmen wir gern. Ob ein einzelnes Kellerabteil oder Keller, Dachboden und Garage zusammen: Sie haben einen Ansprechpartner und einen Preis.",
+    items: [
+      {
+        h3: "Kellerentrümpelung",
+        text: "Kellerräume und Kellerabteile im Mehrfamilienhaus räumen wir leer, auch wenn der Weg nach oben eng und verwinkelt ist.",
+      },
+      {
+        h3: "Dachboden räumen",
+        text: "Alte Möbel, Kisten und Kartons tragen wir vom Dachboden, auch über steile Treppen. Danach ist der Boden besenrein.",
+      },
+      {
+        h3: "Garage entrümpeln",
+        text: "Altreifen, Werkzeug, Gerümpel und alte Regale: Wir räumen die Garage, damit das Auto wieder hineinpasst.",
+      },
+      {
+        h3: "Abstellräume und Schuppen",
+        text: "Abstellkammern, Gartenhäuser und Schuppen räumen wir genauso. Ein altes Gartenhaus brechen wir auf Wunsch gleich mit ab.",
+      },
+      {
+        h3: "Was bleibt, entscheiden Sie",
+        text: "Sie zeigen uns, was raus soll. Alles andere bleibt stehen. Fotos, Papiere und Wertsachen, die wir finden, legen wir beiseite.",
+      },
+      {
+        h3: "Fachgerechte Entsorgung",
+        text: "Holz, Metall, Elektrogeräte und Restmüll trennen wir und geben sie bei zugelassenen Entsorgern ab. Sie müssen nichts zum Wertstoffhof fahren.",
+      },
+    ],
+  },
+  occasions: {
+    h2: "Wann Sie uns rufen",
+    items: [
+      { h3: "Wenn es einfach zu viel wird", text: "Über Jahre sammelt sich viel an. Wir räumen es weg, Sie müssen nichts selbst tragen." },
+      { h3: "Vor dem Umzug", text: "Was nicht mit in die neue Wohnung soll, holen wir vorher ab." },
+      { h3: "Vor dem Hausverkauf", text: "Leere Nebenräume braucht es für Besichtigungen und die Übergabe." },
+      { h3: "Vor dem Dachausbau", text: "Erst räumen wir den Dachboden, dann kann der Ausbau starten. Den Trockenbau übernehmen wir auf Wunsch auch." },
+      { h3: "Auf Wunsch der Hausverwaltung", text: "Wenn Kellerabteile oder Gemeinschaftsräume geräumt werden müssen, erledigen wir das zum Termin." },
+      { h3: "Im Erbfall", text: "Keller, Dachboden und Garage im Elternhaus räumen wir auch als Teil einer Nachlassauflösung." },
+    ],
+  },
+  checklist: {
+    h2: "Was typischerweise raus muss",
+    intro: "Wir räumen und entsorgen zum Beispiel:",
+    items: [
+      "Alte Möbel und Sperrmüll",
+      "Kisten, Kartons und Kleinteile",
+      "Elektrogeräte",
+      "Altreifen und Fahrräder",
+      "Werkzeug und Regale",
+      "Holz und Altmetall",
+      "Gartenmöbel und Gartengeräte",
+      "Teppiche und Matratzen",
+    ],
+  },
+  steps: {
+    h2: "So läuft die Entrümpelung ab",
+    items: [
+      { title: "Fotos schicken", text: "Schicken Sie uns Fotos per WhatsApp. Für kleine Räume reicht das oft für ein Angebot." },
+      { title: "Festpreis", text: "Sie bekommen ein verbindliches Angebot, Abtransport und Entsorgung inklusive. Bei größeren Mengen sehen wir es uns vorher an." },
+      { title: "Termin", text: "Wir kommen zum vereinbarten Termin, oft schon innerhalb weniger Tage." },
+      { title: "Räumen und übergeben", text: "Wir räumen, trennen und entsorgen und übergeben besenrein." },
+    ],
+  },
+  benefits: {
+    h2: "Was für J&L Bauprojekte spricht",
+    items: [
+      { title: "Auch kleine Aufträge", text: "Ein einzelnes Kellerabteil ist uns nicht zu wenig." },
+      { title: "Schnelle Termine", text: "Die Räumung klappt oft schon innerhalb weniger Tage." },
+      { title: "Ein Festpreis", text: "Der Preis steht vorher fest, Abtransport und Entsorgung sind enthalten." },
+    ],
+  },
+  local: {
+    h2: "Entrümpelung in Landsberg, Kaufering und Umgebung",
+    paragraphs: [
+      `Von Landsberg am Lech und Vilgertshofen aus räumen wir Keller, Dachböden und Garagen ${region}.`,
+      "Kellerabteil in Kaufering, Dachboden am Ammersee oder Doppelgarage in Buchloe: Schicken Sie uns Fotos, wir melden uns mit einem Preis.",
+    ],
+  },
+  faqs: [
+    {
+      q: "Lohnt sich das auch für ein einzelnes Kellerabteil?",
+      a: "Ja. Kleine Aufträge nehmen wir gern. Für ein Kellerabteil reichen oft Fotos für ein Angebot.",
+    },
+    {
+      q: "Was kostet es, einen Keller zu entrümpeln?",
+      a: "Das hängt von Menge, Zugang und Entsorgung ab. Anhand von Fotos oder nach einer Besichtigung bekommen Sie einen verbindlichen Festpreis.",
+    },
+    {
+      q: "Muss ich dabei sein?",
+      a: "Nein. Wenn klar ist, was raus soll, räumen wir auch allein. Den Schlüssel können Sie uns vorher geben.",
+    },
+    {
+      q: "Brechen Sie auch das alte Gartenhaus ab?",
+      a: "Ja. Gartenhäuser und Schuppen räumen wir und brechen sie auf Wunsch ab. Den Bauschutt entsorgen wir mit.",
+    },
+    {
+      q: "Wer entsorgt die Sachen?",
+      a: "Wir. Abtransport, Trennung und fachgerechte Entsorgung sind im Festpreis enthalten.",
     },
   ],
 };
