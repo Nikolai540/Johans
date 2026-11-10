@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { LogoIcon } from "@/components/Logo";
 import { ChevronIcon, CloseIcon, MenuIcon, PhoneIcon } from "@/components/Icons";
-import { nav, serviceNav, site } from "@/lib/site";
+import { locations, nav, serviceNav, site } from "@/lib/site";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -14,10 +14,13 @@ export function SiteHeader() {
   const headerRef = useRef<HTMLElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const servicesRef = useRef<HTMLDetailsElement>(null);
+  // Auf einer der beiden Startseiten bleiben Sprungmarken wie "/#faq" auf dieser Seite
+  const home = locations.find((l) => l.home.replace(/\/$/, "") === pathname.replace(/\/$/, ""))?.home;
+  const to = (href: string) => (home && href.startsWith("/#") ? home + href.slice(1) : href);
 
   // Aktive Sprungmarke auf der Startseite hervorheben
   useEffect(() => {
-    if (pathname !== "/") return;
+    if (!home) return;
     const sections = nav
       .filter((l) => l.href.startsWith("/#"))
       .map((l) => document.getElementById(l.href.slice(2)))
@@ -30,7 +33,7 @@ export function SiteHeader() {
     );
     sections.forEach((s) => io.observe(s));
     return () => io.disconnect();
-  }, [pathname]);
+  }, [home]);
 
   // Offenes Menü: Fokus ins Menü, Rest der Seite für Tastatur und Screenreader sperren, Escape schließt
   useEffect(() => {
@@ -129,7 +132,7 @@ export function SiteHeader() {
             {nav.map((l) => (
               <li key={l.href}>
                 <a
-                  href={l.href}
+                  href={to(l.href)}
                   aria-current={isActive(l.href) ? (l.href.startsWith("/#") ? "location" : "page") : undefined}
                   className={`link inline-flex min-h-11 items-center text-nav-link ${
                     isActive(l.href) ? "font-bold text-on-dark link-underlined" : "text-on-dark-soft"
@@ -190,7 +193,7 @@ export function SiteHeader() {
             </li>
             {nav.map((l) => (
               <li key={l.href}>
-                <a href={l.href} onClick={() => setOpen(false)} className="flex min-h-14 items-center text-display-sm text-on-dark">
+                <a href={to(l.href)} onClick={() => setOpen(false)} className="flex min-h-14 items-center text-display-sm text-on-dark">
                   {l.label}
                 </a>
               </li>

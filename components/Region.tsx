@@ -1,7 +1,7 @@
 import { ArrowIcon, GateIcon, HomeIcon, MountainIcon, SailIcon, TowerIcon, WallIcon } from "@/components/Icons";
 import { LocationMap } from "@/components/LocationMap";
 import { regions, type RegionId } from "@/lib/regions";
-import { catchment, locations, site } from "@/lib/site";
+import { catchment, locationById, locations, site, type LocationId } from "@/lib/site";
 
 const facts = [
   { label: "Standorte", value: `${site.branch.locality} und ${site.address.locality}` },
@@ -19,7 +19,10 @@ const icons: Record<RegionId, typeof GateIcon> = {
   allgaeu: MountainIcon,
 };
 
-export function Region() {
+// Karte und Card zeigen den Standort der jeweiligen Startseite, darunter der Link zur Startseite des anderen
+export function Region({ location }: { location: LocationId }) {
+  const loc = locationById(location);
+  const other = locations.find((l) => l.id !== location)!;
   return (
     <section id="einsatzgebiet" aria-labelledby="einsatzgebiet-title" className="bg-canvas py-section">
       <div className="page-x mx-auto max-w-page">
@@ -53,33 +56,33 @@ export function Region() {
           </div>
 
           <div className="lg:col-span-6">
-            <LocationMap className="aspect-[4/3] w-full rounded-sm bg-surface-soft lg:aspect-auto lg:h-[440px]" />
-            <ul className="mt-md grid gap-md sm:grid-cols-2">
-              {locations.map((loc) => (
-                <li key={loc.id} className="rounded-sm bg-surface-soft p-md">
-                  <address className="not-italic text-body-md text-ink">
-                    <span className="flex items-center gap-xs font-bold">
-                      <span aria-hidden className="size-3 shrink-0 rounded-full border-2 border-ink bg-primary" />
-                      {loc.label}
-                    </span>
-                    {loc.lines.map((line) => (
-                      <span key={line} className="block">
-                        {line}
-                      </span>
-                    ))}
-                  </address>
-                  <a
-                    href={loc.route}
-                    target="_blank"
-                    rel="noopener"
-                    className="link link-underlined mt-xs inline-flex min-h-11 items-center gap-xs text-title-sm text-ink"
-                  >
-                    Route planen
-                    <ArrowIcon className="size-4" />
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <LocationMap location={location} className="aspect-[4/3] w-full rounded-sm bg-surface-soft lg:aspect-auto lg:h-[440px]" />
+            <div className="mt-md flex flex-col gap-md rounded-sm bg-surface-soft p-lg sm:flex-row sm:items-end sm:justify-between">
+              <address className="not-italic text-title-md font-light text-ink">
+                <span className="flex items-center gap-xs text-title-lg">
+                  <span aria-hidden className="size-3.5 shrink-0 rounded-full border-2 border-ink bg-primary" />
+                  {loc.label}
+                </span>
+                {loc.lines.map((line) => (
+                  <span key={line} className="mt-xxs block">
+                    {line}
+                  </span>
+                ))}
+              </address>
+              <a
+                href={loc.route}
+                target="_blank"
+                rel="noopener"
+                className="link link-underlined inline-flex min-h-11 shrink-0 items-center gap-xs text-title-sm text-ink"
+              >
+                Route planen
+                <ArrowIcon className="size-4" />
+              </a>
+            </div>
+            <a href={other.home} className="link link-underlined mt-sm inline-flex min-h-11 items-center gap-xs text-title-sm text-ink">
+              Zum {other.label}
+              <ArrowIcon className="size-4" />
+            </a>
           </div>
         </div>
 

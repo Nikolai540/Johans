@@ -14,7 +14,7 @@ export const site = {
   whatsapp: "https://wa.me/4915155450377",
   email: "info@jlbauprojekte.de",
   address: {
-    street: "Schmuzerstr 6", // PLATZHALTER: Straße und Hausnummer
+    street: "Schmuzerstraße 6", // Schreibweise wie im Google-Unternehmensprofil Vilgertshofen
     postalCode: "86946",
     locality: "Vilgertshofen",
     region: "Bayern",
@@ -46,6 +46,9 @@ const route = (destination: string) =>
 export const locations = [
   {
     id: "landsberg",
+    // Eigene Startseite je Standort, damit beide Orte in der Google-Suche eine passende Seite haben
+    home: "/",
+    town: site.branch.locality,
     label: site.branch.label,
     lines: [site.branch.street, `${site.branch.postalCode} ${site.branch.locality}`],
     lat: site.branch.geo.latitude,
@@ -54,6 +57,8 @@ export const locations = [
   },
   {
     id: "vilgertshofen",
+    home: "/vilgertshofen/",
+    town: site.address.locality,
     label: `Firmensitz ${site.address.locality}`,
     lines: [site.address.street, `${site.address.postalCode} ${site.address.locality}`].filter(Boolean),
     lat: site.geo.latitude,
@@ -61,7 +66,10 @@ export const locations = [
     // Ohne Straße (PLATZHALTER in site.address) führt die Route zu den Koordinaten
     route: route(site.address.street ? `${site.address.street}, ${site.address.postalCode} ${site.address.locality}` : `${site.geo.latitude},${site.geo.longitude}`),
   },
-];
+] as const;
+
+export type LocationId = (typeof locations)[number]["id"];
+export const locationById = (id: LocationId) => locations.find((l) => l.id === id)!;
 
 /** Leistungsseiten (Entkernung und Entrümpelung mit den URLs der bisherigen Website) */
 export const pages = {

@@ -16,7 +16,7 @@ export default function Impressum() {
         <br />
         J&amp;L Bauprojekte
         <br />
-        Schmuzerstr 6
+        Schmuzerstraße 6
         <br />
         86946 Vilgertshofen
       </p>

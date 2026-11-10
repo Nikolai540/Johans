@@ -6,7 +6,7 @@ import { catchment } from "@/lib/site";
 // Überblendung der vorhandenen Fotos; nur das erste lädt sofort, die anderen danach
 const slides = [photos.landsbergLechwehr, photos.entkernung, photos.sperrmuell, photos.abbruch];
 
-export function Hero() {
+export function Hero({ town }: { town: string }) {
   return (
     <section
       id="top"
@@ -42,7 +42,7 @@ export function Hero() {
             Abbruch, Entkernung & Haushaltsauflösung
           </span>{" "}
           <span data-rise className="block" style={{ ["--i" as string]: 1 }}>
-            in Landsberg am Lech und Umgebung
+            in {town} und Umgebung
           </span>
         </h1>
         <p data-rise style={{ ["--i" as string]: 2 }} className="mt-md max-w-[52ch] text-body-md text-on-dark sm:text-title-md sm:font-light">
