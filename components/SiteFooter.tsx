@@ -36,7 +36,10 @@ export function SiteFooter() {
                 <span className="block">{site.branch.street}</span>
                 {site.branch.postalCode} {site.branch.locality}
               </span>
+<a href="https://awl-zentrum.de/entruempelung-landsberg-am-lech/j-l-bauprojekte-max-planck-str-13/">
+<img src="https://awl-zentrum.de/api/awl/gelistet/574fa139-7202-4101-8aac-bb59bb39098e" alt="Gelistet bei AWL Zentrum" width="272" height="86"/></a>
             </address>
+
           </div>
         </div>
 

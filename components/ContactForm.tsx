@@ -167,7 +167,7 @@ export function ContactForm({ initial = [], title = "Anfrage senden" }: { initia
             {serviceOrder.map((id) => (
               <label
                 key={id}
-                className="inline-flex min-h-11 cursor-pointer items-center border border-muted bg-canvas px-md text-body-md text-ink transition-colors duration-[180ms] select-none rounded-sm has-checked:border-primary has-checked:bg-primary has-checked:font-bold has-checked:text-ink has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-ink"
+                className="inline-flex min-h-11 cursor-pointer items-center border border-muted bg-canvas px-md text-body-md text-ink transition-colors duration-[180ms] select-none rounded-sm has-checked:border-primary has-checked:bg-primary-active has-checked:font-bold has-checked:text-ink has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-ink"
               >
                 <input
                   type="checkbox"

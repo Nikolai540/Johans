@@ -13,6 +13,7 @@ export type ServiceId =
   | "renovierung"
   | "trockenbau"
   | "bodenverlegung"
+  | "Container & Entsorgung"
   | "umzug";
 
 export type Service = { id: ServiceId; name: string; short: string; text: string };
@@ -78,6 +79,12 @@ export const services: Record<ServiceId, Service> = {
     short: "Zusammen mit Räumung und Renovierung",
     text: "Wir packen mit an, tragen und fahren. Am meisten spart das zusammen mit einer Entrümpelung oder Renovierung. Den genauen Umfang besprechen wir bei der Besichtigung.",
   },
+  "Container & Entsorgung": {
+    id: "entruempelung",
+    name: "Container & Entsorgung",
+    short: "",
+    text: ""
+  }
 };
 
 /** Reihenfolge im Formular und im schema.org-Leistungskatalog */
@@ -87,11 +94,14 @@ export const serviceOrder: ServiceId[] = [
   "entkernung",
   "abbruch",
   "rueckbau",
+    "Container & Entsorgung",
+
   "schadstoffsanierung",
   "renovierung",
   "trockenbau",
   "bodenverlegung",
   "umzug",
+  
 ];
 
 /** Die Leistungsbereiche auf der Startseite */
