@@ -4,8 +4,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { LogoIcon } from "@/components/Logo";
-import { CloseIcon, MenuIcon, PhoneIcon } from "@/components/Icons";
-import { nav, site } from "@/lib/site";
+import { ChevronIcon, CloseIcon, MenuIcon, PhoneIcon } from "@/components/Icons";
+import { nav, serviceNav, site } from "@/lib/site";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -13,6 +13,7 @@ export function SiteHeader() {
   const [active, setActive] = useState<string | null>(null);
   const headerRef = useRef<HTMLElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
+  const servicesRef = useRef<HTMLDetailsElement>(null);
 
   // Aktive Sprungmarke auf der Startseite hervorheben
   useEffect(() => {
@@ -54,6 +55,29 @@ export function SiteHeader() {
     };
   }, [open]);
 
+  // Offenes Leistungen-Menü schließt bei Klick oder Fokus außerhalb und mit Escape.
+  // Die Listener hängen dauerhaft, damit auch schnelles Enter, Tab, Escape greift.
+  useEffect(() => {
+    const details = servicesRef.current!;
+    const onOutside = (e: Event) => {
+      if (details.open && !details.contains(e.target as Node)) details.open = false;
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Escape" || !details.open) return;
+      details.open = false;
+      details.querySelector("summary")?.focus();
+    };
+    document.addEventListener("pointerdown", onOutside);
+    document.addEventListener("focusin", onOutside);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onOutside);
+      document.removeEventListener("focusin", onOutside);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, []);
+
+  const servicesActive = serviceNav.some((l) => pathname === l.href);
   const isActive = (href: string) => (href.startsWith("/#") ? active === href : pathname === href);
 
   return (
@@ -64,14 +88,41 @@ export function SiteHeader() {
           <span className="max-[22.5rem]:hidden">J&amp;L Bauprojekte</span>
         </a>
 
-        <nav aria-label="Hauptnavigation" className="hidden nav:block">
-          <ul className="flex items-center gap-sm">
+        <nav aria-label="Hauptnavigation" className="hidden xl:block">
+          <ul className="flex items-center gap-lg">
+            <li>
+              <details ref={servicesRef} className="group relative">
+                <summary
+                  className={`link inline-flex min-h-11 cursor-pointer items-center gap-xxs text-nav-link ${
+                    servicesActive ? "font-bold text-on-dark link-underlined" : "text-on-dark-soft"
+                  }`}
+                >
+                  Leistungen
+                  <ChevronIcon className="size-4 transition-transform duration-[180ms] group-open:rotate-180" />
+                </summary>
+                <ul className="absolute left-0 top-full min-w-56 border border-surface-dark-elevated bg-surface-dark py-xs">
+                  {serviceNav.map((l) => (
+                    <li key={l.href}>
+                      <a
+                        href={l.href}
+                        aria-current={pathname === l.href ? "page" : undefined}
+                        className={`flex min-h-11 items-center px-md text-nav-link hover:bg-surface-dark-elevated ${
+                          pathname === l.href ? "font-bold text-on-dark" : "text-on-dark-soft hover:text-on-dark"
+                        }`}
+                      >
+                        {l.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            </li>
             {nav.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
                   aria-current={isActive(l.href) ? (l.href.startsWith("/#") ? "location" : "page") : undefined}
-                  className={`link inline-flex min-h-11 items-center whitespace-nowrap text-nav-link ${
+                  className={`link inline-flex min-h-11 items-center text-nav-link ${
                     isActive(l.href) ? "font-bold text-on-dark link-underlined" : "text-on-dark-soft"
                   }`}
                 >
@@ -83,13 +134,13 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-xs">
-          <a href={site.phone.href} className="btn btn-primary hidden nav:inline-flex">
+          <a href={site.phone.href} className="btn btn-primary hidden xl:inline-flex">
             <PhoneIcon className="size-4" />
             Jetzt anrufen
           </a>
           <a
             href={site.phone.href}
-            className="btn btn-primary size-11 min-h-11 p-0 nav:hidden"
+            className="btn btn-primary size-11 min-h-11 p-0 xl:hidden"
             aria-label={`Jetzt anrufen: ${site.phone.display}`}
           >
             <PhoneIcon className="size-5" />
@@ -97,7 +148,7 @@ export function SiteHeader() {
           <button
             ref={toggleRef}
             type="button"
-            className="inline-flex size-11 items-center justify-center nav:hidden"
+            className="inline-flex size-11 items-center justify-center xl:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Menü schließen" : "Menü öffnen"}
@@ -108,9 +159,26 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <div id="mobile-menu" hidden={!open} className="fixed inset-x-0 top-nav bottom-0 overflow-y-auto bg-surface-dark nav:hidden">
+      <div id="mobile-menu" hidden={!open} className="fixed inset-x-0 top-nav bottom-0 overflow-y-auto bg-surface-dark xl:hidden">
         <nav aria-label="Mobile Navigation" className="page-x flex min-h-full flex-col pb-xl pt-lg">
           <ul className="flex flex-col">
+            <li>
+              <details className="group">
+                <summary className="flex min-h-14 cursor-pointer items-center justify-between gap-md text-display-sm text-on-dark">
+                  Leistungen
+                  <ChevronIcon className="size-6 shrink-0 transition-transform duration-[180ms] group-open:rotate-180" />
+                </summary>
+                <ul className="flex flex-col pb-xs pl-md">
+                  {serviceNav.map((l) => (
+                    <li key={l.href}>
+                      <a href={l.href} onClick={() => setOpen(false)} className="flex min-h-12 items-center text-title-lg text-on-dark-soft">
+                        {l.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            </li>
             {nav.map((l) => (
               <li key={l.href}>
                 <a href={l.href} onClick={() => setOpen(false)} className="flex min-h-14 items-center text-display-sm text-on-dark">

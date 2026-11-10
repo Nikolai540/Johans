@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { LogoFull } from "@/components/Logo";
 import { photos } from "@/lib/images";
-import { nav, site } from "@/lib/site";
+import { nav, serviceNav, site } from "@/lib/site";
 
 export function SiteFooter() {
   const stamp = photos.landsbergBayertor;
@@ -43,7 +43,7 @@ export function SiteFooter() {
         <div className="mt-xxl grid gap-xl lg:grid-cols-12">
           <nav aria-label="Fußnavigation" className="lg:col-span-4">
             <ul className="grid grid-cols-2 gap-x-lg text-body-md text-ink">
-              {nav.map((l) => (
+              {[...serviceNav, ...nav].map((l) => (
                 <li key={l.href}>
                   <a href={l.href} className="link inline-flex min-h-11 items-center">
                     {l.label}
