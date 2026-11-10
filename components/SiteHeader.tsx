@@ -77,7 +77,16 @@ export function SiteHeader() {
     };
   }, []);
 
-  const servicesActive = serviceNav.some((l) => pathname === l.href);
+  // Auf einer Leistungsseite steht ihr Name statt "Leistungen" im Menü
+  const activeService = serviceNav.find((l) => pathname === l.href);
+  const servicesLabel = activeService ? (
+    <span>
+      <span className="sr-only">Leistungen: </span>
+      {activeService.label}
+    </span>
+  ) : (
+    "Leistungen"
+  );
   const isActive = (href: string) => (href.startsWith("/#") ? active === href : pathname === href);
 
   return (
@@ -94,10 +103,10 @@ export function SiteHeader() {
               <details ref={servicesRef} className="group relative">
                 <summary
                   className={`link inline-flex min-h-11 cursor-pointer items-center gap-xxs text-nav-link ${
-                    servicesActive ? "font-bold text-on-dark link-underlined" : "text-on-dark-soft"
+                    activeService ? "font-bold text-on-dark link-underlined" : "text-on-dark-soft"
                   }`}
                 >
-                  Leistungen
+                  {servicesLabel}
                   <ChevronIcon className="size-4 transition-transform duration-[180ms] group-open:rotate-180" />
                 </summary>
                 <ul className="absolute left-0 top-full min-w-56 border border-surface-dark-elevated bg-surface-dark py-xs">
@@ -165,7 +174,7 @@ export function SiteHeader() {
             <li>
               <details className="group">
                 <summary className="flex min-h-14 cursor-pointer items-center justify-between gap-md text-display-sm text-on-dark">
-                  Leistungen
+                  {servicesLabel}
                   <ChevronIcon className="size-6 shrink-0 transition-transform duration-[180ms] group-open:rotate-180" />
                 </summary>
                 <ul className="flex flex-col pb-xs pl-md">

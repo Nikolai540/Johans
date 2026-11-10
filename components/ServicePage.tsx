@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { Contact } from "@/components/Contact";
 import { ContainerSizes } from "@/components/ContainerSizes";
-import { ChevronIcon, PhoneIcon } from "@/components/Icons";
+import { ArrowIcon, ChevronIcon, PhoneIcon } from "@/components/Icons";
 import { areaServed, businessId, faqGraph, JsonLd } from "@/components/JsonLd";
 import { MobileActions } from "@/components/MobileActions";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -116,7 +116,7 @@ export function ServicePage({ page }: { page: SubPage }) {
                     id={item.id}
                     data-reveal
                     style={{ ["--i" as string]: i % 2 }}
-                    className="card scroll-mt-[calc(var(--spacing-nav)+var(--spacing-lg))] p-lg"
+                    className="card flex scroll-mt-[calc(var(--spacing-nav)+var(--spacing-lg))] flex-col p-lg"
                   >
                     <h3 className="text-display-sm">{item.h3}</h3>
                     <p className="mt-sm text-body-md">{item.text}</p>
@@ -129,6 +129,12 @@ export function ServicePage({ page }: { page: SubPage }) {
                           </li>
                         ))}
                       </ul>
+                    )}
+                    {item.link && (
+                      <a href={item.link.href} className="group mt-auto inline-flex min-h-11 items-center gap-xs self-start pt-md text-title-sm text-ink">
+                        {item.link.label}
+                        <ArrowIcon className="size-4 transition-transform duration-[180ms] group-hover:translate-x-1" />
+                      </a>
                     )}
                   </article>
                 ))}

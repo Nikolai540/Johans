@@ -23,7 +23,7 @@ export type SubPage = {
   hero: PhotoKey;
   preselect: ServiceId[];
   /** id: Sprungmarke für Links auf einzelne Leistungen, points: Stichpunkte unter dem Text */
-  services: { h2: string; intro: string; items: { h3: string; text: string; id?: string; points?: string[] }[] };
+  services: { h2: string; intro: string; items: { h3: string; text: string; id?: string; points?: string[]; link?: { href: string; label: string } }[] };
   /** Containergrößen als Grafik, zwischen Leistungen und Anlässen */
   sizes?: { h2: string; intro: string; items: ContainerSize[] };
   occasions: { h2: string; items: { h3: string; text: string }[] };
@@ -72,6 +72,7 @@ export const entkernung: SubPage = {
       {
         h3: "Wanddurchbrüche und tragende Wände",
         text: "Für neue Türen und Durchgänge brechen wir Wände durch. Tragende Wände öffnen wir nur mit einem Statiker, der die Abfangung festlegt, etwa mit einem Stahlträger.",
+        link: { href: "/wanddurchbruch/", label: "Alles zum Wanddurchbruch" },
       },
       {
         h3: "Kleinere Abbrucharbeiten",
@@ -80,11 +81,13 @@ export const entkernung: SubPage = {
       {
         h3: "Entsorgung aus einer Hand",
         text: "Wir stellen den Container, trennen Bauschutt, Holz, Metall, Gips und Restmüll und entsorgen alles fachgerecht. Sie haben damit keine Arbeit und bekommen die Räume besenrein zurück.",
+        link: { href: "/containerdienst/", label: "Alles zu Container & Entsorgung" },
       },
       {
         id: "schadstoffsanierung",
         h3: "Asbest und alte Mineralwolle",
         text: "Steckt Asbest oder alte Mineralwolle im Bestand, bauen wir sie mit Sachkunde nach TRGS 519 aus. Schutzmaßnahmen und Entsorgungsnachweis gehören dazu. Verdächtige Baustoffe sprechen wir schon bei der Besichtigung an.",
+        link: { href: pages.schadstoffe.href, label: "Alles zur Schadstoffsanierung" },
       },
     ],
   },
@@ -207,6 +210,7 @@ export const entruempelung: SubPage = {
       {
         h3: "Entrümpelung von Messie-Wohnungen",
         text: "Auch stark vermüllte Wohnungen räumen wir, ohne dass die Nachbarschaft viel mitbekommt. Danach ist alles sortiert, entsorgt und besenrein.",
+        link: { href: "/messie-wohnung-entruempeln/", label: "Alles zur Messie-Wohnung" },
       },
       {
         h3: "Keller-, Dachboden- und Garagenentrümpelung",
@@ -215,6 +219,7 @@ export const entruempelung: SubPage = {
       {
         h3: "Gewerbe- und Objekträumung",
         text: "Büros, Lager und Gewerbeflächen räumen wir zum vereinbarten Termin, damit Übergabe oder Umbau pünktlich starten.",
+        link: { href: "/gewerbeaufloesung/", label: "Alles zur Gewerbeauflösung" },
       },
     ],
   },
