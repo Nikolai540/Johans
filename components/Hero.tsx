@@ -42,11 +42,11 @@ export function Hero() {
             Abbruch, Entkernung & Haushaltsauflösung
           </span>{" "}
           <span data-rise className="block" style={{ ["--i" as string]: 1 }}>
-            in Landsberg am Lech und Augsburg
+            in Landsberg am Lech und Umgebung
           </span>
         </h1>
         <p data-rise style={{ ["--i" as string]: 2 }} className="mt-md max-w-[52ch] text-body-md text-on-dark sm:text-title-md sm:font-light">
-          Wir räumen, bauen zurück und machen Räume wieder bewohnbar – sauber, termingerecht und mit einem festen
+          Wir räumen, bauen zurück und machen Räume wieder bewohnbar. Sauber, pünktlich und mit einem festen
           Ansprechpartner.
         </p>
         <p data-rise style={{ ["--i" as string]: 3 }} className="mt-md max-w-[70ch] text-body-sm text-on-dark sm:text-body-md">

@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // Projektordner als Wurzel, damit eine fremde package-lock.json weiter oben (z. B. im Benutzerordner) ignoriert wird
+  turbopack: { root: __dirname },
   // Gleiche URLs wie die bisherige Website (z. B. /entkernung-abbruch-rueckbau/)
   trailingSlash: true,
   // Entwicklungsserver auch im Heimnetz erreichbar (Handy-Test über die Network-Adresse)

@@ -83,6 +83,7 @@ export const catchment = [
   "Augsburg",
   "Schongau",
   "Allgäu",
+  "Fürstenfeldbruck"
 ] as const;
 
 export const nav = [

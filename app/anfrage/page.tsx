@@ -18,7 +18,7 @@ export default async function Anfrage({ searchParams }: { searchParams: Promise<
         <p>Ihre Anfrage ist angekommen. Wir melden uns so bald wie möglich bei Ihnen.</p>
       ) : (
         <p>
-          Bitte prüfen Sie Ihre Angaben und versuchen Sie es erneut – oder rufen Sie uns direkt an:{" "}
+          Bitte prüfen Sie Ihre Angaben und versuchen Sie es noch einmal. Oder rufen Sie uns direkt an:{" "}
           <a href={site.phone.href} className="link link-underlined font-bold text-ink">
             {site.phone.display}
           </a>

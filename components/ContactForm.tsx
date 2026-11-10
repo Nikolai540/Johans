@@ -210,7 +210,7 @@ export function ContactForm({ initial = [], title = "Anfrage senden" }: { initia
             </dl>
             <p className="mt-lg bg-surface-dark-elevated p-md text-body-md text-on-dark">
               {ordered.length === 0
-                ? "Wählen Sie aus, was gemacht werden soll – das Schild füllt sich mit."
+                ? "Wählen Sie aus, was gemacht werden soll. Das Schild füllt sich mit."
                 : `Ein Ansprechpartner für ${ordered.length === 1 ? "diese Leistung" : `${ordered.length} Leistungen`}.`}
             </p>
           </aside>

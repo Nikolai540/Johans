@@ -16,9 +16,8 @@ export function SiteFooter() {
             <LogoFull className="mb-xl h-auto w-56 max-w-full text-ink" title={site.name} />
             <p className="text-display-md text-ink">Bis bald in Landsberg.</p>
             <p className="mt-md max-w-[44ch] text-body-md">
-              Ob Keller voller Erinnerungen, Altbau mit Zukunft oder ein Boden, der raus muss: Rufen Sie an, wir
-              sehen uns Ihr Projekt an – in Landsberg am Lech, Kaufering, Buchloe, Augsburg, Mindelheim, Schongau, am
-              Ammersee und im Allgäu.
+              Voller Keller, Altbau vor der Sanierung oder ein Boden, der raus muss: Rufen Sie an, wir sehen uns das an. In
+              Landsberg am Lech, Kaufering, Buchloe, Augsburg, Mindelheim, Schongau, am Ammersee und im Allgäu.
             </p>
           </div>
           <div className="flex gap-lg lg:items-center lg:justify-end">

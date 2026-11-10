@@ -11,8 +11,8 @@ export function Gallery() {
             Einblicke in unsere Baustellen
           </h2>
           <p data-reveal style={{ ["--i" as string]: 1 }} className="mt-lg text-body-md text-on-dark sm:text-title-md sm:font-light">
-            Entkernen, räumen, renovieren: So sieht es bei uns aus – vom ersten Container bis zur besenreinen
-            Übergabe.
+            Entkernen, räumen, renovieren: So sieht es auf unseren Baustellen aus, vom ersten Container bis zur
+            besenreinen Übergabe.
           </p>
           <a data-reveal style={{ ["--i" as string]: 2 }} href="#kontakt-formular" className="btn btn-primary mt-xl">
             Kostenlose Besichtigung anfragen
