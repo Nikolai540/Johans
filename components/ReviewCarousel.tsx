@@ -57,6 +57,14 @@ export function ReviewCarousel({ items, className }: { items: Review[]; classNam
       onFocus={() => setHeld(true)}
       onBlur={(e) => !e.currentTarget.contains(e.relatedTarget) && setHeld(false)}
     >
+      <div className="ml-auto flex gap-xs">
+            <button type="button" onClick={() => go(-1)} aria-label="Vorherige Bewertung" className={control}>
+              <ArrowIcon className="size-5 rotate-180" />
+            </button>
+            <button type="button" onClick={() => go(1)} aria-label="Nächste Bewertung" className={control}>
+              <ArrowIcon className="size-5" />
+            </button>
+          </div>
       {/* Während des automatischen Wechsels keine Ansagen, sonst unterbricht der Screenreader alle 7 s */}
       <div className="grid" aria-live={rotating ? "off" : "polite"}>
         {items.map((r, i) => (
@@ -89,14 +97,7 @@ export function ReviewCarousel({ items, className }: { items: Review[]; classNam
           </figure>
         ))}
       </div>
-<div className="ml-auto flex gap-xs">
-            <button type="button" onClick={() => go(-1)} aria-label="Vorherige Bewertung" className={control}>
-              <ArrowIcon className="size-5 rotate-180" />
-            </button>
-            <button type="button" onClick={() => go(1)} aria-label="Nächste Bewertung" className={control}>
-              <ArrowIcon className="size-5" />
-            </button>
-          </div>
+
       {count > 1 && (
         <div className="mt-md flex items-center gap-xs">
           <button type="button" onClick={() => setPlaying((p) => !p)} aria-label={playing ? "Automatischen Wechsel anhalten" : "Automatischen Wechsel starten"} className={control}>
