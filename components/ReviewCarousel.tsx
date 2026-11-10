@@ -19,7 +19,7 @@ export function Stars({ rating }: { rating: number }) {
   );
 }
 
-const INTERVAL = 7000;
+const INTERVAL = 5000;
 
 // Eine Bewertung zur Zeit, die nächste fliegt abwechselnd von links und rechts herein.
 // Alle Karten liegen übereinander im selben Rasterfeld: Die Höhe richtet sich nach der längsten, nichts springt.
@@ -89,7 +89,14 @@ export function ReviewCarousel({ items, className }: { items: Review[]; classNam
           </figure>
         ))}
       </div>
-
+<div className="ml-auto flex gap-xs">
+            <button type="button" onClick={() => go(-1)} aria-label="Vorherige Bewertung" className={control}>
+              <ArrowIcon className="size-5 rotate-180" />
+            </button>
+            <button type="button" onClick={() => go(1)} aria-label="Nächste Bewertung" className={control}>
+              <ArrowIcon className="size-5" />
+            </button>
+          </div>
       {count > 1 && (
         <div className="mt-md flex items-center gap-xs">
           <button type="button" onClick={() => setPlaying((p) => !p)} aria-label={playing ? "Automatischen Wechsel anhalten" : "Automatischen Wechsel starten"} className={control}>
@@ -103,14 +110,7 @@ export function ReviewCarousel({ items, className }: { items: Review[]; classNam
               {index + 1} / {count}
             </span>
           </p>
-          <div className="ml-auto flex gap-xs">
-            <button type="button" onClick={() => go(-1)} aria-label="Vorherige Bewertung" className={control}>
-              <ArrowIcon className="size-5 rotate-180" />
-            </button>
-            <button type="button" onClick={() => go(1)} aria-label="Nächste Bewertung" className={control}>
-              <ArrowIcon className="size-5" />
-            </button>
-          </div>
+          
         </div>
       )}
     </div>
