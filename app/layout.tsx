@@ -66,41 +66,17 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-// Blendet [data-reveal]-Elemente beim Scrollen ein, data-reveal="left" bzw. "right" fliegt seitlich herein. Die Web Animations API ändert keine Attribute,
-// React sieht beim Hydrieren also unverändertes HTML. Ohne JavaScript bleibt alles sichtbar.
-const revealScript = `(() => {
-  if (!("IntersectionObserver" in window) || !Element.prototype.animate) return;
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  const reveals = new WeakMap();
-  const io = new IntersectionObserver((entries) => {
-    for (const e of entries) if (e.isIntersecting) { reveals.get(e.target).play(); io.unobserve(e.target); }
-  }, { rootMargin: "0px 0px -10% 0px", threshold: 0.08 });
-  for (const el of document.querySelectorAll("[data-reveal]")) {
-    const i = parseFloat(el.style.getPropertyValue("--i")) || 0;
-    const from = { left: "translateX(-48px)", right: "translateX(48px)" }[el.dataset.reveal] || "translateY(16px)";
-    const a = el.animate(
-      [{ opacity: 0, transform: from }, { opacity: 1, transform: "none" }],
-      { duration: 500, delay: i * 60, easing: "cubic-bezier(0.22, 1, 0.36, 1)", fill: "backwards" },
-    );
-    a.pause();
-    reveals.set(el, a);
-    io.observe(el);
-  }
-})();`;
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="de" className={inter.variable} suppressHydrationWarning>
       <head>
-        {/* Motion-Startzustände nur mit JavaScript – ohne JS bleibt alles sichtbar */}
-        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         <JsonLd data={businessGraph()} />
       </head>
       <body>
         {children}
         <CookieBanner />
-        {/* Als Inline-Skript startet die Einblendung sofort nach dem HTML und wartet nicht auf React */}
-        <script dangerouslySetInnerHTML={{ __html: revealScript }} />
+        {/* Einblendung beim Scrollen, startet unabhängig von React */}
+        <script async src="/reveal.js" />
       </body>
     </html>
   );

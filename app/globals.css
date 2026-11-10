@@ -236,18 +236,26 @@
 }
 
 /* ------------------------------------------------------------------
-   Motion. Versteckte Startzustände gelten nur mit html.js, damit ohne
-   JavaScript alles sichtbar bleibt.
+   Motion. Versteckte Startzustände gelten nur mit aktivem JavaScript
+   (scripting: enabled), damit ohne JavaScript alles sichtbar bleibt.
    ------------------------------------------------------------------ */
-@media (prefers-reduced-motion: no-preference) {
-  .js [data-rise] {
+@media (prefers-reduced-motion: no-preference) and (scripting: enabled) {
+  [data-rise] {
     opacity: 0;
     transform: translateY(18px);
     animation: rise var(--t-reveal) var(--ease-out) forwards;
     animation-delay: calc(var(--i, 0) * 80ms);
   }
 }
-/* [data-reveal]: Einblendung beim Scrollen per Web Animations API, siehe app/layout.tsx */
+/* [data-reveal]: Einblendung beim Scrollen per Web Animations API, siehe public/reveal.js */
+
+/* Bewertungs-Karussell: neue Karte fliegt abwechselnd von links und rechts herein */
+@keyframes review-in-left { from { opacity: 0; transform: translateX(-48px); } }
+@keyframes review-in-right { from { opacity: 0; transform: translateX(48px); } }
+@media (prefers-reduced-motion: no-preference) {
+  .review-in-left { animation: review-in-left 600ms var(--ease-out); }
+  .review-in-right { animation: review-in-right 600ms var(--ease-out); }
+}
 
 @keyframes rise { to { opacity: 1; transform: none; } }
 

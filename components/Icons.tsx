@@ -53,6 +53,22 @@ export function ChevronIcon({ className }: IconProps) {
   );
 }
 
+export function PauseIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M8 5v14M16 5v14" />
+    </svg>
+  );
+}
+
+export function PlayIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M7 4l13 8-13 8z" />
+    </svg>
+  );
+}
+
 /** Stadttor – Landsberg am Lech */
 export function GateIcon({ className }: IconProps) {
   return (
