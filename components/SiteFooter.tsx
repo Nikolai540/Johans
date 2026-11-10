@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { ConsentSettingsButton } from "@/components/CookieBanner";
 import { LogoFull } from "@/components/Logo";
+import auftragsbank from "@/public/images/partner/auftragsbank.png";
 import { photos } from "@/lib/images";
 import { nav, serviceNav, site } from "@/lib/site";
 
@@ -38,10 +39,23 @@ export function SiteFooter({ home = "/" }: { home?: string }) {
                 <span className="block">{site.branch.street}</span>
                 {site.branch.postalCode} {site.branch.locality}
               </span>
-<a href="https://awl-zentrum.de/entruempelung-landsberg-am-lech/j-l-bauprojekte-max-planck-str-13/">
-<img src="https://awl-zentrum.de/api/awl/gelistet/574fa139-7202-4101-8aac-bb59bb39098e" alt="Gelistet bei AWL Zentrum" width="272" height="86"/></a>
             </address>
-
+          </div>
+          {/* Logos liegen auf dem eigenen Server, damit beim Laden keine Daten an Dritte gehen */}
+          <div className="border-t border-hairline pt-lg lg:col-span-2">
+            <p className="text-title-sm text-ink">Unsere Partner</p>
+            <ul className="mt-md flex flex-wrap items-center gap-lg">
+              <li>
+                <a href="https://awl-zentrum.de" target="_blank" rel="noopener" className="block">
+                  <img src="/images/partner/awl-zentrum.svg" alt="Gelistet bei AWL Zentrum" width={143} height={48} loading="lazy" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.auftragsbank.de/" target="_blank" rel="noopener" className="block">
+                  <Image src={auftragsbank} alt="auftragsbank" width={143} height={48} />
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
