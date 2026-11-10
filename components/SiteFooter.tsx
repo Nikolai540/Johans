@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { ConsentSettingsButton } from "@/components/CookieBanner";
 import { LogoFull } from "@/components/Logo";
 import { photos } from "@/lib/images";
 import { nav, serviceNav, site } from "@/lib/site";
@@ -62,6 +63,9 @@ export function SiteFooter() {
                 <a href="/datenschutz/" className="link inline-flex min-h-11 items-center">
                   Datenschutz
                 </a>
+              </li>
+              <li>
+                <ConsentSettingsButton className="link inline-flex min-h-11 cursor-pointer items-center text-left" />
               </li>
             </ul>
           </nav>

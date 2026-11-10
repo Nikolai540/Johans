@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 // PLATZHALTER: Datenschutzerklärung vor dem Livegang rechtlich prüfen und vervollständigen
-// (Hosting-Anbieter, E-Mail-Versand über Resend, Server-Logfiles, Rechte der Betroffenen, OpenStreetMap-Karte).
+// (Hosting-Anbieter, E-Mail-Versand über Resend, Server-Logfiles, Rechte der Betroffenen, Google Maps, Google-Bewertungen).
 export default function Datenschutz() {
   return (
     <LegalPage title="Datenschutz">
@@ -30,18 +30,34 @@ export default function Datenschutz() {
         Schriftarten und Bilder werden von unserem eigenen Server ausgeliefert. Tracking- oder Analysedienste
         setzen wir nicht ein.
       </p>
-      <h2>Karte (OpenStreetMap)</h2>
+      <h2>Einwilligung und Speicherung Ihrer Wahl</h2>
       <p>
-        Auf der Startseite zeigen wir unsere Standorte auf einer Karte von OpenStreetMap. Sobald Sie zur Karte
-        scrollen, lädt Ihr Browser die Kartenkacheln von Servern der OpenStreetMap Foundation (St John’s Innovation
-        Centre, Cowley Road, Cambridge, CB4 0WS, Vereinigtes Königreich). Dabei wird Ihre IP-Adresse übermittelt.
-        Rechtsgrundlage ist unser berechtigtes Interesse an einer anschaulichen Darstellung unserer Standorte
-        (Art. 6 Abs. 1 lit. f DSGVO). Für das Vereinigte Königreich besteht ein Angemessenheitsbeschluss der
-        EU-Kommission. Details finden Sie in der{" "}
-        <a href="https://osmfoundation.org/wiki/Privacy_Policy" className="link link-underlined text-ink">
-          Datenschutzerklärung der OpenStreetMap Foundation
+        Google Maps laden wir erst, wenn Sie zustimmen, über den Hinweis beim ersten Besuch oder über „Karte laden“.
+        Ihre Wahl speichern wir im lokalen Speicher Ihres Browsers (Eintrag „jl-consent“), damit wir nicht bei jedem
+        Seitenaufruf erneut fragen. Diese Speicherung ist technisch erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG). Über
+        „Cookie-Einstellungen“ im Fußbereich jeder Seite können Sie Ihre Wahl jederzeit ändern oder eine Einwilligung
+        widerrufen.
+      </p>
+      <h2>Karte (Google Maps)</h2>
+      <p>
+        Auf der Startseite zeigen wir unseren Standort auf einer Karte von Google Maps. Anbieter ist die Google
+        Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Erst nach Ihrer Einwilligung lädt Ihr Browser
+        die Karte von Servern von Google. Dabei werden unter anderem Ihre IP-Adresse und Informationen zu Ihrem
+        Browser übertragen, und Google kann Cookies oder ähnliche Techniken einsetzen. Die Daten können auch an die
+        Google LLC in den USA übermittelt werden. Die Google LLC ist nach dem EU-US Data Privacy Framework
+        zertifiziert. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Details
+        finden Sie in der{" "}
+        <a href="https://policies.google.com/privacy?hl=de" className="link link-underlined text-ink">
+          Datenschutzerklärung von Google
         </a>
         .
+      </p>
+      <h2>Google-Bewertungen</h2>
+      <p>
+        Auf der Startseite zeigen wir aktuelle Bewertungen aus unserem Google-Unternehmensprofil. Unser Server ruft
+        sie über eine Schnittstelle von Google ab. Ihr Browser baut dafür keine Verbindung zu Google auf, und es
+        werden keine Daten von Ihnen an Google übertragen. Erst wenn Sie einen Link zu Google anklicken, etwa
+        „Alle Bewertungen auf Google“ oder den Namen einer verfassenden Person, öffnet sich die Seite von Google.
       </p>
       <p>
         Der Link „Route planen“ öffnet Google Maps in einem neuen Fenster. Daten an Google werden erst übertragen,

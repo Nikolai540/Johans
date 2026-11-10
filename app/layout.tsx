@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 
+import { CookieBanner } from "@/components/CookieBanner";
 import { businessGraph, JsonLd } from "@/components/JsonLd";
 import { site } from "@/lib/site";
 
@@ -65,7 +66,7 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-// Blendet [data-reveal]-Elemente beim Scrollen ein. Die Web Animations API ändert keine Attribute,
+// Blendet [data-reveal]-Elemente beim Scrollen ein, data-reveal="left" bzw. "right" fliegt seitlich herein. Die Web Animations API ändert keine Attribute,
 // React sieht beim Hydrieren also unverändertes HTML. Ohne JavaScript bleibt alles sichtbar.
 const revealScript = `(() => {
   if (!("IntersectionObserver" in window) || !Element.prototype.animate) return;
@@ -76,8 +77,9 @@ const revealScript = `(() => {
   }, { rootMargin: "0px 0px -10% 0px", threshold: 0.08 });
   for (const el of document.querySelectorAll("[data-reveal]")) {
     const i = parseFloat(el.style.getPropertyValue("--i")) || 0;
+    const from = { left: "translateX(-48px)", right: "translateX(48px)" }[el.dataset.reveal] || "translateY(16px)";
     const a = el.animate(
-      [{ opacity: 0, transform: "translateY(16px)" }, { opacity: 1, transform: "none" }],
+      [{ opacity: 0, transform: from }, { opacity: 1, transform: "none" }],
       { duration: 500, delay: i * 60, easing: "cubic-bezier(0.22, 1, 0.36, 1)", fill: "backwards" },
     );
     a.pause();
@@ -96,6 +98,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         {children}
+        <CookieBanner />
         {/* Als Inline-Skript startet die Einblendung sofort nach dem HTML und wartet nicht auf React */}
         <script dangerouslySetInnerHTML={{ __html: revealScript }} />
       </body>

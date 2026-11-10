@@ -6,6 +6,7 @@ import { faqGraph, JsonLd } from "@/components/JsonLd";
 import { Hero } from "@/components/Hero";
 import { MobileActions } from "@/components/MobileActions";
 import { Region } from "@/components/Region";
+import { Reviews } from "@/components/Reviews";
 import { Services } from "@/components/Services";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -28,6 +29,7 @@ export default function Home() {
         <About />
         <Services />
         <Gallery />
+        <Reviews />
         <Region />
         <Faq />
         <Contact />
