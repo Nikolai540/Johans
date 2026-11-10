@@ -57,14 +57,6 @@ export function ReviewCarousel({ items, className }: { items: Review[]; classNam
       onFocus={() => setHeld(true)}
       onBlur={(e) => !e.currentTarget.contains(e.relatedTarget) && setHeld(false)}
     >
-      <div className="ml-auto flex gap-xs">
-            <button type="button" onClick={() => go(-1)} aria-label="Vorherige Bewertung" className={control}>
-              <ArrowIcon className="size-5 rotate-180" />
-            </button>
-            <button type="button" onClick={() => go(1)} aria-label="Nächste Bewertung" className={control}>
-              <ArrowIcon className="size-5" />
-            </button>
-          </div>
       {/* Während des automatischen Wechsels keine Ansagen, sonst unterbricht der Screenreader alle 7 s */}
       <div className="grid" aria-live={rotating ? "off" : "polite"}>
         {items.map((r, i) => (
@@ -77,6 +69,29 @@ export function ReviewCarousel({ items, className }: { items: Review[]; classNam
               i === index ? (turn % 2 ? "review-in-right" : "review-in-left") : "invisible"
             }`}
           >
+            {count > 1 && (
+        <div className="mt-md flex items-center gap-xs">
+          <button type="button" onClick={() => setPlaying((p) => !p)} aria-label={playing ? "Automatischen Wechsel anhalten" : "Automatischen Wechsel starten"} className={control}>
+            {playing ? <PauseIcon className="size-5" /> : <PlayIcon className="size-5" />}
+          </button>
+          <p className="ml-xs text-title-sm text-ink tabular">
+            <span className="sr-only">
+              Bewertung {index + 1} von {count}
+            </span>
+            <span aria-hidden>
+              {index + 1} / {count}
+            </span>
+          </p>
+          <div className="ml-auto flex gap-xs">
+            <button type="button" onClick={() => go(-1)} aria-label="Vorherige Bewertung" className={control}>
+              <ArrowIcon className="size-5 rotate-180" />
+            </button>
+            <button type="button" onClick={() => go(1)} aria-label="Nächste Bewertung" className={control}>
+              <ArrowIcon className="size-5" />
+            </button>
+          </div>
+        </div>
+      )}
             <Stars rating={r.rating} />
             <blockquote className="mt-md whitespace-pre-line text-body-md sm:text-title-md sm:font-light">{r.text}</blockquote>
             <figcaption className="mt-auto flex items-center gap-sm pt-lg text-body-sm text-body">
@@ -98,22 +113,7 @@ export function ReviewCarousel({ items, className }: { items: Review[]; classNam
         ))}
       </div>
 
-      {count > 1 && (
-        <div className="mt-md flex items-center gap-xs">
-          <button type="button" onClick={() => setPlaying((p) => !p)} aria-label={playing ? "Automatischen Wechsel anhalten" : "Automatischen Wechsel starten"} className={control}>
-            {playing ? <PauseIcon className="size-5" /> : <PlayIcon className="size-5" />}
-          </button>
-          <p className="ml-xs text-title-sm text-ink tabular">
-            <span className="sr-only">
-              Bewertung {index + 1} von {count}
-            </span>
-            <span aria-hidden>
-              {index + 1} / {count}
-            </span>
-          </p>
-          
-        </div>
-      )}
+      
     </div>
   );
 }
