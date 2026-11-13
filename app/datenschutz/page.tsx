@@ -64,6 +64,12 @@ export default function Datenschutz() {
         Der Link „Route planen“ öffnet Google Maps in einem neuen Fenster. Daten an Google werden erst übertragen,
         wenn Sie den Link anklicken.
       </p>
+      <h2>WhatsApp</h2>
+      <p>
+        Der Button „WhatsApp“ öffnet einen Chat mit uns in WhatsApp, einem Dienst der WhatsApp Ireland Limited (Meta).
+        Daten an WhatsApp werden erst übertragen, wenn Sie den Button anklicken. Was Sie uns dort schreiben, verarbeiten
+        wir nur, um Ihre Anfrage zu beantworten.
+      </p>
       <p>[Weitere Abschnitte: Hosting, Server-Logfiles, E-Mail-Versand, Ihre Rechte, Beschwerderecht]</p>
     </LegalPage>
   );

@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { LogoIcon } from "@/components/Logo";
-import { ChevronIcon, CloseIcon, MenuIcon, PhoneIcon } from "@/components/Icons";
+import { ChevronIcon, CloseIcon, MenuIcon, PhoneIcon, WhatsAppIcon } from "@/components/Icons";
 import { locations, nav, serviceNav, site } from "@/lib/site";
 
 export function SiteHeader() {
@@ -149,6 +149,10 @@ export function SiteHeader() {
           <a href={site.phone.href} className="btn btn-primary hidden xl:inline-flex">
             <PhoneIcon className="size-4" />
             Jetzt anrufen
+          </a>
+          <a href={site.whatsapp} target="_blank" rel="noopener" className="btn btn-whatsapp hidden xl:inline-flex">
+            <WhatsAppIcon className="size-5" />
+            WhatsApp
           </a>
           <a
             href={site.phone.href}

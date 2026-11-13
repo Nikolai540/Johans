@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import { PhoneIcon } from "@/components/Icons";
+import { PhoneIcon, WhatsAppIcon } from "@/components/Icons";
 import { site } from "@/lib/site";
 
 // Daumenzone auf dem Smartphone: erscheint, sobald die Hero-Buttons aus dem Bild sind,
@@ -40,8 +40,9 @@ export function MobileActions() {
           <PhoneIcon className="size-4" />
           Jetzt anrufen
         </a>
-        <a href="#kontakt-formular" className="btn btn-secondary px-md" tabIndex={visible ? 0 : -1}>
-          Kontakt aufnehmen
+        <a href={site.whatsapp} target="_blank" rel="noopener" className="btn btn-whatsapp px-md" tabIndex={visible ? 0 : -1}>
+          <WhatsAppIcon className="size-5" />
+          WhatsApp
         </a>
       </div>
     </div>

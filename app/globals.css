@@ -174,7 +174,11 @@
   /* button-secondary: weiße Fläche – auf dunklen Bändern ohne Kontur */
   .btn-secondary { background-color: var(--color-canvas); color: var(--color-ink); }
   .btn-secondary:active { background-color: var(--color-surface-strong); }
+  /* WhatsApp-Grün, damit der Button sofort erkannt wird. Dunkle Schrift, weißer Text hätte zu wenig Kontrast. */
+  .btn-whatsapp { background-color: #25d366; color: #0b141a; }
+  .btn-whatsapp:active { background-color: #1ebe5b; }
   @media (hover: hover) and (pointer: fine) {
+    .btn-whatsapp:hover { background-color: #1ebe5b; }
     .btn-primary:hover { background-color: var(--color-primary-active); }
     .btn-secondary:hover { background-color: var(--color-surface-strong); }
   }
