@@ -292,3 +292,6 @@
   }
 }
 
+
+/* Offene Großansicht der Galerie: Seite dahinter scrollt nicht mit */
+html:has(dialog[open]) { overflow: hidden; }

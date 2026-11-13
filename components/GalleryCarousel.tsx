@@ -1,150 +1,171 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-import { ArrowIcon } from "@/components/Icons";
+import { ChevronIcon, CloseIcon, PauseIcon, PlayIcon } from "@/components/Icons";
 import { gallery } from "@/lib/gallery";
 
 const count = gallery.length;
+const SPEED = 40; // px pro Sekunde
 
-// Karussell: Wischen (scroll-snap), Pfeil-Buttons, Punkte und Pfeiltasten.
-// Der Rahmen hat 4:3, das Standardformat von Handykameras. Hochkant-Fotos werden nicht beschnitten.
+// Bilderstreifen über die volle Breite, alle Bilder gleich hoch. Er läuft von selbst langsam durch und
+// lässt sich wischen oder mit den Pfeilen schieben. Ein Klick öffnet das Bild groß.
+// Die Bilder liegen zweimal hintereinander: Ist der Streifen um eine Hälfte weitergelaufen, springt er unsichtbar zurück.
+// shortcut: Bei sehr wenigen Bildern ist eine Hälfte schmaler als der Bildschirm, dann hakt die Schleife. Ab etwa 5 Bildern passt es.
+// Pausiert bei Maus, Fokus oder Finger auf dem Streifen, in der Großansicht, per Button und bei reduzierter Bewegung (WCAG 2.2.2).
 export function GalleryCarousel({ className }: { className?: string }) {
-  const rootRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
-  const [index, setIndex] = useState(0);
-  // Ziel der laufenden Bewegung, damit schnelles Mehrfach-Drücken weiterzählt
-  const target = useRef(0);
-  const moving = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const [playing, setPlaying] = useState(true);
+  const [open, setOpen] = useState<number | null>(null);
+  const held = useRef(false);
+  // Pfeil-Klicks scrollen weich, solange steht der Streifen still
+  const nudgedUntil = useRef(0);
+  const run = playing && open === null;
 
-  const goTo = useCallback((i: number) => {
-    const track = trackRef.current!;
-    const next = Math.max(0, Math.min(count - 1, i));
-    target.current = next;
-    // Bis das Ziel erreicht ist, zählt die Scrollposition nicht als neues Ziel (Rückfall nach 1,5 s, falls unterbrochen)
-    if (moving.current) clearTimeout(moving.current);
-    moving.current = setTimeout(() => (moving.current = null), 1500);
-    const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    track.scrollTo({ left: next * track.clientWidth, behavior: still ? "auto" : "smooth" });
+  useEffect(() => {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) setPlaying(false);
   }, []);
 
-  // Aktuelles Bild aus der Scrollposition, auch nach dem Wischen
   useEffect(() => {
+    if (!run) return;
     const track = trackRef.current!;
-    let frame = 0;
-    const onScroll = () => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        const i = Math.round(track.scrollLeft / track.clientWidth);
-        setIndex(i);
-        if (moving.current && Math.abs(track.scrollLeft - target.current * track.clientWidth) < 2) {
-          clearTimeout(moving.current);
-          moving.current = null;
-        }
-        if (!moving.current) target.current = i;
-      });
-    };
-    track.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      track.removeEventListener("scroll", onScroll);
-      cancelAnimationFrame(frame);
-    };
-  }, []);
+    // Eigene Position als Kommazahl, scrollLeft rundet manche Browser auf ganze Pixel
+    let pos = track.scrollLeft;
+    let last = performance.now();
+    let frame = requestAnimationFrame(function step(now) {
+      const dt = Math.min(now - last, 100) / 1000;
+      last = now;
+      if (Math.abs(track.scrollLeft - pos) > 2) pos = track.scrollLeft; // Nutzer hat selbst geschoben
+      if (!held.current && now > nudgedUntil.current) {
+        const half = track.scrollWidth / 2;
+        pos += SPEED * dt;
+        if (pos >= half) pos -= half;
+        track.scrollLeft = pos;
+      }
+      frame = requestAnimationFrame(step);
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [run]);
 
-  // Pfeiltasten: wenn der Fokus im Karussell liegt – oder nirgends und das Karussell gut zu sehen ist
-  useEffect(() => {
-    const root = rootRef.current!;
-    let visible = false;
-    const io = new IntersectionObserver(([e]) => (visible = e.intersectionRatio >= 0.5), { threshold: [0, 0.5, 1] });
-    io.observe(root);
-    const onKey = (e: KeyboardEvent) => {
-      if ((e.key !== "ArrowLeft" && e.key !== "ArrowRight") || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
-      const active = document.activeElement;
-      const idle = !active || active === document.body;
-      if (!root.contains(active) && !(idle && visible)) return;
-      e.preventDefault();
-      goTo(target.current + (e.key === "ArrowRight" ? 1 : -1));
-    };
-    window.addEventListener("keydown", onKey);
-    return () => {
-      io.disconnect();
-      window.removeEventListener("keydown", onKey);
-    };
-  }, [goTo]);
+  const nudge = (dir: number) => {
+    const track = trackRef.current!;
+    const half = track.scrollWidth / 2;
+    // Vor dem Schieben in die passende Hälfte springen, damit es in beide Richtungen endlos weitergeht
+    if (dir < 0 && track.scrollLeft < track.clientWidth) track.scrollLeft += half;
+    if (dir > 0 && track.scrollLeft > half) track.scrollLeft -= half;
+    nudgedUntil.current = performance.now() + 900;
+    track.scrollBy({ left: dir * track.clientWidth * 0.6, behavior: "smooth" });
+  };
 
-  const control =
-    "flex size-12 items-center justify-center rounded-sm bg-canvas text-ink transition-colors duration-[180ms] hover:bg-surface-strong disabled:cursor-not-allowed disabled:bg-surface-dark-elevated disabled:text-on-dark-soft";
+  const show = (i: number) => {
+    setOpen(i);
+    dialogRef.current!.showModal();
+  };
+  const step = (dir: number) => setOpen((i) => (i === null ? i : (i + dir + count) % count));
+  const current = open === null ? null : gallery[open];
+
+  const arrow =
+    "absolute top-1/2 z-10 flex size-12 -translate-y-1/2 items-center justify-center rounded-full bg-surface-dark/60 text-white opacity-0 transition-opacity duration-[180ms] group-hover:opacity-100 focus-visible:opacity-100 [@media(hover:none)]:opacity-100";
+  const hold = (v: boolean) => () => (held.current = v);
 
   return (
-    <div ref={rootRef} role="region" aria-roledescription="Karussell" aria-label="Fotos von unseren Baustellen" className={className}>
+    <div role="region" aria-roledescription="Karussell" aria-label="Fotos von unseren Baustellen" className={className}>
       <div
-        ref={trackRef}
-        tabIndex={0}
-        role="group"
-        aria-label="Bilder, mit den Pfeiltasten blättern"
-        className="flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="group relative"
+        onMouseEnter={hold(true)}
+        onMouseLeave={hold(false)}
+        onFocus={hold(true)}
+        onBlur={(e) => !e.currentTarget.contains(e.relatedTarget) && (held.current = false)}
+        onTouchStart={hold(true)}
+        onTouchEnd={() => setTimeout(() => (held.current = false), 1500)}
       >
-        {gallery.map((item, i) => (
-          <figure
-            key={item.caption}
-            role="group"
-            aria-roledescription="Folie"
-            aria-label={`${i + 1} von ${count}`}
-            className="relative aspect-[4/3] w-full shrink-0 snap-start overflow-hidden bg-surface-dark-elevated"
-          >
-            <Image
-              src={item.src}
-              alt={item.alt}
-              fill
-              sizes="(min-width: 1024px) 66vw, 100vw"
-              className={item.src.height > item.src.width ? "object-contain" : "object-cover"}
-            />
-            <figcaption className="absolute bottom-xs left-xs max-w-[calc(100%-var(--spacing-md))] rounded-sm bg-surface-dark px-sm py-xxs text-body-sm text-on-dark">
-              {item.placeholder && <span className="font-bold">Platzhalter: </span>}
-              {item.caption}
-            </figcaption>
-          </figure>
-        ))}
-      </div>
-
-      <div className="mt-md flex items-center gap-md">
-        <p aria-live="polite" className="text-title-sm text-on-dark tabular">
-          <span className="sr-only">
-            Bild {index + 1} von {count}
-          </span>
-          <span aria-hidden>
-            {index + 1} / {count}
-          </span>
-        </p>
-        <ul className="hidden flex-1 items-center gap-xxs sm:flex" aria-label="Bild auswählen">
-          {gallery.map((item, i) => (
-            <li key={item.caption}>
+        <div ref={trackRef} className="flex gap-xxs overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {[0, 1].map((copy) =>
+            gallery.map((item, i) => (
               <button
+                key={`${copy}-${item.caption}`}
                 type="button"
-                onClick={() => goTo(i)}
-                aria-label={`Bild ${i + 1}: ${item.caption}`}
-                aria-current={i === index ? "true" : undefined}
-                className="group flex h-6 w-7 items-center justify-center"
+                onClick={() => show(i)}
+                aria-hidden={copy === 1 || undefined}
+                tabIndex={copy === 1 ? -1 : undefined}
+                aria-label={`${item.caption}, groß anzeigen`}
+                className="relative h-60 shrink-0 overflow-hidden bg-surface-dark-elevated sm:h-72 lg:h-[22rem]"
               >
-                <span
-                  className={`h-1 w-full rounded-pill transition-colors duration-[180ms] ${
-                    i === index ? "bg-primary" : "bg-muted-soft group-hover:bg-on-dark"
-                  }`}
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  sizes={`${Math.round((352 * item.src.width) / item.src.height)}px`}
+                  className="h-full w-auto transition-transform duration-[400ms] hover:scale-[1.03]"
                 />
               </button>
-            </li>
-          ))}
-        </ul>
-        <div className="ml-auto flex gap-xs">
-          <button type="button" onClick={() => goTo(target.current - 1)} disabled={index === 0} aria-label="Vorheriges Bild" className={control}>
-            <ArrowIcon className="size-5 rotate-180" />
-          </button>
-          <button type="button" onClick={() => goTo(target.current + 1)} disabled={index === count - 1} aria-label="Nächstes Bild" className={control}>
-            <ArrowIcon className="size-5" />
-          </button>
+            )),
+          )}
         </div>
+        <button type="button" onClick={() => nudge(-1)} aria-label="Bilder nach links schieben" className={`${arrow} left-md`}>
+          <ChevronIcon className="size-6 rotate-90" />
+        </button>
+        <button type="button" onClick={() => nudge(1)} aria-label="Bilder nach rechts schieben" className={`${arrow} right-md`}>
+          <ChevronIcon className="size-6 -rotate-90" />
+        </button>
       </div>
+
+      <div className="page-x mx-auto mt-md flex max-w-page justify-end">
+        <button
+          type="button"
+          onClick={() => setPlaying((p) => !p)}
+          aria-label={playing ? "Automatischen Lauf anhalten" : "Automatischen Lauf starten"}
+          className="flex size-12 items-center justify-center rounded-sm bg-canvas text-ink transition-colors duration-[180ms] hover:bg-surface-strong"
+        >
+          {playing ? <PauseIcon className="size-5" /> : <PlayIcon className="size-5" />}
+        </button>
+      </div>
+
+      {/* Großansicht: <dialog> hält den Fokus darin, Esc schließt, der Rest der Seite ist solange gesperrt */}
+      <dialog
+        ref={dialogRef}
+        aria-label="Großansicht"
+        onClose={() => setOpen(null)}
+        onKeyDown={(e) => {
+          if (e.key === "ArrowLeft") step(-1);
+          if (e.key === "ArrowRight") step(1);
+        }}
+        className="m-0 h-dvh max-h-none w-screen max-w-none bg-canvas p-0 text-ink backdrop:bg-surface-dark/80"
+      >
+        <div
+          className="flex h-full flex-col items-center justify-center gap-md px-[4.5rem] py-xxl"
+          onClick={(e) => e.target === e.currentTarget && dialogRef.current!.close()}
+        >
+          {current && (
+            <>
+              <Image
+                key={open}
+                src={current.src}
+                alt={current.alt}
+                sizes="(min-width: 1024px) 80vw, 100vw"
+                className="h-auto max-h-[calc(100dvh-10rem)] w-auto max-w-full object-contain"
+              />
+              <p className="text-body-sm text-body">
+                {current.placeholder && <span className="font-bold">Platzhalter: </span>}
+                {current.caption}
+                <span className="ml-sm tabular">
+                  {open! + 1} / {count}
+                </span>
+              </p>
+            </>
+          )}
+        </div>
+        <button type="button" onClick={() => dialogRef.current!.close()} aria-label="Großansicht schließen" className="absolute top-md right-md flex size-12 items-center justify-center rounded-sm hover:bg-surface-strong">
+          <CloseIcon className="size-6" />
+        </button>
+        <button type="button" onClick={() => step(-1)} aria-label="Vorheriges Bild" className="absolute top-1/2 left-xs flex size-12 -translate-y-1/2 items-center justify-center rounded-sm hover:bg-surface-strong">
+          <ChevronIcon className="size-7 rotate-90" />
+        </button>
+        <button type="button" onClick={() => step(1)} aria-label="Nächstes Bild" className="absolute top-1/2 right-xs flex size-12 -translate-y-1/2 items-center justify-center rounded-sm hover:bg-surface-strong">
+          <ChevronIcon className="size-7 -rotate-90" />
+        </button>
+      </dialog>
     </div>
   );
 }
