@@ -16,9 +16,9 @@ const roboto = Roboto({ subsets: ["latin"], preload: false });
 
 export function Stars({ rating }: { rating: number }) {
   return (
-    <span role="img" aria-label={`${de(rating)} von 5 Sternen`} className="flex gap-xxs text-secondary">
+    <span role="img" aria-label={`${de(rating)} von 5 Sternen`} className="flex gap-xxs text-primary">
       {[1, 2, 3, 4, 5].map((n) => (
-        <svg key={n} viewBox="0 0 24 24" aria-hidden className={`size-5 ${n <= Math.round(rating) ? "fill-current" : "fill-hairline-strong"}`}>
+        <svg key={n} viewBox="0 0 24 24" aria-hidden className={`size-5 ${n <= Math.round(rating) ? "fill-current" : "fill-muted-soft"}`}>
           <path d={STAR} />
         </svg>
       ))}
@@ -51,7 +51,7 @@ export function ReviewCarousel({ items, className }: { items: Review[]; classNam
 
   const go = (step: number) => setPos((p) => ({ index: (p.index + step + count) % count, turn: p.turn + 1 }));
   const control =
-    "flex size-12 items-center justify-center rounded-sm border border-hairline-strong bg-canvas text-ink transition-colors duration-[180ms] hover:bg-surface-strong";
+    "flex size-12 items-center justify-center rounded-sm bg-canvas text-ink transition-colors duration-[180ms] hover:bg-surface-strong";
 
   return (
     <div
@@ -70,7 +70,7 @@ export function ReviewCarousel({ items, className }: { items: Review[]; classNam
           <button type="button" onClick={() => setPlaying((p) => !p)} aria-label={playing ? "Automatischen Wechsel anhalten" : "Automatischen Wechsel starten"} className={control}>
             {playing ? <PauseIcon className="size-5" /> : <PlayIcon className="size-5" />}
           </button>
-          <p className="ml-xs text-title-sm text-ink tabular">
+          <p className="ml-xs text-title-sm text-on-dark tabular">
             <span className="sr-only">
               Bewertung {index + 1} von {count}
             </span>
@@ -98,7 +98,7 @@ export function ReviewCarousel({ items, className }: { items: Review[]; classNam
             role="group"
             aria-roledescription="Folie"
             aria-label={`${i + 1} von ${count}`}
-            className={`${roboto.className} col-start-1 row-start-1 rounded-lg bg-white p-4 text-[14px] font-normal leading-5 text-[#202124] shadow-[0_1px_2px_rgb(60_64_67/0.3),0_1px_3px_1px_rgb(60_64_67/0.15)] ${
+            className={`${roboto.className} col-start-1 row-start-1 rounded-lg bg-[#fff] p-4 text-[14px] font-normal leading-5 text-[#202124] shadow-[0_1px_2px_rgb(60_64_67/0.3),0_1px_3px_1px_rgb(60_64_67/0.15)] ${
               i === index ? (turn % 2 ? "review-in-right" : "review-in-left") : "invisible"
             }`}
           >
@@ -107,7 +107,7 @@ export function ReviewCarousel({ items, className }: { items: Review[]; classNam
                 // Läuft über die Bildoptimierung von Next: Unser Server lädt das Bild, der Browser spricht nicht mit Google
                 <Image src={r.photo} alt="" width={40} height={40} className="size-10 shrink-0 rounded-full" />
               ) : (
-                <span aria-hidden className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#1a73e8] text-[18px] text-white">
+                <span aria-hidden className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#1a73e8] text-[18px] text-[#fff]">
                   {r.author.charAt(0).toUpperCase()}
                 </span>
               )}

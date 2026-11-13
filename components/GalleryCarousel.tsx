@@ -13,7 +13,7 @@ const SPEED = 40; // px pro Sekunde
 // lässt sich wischen oder mit den Pfeilen schieben. Ein Klick öffnet das Bild groß.
 // Die Bilder liegen zweimal hintereinander: Ist der Streifen um eine Hälfte weitergelaufen, springt er unsichtbar zurück.
 // shortcut: Bei sehr wenigen Bildern ist eine Hälfte schmaler als der Bildschirm, dann hakt die Schleife. Ab etwa 5 Bildern passt es.
-// Pausiert bei Maus, Fokus oder Finger auf dem Streifen, in der Großansicht, per Button und bei reduzierter Bewegung (WCAG 2.2.2).
+// Läuft unter der Maus weiter. Pausiert bei Tastaturfokus oder Finger auf dem Streifen, in der Großansicht, per Button und bei reduzierter Bewegung (WCAG 2.2.2).
 export function GalleryCarousel({ className }: { className?: string }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -67,16 +67,15 @@ export function GalleryCarousel({ className }: { className?: string }) {
   const current = open === null ? null : gallery[open];
 
   const arrow =
-    "absolute top-1/2 z-10 flex size-12 -translate-y-1/2 items-center justify-center rounded-full bg-surface-dark/60 text-white opacity-0 transition-opacity duration-[180ms] group-hover:opacity-100 focus-visible:opacity-100 [@media(hover:none)]:opacity-100";
+    "absolute top-1/2 z-10 flex size-12 -translate-y-1/2 items-center justify-center rounded-full bg-surface-dark/60 text-on-dark opacity-0 transition-opacity duration-[180ms] group-hover:opacity-100 focus-visible:opacity-100 [@media(hover:none)]:opacity-100";
   const hold = (v: boolean) => () => (held.current = v);
 
   return (
     <div role="region" aria-roledescription="Karussell" aria-label="Fotos von unseren Baustellen" className={className}>
       <div
         className="group relative"
-        onMouseEnter={hold(true)}
-        onMouseLeave={hold(false)}
-        onFocus={hold(true)}
+        // Nur Tastaturfokus hält an: Nach einem Mausklick bleibt der Fokus auf dem Bild, der Streifen soll trotzdem weiterlaufen
+        onFocus={(e) => e.target.matches(":focus-visible") && (held.current = true)}
         onBlur={(e) => !e.currentTarget.contains(e.relatedTarget) && (held.current = false)}
         onTouchStart={hold(true)}
         onTouchEnd={() => setTimeout(() => (held.current = false), 1500)}
@@ -126,7 +125,11 @@ export function GalleryCarousel({ className }: { className?: string }) {
       <dialog
         ref={dialogRef}
         aria-label="Großansicht"
-        onClose={() => setOpen(null)}
+        onClose={() => {
+          setOpen(null);
+          // Der Fokus springt beim Schließen aufs Bild zurück, das soll den Streifen nicht anhalten
+          held.current = false;
+        }}
         onKeyDown={(e) => {
           if (e.key === "ArrowLeft") step(-1);
           if (e.key === "ArrowRight") step(1);
