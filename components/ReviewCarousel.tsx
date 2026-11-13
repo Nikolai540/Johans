@@ -11,7 +11,8 @@ const de = (n: number) => n.toLocaleString("de-DE", { maximumFractionDigits: 1 }
 const STAR = "M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z";
 
 // Schrift wie bei Google. next/font legt sie beim Build auf den eigenen Server, der Browser lädt nichts von Google.
-const roboto = Roboto({ subsets: ["latin"] });
+// Kein Preload: Die Bewertungen stehen weit unten, und ohne API-Key gibt es den Abschnitt gar nicht
+const roboto = Roboto({ subsets: ["latin"], preload: false });
 
 export function Stars({ rating }: { rating: number }) {
   return (
