@@ -94,7 +94,7 @@ export function SiteHeader() {
 
   return (
     <header ref={headerRef} className="on-dark sticky top-0 z-50 h-nav border-b border-surface-dark-elevated bg-surface-dark text-on-dark">
-      <div className="page-x mx-auto flex h-full max-w-page items-center justify-between gap-lg">
+      <div className="page-x flex h-full items-center justify-between gap-lg">
         <a href="/" className="flex min-h-11 shrink-0 items-center text-title-md" aria-label={`${site.name} – Startseite`}>
           <LogoIcon className="mr-sm h-9 w-auto" />
           <span className="max-[22.5rem]:hidden">J&amp;L Bauprojekte</span>
