@@ -17,6 +17,8 @@ const nextConfig: NextConfig = {
     imageSizes: [96, 256, 384],
     // Statische Importe tragen einen Inhalts-Hash, ändern sich also nie unter derselben URL
     minimumCacheTTL: 31536000,
+    // Profilbilder der Google-Bewertungen, Next lädt sie auf dem Server und liefert sie von der eigenen Domain aus
+    remotePatterns: [new URL("https://lh3.googleusercontent.com/**")],
   },
 };
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import { ArrowIcon, PauseIcon, PlayIcon } from "@/components/Icons";
@@ -47,30 +48,20 @@ export function ReviewCarousel({ items, className }: { items: Review[]; classNam
     "flex size-12 items-center justify-center rounded-sm border border-hairline-strong bg-canvas text-ink transition-colors duration-[180ms] hover:bg-surface-strong";
 
   return (
+    // Der Kartenrahmen und die Buttons stehen fest, nur der Inhalt fliegt herein.
+    // So gibt es die Buttons nur einmal, und der Fokus bleibt nach dem Klick auf dem Pfeil.
     <div
       role="region"
       aria-roledescription="Karussell"
       aria-label="Google-Bewertungen"
-      className={className}
+      className={`card flex flex-col overflow-x-clip p-lg sm:p-xl ${className ?? ""}`}
       onMouseEnter={() => setHeld(true)}
       onMouseLeave={() => setHeld(false)}
       onFocus={() => setHeld(true)}
       onBlur={(e) => !e.currentTarget.contains(e.relatedTarget) && setHeld(false)}
     >
-      {/* Während des automatischen Wechsels keine Ansagen, sonst unterbricht der Screenreader alle 7 s */}
-      <div className="grid" aria-live={rotating ? "off" : "polite"}>
-        {items.map((r, i) => (
-          <figure
-            key={r.author + r.when}
-            role="group"
-            aria-roledescription="Folie"
-            aria-label={`${i + 1} von ${count}`}
-            className={`card col-start-1 row-start-1 flex flex-col p-lg sm:p-xl ${
-              i === index ? (turn % 2 ? "review-in-right" : "review-in-left") : "invisible"
-            }`}
-          >
-            {count > 1 && (
-        <div className="mt-md flex items-center gap-xs">
+      {count > 1 && (
+        <div className="mb-lg flex items-center gap-xs">
           <button type="button" onClick={() => setPlaying((p) => !p)} aria-label={playing ? "Automatischen Wechsel anhalten" : "Automatischen Wechsel starten"} className={control}>
             {playing ? <PauseIcon className="size-5" /> : <PlayIcon className="size-5" />}
           </button>
@@ -92,12 +83,30 @@ export function ReviewCarousel({ items, className }: { items: Review[]; classNam
           </div>
         </div>
       )}
+
+      {/* Während des automatischen Wechsels keine Ansagen, sonst unterbricht der Screenreader alle 5 s */}
+      <div className="grid flex-1" aria-live={rotating ? "off" : "polite"}>
+        {items.map((r, i) => (
+          <figure
+            key={r.author + r.when}
+            role="group"
+            aria-roledescription="Folie"
+            aria-label={`${i + 1} von ${count}`}
+            className={`col-start-1 row-start-1 flex flex-col ${
+              i === index ? (turn % 2 ? "review-in-right" : "review-in-left") : "invisible"
+            }`}
+          >
             <Stars rating={r.rating} />
             <blockquote className="mt-md whitespace-pre-line text-body-md sm:text-title-md sm:font-light">{r.text}</blockquote>
             <figcaption className="mt-auto flex items-center gap-sm pt-lg text-body-sm text-body">
-              <span aria-hidden className="flex size-10 shrink-0 items-center justify-center rounded-full bg-surface-strong text-title-sm text-ink">
-                {r.author.charAt(0).toUpperCase()}
-              </span>
+              {r.photo ? (
+                // Läuft über die Bildoptimierung von Next: Unser Server lädt das Bild, der Browser spricht nicht mit Google
+                <Image src={r.photo} alt="" width={40} height={40} className="size-10 shrink-0 rounded-full" />
+              ) : (
+                <span aria-hidden className="flex size-10 shrink-0 items-center justify-center rounded-full bg-surface-strong text-title-sm text-ink">
+                  {r.author.charAt(0).toUpperCase()}
+                </span>
+              )}
               <span>
                 {r.authorUri ? (
                   <a href={r.authorUri} target="_blank" rel="noopener" className="link font-bold text-ink">
@@ -112,8 +121,6 @@ export function ReviewCarousel({ items, className }: { items: Review[]; classNam
           </figure>
         ))}
       </div>
-
-      
     </div>
   );
 }

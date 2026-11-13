@@ -56,7 +56,8 @@ export default function Datenschutz() {
       <p>
         Auf der Startseite zeigen wir aktuelle Bewertungen aus unserem Google-Unternehmensprofil. Unser Server ruft
         sie über eine Schnittstelle von Google ab. Ihr Browser baut dafür keine Verbindung zu Google auf, und es
-        werden keine Daten von Ihnen an Google übertragen. Erst wenn Sie einen Link zu Google anklicken, etwa
+        werden keine Daten von Ihnen an Google übertragen. Das gilt auch für die Profilbilder: Unser Server lädt sie
+        und liefert sie selbst aus. Erst wenn Sie einen Link zu Google anklicken, etwa
         „Alle Bewertungen auf Google“ oder den Namen einer verfassenden Person, öffnet sich die Seite von Google.
       </p>
       <p>

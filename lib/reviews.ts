@@ -3,7 +3,7 @@
 // Jeder Standort zeigt die Bewertungen seines eigenen Google-Profils, Vilgertshofen sonst die aus GOOGLE_PLACE_ID.
 import type { LocationId } from "./site";
 
-export type Review = { author: string; authorUri?: string; rating: number; text: string; when: string };
+export type Review = { author: string; authorUri?: string; photo?: string; rating: number; text: string; when: string };
 export type Reviews = { rating: number; count: number; mapsUri: string; items: Review[] };
 
 type ApiReview = {
@@ -11,7 +11,7 @@ type ApiReview = {
   relativePublishTimeDescription?: string;
   text?: { text?: string };
   originalText?: { text?: string };
-  authorAttribution?: { displayName?: string; uri?: string };
+  authorAttribution?: { displayName?: string; uri?: string; photoUri?: string };
 };
 
 export async function getReviews(location: LocationId): Promise<Reviews | null> {
@@ -34,6 +34,7 @@ export async function getReviews(location: LocationId): Promise<Reviews | null> 
       .map((r) => ({
         author: r.authorAttribution?.displayName ?? "Google-Nutzer",
         authorUri: r.authorAttribution?.uri,
+        photo: r.authorAttribution?.photoUri,
         rating: r.rating ?? 0,
         // Originaltext statt maschineller Übersetzung
         text: (r.originalText?.text ?? r.text?.text ?? "").trim(),
