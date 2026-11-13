@@ -8,10 +8,12 @@ import { MobileActions } from "@/components/MobileActions";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { photos } from "@/lib/images";
+import { getRating } from "@/lib/reviews";
 import { pages, site } from "@/lib/site";
 import type { SubPage } from "@/lib/subpages";
 
-export function ServicePage({ page }: { page: SubPage }) {
+export async function ServicePage({ page }: { page: SubPage }) {
+  const { rating, reviews } = await getRating();
   const hero = photos[page.hero];
   const url = `${site.url}${page.path}`;
   const others = Object.values(pages).filter((p) => p.href !== page.path);
@@ -84,7 +86,7 @@ export function ServicePage({ page }: { page: SubPage }) {
                 </a>
               </div>
               <p data-rise style={{ ["--i" as string]: 3 }} className="mt-lg text-body-sm text-on-dark-soft">
-                {site.proof.rating} von 5 bei {site.proof.reviews} Google-Bewertungen · {site.proof.years} Jahre Erfahrung ·
+                {rating} von 5 bei {reviews} Google-Bewertungen · {site.proof.years} Jahre Erfahrung ·
                 über {site.proof.projects} Projekte
               </p>
             </div>
@@ -235,7 +237,7 @@ export function ServicePage({ page }: { page: SubPage }) {
             </div>
             <dl className="grid content-start gap-xl lg:col-span-4 lg:col-start-9">
               {[
-                { v: site.proof.rating, l: `von 5 Sternen bei ${site.proof.reviews} Google-Bewertungen` },
+                { v: rating, l: `von 5 Sternen bei ${reviews} Google-Bewertungen` },
                 { v: String(site.proof.years), l: "Jahre Erfahrung im Landkreis Landsberg" },
                 { v: `${site.proof.projects}+`, l: "abgeschlossene Projekte" },
               ].map((f, i) => (

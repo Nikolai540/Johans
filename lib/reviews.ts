@@ -1,7 +1,7 @@
 // Google-Bewertungen über die Places API (New). Der Abruf läuft auf dem Server, der Browser spricht nicht mit Google.
 // Ohne GOOGLE_PLACES_API_KEY und Place ID oder bei einem Fehler gibt es null, der Abschnitt entfällt dann.
 // Jeder Standort zeigt die Bewertungen seines eigenen Google-Profils, Vilgertshofen sonst die aus GOOGLE_PLACE_ID.
-import type { LocationId } from "./site";
+import { site, type LocationId } from "./site";
 
 export type Review = { author: string; authorUri?: string; photo?: string; rating: number; text: string; when: string };
 export type Reviews = { rating: number; count: number; mapsUri: string; items: Review[] };
@@ -47,4 +47,13 @@ export async function getReviews(location: LocationId): Promise<Reviews | null> 
     console.error("Google-Bewertungen:", e);
     return null;
   }
+}
+
+export const formatRating = (n: number) => n.toLocaleString("de-DE", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+
+// Sterne und Anzahl für Texte auf der Seite, damit sie zum Bewertungs-Abschnitt passen.
+// Live von Google, ohne API-Key oder bei einem Fehler die festen Werte aus site.proof.
+export async function getRating(location: LocationId = "landsberg") {
+  const r = await getReviews(location);
+  return r ? { rating: formatRating(r.rating), reviews: r.count } : { rating: site.proof.rating, reviews: site.proof.reviews };
 }

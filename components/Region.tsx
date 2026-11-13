@@ -2,14 +2,9 @@ import { ArrowIcon, GateIcon, HomeIcon, MountainIcon, SailIcon, TowerIcon, WallI
 import { LocationMap } from "@/components/LocationMap";
 import { regions, type RegionId } from "@/lib/regions";
 import { homeCopy } from "@/lib/homes";
+import { getRating } from "@/lib/reviews";
 import { locationById, locations, site, type LocationId } from "@/lib/site";
 
-const facts = [
-  { label: "Standorte", value: `${site.branch.locality} und ${site.address.locality}` },
-  { label: "Erfahrung", value: `${site.proof.years} Jahre, über ${site.proof.projects} Projekte` },
-  { label: "Google-Bewertung", value: `${site.proof.rating} von 5 (${site.proof.reviews} Bewertungen)` },
-  { label: "Ansprechpartner", value: site.owner },
-];
 
 const icons: Record<RegionId, typeof GateIcon> = {
   landsberg: GateIcon,
@@ -21,7 +16,14 @@ const icons: Record<RegionId, typeof GateIcon> = {
 };
 
 // Karte und Card zeigen den Standort der jeweiligen Startseite, darunter der Link zur Startseite des anderen
-export function Region({ location }: { location: LocationId }) {
+export async function Region({ location }: { location: LocationId }) {
+  const { rating, reviews } = await getRating(location);
+  const facts = [
+    { label: "Standorte", value: `${site.branch.locality} und ${site.address.locality}` },
+    { label: "Erfahrung", value: `${site.proof.years} Jahre, über ${site.proof.projects} Projekte` },
+    { label: "Google-Bewertung", value: `${rating} von 5 (${reviews} Bewertungen)` },
+    { label: "Ansprechpartner", value: site.owner },
+  ];
   const loc = locationById(location);
   const other = locations.find((l) => l.id !== location)!;
   const copy = homeCopy[location];

@@ -10,6 +10,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { services, type ServiceId } from "@/lib/content";
 import { photos } from "@/lib/images";
 import { regionById, regions, type RegionPage as RegionPageData } from "@/lib/regions";
+import { getRating } from "@/lib/reviews";
 import { locationById, pages, site } from "@/lib/site";
 
 // Leistungen mit eigener Unterseite verlinken dorthin, alle anderen wählen die Leistung im Formular vor
@@ -41,7 +42,9 @@ const addresses = {
   },
 };
 
-export function RegionPage({ page }: { page: RegionPageData }) {
+export async function RegionPage({ page }: { page: RegionPageData }) {
+  // Bewertungen des nächstgelegenen Standorts (main = Vilgertshofen, branch = Landsberg)
+  const { rating, reviews } = await getRating(page.locations[0] === "main" ? "vilgertshofen" : "landsberg");
   const region = regionById(page.region);
   const others = regions.filter((r) => r.id !== region.id);
   const hero = photos[page.hero];
@@ -122,7 +125,7 @@ export function RegionPage({ page }: { page: RegionPageData }) {
                 </a>
               </div>
               <p data-rise style={{ ["--i" as string]: 3 }} className="mt-lg text-body-sm text-on-dark-soft">
-                {site.proof.rating} von 5 bei {site.proof.reviews} Google-Bewertungen · {site.proof.years} Jahre Erfahrung ·
+                {rating} von 5 bei {reviews} Google-Bewertungen · {site.proof.years} Jahre Erfahrung ·
                 über {site.proof.projects} Projekte
               </p>
             </div>
@@ -190,7 +193,7 @@ export function RegionPage({ page }: { page: RegionPageData }) {
               </p>
               <dl className="mt-xl grid grid-cols-3 gap-md">
                 {[
-                  { v: site.proof.rating, l: `von 5 bei ${site.proof.reviews} Google-Bewertungen` },
+                  { v: rating, l: `von 5 bei ${reviews} Google-Bewertungen` },
                   { v: String(site.proof.years), l: "Jahre Erfahrung" },
                   { v: `${site.proof.projects}+`, l: "Projekte" },
                 ].map((f, i) => (

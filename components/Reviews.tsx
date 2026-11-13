@@ -1,6 +1,6 @@
 import { ArrowIcon } from "@/components/Icons";
 import { ReviewCarousel, Stars } from "@/components/ReviewCarousel";
-import { getReviews } from "@/lib/reviews";
+import { formatRating, getReviews } from "@/lib/reviews";
 import type { LocationId } from "@/lib/site";
 
 // Aktuelle Google-Bewertungen als Karussell. Steht direkt unter der Galerie und teilt ihren dunklen Hintergrund,
@@ -19,7 +19,7 @@ export async function Reviews({ location }: { location: LocationId }) {
           </h2>
           <p data-reveal style={{ ["--i" as string]: 1 }} className="mt-md flex flex-wrap items-center gap-sm text-title-md text-on-dark">
             <Stars rating={reviews.rating} />
-            {reviews.rating.toLocaleString("de-DE", { maximumFractionDigits: 1 })} von 5 bei {reviews.count} Bewertungen auf Google
+            {formatRating(reviews.rating)} von 5 bei {reviews.count} Bewertungen auf Google
           </p>
           <a
             data-reveal

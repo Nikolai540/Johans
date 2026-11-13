@@ -10,6 +10,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { placeholders } from "@/lib/placeholders";
 import { regions } from "@/lib/regions";
+import { getRating } from "@/lib/reviews";
 import { aboutPage, locations, pages, site } from "@/lib/site";
 
 const path = aboutPage.href;
@@ -61,13 +62,17 @@ const reasons = [
     title: "Aus der Region",
     text: `Mit Standorten in ${site.branch.locality} und ${site.address.locality} sind wir schnell vor Ort, in Augsburg, am Ammersee und im Allgäu.`,
   },
-  {
-    title: "Gut bewertet",
-    text: `${site.proof.rating} von 5 Sternen bei ${site.proof.reviews} Google-Bewertungen und über ${site.proof.projects} abgeschlossene Projekte in ${site.proof.years} Jahren.`,
-  },
 ];
 
-export default function UeberUns() {
+export default async function UeberUns() {
+  const { rating, reviews } = await getRating();
+  const allReasons = [
+    ...reasons,
+    {
+      title: "Gut bewertet",
+      text: `${rating} von 5 Sternen bei ${reviews} Google-Bewertungen und über ${site.proof.projects} abgeschlossene Projekte in ${site.proof.years} Jahren.`,
+    },
+  ];
   const url = `${site.url}${path}`;
   const schema = [
     { "@type": "AboutPage", "@id": `${url}#seite`, url, name: title, description, about: { "@id": businessId } },
@@ -133,7 +138,7 @@ export default function UeberUns() {
             {[
               { v: String(site.proof.years), l: "Jahre Erfahrung im Landkreis Landsberg" },
               { v: `${site.proof.projects}+`, l: "abgeschlossene Projekte" },
-              { v: site.proof.rating, l: `von 5 Sternen bei ${site.proof.reviews} Google-Bewertungen` },
+              { v: rating, l: `von 5 Sternen bei ${reviews} Google-Bewertungen` },
             ].map((f, i) => (
               <div key={f.l} data-reveal style={{ ["--i" as string]: i }}>
                 <dt className="sr-only">{f.l}</dt>
@@ -153,7 +158,7 @@ export default function UeberUns() {
               Warum {site.name}?
             </h2>
             <ul className="mt-xxl grid gap-lg sm:grid-cols-2 lg:grid-cols-3">
-              {reasons.map((r, i) => (
+              {allReasons.map((r, i) => (
                 <li key={r.title} data-reveal style={{ ["--i" as string]: i % 3 }} className="card p-lg">
                   <h3 className="flex items-start gap-sm text-title-lg">
                     <span aria-hidden className="mt-[0.45em] size-2 shrink-0 bg-primary" />

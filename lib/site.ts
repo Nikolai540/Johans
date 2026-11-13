@@ -30,6 +30,7 @@ export const site = {
     geo: { latitude: 48.0623, longitude: 10.8566 },
   },
   // Angaben von der bisherigen Website
+  // rating und reviews sind nur der Ersatz, wenn die Google-Bewertungen nicht abrufbar sind (siehe getRating in lib/reviews.ts)
   proof: { years: 7, projects: 270, rating: "4,8", reviews: 42 },
   // PLATZHALTER: Erreichbarkeit bestätigen
   hours: [
