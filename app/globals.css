@@ -263,21 +263,6 @@
 
 @keyframes rise { to { opacity: 1; transform: none; } }
 
-/* Hero: 4 Fotos je 6 s, 1,5 s Überblendung. Ohne Animation (Bewegung reduziert) bleibt das erste stehen. */
-.hero-slide:not(:first-child) { opacity: 0; }
-@media (prefers-reduced-motion: no-preference) {
-  .hero-slide {
-    opacity: 0;
-    animation: hero-fade 24s linear infinite;
-    animation-delay: calc(var(--i) * 6s - 1.5s);
-  }
-}
-@keyframes hero-fade {
-  0% { opacity: 0; }
-  6.25%, 25% { opacity: 1; }
-  31.25%, 100% { opacity: 0; }
-}
-
 
 /* Sehr schmale Geräte oder stark vergrößerte Schrift (rem folgt der Schriftgröße im Browser):
    Überschriften eine Stufe kleiner, lange Komposita wie „Haushaltsauflösung“ trennen statt überlaufen */

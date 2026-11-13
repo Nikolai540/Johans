@@ -4,8 +4,7 @@ import { photos } from "@/lib/images";
 import { homeCopy } from "@/lib/homes";
 import { locationById, type LocationId } from "@/lib/site";
 
-// Überblendung der vorhandenen Fotos; nur das erste lädt sofort, die anderen danach
-const slides = [photos.landsbergLechwehr, photos.entkernung, photos.sperrmuell, photos.abbruch];
+const hero = photos.landsbergLechwehr;
 
 export function Hero({ location }: { location: LocationId }) {
   const copy = homeCopy[location];
@@ -15,28 +14,19 @@ export function Hero({ location }: { location: LocationId }) {
       aria-labelledby="hero-title"
       className="on-dark relative isolate flex min-h-[560px] flex-col justify-end bg-surface-dark text-on-dark h-[calc(100svh-var(--spacing-nav))]"
     >
-      {slides.map((p, i) => (
-        <div key={p.caption} className="hero-slide absolute inset-0 -z-10" style={{ ["--i" as string]: i }}>
-          <Image
-            src={p.src}
-            alt={i === 0 ? p.alt : ""}
-            fill
-            preload={i === 0}
-            sizes="100vw"
-            placeholder="blur"
-            className="object-cover object-[50%_35%]"
-          />
-        </div>
-      ))}
+      <Image
+        src={hero.src}
+        alt={hero.alt}
+        fill
+        preload
+        sizes="100vw"
+        placeholder="blur"
+        className="-z-10 object-cover object-[50%_35%]"
+      />
       <div aria-hidden className="absolute inset-0 -z-10 bg-surface-dark/60" />
-      {/* Bildtexte über der Abdunklung, mit den Fotos synchron */}
-      <ul aria-hidden className="absolute right-md bottom-xs hidden text-body-sm text-on-dark-soft md:block lg:right-xl">
-        {slides.map((p, i) => (
-          <li key={p.caption} className="hero-slide absolute right-0 bottom-0 whitespace-nowrap" style={{ ["--i" as string]: i }}>
-            {p.caption}
-          </li>
-        ))}
-      </ul>
+      <p aria-hidden className="absolute right-md bottom-xs hidden text-body-sm text-on-dark-soft md:block lg:right-xl">
+        {hero.caption}
+      </p>
 
       <div className="page-x mx-auto w-full max-w-page pb-xxl lg:pb-section">
         <h1 id="hero-title" className="max-w-[22ch] text-display-md text-on-dark sm:text-display-lg">
