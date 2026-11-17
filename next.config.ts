@@ -17,6 +17,9 @@ const csp = [
   "base-uri 'self'",
   "form-action 'self'",
   "frame-ancestors 'none'",
+  // report-to für Chrome, Edge, Safari; report-uri für Firefox, das report-to bei CSP nicht kennt
+  "report-to csp",
+  "report-uri /api/csp-report/",
 ].join("; ");
 
 const nextConfig: NextConfig = {
@@ -33,9 +36,12 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         headers: [
           { key: "Content-Security-Policy-Report-Only", value: csp },
+          { key: "Reporting-Endpoints", value: 'csp="/api/csp-report/"' },
           // frame-ancestors greift im Report-Only-Modus nicht, deshalb Einbettungsschutz hier scharf
           { key: "Content-Security-Policy", value: "frame-ancestors 'none'" },
           { key: "X-Frame-Options", value: "DENY" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
         ],
       },
     ];
