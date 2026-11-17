@@ -1,13 +1,13 @@
 import type { StaticImageData } from "next/image";
 
-import baustelle from "@/public/images/platzhalter/baustelle.jpg";
-import johann from "@/public/images/platzhalter/johann.jpg";
-import schadstoffe from "@/public/images/platzhalter/schadstoffe.jpg";
+import baustelle from "@/public/images/ueber-uns/baustelle.jpg";
+import johann from "@/public/images/ueber-uns/johann.jpg";
+import schadstoffe from "@/public/images/schadstoffe/schadstoffe.jpg";
 
 export type Placeholder = { src: StaticImageData; alt: string; caption: string };
 
 // PLATZHALTER: Einfarbige Testbilder für die Seiten Schadstoffe und Über uns.
-// Eigene Fotos unter gleichem Namen in public/images/platzhalter/ ablegen (oder Import ändern)
+// Eigene Fotos unter gleichem Namen in public/images/schadstoffe/ bzw. ueber-uns/ ablegen (oder Import ändern)
 // und Bildtext ohne "Platzhalter:" eintragen.
 export const placeholders = {
   schadstoffe: {

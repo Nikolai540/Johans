@@ -8,7 +8,7 @@ import { ServiceLink } from "@/components/ServiceLink";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { services, type ServiceId } from "@/lib/content";
-import { photos } from "@/lib/images";
+import { folderOf, photo } from "@/lib/images";
 import { regionById, regions, type RegionPage as RegionPageData } from "@/lib/regions";
 import { locationById, pages, site } from "@/lib/site";
 
@@ -44,8 +44,8 @@ const addresses = {
 export function RegionPage({ page }: { page: RegionPageData }) {
   const region = regionById(page.region);
   const others = regions.filter((r) => r.id !== region.id);
-  const hero = photos[page.hero];
-  const local = photos[page.local.photo];
+  const hero = photo(folderOf(region.href), page.hero);
+  const local = photo(folderOf(region.href), page.local.photo);
   const url = `${site.url}${region.href}`;
 
   const schema = [

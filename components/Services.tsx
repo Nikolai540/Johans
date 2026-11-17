@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ArrowIcon, PhoneIcon } from "@/components/Icons";
 import { ServiceIndex } from "@/components/ServiceIndex";
 import { serviceCategories, services } from "@/lib/content";
-import { photos } from "@/lib/images";
+import { photo as pagePhoto } from "@/lib/images";
 import { site } from "@/lib/site";
 
 const shapes = {
@@ -39,7 +39,7 @@ export function Services() {
 
         <div className="flex flex-col gap-section lg:col-span-8 lg:col-start-5">
           {serviceCategories.map((cat, i) => {
-            const photo = photos[cat.photo];
+            const photo = pagePhoto("startseite", cat.photo);
             const shape = shapes[cat.shape];
             const frame = mobileFrames[i % mobileFrames.length];
             return (

@@ -3,12 +3,12 @@ import Image from "next/image";
 import { ConsentSettingsButton } from "@/components/CookieBanner";
 import { LogoFull } from "@/components/Logo";
 import auftragsbank from "@/public/images/partner/auftragsbank.png";
-import { photos } from "@/lib/images";
+import { photo, photos } from "@/lib/images";
 import { nav, serviceNav, site } from "@/lib/site";
 
 /** home: Startseite, auf der der Footer steht – Sprungmarken wie "/#faq" bleiben dann auf dieser Seite */
 export function SiteFooter({ home = "/" }: { home?: string }) {
-  const stamp = photos.landsbergBayertor;
+  const stamp = photo("allgemein", "landsbergBayertor");
   const credits = Object.values(photos).map((p) => p.credit);
 
   return (

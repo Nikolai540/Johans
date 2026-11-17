@@ -7,12 +7,12 @@ import { areaServed, businessId, faqGraph, JsonLd } from "@/components/JsonLd";
 import { MobileActions } from "@/components/MobileActions";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { photos } from "@/lib/images";
+import { folderOf, photo } from "@/lib/images";
 import { pages, site } from "@/lib/site";
 import type { SubPage } from "@/lib/subpages";
 
 export function ServicePage({ page }: { page: SubPage }) {
-  const hero = photos[page.hero];
+  const hero = photo(folderOf(page.path), page.hero);
   const url = `${site.url}${page.path}`;
   const others = Object.values(pages).filter((p) => p.href !== page.path);
   // Mit Containergrößen tauschen Anlässe und Checkliste die Fläche

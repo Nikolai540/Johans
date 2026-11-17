@@ -21,9 +21,9 @@ export const metadata: Metadata = {
     siteName: site.name,
     title,
     description,
-    images: [{ url: "/images/landsberg-lechwehr.jpg", width: 1920, height: 989, alt: "Lechwehr in Landsberg am Lech" }],
+    images: [{ url: "/images/vilgertshofen/landsberg-lechwehr.jpg", width: 1920, height: 989, alt: "Lechwehr in Landsberg am Lech" }],
   },
-  twitter: { card: "summary_large_image", title, description, images: ["/images/landsberg-lechwehr.jpg"] },
+  twitter: { card: "summary_large_image", title, description, images: ["/images/vilgertshofen/landsberg-lechwehr.jpg"] },
   other: {
     "geo.region": "DE-BY",
     "geo.placename": loc.town,

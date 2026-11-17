@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-import { photos } from "@/lib/images";
+import { photo } from "@/lib/images";
 import { homeCopy } from "@/lib/homes";
 import { locationById, type LocationId } from "@/lib/site";
 
 // Überblendung der vorhandenen Fotos; nur das erste lädt sofort, die anderen danach
-const slides = [photos.landsbergLechwehr, photos.entkernung, photos.sperrmuell, photos.abbruch];
+const slides = [photo("startseite", "landsbergLechwehr"), photo("startseite", "entkernung"), photo("startseite", "sperrmuell"), photo("startseite", "abbruch")];
 
 export function Hero({ location }: { location: LocationId }) {
   const copy = homeCopy[location];

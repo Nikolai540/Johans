@@ -40,7 +40,7 @@ export function businessGraph() {
       hasMap: mapUrl(site.address.street, site.address.postalCode, site.address.locality),
       telephone: site.phone.e164,
       email: site.email,
-      image: `${site.url}/images/landsberg-lechwehr.jpg`,
+      image: `${site.url}/images/allgemein/landsberg-lechwehr.jpg`,
       logo: `${site.url}/logo.svg`,
       description:
         "Entkernung, Abbruch und Rückbau, Entrümpelung, Haushaltsauflösung und Renovierung mit Trockenbau, Bodenverlegung und Umzügen. Firmensitz in Vilgertshofen, Standort in Landsberg am Lech.",
@@ -73,7 +73,7 @@ export function businessGraph() {
       hasMap: mapUrl(site.branch.street, site.branch.postalCode, site.branch.locality),
       telephone: site.phone.e164,
       email: site.email,
-      image: `${site.url}/images/landsberg-lechwehr.jpg`,
+      image: `${site.url}/images/allgemein/landsberg-lechwehr.jpg`,
       address: {
         "@type": "PostalAddress",
         streetAddress: site.branch.street,

@@ -1,17 +1,17 @@
 import type { StaticImageData } from "next/image";
 
-import p1 from "@/public/images/galerie/platzhalter-1.jpg";
-import p2 from "@/public/images/galerie/platzhalter-2.jpg";
-import p3 from "@/public/images/galerie/platzhalter-3.jpg";
-import p4 from "@/public/images/galerie/platzhalter-4.jpg";
-import p5 from "@/public/images/galerie/platzhalter-5.jpg";
-import p6 from "@/public/images/galerie/platzhalter-6.jpg";
-import p7 from "@/public/images/galerie/platzhalter-7.jpg";
-import p8 from "@/public/images/galerie/platzhalter-8.jpg";
+import p1 from "@/public/images/startseite/galerie/platzhalter-1.jpg";
+import p2 from "@/public/images/startseite/galerie/platzhalter-2.jpg";
+import p3 from "@/public/images/startseite/galerie/platzhalter-3.jpg";
+import p4 from "@/public/images/startseite/galerie/platzhalter-4.jpg";
+import p5 from "@/public/images/startseite/galerie/platzhalter-5.jpg";
+import p6 from "@/public/images/startseite/galerie/platzhalter-6.jpg";
+import p7 from "@/public/images/startseite/galerie/platzhalter-7.jpg";
+import p8 from "@/public/images/startseite/galerie/platzhalter-8.jpg";
 
 export type GalleryItem = { src: StaticImageData; alt: string; caption: string; placeholder?: boolean };
 
-// PLATZHALTER: Einfarbige Testbilder. Eigene Baustellenfotos in public/images/galerie/ ablegen,
+// PLATZHALTER: Einfarbige Testbilder. Eigene Baustellenfotos in public/images/startseite/galerie/ ablegen,
 // Import, Alternativtext und Bildtext anpassen und "placeholder" entfernen.
 // Format: Handyfotos quer im Standardformat 4:3 füllen den Rahmen ganz, Hochkant-Fotos werden
 // vollständig mit Rand gezeigt. Vor dem Ablegen auf 2000 px an der langen Seite verkleinern (JPG, Qualität 80).

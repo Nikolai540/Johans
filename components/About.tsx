@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { ArrowIcon } from "@/components/Icons";
-import { photos, type PhotoKey } from "@/lib/images";
+import { photo, type PhotoKey } from "@/lib/images";
 import { homeCopy } from "@/lib/homes";
 import { aboutPage, type LocationId } from "@/lib/site";
 
@@ -41,7 +41,7 @@ export function About({ location }: { location: LocationId }) {
 
         <div className="flex flex-col gap-xxl lg:col-span-5 lg:col-start-8 lg:gap-[30svh] lg:py-[18svh]">
           {passing.map(({ key, ratio, frame }) => {
-            const p = photos[key];
+            const p = photo("startseite", key);
             return (
               <figure key={key} className={frame}>
                 <div className={`relative overflow-hidden bg-surface-card ${ratio}`}>

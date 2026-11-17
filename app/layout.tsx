@@ -46,9 +46,9 @@ export const metadata: Metadata = {
     siteName: site.name,
     title,
     description,
-    images: [{ url: "/images/landsberg-lechwehr.jpg", width: 1920, height: 989, alt: "Lechwehr in Landsberg am Lech" }],
+    images: [{ url: "/images/allgemein/landsberg-lechwehr.jpg", width: 1920, height: 989, alt: "Lechwehr in Landsberg am Lech" }],
   },
-  twitter: { card: "summary_large_image", title, description, images: ["/images/landsberg-lechwehr.jpg"] },
+  twitter: { card: "summary_large_image", title, description, images: ["/images/allgemein/landsberg-lechwehr.jpg"] },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
   formatDetection: { telephone: true, email: true, address: true },
   other: {
