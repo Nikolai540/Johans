@@ -263,6 +263,9 @@
 
 @keyframes rise { to { opacity: 1; transform: none; } }
 
+/* Ohne JavaScript gäbe es die Mauer nicht einzureißen: dann gar nicht erst zeigen */
+@media (scripting: none) { [data-wall] { display: none; } }
+
 /* Hero: 4 Fotos je 6 s, 1,5 s Überblendung. Ohne Animation (Bewegung reduziert) bleibt das erste stehen. */
 .hero-slide:not(:first-child) { opacity: 0; }
 @media (prefers-reduced-motion: no-preference) {
