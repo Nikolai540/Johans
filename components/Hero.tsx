@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { HeroWall } from "@/components/HeroWall";
 import { photo } from "@/lib/images";
 import { homeCopy } from "@/lib/homes";
 import { locationById, type LocationId } from "@/lib/site";
@@ -13,7 +14,7 @@ export function Hero({ location }: { location: LocationId }) {
     <section
       id="top"
       aria-labelledby="hero-title"
-      className="on-dark relative isolate flex min-h-[560px] flex-col justify-end bg-surface-dark text-on-dark h-[calc(100svh-var(--spacing-nav))]"
+      className="on-dark relative isolate flex min-h-[560px] flex-col justify-end bg-surface-dark text-on-dark h-[calc(100dvh-var(--spacing-nav))]"
     >
       {slides.map((p, i) => (
         <div key={p.caption} className="hero-slide absolute inset-0 -z-10" style={{ ["--i" as string]: i }}>
@@ -68,6 +69,7 @@ export function Hero({ location }: { location: LocationId }) {
           </a>
         </div>
       </div>
+      <HeroWall />
     </section>
   );
 }

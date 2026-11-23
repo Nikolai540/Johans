@@ -299,3 +299,11 @@
 
 /* Offene Großansicht der Galerie: Seite dahinter scrollt nicht mit */
 html:has(dialog[open]) { overflow: hidden; }
+
+/* Wanddurchbruch vor dem Hero-Foto (components/HeroWall.tsx). Ohne JavaScript oder mit „Bewegung reduzieren“
+   erscheint die Wand nie. Hydriert React nie, gibt sie das Foto nach 6 s trotzdem frei. */
+.hero-wall { display: none; }
+@media (prefers-reduced-motion: no-preference) and (scripting: enabled) {
+  .hero-wall { display: block; animation: hero-wall-off 0s 6s forwards; }
+}
+@keyframes hero-wall-off { to { visibility: hidden; } }
