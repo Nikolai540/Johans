@@ -223,7 +223,7 @@ export default function UeberUns() {
         </section>
 
         {/* Handlungsaufforderung */}
-        <section aria-labelledby="cta-titel" className="on-dark bg-surface-dark py-section text-on-dark">
+        <section aria-labelledby="cta-titel" className="on-dark bg-putz py-section text-on-dark">
           <div className="page-x mx-auto grid max-w-page gap-xl lg:grid-cols-12 lg:items-end lg:gap-lg">
             <div className="lg:col-span-7">
               <h2 id="cta-titel" data-reveal className="text-display-md text-on-dark lg:text-display-lg">

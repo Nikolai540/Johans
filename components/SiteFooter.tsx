@@ -14,9 +14,7 @@ export function SiteFooter({ home = "/" }: { home?: string }) {
   return (
     <footer className="bg-surface-soft pt-section pb-[calc(var(--spacing-xxl)+88px)] lg:pb-xxl">
       <div className="page-x mx-auto max-w-page">
-        {/* Putz-Textur aus dem Logo-Hintergrund als gespiegelte Kachel (3200 × 1066 px, nahtlos).
-            Wiederholt statt gestreckt und in halber Größe gezeigt, damit sie auf Retina-Bildschirmen scharf bleibt. */}
-        <div className="on-dark relative grid gap-xxl bg-surface-dark bg-[url(/images/allgemein/textur-kachel.webp)] bg-size-[1600px_533px] p-lg text-on-dark sm:p-xxl lg:grid-cols-2">
+        <div className="on-dark bg-putz relative grid gap-xxl p-lg text-on-dark sm:p-xxl lg:grid-cols-2">
           <div>
             <Logo alt={site.name} className="mb-xl h-auto w-64 max-w-full" />
             <p className="text-display-md text-on-dark">Bis bald in Landsberg.</p>

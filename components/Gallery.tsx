@@ -5,7 +5,7 @@ import type { GalleryItem } from "@/lib/gallery";
 // Fotos von den Baustellen (Startseite und große Leistungsseiten): Text oben, darunter der Bilderstreifen über die volle Breite
 export function Gallery({ items }: { items: GalleryItem[] }) {
   return (
-    <section id="baustellen" aria-labelledby="baustellen-title" className="on-dark bg-surface-dark py-section text-on-dark">
+    <section id="baustellen" aria-labelledby="baustellen-title" className="on-dark bg-putz py-section text-on-dark">
       <div className="page-x mx-auto flex max-w-page flex-col gap-lg lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-[40rem]">
           <h2 id="baustellen-title" data-reveal className="text-display-md text-on-dark lg:text-display-lg">

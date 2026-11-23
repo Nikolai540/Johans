@@ -23,7 +23,7 @@ export function PageHero({
   portrait?: boolean;
 }) {
   return (
-    <section aria-labelledby="seite-titel" className="on-dark bg-surface-dark text-on-dark">
+    <section aria-labelledby="seite-titel" className="on-dark bg-putz text-on-dark">
       <div className="page-x mx-auto grid max-w-page gap-xxl py-xxl lg:grid-cols-12 lg:gap-lg lg:py-section">
         <div className="flex flex-col justify-center lg:col-span-7">
           <nav aria-label="Brotkrumen" className="text-body-sm text-on-dark-soft">

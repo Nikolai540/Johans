@@ -11,7 +11,7 @@ export async function Reviews({ location }: { location: LocationId }) {
 
   // overflow-x-clip: Karten, die seitlich hereinfliegen, verbreitern sonst kurz die Seite
   return (
-    <section id="bewertungen" aria-labelledby="bewertungen-title" className="on-dark overflow-x-clip bg-surface-dark pb-section text-on-dark">
+    <section id="bewertungen" aria-labelledby="bewertungen-title" className="on-dark overflow-x-clip bg-putz pb-section text-on-dark">
       <div className="page-x mx-auto grid max-w-page gap-xxl lg:grid-cols-12 lg:gap-lg">
         <div className="lg:col-span-4">
           <h2 id="bewertungen-title" data-reveal className="text-display-md text-on-dark lg:text-display-lg">

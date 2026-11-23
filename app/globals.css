@@ -207,6 +207,9 @@
 
   /* Karten: heben sich durch Fläche, Rand und Schatten ab. Die gelbe Kante erscheint erst beim Überfahren
      (oder bei Tastaturfokus in der Karte): 1px Rand plus 3px Innenschatten, damit sie dem Radius folgt. */
+  /* Dunkle Abschnitte: Putz-Relief als Vektorgrafik, rechnet sich in jeder Größe scharf */
+  .bg-putz { background: var(--color-surface-dark) url(/images/allgemein/hintergrund.svg) center / cover; }
+
   .card {
     position: relative;
     background-color: var(--color-canvas);

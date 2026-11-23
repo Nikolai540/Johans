@@ -170,7 +170,7 @@ export default function Schadstoffe() {
         </section>
 
         {/* Ablauf nach TRGS 519 */}
-        <section aria-labelledby="ablauf-titel" className="on-dark bg-surface-dark py-section text-on-dark">
+        <section aria-labelledby="ablauf-titel" className="on-dark bg-putz py-section text-on-dark">
           <div className="page-x mx-auto max-w-page">
             <div className="grid gap-xl lg:grid-cols-12 lg:gap-lg">
               <h2 id="ablauf-titel" data-reveal className="text-display-md text-on-dark lg:col-span-6 lg:text-display-lg">
@@ -247,7 +247,7 @@ export default function Schadstoffe() {
         </section>
 
         {/* Handlungsaufforderung */}
-        <section aria-labelledby="cta-titel" className="on-dark bg-surface-dark py-section text-on-dark">
+        <section aria-labelledby="cta-titel" className="on-dark bg-putz py-section text-on-dark">
           <div className="page-x mx-auto grid max-w-page gap-xl lg:grid-cols-12 lg:items-end lg:gap-lg">
             <div className="lg:col-span-7">
               <h2 id="cta-titel" data-reveal className="text-display-md text-on-dark lg:text-display-lg">

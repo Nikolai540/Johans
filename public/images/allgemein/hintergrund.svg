@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 533" width="1600" height="533">
+  <defs>
+    <!-- Basis-Farbton exakt abgestimmt auf #252422 (RGB 37, 36, 34) mit sanfter Studio-Vignette -->
+    <radialGradient id="studio-light" cx="50%" cy="42%" r="72%" fx="50%" fy="32%">
+      <stop offset="0%" stop-color="#2D2C29"/>
+      <stop offset="55%" stop-color="#252422"/>
+      <stop offset="100%" stop-color="#1D1C1A"/>
+    </radialGradient>
+
+    <!-- Prozedurale Putz-/Beton-Relief-Struktur im warmen #252422-Farbton -->
+    <filter id="dark-plaster-relief" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <!-- Grobe Spachtel-/Putz-Topografie -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.022 0.032" numOctaves="5" seed="14" result="coarseNoise"/>
+      <!-- Feine mineralische Körnung -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.11 0.14" numOctaves="3" seed="42" result="fineNoise"/>
+
+      <!-- Kombination aus grober und feiner Struktur -->
+      <feBlend in="coarseNoise" in2="fineNoise" mode="overlay" result="combinedRelief"/>
+
+      <!-- Diffuses Schräglicht von oben links für plastische Putzfurchen -->
+      <feDiffuseLighting in="combinedRelief" surfaceScale="5.2" diffuseConstant="1.15" lighting-color="#FFFDF8" result="diffuseLight">
+        <feDistantLight azimuth="235" elevation="40"/>
+      </feDiffuseLighting>
+
+      <!-- Dezente Glanzlichter auf den erhabenen Putzkanten -->
+      <feSpecularLighting in="coarseNoise" surfaceScale="4.2" specularConstant="0.38" specularExponent="18" lighting-color="#EAE6DF" result="specLight">
+        <feDistantLight azimuth="235" elevation="44"/>
+      </feSpecularLighting>
+
+      <!-- Farbmatrix kalibriert auf den Zielton #252422 (RGB 37, 36, 34) -->
+      <feColorMatrix in="diffuseLight" type="matrix" values="
+        0.26 0    0    0 0.045
+        0    0.253 0   0 0.043
+        0    0    0.238 0 0.040
+        0    0    0    1 0" result="darkBase"/>
+
+      <feColorMatrix in="specLight" type="matrix" values="
+        0.34 0    0    0 0
+        0    0.33 0    0 0
+        0    0    0.31 0 0
+        0    0    0    1 0" result="softSpec"/>
+
+      <!-- Relief-Licht und #252422-Basis miteinander verrechnen -->
+      <feComposite in="darkBase" in2="softSpec" operator="arithmetic" k1="0" k2="1" k3="0.85" k4="0" result="litTexture"/>
+      <feBlend in="SourceGraphic" in2="litTexture" mode="hard-light" result="finalPlaster"/>
+    </filter>
+  </defs>
+
+  <g id="background-layer">
+    <rect width="1600" height="533" fill="#252422"/>
+    <rect width="1600" height="533" fill="url(#studio-light)" filter="url(#dark-plaster-relief)"/>
+  </g>
+</svg>
