@@ -32,16 +32,16 @@ export function Services() {
           {serviceCategories.map((cat) => {
             const photo = pagePhoto("startseite", cat.photo);
             return (
-              <article key={cat.id} aria-labelledby={`leistung-${cat.id}`} className="card grid overflow-hidden lg:grid-cols-8">
+              <article key={cat.id} aria-labelledby={`leistung-${cat.id}`} className="card card-dark bg-putz on-dark grid overflow-hidden lg:grid-cols-8">
                 <div className="flex flex-col p-lg sm:p-xl lg:col-span-5">
                   <h3
                     id={`leistung-${cat.id}`}
                     data-reveal
-                    className="scroll-mt-[calc(var(--spacing-nav)+var(--spacing-lg))] text-display-sm"
+                    className="scroll-mt-[calc(var(--spacing-nav)+var(--spacing-lg))] text-display-sm text-on-dark"
                   >
                     {cat.name}
                   </h3>
-                  <p data-reveal style={{ ["--i" as string]: 1 }} className="mt-sm max-w-[52ch] text-body-md">
+                  <p data-reveal style={{ ["--i" as string]: 1 }} className="mt-sm max-w-[52ch] text-body-md text-on-dark-soft">
                     {cat.text}
                   </p>
                   <ul data-reveal style={{ ["--i" as string]: 2 }} className="mt-lg grid gap-sm">
@@ -50,8 +50,8 @@ export function Services() {
                       return (
                         <li key={item.name} className="flex gap-sm">
                           <span aria-hidden className="mt-[0.55em] size-2 shrink-0 bg-primary" />
-                          <span className="text-body-md">
-                            <span className="font-bold text-ink">{item.name}:</span> {item.short}
+                          <span className="text-body-md text-on-dark-soft">
+                            <span className="font-bold text-on-dark">{item.name}:</span> {item.short}
                           </span>
                         </li>
                       );
@@ -63,10 +63,16 @@ export function Services() {
                   </a>
                 </div>
                 {/* Bild randlos: mobil volle Kartenbreite unter dem Text, Desktop volle Kartenhöhe rechts.
-                    Der Verlauf blendet von der Kartenfarbe ins Bild über. */}
-                <figure className="relative aspect-[4/3] bg-surface-card lg:col-span-3 lg:aspect-auto lg:min-h-[28rem]">
-                  <Image src={photo.src} alt={photo.alt} fill sizes="(min-width: 1024px) 25vw, 100vw" placeholder="blur" className="object-cover" />
-                  <div aria-hidden className="absolute inset-0 bg-linear-to-b from-canvas to-transparent to-40% lg:bg-linear-to-r lg:to-45%" />
+                    Eine Maske blendet das Bild selbst aus, so läuft es weich in den Putz-Hintergrund über. */}
+                <figure className="relative aspect-[4/3] lg:col-span-3 lg:aspect-auto lg:min-h-[28rem]">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="(min-width: 1024px) 25vw, 100vw"
+                    placeholder="blur"
+                    className="object-cover [mask-image:linear-gradient(to_bottom,transparent,black_40%)] lg:[mask-image:linear-gradient(to_right,transparent,black_45%)]"
+                  />
                   <figcaption className="absolute right-xs bottom-xs bg-canvas/85 px-xs py-[2px] text-body-sm text-body">{photo.caption}</figcaption>
                 </figure>
               </article>

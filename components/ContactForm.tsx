@@ -187,7 +187,7 @@ export function ContactForm({ initial = [], title = "Anfrage senden" }: { initia
         <div className="lg:col-span-4 lg:col-start-9 lg:row-span-6 lg:row-start-1">
           <aside
             aria-label="Vorschau: Ihr Bauschild"
-            className="card card-dark p-lg text-on-dark lg:sticky lg:top-[calc(var(--spacing-nav)+var(--spacing-xxl))] lg:p-xl"
+            className="card card-dark bg-putz p-lg text-on-dark lg:sticky lg:top-[calc(var(--spacing-nav)+var(--spacing-xxl))] lg:p-xl"
           >
             <p className="text-title-lg text-on-dark">Ihr Bauschild</p>
             <dl className="mt-lg grid gap-md text-body-md">
