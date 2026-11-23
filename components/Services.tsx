@@ -33,7 +33,7 @@ export function Services() {
             const photo = pagePhoto("startseite", cat.photo);
             return (
               <article key={cat.id} aria-labelledby={`leistung-${cat.id}`} className="card grid overflow-hidden lg:grid-cols-8">
-                <div className="flex flex-col p-lg sm:p-xl lg:col-span-5">
+                <div className="flex flex-col p-lg sm:p-xl lg:col-span-4">
                   <h3
                     id={`leistung-${cat.id}`}
                     data-reveal
@@ -64,8 +64,8 @@ export function Services() {
                 </div>
                 {/* Bild randlos: mobil volle Kartenbreite unter dem Text, Desktop volle Kartenhöhe rechts.
                     Der Verlauf blendet von der Kartenfarbe ins Bild über. */}
-                <figure className="relative aspect-[4/3] bg-surface-card lg:col-span-3 lg:aspect-auto lg:min-h-[28rem]">
-                  <Image src={photo.src} alt={photo.alt} fill sizes="(min-width: 1024px) 25vw, 100vw" placeholder="blur" className="object-cover" />
+                <figure className="relative aspect-[4/3] bg-surface-card lg:col-span-4 lg:aspect-auto lg:min-h-[28rem]">
+                  <Image src={photo.src} alt={photo.alt} fill sizes="(min-width: 1024px) 33vw, 100vw" placeholder="blur" className="object-cover" />
                   <div aria-hidden className="absolute inset-0 bg-linear-to-b from-canvas to-transparent to-40% lg:bg-linear-to-r lg:to-45%" />
                   <figcaption className="absolute right-xs bottom-xs bg-canvas/85 px-xs py-[2px] text-body-sm text-body">{photo.caption}</figcaption>
                 </figure>
