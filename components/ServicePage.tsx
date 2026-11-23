@@ -1,18 +1,22 @@
 import Image from "next/image";
 
 import { Contact } from "@/components/Contact";
+import { Gallery } from "@/components/Gallery";
 import { ContainerSizes } from "@/components/ContainerSizes";
 import { ArrowIcon, ChevronIcon, PhoneIcon } from "@/components/Icons";
 import { areaServed, businessId, faqGraph, JsonLd } from "@/components/JsonLd";
 import { MobileActions } from "@/components/MobileActions";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { galleries } from "@/lib/gallery";
 import { folderOf, photo } from "@/lib/images";
 import { pages, site } from "@/lib/site";
 import type { SubPage } from "@/lib/subpages";
 
 export function ServicePage({ page }: { page: SubPage }) {
   const hero = photo(folderOf(page.path), page.hero);
+  // Karussell nur auf den großen Leistungsseiten, die einen Ordner galerie/ haben
+  const gallery = galleries[folderOf(page.path)];
   const url = `${site.url}${page.path}`;
   const others = Object.values(pages).filter((p) => p.href !== page.path);
   // Mit Containergrößen tauschen Anlässe und Checkliste die Fläche
@@ -288,6 +292,8 @@ export function ServicePage({ page }: { page: SubPage }) {
             </div>
           </div>
         </section>
+
+        {gallery && <Gallery items={gallery} />}
 
         {/* FAQ */}
         <section aria-labelledby="faq-titel" className="bg-canvas py-section">

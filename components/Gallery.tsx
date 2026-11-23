@@ -1,8 +1,9 @@
 import { ArrowIcon } from "@/components/Icons";
 import { GalleryCarousel } from "@/components/GalleryCarousel";
+import type { GalleryItem } from "@/lib/gallery";
 
-// Fotos von den Baustellen auf der Startseite: Text oben, darunter der Bilderstreifen über die volle Breite
-export function Gallery() {
+// Fotos von den Baustellen (Startseite und große Leistungsseiten): Text oben, darunter der Bilderstreifen über die volle Breite
+export function Gallery({ items }: { items: GalleryItem[] }) {
   return (
     <section id="baustellen" aria-labelledby="baustellen-title" className="on-dark bg-surface-dark py-section text-on-dark">
       <div className="page-x mx-auto flex max-w-page flex-col gap-lg lg:flex-row lg:items-end lg:justify-between">
@@ -20,7 +21,7 @@ export function Gallery() {
           <ArrowIcon className="size-4" />
         </a>
       </div>
-      <GalleryCarousel className="mt-xxl" />
+      <GalleryCarousel items={items} className="mt-xxl" />
     </section>
   );
 }

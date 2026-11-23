@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 
 import { Contact } from "@/components/Contact";
+import { Gallery } from "@/components/Gallery";
 import { ChevronIcon, PhoneIcon } from "@/components/Icons";
 import { areaServed, businessId, faqGraph, JsonLd } from "@/components/JsonLd";
 import { MobileActions } from "@/components/MobileActions";
 import { PageHero } from "@/components/PageHero";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { galleries } from "@/lib/gallery";
 import { placeholders } from "@/lib/placeholders";
 import { schadstoffe as page } from "@/lib/schadstoffe";
 import { pages, site } from "@/lib/site";
@@ -221,6 +223,8 @@ export default function Schadstoffe() {
             </div>
           </div>
         </section>
+
+        <Gallery items={galleries.schadstoffe} />
 
         {/* FAQ */}
         <section aria-labelledby="faq-titel" className="bg-canvas py-section">
