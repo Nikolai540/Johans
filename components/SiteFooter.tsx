@@ -2,7 +2,6 @@ import Image from "next/image";
 
 import { ConsentSettingsButton } from "@/components/CookieBanner";
 import { Logo } from "@/components/Logo";
-import textur from "@/public/images/allgemein/textur.jpg";
 import auftragsbank from "@/public/images/partner/auftragsbank.png";
 import { photo, photos } from "@/lib/images";
 import { nav, serviceNav, site } from "@/lib/site";
@@ -15,10 +14,10 @@ export function SiteFooter({ home = "/" }: { home?: string }) {
   return (
     <footer className="bg-surface-soft pt-section pb-[calc(var(--spacing-xxl)+88px)] lg:pb-xxl">
       <div className="page-x mx-auto max-w-page">
-        {/* Karte auf der Putz-Textur aus dem Logo-Hintergrund */}
-        <div className="on-dark relative grid gap-xxl overflow-hidden bg-surface-dark p-lg text-on-dark sm:p-xxl lg:grid-cols-2">
-          <Image src={textur} alt="" fill sizes="(min-width: 1280px) 1280px, 100vw" className="object-cover" />
-          <div className="relative">
+        {/* Putz-Textur aus dem Logo-Hintergrund als gespiegelte Kachel (3200 × 1066 px, nahtlos).
+            Wiederholt statt gestreckt und in halber Größe gezeigt, damit sie auf Retina-Bildschirmen scharf bleibt. */}
+        <div className="on-dark relative grid gap-xxl bg-surface-dark bg-[url(/images/allgemein/textur-kachel.webp)] bg-size-[1600px_533px] p-lg text-on-dark sm:p-xxl lg:grid-cols-2">
+          <div>
             <Logo alt={site.name} className="mb-xl h-auto w-64 max-w-full" />
             <p className="text-display-md text-on-dark">Bis bald in Landsberg.</p>
             <p className="mt-md max-w-[44ch] text-body-md text-on-dark-soft">
@@ -26,7 +25,7 @@ export function SiteFooter({ home = "/" }: { home?: string }) {
               Landsberg am Lech, Kaufering, Buchloe, Augsburg, Mindelheim, Schongau, am Ammersee und im Allgäu.
             </p>
           </div>
-          <div className="relative flex gap-lg lg:items-center lg:justify-end">
+          <div className="flex gap-lg lg:items-center lg:justify-end">
             <address className="grid gap-xs not-italic text-title-md text-on-dark lg:justify-items-end lg:text-right">
               <a href={site.phone.href} className="link inline-flex min-h-11 items-center tabular">
                 {site.phone.display}
@@ -45,7 +44,7 @@ export function SiteFooter({ home = "/" }: { home?: string }) {
             </address>
           </div>
           {/* Logos liegen auf dem eigenen Server, damit beim Laden keine Daten an Dritte gehen */}
-          <div className="relative border-t border-surface-dark-elevated pt-lg lg:col-span-2">
+          <div className="border-t border-surface-dark-elevated pt-lg lg:col-span-2">
             <p className="text-title-sm text-on-dark">Unsere Partner</p>
             <ul className="mt-md flex flex-wrap items-center gap-lg">
               <li>
