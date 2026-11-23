@@ -32,7 +32,7 @@ export function Services() {
           {serviceCategories.map((cat) => {
             const photo = pagePhoto("startseite", cat.photo);
             return (
-              <article key={cat.id} aria-labelledby={`leistung-${cat.id}`} className="card card-dark bg-putz on-dark grid overflow-hidden lg:grid-cols-8">
+              <article key={cat.id} aria-labelledby={`leistung-${cat.id}`} data-scroll-card className="card card-dark bg-putz on-dark grid overflow-hidden lg:grid-cols-8">
                 <div className="flex flex-col p-lg sm:p-xl lg:col-span-5">
                   <h3
                     id={`leistung-${cat.id}`}
@@ -71,6 +71,7 @@ export function Services() {
                     fill
                     sizes="(min-width: 1024px) 25vw, 100vw"
                     placeholder="blur"
+                    data-scroll-parallax
                     className="object-cover [mask-image:linear-gradient(to_bottom,transparent,black_40%)] lg:[mask-image:linear-gradient(to_right,transparent,black_45%)]"
                   />
                   <figcaption className="absolute right-xs bottom-xs bg-canvas/85 px-xs py-[2px] text-body-sm text-body">{photo.caption}</figcaption>

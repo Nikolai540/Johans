@@ -77,6 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CookieBanner />
         {/* Einblendung beim Scrollen, startet unabhängig von React */}
         <script async src="/reveal.js" />
+        <script async src="/scroll-fx.js" />
       </body>
     </html>
   );
