@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 export function LegalPage({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <>
-      <header className="on-dark h-nav border-b border-surface-dark-elevated bg-putz">
+      <header className="on-dark h-nav border-b border-surface-dark-elevated bg-surface-dark">
         <div className="page-x mx-auto flex h-full max-w-page items-center justify-between">
           <a href="/" className="flex min-h-11 items-center text-title-md text-on-dark" aria-label={`${site.name} – Startseite`}>
           <Logo className="h-10 w-auto" />

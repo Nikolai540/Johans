@@ -93,7 +93,7 @@ export function SiteHeader() {
   const isActive = (href: string) => (href.startsWith("/#") ? active === href : pathname === href);
 
   return (
-    <header ref={headerRef} className="on-dark sticky top-0 z-50 h-nav border-b border-surface-dark-elevated bg-putz text-on-dark">
+    <header ref={headerRef} className="on-dark sticky top-0 z-50 h-nav border-b border-surface-dark-elevated bg-surface-dark text-on-dark">
       <div className="page-x flex h-full items-center justify-between gap-lg">
         <a href="/" className="flex min-h-11 shrink-0 items-center text-title-md" aria-label={`${site.name} – Startseite`}>
           <Logo className="h-10 w-auto" />
