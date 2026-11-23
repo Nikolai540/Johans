@@ -2,8 +2,8 @@
 name: J&L Bauprojekte
 description: Handwerk aus der Region zwischen Lech und Ammersee – Logo-Gelb auf Anthrazit, warmer Stein, klare Ansprache.
 colors:
-  primary: "#ffc000"
-  primary-active: "#e6ad00"
+  primary: "#FA3E08"
+  primary-active: "#FF6A3D"
   primary-disabled: "#e2ded4"
   ink: "#1d1c1a"
   body: "#3a3834"

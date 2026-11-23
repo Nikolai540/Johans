@@ -6,10 +6,10 @@
    ------------------------------------------------------------------ */
 @theme {
   --color-*: initial;
-  --color-primary: #00E5FF; /* Signal-Orange */
-  --color-primary-active: #00B8CC;
+  --color-primary: #FA3E08; /* Signal-Orange aus dem Logo */
+  --color-primary-active: #FF6A3D; /* heller statt dunkler: dunkle Schrift bleibt lesbar (6:1) */
   --color-primary-disabled: #e2ded4;
-  --color-secondary: #0093A6; /* Petrol: dunklere Stufe von primary, für helle Flächen */
+  --color-secondary: #C73000; /* dunklere Stufe von primary, für Text auf hellen Flächen */
   --color-ink: #1d1c1a;
   --color-body: #3a3834;
   --color-body-strong: #1a1a1a;
