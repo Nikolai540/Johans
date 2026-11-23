@@ -85,7 +85,7 @@ export function RegionPage({ page }: { page: RegionPageData }) {
       <SiteHeader />
       <main id="inhalt">
         {/* Hero */}
-        <section aria-labelledby="seite-titel" className="on-dark bg-surface-dark text-on-dark">
+        <section aria-labelledby="seite-titel" className="on-dark bg-putz text-on-dark">
           <div className="page-x mx-auto grid max-w-page gap-xxl py-xxl lg:grid-cols-12 lg:gap-lg lg:py-section">
             <div className="flex flex-col justify-center lg:col-span-6">
               <nav aria-label="Brotkrumen" className="text-body-sm text-on-dark-soft">
@@ -179,7 +179,7 @@ export function RegionPage({ page }: { page: RegionPageData }) {
         </section>
 
         {/* Vertrauen */}
-        <section aria-labelledby="vertrauen-titel" className="on-dark bg-surface-dark py-section text-on-dark">
+        <section aria-labelledby="vertrauen-titel" className="on-dark bg-putz py-section text-on-dark">
           <div className="page-x mx-auto grid max-w-page gap-xxl lg:grid-cols-12 lg:gap-lg">
             <div className="lg:col-span-5">
               <h2 id="vertrauen-titel" data-reveal className="text-display-md text-on-dark lg:text-display-lg">

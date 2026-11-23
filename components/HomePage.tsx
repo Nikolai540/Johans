@@ -2,6 +2,7 @@ import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Faq } from "@/components/Faq";
 import { Gallery } from "@/components/Gallery";
+import { galleries } from "@/lib/gallery";
 import { faqGraph, JsonLd } from "@/components/JsonLd";
 import { Hero } from "@/components/Hero";
 import { MobileActions } from "@/components/MobileActions";
@@ -31,7 +32,7 @@ export function HomePage({ location }: { location: LocationId }) {
         <Hero location={location} />
         <About location={location} />
         <Services />
-        <Gallery />
+        <Gallery items={galleries.startseite} />
         <Reviews location={location} />
         <Region location={location} />
         <Faq extra={homeCopy[location].faqs} />

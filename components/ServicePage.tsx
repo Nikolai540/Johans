@@ -1,18 +1,22 @@
 import Image from "next/image";
 
 import { Contact } from "@/components/Contact";
+import { Gallery } from "@/components/Gallery";
 import { ContainerSizes } from "@/components/ContainerSizes";
 import { ArrowIcon, ChevronIcon, PhoneIcon } from "@/components/Icons";
 import { areaServed, businessId, faqGraph, JsonLd } from "@/components/JsonLd";
 import { MobileActions } from "@/components/MobileActions";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { galleries } from "@/lib/gallery";
 import { folderOf, photo } from "@/lib/images";
 import { pages, site } from "@/lib/site";
 import type { SubPage } from "@/lib/subpages";
 
 export function ServicePage({ page }: { page: SubPage }) {
   const hero = photo(folderOf(page.path), page.hero);
+  // Karussell nur auf den großen Leistungsseiten, die einen Ordner galerie/ haben
+  const gallery = galleries[folderOf(page.path)];
   const url = `${site.url}${page.path}`;
   const others = Object.values(pages).filter((p) => p.href !== page.path);
   // Mit Containergrößen tauschen Anlässe und Checkliste die Fläche
@@ -53,7 +57,7 @@ export function ServicePage({ page }: { page: SubPage }) {
       <SiteHeader />
       <main id="inhalt">
         {/* Hero */}
-        <section aria-labelledby="seite-titel" className="on-dark bg-surface-dark text-on-dark">
+        <section aria-labelledby="seite-titel" className="on-dark bg-putz text-on-dark">
           <div className="page-x mx-auto grid max-w-page gap-xxl py-xxl lg:grid-cols-12 lg:gap-lg lg:py-section">
             <div className="flex flex-col justify-center lg:col-span-6">
               <nav aria-label="Brotkrumen" className="text-body-sm text-on-dark-soft">
@@ -201,7 +205,7 @@ export function ServicePage({ page }: { page: SubPage }) {
         </section>
 
         {/* Ablauf */}
-        <section aria-labelledby="ablauf-titel" className="on-dark bg-surface-dark py-section text-on-dark">
+        <section aria-labelledby="ablauf-titel" className="on-dark bg-putz py-section text-on-dark">
           <div className="page-x mx-auto max-w-page">
             <h2 id="ablauf-titel" data-reveal className="text-display-md text-on-dark lg:text-display-lg">
               {page.steps.h2}
@@ -288,6 +292,8 @@ export function ServicePage({ page }: { page: SubPage }) {
             </div>
           </div>
         </section>
+
+        {gallery && <Gallery items={gallery} />}
 
         {/* FAQ */}
         <section aria-labelledby="faq-titel" className="bg-canvas py-section">

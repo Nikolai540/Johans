@@ -112,7 +112,6 @@ export const serviceCategories: {
   /** Leistungen aus `services` oder eigene Stichpunkte */
   items: (ServiceId | { name: string; short: string })[];
   photo: PhotoKey;
-  shape: "portrait" | "landscape" | "square";
   page: { href: string; cta: string };
 }[] = [
   {
@@ -121,7 +120,6 @@ export const serviceCategories: {
     text: "Wir entkernen bis auf den Rohbau, bauen Bauteile kontrolliert zurück und übernehmen kleinere Abbrucharbeiten. Steckt Asbest oder alte Mineralwolle im Bestand, bauen wir das gleich fachgerecht mit aus.",
     items: ["entkernung", "abbruch", "rueckbau"],
     photo: "entkernung",
-    shape: "landscape",
     page: { href: pages.entkernung.href, cta: "Alles zu Entkernung, Abbruch & Rückbau" },
   },
   {
@@ -130,7 +128,6 @@ export const serviceCategories: {
     text: "Keller, Dachboden, Garage oder die ganze Wohnung: Wir räumen, trennen und entsorgen. Haushaltsauflösungen nach einem Erbfall, beim Umzug ins Pflegeheim oder vor dem Verkauf erledigen wir diskret und pünktlich. Sie bekommen die Räume besenrein zurück.",
     items: ["entruempelung", "haushaltsaufloesung"],
     photo: "sperrmuell",
-    shape: "portrait",
     page: { href: pages.entruempelung.href, cta: "Alles zu Entrümpelung & Haushaltsauflösung" },
   },
   {
@@ -139,7 +136,6 @@ export const serviceCategories: {
     text: "Trockenbau, neue Böden und auf Wunsch der Umzug: So werden Wohnungen und Häuser wieder bezugsfertig, ob vor dem Einzug, nach dem Mieterwechsel oder vor dem Verkauf.",
     items: ["trockenbau", "bodenverlegung", "umzug"],
     photo: "trockenbau",
-    shape: "portrait",
     page: { href: pages.renovierung.href, cta: "Alles zur Renovierung" },
   },
   {
@@ -152,7 +148,6 @@ export const serviceCategories: {
       { name: "Entsorgung", short: "Fachgerecht und mit Nachweis" },
     ],
     photo: "sanierungFachwerk",
-    shape: "landscape",
     page: { href: pages.schadstoffe.href, cta: "Alles zur Schadstoffsanierung" },
   },
   {
@@ -165,7 +160,6 @@ export const serviceCategories: {
       { name: "Mischabfall", short: "Gemischte Bau- und Gewerbeabfälle" },
     ],
     photo: "abbruch",
-    shape: "square",
     page: { href: containerdienst.path, cta: "Alles zu Container & Entsorgung" },
   },
 ];

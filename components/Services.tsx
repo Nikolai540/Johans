@@ -6,15 +6,6 @@ import { serviceCategories, services } from "@/lib/content";
 import { photo as pagePhoto } from "@/lib/images";
 import { site } from "@/lib/site";
 
-const shapes = {
-  portrait: { ratio: "aspect-[4/5]", desk: "lg:w-full" },
-  landscape: { ratio: "aspect-[3/2]", desk: "lg:w-full" },
-  square: { ratio: "aspect-square", desk: "lg:w-3/4" },
-} as const;
-
-// Abwechselnde Bildbreiten auf dem Smartphone
-const mobileFrames = ["w-full", "ml-auto w-[70%]", "w-[55%]"];
-
 export function Services() {
   return (
     <section id="leistungen" aria-labelledby="leistungen-title" className="bg-surface-soft py-section">
@@ -38,13 +29,11 @@ export function Services() {
         </div>
 
         <div className="flex flex-col gap-section lg:col-span-8 lg:col-start-5">
-          {serviceCategories.map((cat, i) => {
+          {serviceCategories.map((cat) => {
             const photo = pagePhoto("startseite", cat.photo);
-            const shape = shapes[cat.shape];
-            const frame = mobileFrames[i % mobileFrames.length];
             return (
-              <article key={cat.id} aria-labelledby={`leistung-${cat.id}`} className="card grid gap-lg p-lg sm:p-xl lg:grid-cols-8">
-                <div className="flex flex-col lg:col-span-5">
+              <article key={cat.id} aria-labelledby={`leistung-${cat.id}`} className="card grid overflow-hidden lg:grid-cols-8">
+                <div className="flex flex-col p-lg sm:p-xl lg:col-span-5">
                   <h3
                     id={`leistung-${cat.id}`}
                     data-reveal
@@ -73,11 +62,12 @@ export function Services() {
                     <ArrowIcon className="size-4" />
                   </a>
                 </div>
-                <figure className={`${frame} lg:col-span-3 lg:ml-0 ${shape.desk}`}>
-                  <div data-reveal className={`relative overflow-hidden bg-surface-card ${shape.ratio}`}>
-                    <Image src={photo.src} alt={photo.alt} fill sizes="(min-width: 1024px) 25vw, 80vw" placeholder="blur" className="object-cover" />
-                  </div>
-                  <figcaption className="mt-xs text-body-sm text-body">{photo.caption}</figcaption>
+                {/* Bild randlos: mobil volle Kartenbreite unter dem Text, Desktop volle Kartenhöhe rechts.
+                    Der Verlauf blendet von der Kartenfarbe ins Bild über. */}
+                <figure className="relative aspect-[4/3] bg-surface-card lg:col-span-3 lg:aspect-auto lg:min-h-[28rem]">
+                  <Image src={photo.src} alt={photo.alt} fill sizes="(min-width: 1024px) 25vw, 100vw" placeholder="blur" className="object-cover" />
+                  <div aria-hidden className="absolute inset-0 bg-linear-to-b from-canvas to-transparent to-40% lg:bg-linear-to-r lg:to-45%" />
+                  <figcaption className="absolute right-xs bottom-xs bg-canvas/85 px-xs py-[2px] text-body-sm text-body">{photo.caption}</figcaption>
                 </figure>
               </article>
             );

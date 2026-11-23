@@ -4,9 +4,8 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 import { ChevronIcon, CloseIcon, PauseIcon, PlayIcon } from "@/components/Icons";
-import { gallery } from "@/lib/gallery";
+import type { GalleryItem } from "@/lib/gallery";
 
-const count = gallery.length;
 const SPEED = 40; // px pro Sekunde
 
 // Bilderstreifen über die volle Breite, alle Bilder gleich hoch. Er läuft von selbst langsam durch und
@@ -14,7 +13,8 @@ const SPEED = 40; // px pro Sekunde
 // Die Bilder liegen zweimal hintereinander: Ist der Streifen um eine Hälfte weitergelaufen, springt er unsichtbar zurück.
 // shortcut: Bei sehr wenigen Bildern ist eine Hälfte schmaler als der Bildschirm, dann hakt die Schleife. Ab etwa 5 Bildern passt es.
 // Läuft unter der Maus weiter. Pausiert bei Tastaturfokus oder Finger auf dem Streifen, in der Großansicht, per Button und bei reduzierter Bewegung (WCAG 2.2.2).
-export function GalleryCarousel({ className }: { className?: string }) {
+export function GalleryCarousel({ items: gallery, className }: { items: GalleryItem[]; className?: string }) {
+  const count = gallery.length;
   const trackRef = useRef<HTMLDivElement>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [playing, setPlaying] = useState(true);
@@ -90,12 +90,12 @@ export function GalleryCarousel({ className }: { className?: string }) {
                 aria-hidden={copy === 1 || undefined}
                 tabIndex={copy === 1 ? -1 : undefined}
                 aria-label={`${item.caption}, groß anzeigen`}
-                className="relative h-60 shrink-0 overflow-hidden bg-surface-dark-elevated sm:h-72 lg:h-[22rem]"
+                className="relative h-80 shrink-0 overflow-hidden bg-surface-dark-elevated sm:h-96 lg:h-[32rem]"
               >
                 <Image
                   src={item.src}
                   alt={item.alt}
-                  sizes={`${Math.round((352 * item.src.width) / item.src.height)}px`}
+                  sizes={`${Math.round((512 * item.src.width) / item.src.height)}px`}
                   className="h-full w-auto transition-transform duration-[400ms] hover:scale-[1.03]"
                 />
               </button>

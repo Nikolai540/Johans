@@ -1,4 +1,4 @@
-import { LogoIcon } from "@/components/Logo";
+import { Logo } from "@/components/Logo";
 import { site } from "@/lib/site";
 
 export function LegalPage({ title, children }: { title: string; children: React.ReactNode }) {
@@ -7,8 +7,7 @@ export function LegalPage({ title, children }: { title: string; children: React.
       <header className="on-dark h-nav border-b border-surface-dark-elevated bg-surface-dark">
         <div className="page-x mx-auto flex h-full max-w-page items-center justify-between">
           <a href="/" className="flex min-h-11 items-center text-title-md text-on-dark" aria-label={`${site.name} – Startseite`}>
-            <LogoIcon className="mr-sm h-9 w-auto" />
-          <span className="max-[22.5rem]:hidden">J&amp;L Bauprojekte</span>
+          <Logo className="h-10 w-auto" />
           </a>
           <a href={site.phone.href} className="btn btn-primary">
             Jetzt anrufen
