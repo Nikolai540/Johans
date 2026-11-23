@@ -207,8 +207,9 @@
 
   /* Karten: heben sich durch Fläche, Rand und Schatten ab. Die gelbe Kante erscheint erst beim Überfahren
      (oder bei Tastaturfokus in der Karte): 1px Rand plus 3px Innenschatten, damit sie dem Radius folgt. */
-  /* Dunkle Abschnitte: Putz-Relief als Vektorgrafik, rechnet sich in jeder Größe scharf */
-  .bg-putz { background: var(--color-surface-dark) url(/images/allgemein/hintergrund.svg) center / cover; }
+  /* Dunkle Abschnitte: Kohleputz als nach rechts und unten gespiegelte, nahtlose Kachel (3072 × 1024 px).
+     Wiederholt statt gestreckt und in halber Größe gezeigt, damit er auf Retina-Bildschirmen scharf bleibt. */
+  .bg-putz { background: var(--color-surface-dark) url(/images/allgemein/kohleputz-kachel.webp) 0 0 / 1536px 512px repeat; }
 
   .card {
     position: relative;
