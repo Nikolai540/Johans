@@ -1,13 +1,7 @@
-import Image from "next/image";
-
 import { ContactForm } from "@/components/ContactForm";
-import { PhoneIcon } from "@/components/Icons";
 import type { ServiceId } from "@/lib/content";
-import { photo } from "@/lib/images";
-import { site } from "@/lib/site";
 
 export function Contact({ initial, formTitle }: { initial?: ServiceId[]; formTitle?: string }) {
-  const p = photo("startseite", "lechBlickNorden");
   return (
     <section id="kontakt" aria-labelledby="kontakt-title" className="bg-canvas">
       <ContactForm initial={initial} title={formTitle} />

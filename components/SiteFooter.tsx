@@ -5,12 +5,11 @@ import { Logo } from "@/components/Logo";
 import auftragsbank from "@/public/images/partner/auftragsbank.png";
 import lnDigital from "@/public/images/partner/ln-digital.png";
 import solaris from "@/public/images/partner/solaris.png";
-import { photo, photos } from "@/lib/images";
+import { photos } from "@/lib/images";
 import { nav, serviceNav, site } from "@/lib/site";
 
 /** home: Startseite, auf der der Footer steht – Sprungmarken wie "/#faq" bleiben dann auf dieser Seite */
 export function SiteFooter({ home = "/" }: { home?: string }) {
-  const stamp = photo("allgemein", "landsbergBayertor");
   const credits = Object.values(photos).map((p) => p.credit);
 
   return (
@@ -97,7 +96,7 @@ export function SiteFooter({ home = "/" }: { home?: string }) {
           <div className="lg:col-span-8">
             <p className="text-title-sm text-ink">Bildnachweise</p>
             <p className="mt-xs text-body-sm text-body">
-              Alle Fotos via Wikimedia Commons; Gewerke-Fotos sind Symbolbilder und zeigen keine Projekte von{" "}
+              Diese Fotos stammen von Wikimedia Commons. Die mit „Symbolbild“ gekennzeichneten zeigen keine Projekte von{" "}
               {site.name}.{" "}
               {credits.map((c, i) => (
                 <span key={c.source}>

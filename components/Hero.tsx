@@ -3,9 +3,27 @@ import Image from "next/image";
 import { photo } from "@/lib/images";
 import { homeCopy } from "@/lib/homes";
 import { locationById, type LocationId } from "@/lib/site";
+import demontage from "@/public/images/startseite/hero/demontage-stahltank.jpg";
+import wanddurchbruch from "@/public/images/startseite/hero/wanddurchbruch.jpg";
 
-// Überblendung der vorhandenen Fotos; nur das erste lädt sofort, die anderen danach
-const slides = [photo("startseite", "landsbergLechwehr"), photo("startseite", "entkernung"), photo("startseite", "sperrmuell"), photo("startseite", "abbruch")];
+// Überblendung; nur das erste Foto lädt sofort, die anderen danach.
+// Eigene Fotos aus public/images/startseite/hero/ in alphabetischer Reihenfolge, danach das Symbolbild.
+// position: Bildausschnitt, damit Person und Motiv quer (Desktop) und hochkant (Handy) im Bild bleiben.
+const slides = [
+  {
+    src: demontage,
+    alt: "Mitarbeiter mit Gehörschutz und Schutzbrille zerlegt im Keller einen Stahltank mit dem Winkelschleifer, Funken sprühen",
+    caption: "Demontage eines Stahltanks im Keller",
+    position: "object-[62%_38%]",
+  },
+  {
+    src: wanddurchbruch,
+    alt: "Wanddurchbruch im Wohnhaus: Die Öffnung ist mit Stahlprofilen abgefangen, davor liegen die Ziegel der abgebrochenen Wand",
+    caption: "Wanddurchbruch im Wohnhaus",
+    position: "object-[50%_20%]",
+  },
+  { ...photo("startseite", "entkernung"), position: "object-[50%_35%]" },
+];
 
 export function Hero({ location }: { location: LocationId }) {
   const copy = homeCopy[location];
@@ -24,7 +42,7 @@ export function Hero({ location }: { location: LocationId }) {
             preload={i === 0}
             sizes="100vw"
             placeholder="blur"
-            className="object-cover object-[50%_35%]"
+            className={`object-cover ${p.position}`}
           />
         </div>
       ))}

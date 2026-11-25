@@ -8,7 +8,6 @@ import { site } from "@/lib/site";
 /** extra: Fragen nur für diese Seite, vor den allgemeinen */
 export function Faq({ extra = [] }: { extra?: { q: string; a: string }[] }) {
   const tall = photo("startseite", "landsbergBayertor");
-  const square = photo("startseite", "landsbergLechwehr");
   const place = [site.address.street, `${site.address.postalCode} ${site.address.locality}`].filter(Boolean).join(", ");
   const branch = `${site.branch.street}, ${site.branch.postalCode} ${site.branch.locality}`;
 
