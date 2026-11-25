@@ -12,7 +12,7 @@ export function Faq({ extra = [] }: { extra?: { q: string; a: string }[] }) {
   const branch = `${site.branch.street}, ${site.branch.postalCode} ${site.branch.locality}`;
 
   return (
-    <section id="faq" aria-labelledby="faq-title" className="bg-surface-soft pb-section lg:pb-0 mt-10">
+    <section id="faq" aria-labelledby="faq-title" className="bg-surface-soft pt-10 pb-section lg:pb-0">
       <div className="page-x mx-auto grid max-w-page gap-xxl lg:grid-cols-12 lg:gap-lg">
         {/* Bilder: auf dem Smartphone zuerst */}
         <div className="relative pb-xxl lg:order-2 lg:col-span-6 lg:col-start-7 lg:self-center lg:pb-0">

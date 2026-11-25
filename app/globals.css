@@ -259,13 +259,15 @@
 }
 
 /* Helle Flächen: überall derselbe Ton wie der Leistungen-Abschnitt (Stein mit Kalkputz, dunkelste Stelle hält
-   4,5:1 für grauen Text). Nur auf Flächen-Elementen, nicht auf Bildern, Eingabefeldern oder Logo-Hintergründen.
+   4,5:1 für grauen Text). Karten sind heller (Weiß mit Kalkputz), damit sie sich vom Hintergrund abheben.
+   Nur auf Flächen-Elementen, nicht auf Bildern, Eingabefeldern oder Logo-Hintergründen.
    Außerhalb von @layer, damit es die Farb-Utilities bg-canvas usw. überstimmt. */
 :is(section, footer, div, li, article, aside, details):is(.bg-canvas, .bg-surface-soft, .bg-surface-card),
 .card:not(.card-dark)::after {
   background: var(--color-surface-soft) url(/images/allgemein/kalkputz-kachel.webp) 0 0 / 1536px 512px repeat;
   background-blend-mode: multiply;
 }
+.card:not(.card-dark)::after { background-color: var(--color-canvas); }
 
 
 /* ------------------------------------------------------------------
