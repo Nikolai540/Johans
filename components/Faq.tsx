@@ -25,7 +25,7 @@ export function Faq({ extra = [] }: { extra?: { q: string; a: string }[] }) {
           <h2 id="faq-title" data-reveal className="text-display-md lg:text-display-lg">
             Häufige Fragen
           </h2>
-          <div className="mt-xxl flex flex-col gap-sm">
+          <div className="mt-xxl flex flex-col gap-lg">
             {[...extra, ...faqs].map((f, i) => (
               <details key={f.q} name="faq" data-reveal style={{ ["--i" as string]: i + 2 }} className="card group px-lg py-xs">
                 <summary className="flex min-h-11 cursor-pointer items-start justify-between gap-md py-xs text-title-md text-ink">
