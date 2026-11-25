@@ -3,6 +3,8 @@ import Image from "next/image";
 import { ConsentSettingsButton } from "@/components/CookieBanner";
 import { Logo } from "@/components/Logo";
 import auftragsbank from "@/public/images/partner/auftragsbank.png";
+import lnDigital from "@/public/images/partner/ln-digital.png";
+import solaris from "@/public/images/partner/solaris.png";
 import { photo, photos } from "@/lib/images";
 import { nav, serviceNav, site } from "@/lib/site";
 
@@ -54,6 +56,14 @@ export function SiteFooter({ home = "/" }: { home?: string }) {
                 <a href="https://www.auftragsbank.de/" target="_blank" rel="noopener" className="block">
                   <Image src={auftragsbank} alt="auftragsbank" width={143} height={48} className="rounded-[10px] bg-canvas px-xs" />
                 </a>
+              </li>
+              {/* PLATZHALTER: Links zu Solaris und LN digital fehlen noch, dann wie oben in <a target="_blank" rel="noopener"> einpacken */}
+              <li>
+                {/* Helles Logo für dunkle Flächen, darum als einziges ohne weiße Fläche */}
+                <Image src={solaris} alt="Solaris Landsberg am Lech" width={188} height={48} />
+              </li>
+              <li>
+                <Image src={lnDigital} alt="Website von LN digital" width={169} height={48} className="rounded-[10px] bg-canvas px-xs py-xxs" />
               </li>
             </ul>
           </div>
