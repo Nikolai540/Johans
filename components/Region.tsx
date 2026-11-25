@@ -98,7 +98,7 @@ export function Region({ location }: { location: LocationId }) {
                 className="card group flex flex-col p-lg has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-ink sm:p-xl"
               >
                 <span className="flex items-start justify-between gap-md">
-                  <span className="flex size-14 items-center justify-center rounded-sm bg-surface-soft text-on-primary">
+                  <span className="flex size-14 items-center justify-center rounded-sm bg-surface-strong text-on-primary">
                     <Icon className="size-7" />
                   </span>
                   {r.badge && (

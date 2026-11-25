@@ -210,13 +210,28 @@
   /* Dunkle Abschnitte: Kohleputz als nach rechts und unten gespiegelte, nahtlose Kachel (3072 × 1024 px).
      Wiederholt statt gestreckt und in halber Größe gezeigt, damit er auf Retina-Bildschirmen scharf bleibt. */
   .bg-putz { background: var(--color-surface-dark) url(/images/allgemein/kohleputz-kachel.webp) 0 0 / 1536px 512px repeat; }
+  /* Helle Flächen: Kalkputz mit demselben Relief (dunkelste Stelle #e7e3d9, grauer Text hält 4,5:1).
+     Multipliziert mit der Flächenfarbe, so bleibt Stein (surface-soft) wärmer als Weiß. Nur auf Flächen-Elementen,
+     nicht auf Bildern, Eingabefeldern oder Logo-Hintergründen. */
+  :is(section, footer, div, li, article, aside, details).bg-canvas,
+  :is(section, footer, div, li, article, aside, details).bg-surface-soft,
+  :is(section, footer, div, li, article, aside, details).bg-surface-card,
+  .card:not(.card-dark) {
+    background-image: url(/images/allgemein/kalkputz-kachel.webp);
+    background-size: 1536px 512px;
+    background-blend-mode: multiply;
+  }
 
+  /* Karten als Putzplatte mit dunkler Kante unten rechts (3D). Die Kante sind gestapelte harte Schatten:
+     Sie folgen dem Radius, ergeben die schrägen Ecken und werden von overflow-hidden der Karte nicht abgeschnitten. */
   .card {
+    --slab: var(--color-surface-dark-elevated);
+    --edge: 1px 1px 0 var(--slab), 2px 2px 0 var(--slab), 3px 3px 0 var(--slab), 4px 4px 0 var(--slab), 5px 5px 0 var(--slab), 6px 6px 0 var(--slab), 7px 7px 0 var(--slab), 8px 8px 0 var(--slab), 9px 9px 0 var(--slab), 10px 10px 0 var(--slab);
     position: relative;
     background-color: var(--color-canvas);
     border: 1px solid var(--color-hairline);
     border-radius: var(--radius-sm);
-    box-shadow: 0 1px 2px rgb(29 28 26 / 0.06), 0 12px 32px -16px rgb(29 28 26 / 0.28); /* taste-skill-ignore: Karten-Schatten auf Kundenwunsch */
+    box-shadow: var(--edge), 10px 18px 28px -12px rgb(29 28 26 / 0.45); /* taste-skill-ignore: 3D-Kante auf Kundenwunsch */
     transition: transform var(--t-ui) var(--ease-out), box-shadow var(--t-ui) var(--ease-out), border-color var(--t-ui) var(--ease-out);
   }
   /* Orange Leiste oben bei Hover/Fokus. Als eigene Ebene über dem Inhalt, sonst verdecken randlose Bilder sie */
@@ -232,20 +247,22 @@
     transition: opacity var(--t-ui) var(--ease-out);
   }
   .card-dark {
+    --slab: #0d0c0b; /* dunkler als der Kohleputz, sonst verschwindet die Kante auf dunklen Abschnitten */
     background-color: var(--color-surface-dark-elevated);
     border-color: var(--color-surface-dark-elevated);
-    box-shadow: 0 12px 32px -16px rgb(0 0 0 / 0.6); /* taste-skill-ignore: Karten-Schatten auf Kundenwunsch */
+    box-shadow: var(--edge), 10px 18px 28px -12px rgb(0 0 0 / 0.6); /* taste-skill-ignore */
   }
   .card:has(:focus-visible) { border-top-color: var(--color-primary); }
   .card:has(:focus-visible)::after { opacity: 1; }
   @media (hover: hover) and (pointer: fine) {
+    /* Beim Überfahren hebt sich die Platte schräg an, die Kante wird dicker */
     .card:hover {
-      transform: translateY(-3px);
+      transform: translate(-2px, -2px);
       border-top-color: var(--color-primary);
-      box-shadow: 0 2px 4px rgb(29 28 26 / 0.06), 0 20px 40px -18px rgb(29 28 26 / 0.35); /* taste-skill-ignore */
+      box-shadow: var(--edge), 11px 11px 0 var(--slab), 12px 12px 0 var(--slab), 14px 22px 32px -12px rgb(29 28 26 / 0.5); /* taste-skill-ignore */
     }
     .card:hover::after { opacity: 1; }
-    .card-dark:hover { box-shadow: 0 20px 40px -18px rgb(0 0 0 / 0.7); } /* taste-skill-ignore */
+    .card-dark:hover { box-shadow: var(--edge), 11px 11px 0 var(--slab), 12px 12px 0 var(--slab), 14px 22px 32px -12px rgb(0 0 0 / 0.7); } /* taste-skill-ignore */
   }
 
   /* Neutrale Abdunklung unter Text auf Fotos (Ink mit Alpha) */
@@ -278,19 +295,20 @@
 
 @keyframes rise { to { opacity: 1; transform: none; } }
 
-/* Hero: 4 Fotos je 6 s, 1,5 s Überblendung. Ohne Animation (Bewegung reduziert) bleibt das erste stehen. */
+/* Hero: 3 Fotos je 6 s, 1,5 s Überblendung. Ohne Animation (Bewegung reduziert) bleibt das erste stehen.
+   Bei anderer Anzahl Dauer (Anzahl × 6 s) und Prozentwerte (je Foto 100 % / Anzahl) anpassen. */
 .hero-slide:not(:first-child) { opacity: 0; }
 @media (prefers-reduced-motion: no-preference) {
   .hero-slide {
     opacity: 0;
-    animation: hero-fade 24s linear infinite;
+    animation: hero-fade 18s linear infinite;
     animation-delay: calc(var(--i) * 6s - 1.5s);
   }
 }
 @keyframes hero-fade {
   0% { opacity: 0; }
-  6.25%, 25% { opacity: 1; }
-  31.25%, 100% { opacity: 0; }
+  8.33%, 33.33% { opacity: 1; }
+  41.67%, 100% { opacity: 0; }
 }
 
 
