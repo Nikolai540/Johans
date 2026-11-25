@@ -8,12 +8,11 @@ import { site } from "@/lib/site";
 /** extra: Fragen nur für diese Seite, vor den allgemeinen */
 export function Faq({ extra = [] }: { extra?: { q: string; a: string }[] }) {
   const tall = photo("startseite", "landsbergBayertor");
-  const square = photo("startseite", "landsbergLechwehr");
   const place = [site.address.street, `${site.address.postalCode} ${site.address.locality}`].filter(Boolean).join(", ");
   const branch = `${site.branch.street}, ${site.branch.postalCode} ${site.branch.locality}`;
 
   return (
-    <section id="faq" aria-labelledby="faq-title" className="bg-surface-soft pb-section lg:pb-0 mt-10">
+    <section id="faq" aria-labelledby="faq-title" className="bg-surface-soft pt-10 pb-section lg:pb-0">
       <div className="page-x mx-auto grid max-w-page gap-xxl lg:grid-cols-12 lg:gap-lg">
         {/* Bilder: auf dem Smartphone zuerst */}
         <div className="relative pb-xxl lg:order-2 lg:col-span-6 lg:col-start-7 lg:self-center lg:pb-0">
@@ -26,7 +25,7 @@ export function Faq({ extra = [] }: { extra?: { q: string; a: string }[] }) {
           <h2 id="faq-title" data-reveal className="text-display-md lg:text-display-lg">
             Häufige Fragen
           </h2>
-          <div className="mt-xxl flex flex-col gap-sm">
+          <div className="mt-xxl flex flex-col gap-lg">
             {[...extra, ...faqs].map((f, i) => (
               <details key={f.q} name="faq" data-reveal style={{ ["--i" as string]: i + 2 }} className="card group px-lg py-xs">
                 <summary className="flex min-h-11 cursor-pointer items-start justify-between gap-md py-xs text-title-md text-ink">

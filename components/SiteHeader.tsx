@@ -111,7 +111,7 @@ export function SiteHeader() {
                   {servicesLabel}
                   <ChevronIcon className="size-4 transition-transform duration-[180ms] group-open:rotate-180" />
                 </summary>
-                <ul className="absolute left-0 top-full min-w-56 border border-surface-dark-elevated bg-surface-dark py-xs">
+                <ul className="absolute left-0 top-full min-w-56 border border-surface-dark-elevated bg-putz py-xs">
                   {serviceNav.map((l) => (
                     <li key={l.href}>
                       <a
@@ -174,7 +174,7 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <div id="mobile-menu" hidden={!open} className="fixed inset-x-0 top-nav bottom-0 overflow-y-auto bg-surface-dark xl:hidden">
+      <div id="mobile-menu" hidden={!open} className="fixed inset-x-0 top-nav bottom-0 overflow-y-auto bg-putz xl:hidden">
         <nav aria-label="Mobile Navigation" className="page-x flex min-h-full flex-col pb-xl pt-lg">
           <ul className="flex flex-col">
             <li>

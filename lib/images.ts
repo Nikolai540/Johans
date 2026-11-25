@@ -9,19 +9,13 @@ export type Photo = {
   credit: { title: string; author: string; license: string; licenseUrl: string; source: string };
 };
 
-// Alle Fotos stammen aus Wikimedia Commons (freie Lizenzen, unverändert, nur zugeschnitten angezeigt).
-// Sie zeigen die Region bzw. Arbeiten anderer – nicht Projekte von JL Bauprojekte.
-// Eigene Projektfotos können hier 1:1 ausgetauscht werden.
+// Fotos aus Wikimedia Commons (freie Lizenzen, unverändert, nur zugeschnitten angezeigt), jedes steht im Footer als Bildnachweis.
+// Sie zeigen die Region bzw. Arbeiten anderer, nicht Projekte von J&L Bauprojekte. Wird ein Foto nirgends mehr genutzt, hier löschen.
 export const photos = {
   landsbergLechwehr: {
     alt: "Das Lechwehr in Landsberg am Lech, dahinter die Altstadt mit dem Turm der Stadtpfarrkirche",
     caption: "Lechwehr, Landsberg am Lech",
     credit: { title: "Landsberg am Lech Lechwehr", author: "PeterWeisenbach", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/", source: "https://commons.wikimedia.org/w/index.php?curid=87623793" },
-  },
-  lechBlickNorden: {
-    alt: "Ruhiger Lech nördlich des Lechwehrs in Landsberg mit Uferbäumen und Altstadthäusern",
-    caption: "Der Lech in Landsberg, Blick nach Norden",
-    credit: { title: "Landsberg am Lech — Lechwehr (Blick gen Norden)", author: "User:Mattes", license: "CC BY 2.0", licenseUrl: "https://creativecommons.org/licenses/by/2.0/de/deed.en", source: "https://commons.wikimedia.org/wiki/File:Landsberg_am_Lech_%E2%80%94_Lechwehr_(Blick_gen_Norden).JPG" },
   },
   landsbergLuftbild: {
     alt: "Luftbild der Altstadt von Landsberg am Lech mit roten Dächern",

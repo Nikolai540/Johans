@@ -32,16 +32,16 @@ export function Services() {
           {serviceCategories.map((cat) => {
             const photo = pagePhoto("startseite", cat.photo);
             return (
-              <article key={cat.id} aria-labelledby={`leistung-${cat.id}`} className="card card-dark bg-putz on-dark grid overflow-hidden lg:grid-cols-8">
+              <article key={cat.id} aria-labelledby={`leistung-${cat.id}`} className="card grid lg:grid-cols-8">
                 <div className="flex flex-col p-lg sm:p-xl lg:col-span-5">
                   <h3
                     id={`leistung-${cat.id}`}
                     data-reveal
-                    className="scroll-mt-[calc(var(--spacing-nav)+var(--spacing-lg))] text-display-sm text-on-dark"
+                    className="scroll-mt-[calc(var(--spacing-nav)+var(--spacing-lg))] text-display-sm"
                   >
                     {cat.name}
                   </h3>
-                  <p data-reveal style={{ ["--i" as string]: 1 }} className="mt-sm max-w-[52ch] text-body-md text-on-dark-soft">
+                  <p data-reveal style={{ ["--i" as string]: 1 }} className="mt-sm max-w-[52ch] text-body-md">
                     {cat.text}
                   </p>
                   <ul data-reveal style={{ ["--i" as string]: 2 }} className="mt-lg grid gap-sm">
@@ -50,8 +50,8 @@ export function Services() {
                       return (
                         <li key={item.name} className="flex gap-sm">
                           <span aria-hidden className="mt-[0.55em] size-2 shrink-0 bg-primary" />
-                          <span className="text-body-md text-on-dark-soft">
-                            <span className="font-bold text-on-dark">{item.name}:</span> {item.short}
+                          <span className="text-body-md">
+                            <span className="font-bold text-ink">{item.name}:</span> {item.short}
                           </span>
                         </li>
                       );
@@ -63,8 +63,8 @@ export function Services() {
                   </a>
                 </div>
                 {/* Bild randlos: mobil volle Kartenbreite unter dem Text, Desktop volle Kartenhöhe rechts.
-                    Eine Maske blendet das Bild selbst aus, so läuft es weich in den Putz-Hintergrund über. */}
-                <figure className="relative aspect-[4/3] lg:col-span-3 lg:aspect-auto lg:min-h-[28rem]">
+                    Eine Maske blendet das Bild selbst aus, so läuft es weich in den Kalkputz der Karte über. */}
+                <figure className="card-cut relative aspect-[4/3] lg:col-span-3 lg:aspect-auto lg:min-h-[28rem]">
                   <Image
                     src={photo.src}
                     alt={photo.alt}
@@ -73,7 +73,7 @@ export function Services() {
                     placeholder="blur"
                     className="object-cover [mask-image:linear-gradient(to_bottom,transparent,black_40%)] lg:[mask-image:linear-gradient(to_right,transparent,black_45%)]"
                   />
-                  <figcaption className="absolute right-xs bottom-xs bg-canvas/85 px-xs py-[2px] text-body-sm text-body">{photo.caption}</figcaption>
+                  <figcaption className="absolute right-[calc(var(--cut)+var(--spacing-xs))] bottom-xs bg-canvas/85 px-xs py-[2px] text-body-sm text-body">{photo.caption}</figcaption>
                 </figure>
               </article>
             );

@@ -293,7 +293,7 @@ export function RegionPage({ page }: { page: RegionPageData }) {
             <h2 id="faq-titel" data-reveal className="text-display-md lg:col-span-4 lg:text-display-lg">
               Häufige Fragen
             </h2>
-            <div className="flex flex-col gap-sm lg:col-span-7 lg:col-start-6">
+            <div className="flex flex-col gap-lg lg:col-span-7 lg:col-start-6">
               {page.faqs.map((f, i) => (
                 <details key={f.q} data-reveal style={{ ["--i" as string]: i % 3 }} className="card group px-lg py-xs">
                   <summary className="flex min-h-11 cursor-pointer items-start justify-between gap-md py-xs text-ink">

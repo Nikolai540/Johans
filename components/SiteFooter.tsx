@@ -3,12 +3,13 @@ import Image from "next/image";
 import { ConsentSettingsButton } from "@/components/CookieBanner";
 import { Logo } from "@/components/Logo";
 import auftragsbank from "@/public/images/partner/auftragsbank.png";
-import { photo, photos } from "@/lib/images";
+import lnDigital from "@/public/images/partner/ln-digital.png";
+import solaris from "@/public/images/partner/solaris.png";
+import { photos } from "@/lib/images";
 import { nav, serviceNav, site } from "@/lib/site";
 
 /** home: Startseite, auf der der Footer steht – Sprungmarken wie "/#faq" bleiben dann auf dieser Seite */
 export function SiteFooter({ home = "/" }: { home?: string }) {
-  const stamp = photo("allgemein", "landsbergBayertor");
   const credits = Object.values(photos).map((p) => p.credit);
 
   return (
@@ -55,6 +56,14 @@ export function SiteFooter({ home = "/" }: { home?: string }) {
                   <Image src={auftragsbank} alt="auftragsbank" width={143} height={48} className="rounded-[10px] bg-canvas px-xs" />
                 </a>
               </li>
+              {/* PLATZHALTER: Links zu Solaris und LN digital fehlen noch, dann wie oben in <a target="_blank" rel="noopener"> einpacken */}
+              <li>
+                {/* Helles Logo für dunkle Flächen, darum als einziges ohne weiße Fläche */}
+                <Image src={solaris} alt="Solaris Landsberg am Lech" width={188} height={48} />
+              </li>
+              <li>
+                <Image src={lnDigital} alt="Website von LN digital" width={169} height={48} className="rounded-[10px] bg-canvas px-xs py-xxs" />
+              </li>
             </ul>
           </div>
         </div>
@@ -87,7 +96,7 @@ export function SiteFooter({ home = "/" }: { home?: string }) {
           <div className="lg:col-span-8">
             <p className="text-title-sm text-ink">Bildnachweise</p>
             <p className="mt-xs text-body-sm text-body">
-              Alle Fotos via Wikimedia Commons; Gewerke-Fotos sind Symbolbilder und zeigen keine Projekte von{" "}
+              Diese Fotos stammen von Wikimedia Commons. Die mit „Symbolbild“ gekennzeichneten zeigen keine Projekte von{" "}
               {site.name}.{" "}
               {credits.map((c, i) => (
                 <span key={c.source}>

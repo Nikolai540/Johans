@@ -10,8 +10,6 @@ import i6 from "@/public/images/startseite/landsberg-luftbild.jpg";
 import i7 from "@/public/images/startseite/utting-ammersee.jpg";
 import i8 from "@/public/images/startseite/buchloe-luftbild.jpg";
 import i9 from "@/public/images/startseite/landsberg-bayertor.jpg";
-import i10 from "@/public/images/startseite/lech-blick-norden.jpg";
-import i11 from "@/public/images/allgemein/landsberg-bayertor.jpg";
 import i12 from "@/public/images/allgemein/landsberg-lechwehr.jpg";
 import i13 from "@/public/images/vilgertshofen/landsberg-lechwehr.jpg";
 import i14 from "@/public/images/entkernung-abbruch-rueckbau/entkernung.jpg";
@@ -43,8 +41,8 @@ import i39 from "@/public/images/einsatzgebiet/allgaeu/sperrmuell.jpg";
 
 // Ein Ordner pro Seite unter public/images/<Seitenpfad>/. Bild für eine Seite austauschen = Datei im Ordner ersetzen.
 export const files: Record<string, Partial<Record<string, StaticImageData>>> = {
-  "startseite": { landsbergLechwehr: i0, entkernung: i1, sperrmuell: i2, abbruch: i3, trockenbau: i4, sanierungFachwerk: i5, landsbergLuftbild: i6, uttingAmmersee: i7, buchloeLuftbild: i8, landsbergBayertor: i9, lechBlickNorden: i10, },
-  "allgemein": { landsbergBayertor: i11, landsbergLechwehr: i12, },
+  "startseite": { landsbergLechwehr: i0, entkernung: i1, sperrmuell: i2, abbruch: i3, trockenbau: i4, sanierungFachwerk: i5, landsbergLuftbild: i6, uttingAmmersee: i7, buchloeLuftbild: i8, landsbergBayertor: i9, },
+  "allgemein": { landsbergLechwehr: i12, },
   "vilgertshofen": { landsbergLechwehr: i13, },
   "entkernung-abbruch-rueckbau": { entkernung: i14, },
   "entruempelung-haushaltsaufloesung": { sperrmuell: i15, },

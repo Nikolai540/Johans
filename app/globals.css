@@ -210,42 +210,46 @@
   /* Dunkle Abschnitte: Kohleputz als nach rechts und unten gespiegelte, nahtlose Kachel (3072 × 1024 px).
      Wiederholt statt gestreckt und in halber Größe gezeigt, damit er auf Retina-Bildschirmen scharf bleibt. */
   .bg-putz { background: var(--color-surface-dark) url(/images/allgemein/kohleputz-kachel.webp) 0 0 / 1536px 512px repeat; }
-
+  /* Karten: helle Putzplatte (::after) liegt auf einer dunklen Putzplatte (::before), die nach rechts unten versetzt ist.
+     Die Ecke unten rechts ist abgeschnitten, dort sieht man die dunkle Platte. Der Inhalt liegt über beiden Platten. */
   .card {
+    --cut: 40px; /* abgeschnittene Ecke; Innenabstand ab 24px hält Text aus der Schräge */
     position: relative;
-    background-color: var(--color-canvas);
-    border: 1px solid var(--color-hairline);
-    border-radius: var(--radius-sm);
-    box-shadow: 0 1px 2px rgb(29 28 26 / 0.06), 0 12px 32px -16px rgb(29 28 26 / 0.28); /* taste-skill-ignore: Karten-Schatten auf Kundenwunsch */
-    transition: transform var(--t-ui) var(--ease-out), box-shadow var(--t-ui) var(--ease-out), border-color var(--t-ui) var(--ease-out);
+    isolation: isolate;
+    transition: transform var(--t-ui) var(--ease-out);
   }
-  /* Orange Leiste oben bei Hover/Fokus. Als eigene Ebene über dem Inhalt, sonst verdecken randlose Bilder sie */
+  .card::before,
   .card::after {
     content: "";
     position: absolute;
-    inset: 0;
-    z-index: 1;
-    border-radius: inherit;
-    box-shadow: inset 0 3px 0 var(--color-primary);
-    opacity: 0;
     pointer-events: none;
-    transition: opacity var(--t-ui) var(--ease-out);
+    transition: transform var(--t-ui) var(--ease-out), box-shadow var(--t-ui) var(--ease-out);
   }
-  .card-dark {
-    background-color: var(--color-surface-dark-elevated);
-    border-color: var(--color-surface-dark-elevated);
-    box-shadow: 0 12px 32px -16px rgb(0 0 0 / 0.6); /* taste-skill-ignore: Karten-Schatten auf Kundenwunsch */
+  .card::before {
+    inset: 10px -10px -14px 10px;
+    z-index: -2;
+    background: var(--color-surface-dark) url(/images/allgemein/kohleputz-kachel.webp) 0 0 / 1536px 512px repeat;
+    box-shadow: 0 12px 24px -12px rgb(29 28 26 / 0.5); /* taste-skill-ignore: Plattenschatten auf Kundenwunsch */
   }
-  .card:has(:focus-visible) { border-top-color: var(--color-primary); }
-  .card:has(:focus-visible)::after { opacity: 1; }
+  .card::after {
+    inset: 0;
+    z-index: -1;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
+    /* Plattenstärke: Unterkante etwas dunkler */
+    box-shadow: inset 0 -4px 0 rgb(29 28 26 / 0.12); /* taste-skill-ignore */
+  }
+  /* Bilder, die bis in die Ecke reichen, folgen der Schräge */
+  .card-cut { clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%); }
+  /* Dunkle Karte: Kohleputz auf noch dunklerem Kohleputz */
+  .card-dark::after { background: var(--color-surface-dark) url(/images/allgemein/kohleputz-kachel.webp) 0 0 / 1536px 512px repeat; }
+  .card-dark::before { background-color: #0d0c0b; background-blend-mode: multiply; }
+
+  /* Orange Leiste oben bei Hover/Fokus; beim Überfahren hebt sich die helle Platte von der dunklen ab */
+  .card:has(:focus-visible)::after { box-shadow: inset 0 3px 0 var(--color-primary), inset 0 -4px 0 rgb(29 28 26 / 0.12); }
   @media (hover: hover) and (pointer: fine) {
-    .card:hover {
-      transform: translateY(-3px);
-      border-top-color: var(--color-primary);
-      box-shadow: 0 2px 4px rgb(29 28 26 / 0.06), 0 20px 40px -18px rgb(29 28 26 / 0.35); /* taste-skill-ignore */
-    }
-    .card:hover::after { opacity: 1; }
-    .card-dark:hover { box-shadow: 0 20px 40px -18px rgb(0 0 0 / 0.7); } /* taste-skill-ignore */
+    .card:hover { transform: translate(-2px, -2px); }
+    .card:hover::before { transform: translate(3px, 3px); }
+    .card:hover::after { box-shadow: inset 0 3px 0 var(--color-primary), inset 0 -4px 0 rgb(29 28 26 / 0.12); }
   }
 
   /* Neutrale Abdunklung unter Text auf Fotos (Ink mit Alpha) */
@@ -253,6 +257,18 @@
     background-image: linear-gradient(to top, color-mix(in srgb, var(--color-ink) 90%, transparent), color-mix(in srgb, var(--color-ink) 55%, transparent) 45%, transparent); /* taste-skill-ignore: Scrim */
   }
 }
+
+/* Helle Flächen: überall derselbe Ton wie der Leistungen-Abschnitt (Stein mit Kalkputz, dunkelste Stelle hält
+   4,5:1 für grauen Text). Karten sind heller (Weiß mit Kalkputz), damit sie sich vom Hintergrund abheben.
+   Nur auf Flächen-Elementen, nicht auf Bildern, Eingabefeldern oder Logo-Hintergründen.
+   Außerhalb von @layer, damit es die Farb-Utilities bg-canvas usw. überstimmt. */
+:is(section, footer, div, li, article, aside, details):is(.bg-canvas, .bg-surface-soft, .bg-surface-card),
+.card:not(.card-dark)::after {
+  background: var(--color-surface-soft) url(/images/allgemein/kalkputz-kachel.webp) 0 0 / 1536px 512px repeat;
+  background-blend-mode: multiply;
+}
+.card:not(.card-dark)::after { background-color: var(--color-canvas); }
+
 
 /* ------------------------------------------------------------------
    Motion. Versteckte Startzustände gelten nur mit aktivem JavaScript
@@ -278,19 +294,20 @@
 
 @keyframes rise { to { opacity: 1; transform: none; } }
 
-/* Hero: 4 Fotos je 6 s, 1,5 s Überblendung. Ohne Animation (Bewegung reduziert) bleibt das erste stehen. */
+/* Hero: 3 Fotos je 6 s, 1,5 s Überblendung. Ohne Animation (Bewegung reduziert) bleibt das erste stehen.
+   Bei anderer Anzahl Dauer (Anzahl × 6 s) und Prozentwerte (je Foto 100 % / Anzahl) anpassen. */
 .hero-slide:not(:first-child) { opacity: 0; }
 @media (prefers-reduced-motion: no-preference) {
   .hero-slide {
     opacity: 0;
-    animation: hero-fade 24s linear infinite;
+    animation: hero-fade 18s linear infinite;
     animation-delay: calc(var(--i) * 6s - 1.5s);
   }
 }
 @keyframes hero-fade {
   0% { opacity: 0; }
-  6.25%, 25% { opacity: 1; }
-  31.25%, 100% { opacity: 0; }
+  8.33%, 33.33% { opacity: 1; }
+  41.67%, 100% { opacity: 0; }
 }
 
 

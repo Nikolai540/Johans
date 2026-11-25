@@ -4,7 +4,6 @@ import { Roboto } from "next/font/google";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-import { ArrowIcon, PauseIcon, PlayIcon } from "@/components/Icons";
 import type { Review } from "@/lib/reviews";
 
 const de = (n: number) => n.toLocaleString("de-DE", { maximumFractionDigits: 1 });
@@ -30,18 +29,16 @@ const INTERVAL = 5000;
 
 // Eine Bewertung zur Zeit, die nächste fliegt abwechselnd von links und rechts herein.
 // Alle Karten liegen übereinander im selben Rasterfeld: Die Höhe richtet sich nach der längsten, nichts springt.
-// Pausiert bei Maus oder Fokus im Karussell, per Button und bei reduzierter Bewegung (WCAG 2.2.2).
+// Pausiert bei Maus oder Fokus im Karussell und bei reduzierter Bewegung. Ohne Pause-Knopf erfüllt das WCAG 2.2.2 nur teilweise.
 export function ReviewCarousel({ items, className }: { items: Review[]; className?: string }) {
   const count = items.length;
   // turn zählt jeden Wechsel, die Richtung wechselt so auch beim Sprung von der letzten zur ersten Karte
   const [{ index, turn }, setPos] = useState({ index: 0, turn: 0 });
-  const [playing, setPlaying] = useState(true);
+  const [reduced, setReduced] = useState(false);
   const [held, setHeld] = useState(false);
-  const rotating = playing && !held && count > 1;
+  const rotating = !reduced && !held && count > 1;
 
-  useEffect(() => {
-    if (matchMedia("(prefers-reduced-motion: reduce)").matches) setPlaying(false);
-  }, []);
+  useEffect(() => setReduced(matchMedia("(prefers-reduced-motion: reduce)").matches), []);
 
   useEffect(() => {
     if (!rotating) return;
@@ -49,9 +46,7 @@ export function ReviewCarousel({ items, className }: { items: Review[]; classNam
     return () => clearTimeout(t);
   }, [rotating, index, count]);
 
-  const go = (step: number) => setPos((p) => ({ index: (p.index + step + count) % count, turn: p.turn + 1 }));
-  const control =
-    "flex size-12 items-center justify-center rounded-sm bg-canvas text-ink transition-colors duration-[180ms] hover:bg-surface-strong";
+  const go = (i: number) => setPos((p) => (i === p.index ? p : { index: i, turn: p.turn + 1 }));
 
   return (
     <div
@@ -64,31 +59,6 @@ export function ReviewCarousel({ items, className }: { items: Review[]; classNam
       onFocus={() => setHeld(true)}
       onBlur={(e) => !e.currentTarget.contains(e.relatedTarget) && setHeld(false)}
     >
-      {/* Buttons außerhalb der Folien: Sie gibt es nur einmal, und der Fokus bleibt nach dem Klick auf dem Pfeil */}
-      {count > 1 && (
-        <div className="mb-md flex items-center gap-xs">
-          <button type="button" onClick={() => setPlaying((p) => !p)} aria-label={playing ? "Automatischen Wechsel anhalten" : "Automatischen Wechsel starten"} className={control}>
-            {playing ? <PauseIcon className="size-5" /> : <PlayIcon className="size-5" />}
-          </button>
-          <p className="ml-xs text-title-sm text-on-dark tabular">
-            <span className="sr-only">
-              Bewertung {index + 1} von {count}
-            </span>
-            <span aria-hidden>
-              {index + 1} / {count}
-            </span>
-          </p>
-          <div className="ml-auto flex gap-xs">
-            <button type="button" onClick={() => go(-1)} aria-label="Vorherige Bewertung" className={control}>
-              <ArrowIcon className="size-5 rotate-180" />
-            </button>
-            <button type="button" onClick={() => go(1)} aria-label="Nächste Bewertung" className={control}>
-              <ArrowIcon className="size-5" />
-            </button>
-          </div>
-        </div>
-      )}
-
       {/* Während des automatischen Wechsels keine Ansagen, sonst unterbricht der Screenreader alle 5 s */}
       <div className="grid" aria-live={rotating ? "off" : "polite"}>
         {items.map((r, i) => (
@@ -134,6 +104,24 @@ export function ReviewCarousel({ items, className }: { items: Review[]; classNam
           </figure>
         ))}
       </div>
+
+      {/* Punkte unter den Karten: 44 px große Klickfläche, sichtbar ist nur der kleine Punkt darin */}
+      {count > 1 && (
+        <div className="mt-sm flex justify-center">
+          {items.map((r, i) => (
+            <button
+              key={r.author + r.when}
+              type="button"
+              onClick={() => go(i)}
+              aria-label={`Bewertung ${i + 1} von ${count} anzeigen`}
+              aria-current={i === index || undefined}
+              className="group flex size-11 items-center justify-center"
+            >
+              <span className={`size-2.5 rounded-full transition-colors duration-[180ms] ${i === index ? "bg-primary" : "bg-on-dark-soft group-hover:bg-on-dark"}`} />
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

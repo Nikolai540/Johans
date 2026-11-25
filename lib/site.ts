@@ -80,6 +80,7 @@ export const pages = {
 } as const;
 
 export const aboutPage = { href: "/ueber-uns/", label: "Über uns" } as const;
+export const pricesPage = { href: "/preise/", label: "Preise" } as const;
 
 /** Einzugsgebiet in der Reihenfolge, in der es auf der Website genannt wird */
 export const catchment = [
@@ -101,6 +102,7 @@ export const serviceNav = [
   { href: pages.renovierung.href, label: pages.renovierung.label },
   { href: pages.schadstoffe.href, label: pages.schadstoffe.label },
   { href: "/containerdienst/", label: "Container" },
+  { href: pricesPage.href, label: pricesPage.label },
 ] as const;
 
 export const nav = [
