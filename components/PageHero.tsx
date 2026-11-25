@@ -4,7 +4,7 @@ import { PhoneIcon } from "@/components/Icons";
 import type { Placeholder } from "@/lib/placeholders";
 import { site } from "@/lib/site";
 
-// Dunkler Seitenkopf für Unterseiten ohne Leistungs-Vorlage (Schadstoffe, Über uns)
+// Dunkler Seitenkopf für Unterseiten ohne Leistungs-Vorlage (Schadstoffe, Über uns, Preise). Ohne Foto nur Text.
 export function PageHero({
   crumb,
   h1,
@@ -19,7 +19,7 @@ export function PageHero({
   intro: string;
   badge?: string;
   cta: string;
-  photo: Placeholder;
+  photo?: Placeholder;
   portrait?: boolean;
 }) {
   return (
@@ -59,12 +59,14 @@ export function PageHero({
             </a>
           </div>
         </div>
-        <figure className={portrait ? "lg:col-span-4 lg:col-start-9" : "lg:col-span-5"}>
-          <div className={`relative overflow-hidden bg-surface-dark-elevated ${portrait ? "aspect-[4/5]" : "aspect-[4/3]"}`}>
-            <Image src={photo.src} alt={photo.alt} fill preload sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
-          </div>
-          <figcaption className="mt-xs text-body-sm text-on-dark-soft">{photo.caption}</figcaption>
-        </figure>
+        {photo && (
+          <figure className={portrait ? "lg:col-span-4 lg:col-start-9" : "lg:col-span-5"}>
+            <div className={`relative overflow-hidden bg-surface-dark-elevated ${portrait ? "aspect-[4/5]" : "aspect-[4/3]"}`}>
+              <Image src={photo.src} alt={photo.alt} fill preload sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
+            </div>
+            <figcaption className="mt-xs text-body-sm text-on-dark-soft">{photo.caption}</figcaption>
+          </figure>
+        )}
       </div>
     </section>
   );
