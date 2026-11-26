@@ -20,7 +20,7 @@ const slides = [
     src: wanddurchbruch,
     alt: "Wanddurchbruch im Wohnhaus: Die Öffnung ist mit Stahlprofilen abgefangen, davor liegen die Ziegel der abgebrochenen Wand",
     caption: "Wanddurchbruch im Wohnhaus",
-    position: "object-[50%_20%]",
+    position: "object-[50%_45%]",
   },
   { ...photo("startseite", "entkernung"), position: "object-[50%_35%]" },
 ];
@@ -46,7 +46,7 @@ export function Hero({ location }: { location: LocationId }) {
           />
         </div>
       ))}
-      <div aria-hidden className="absolute inset-0 -z-10 bg-surface-dark/60" />
+      <div aria-hidden className="absolute inset-0 -z-10 bg-linear-to-t from-surface-dark/85 via-surface-dark/50 to-surface-dark/25" />
       {/* Bildtexte über der Abdunklung, mit den Fotos synchron */}
       <ul aria-hidden className="absolute right-md bottom-xs hidden text-body-sm text-on-dark-soft md:block lg:right-xl">
         {slides.map((p, i) => (
