@@ -122,8 +122,7 @@ export function RegionPage({ page }: { page: RegionPageData }) {
                 </a>
               </div>
               <p data-rise style={{ ["--i" as string]: 3 }} className="mt-lg text-body-sm text-on-dark-soft">
-                {site.proof.rating} von 5 bei {site.proof.reviews} Google-Bewertungen · {site.proof.years} Jahre Erfahrung ·
-                über {site.proof.projects} Projekte
+                {site.proof.years} Jahre Erfahrung · über {site.proof.projects} Projekte
               </p>
             </div>
             <figure className="lg:col-span-6">
@@ -188,9 +187,8 @@ export function RegionPage({ page }: { page: RegionPageData }) {
               <p data-reveal style={{ ["--i" as string]: 1 }} className="mt-md text-body-md text-on-dark">
                 {page.trust.intro}
               </p>
-              <dl className="mt-xl grid grid-cols-3 gap-md">
+              <dl className="mt-xl grid grid-cols-2 gap-md">
                 {[
-                  { v: site.proof.rating, l: `von 5 bei ${site.proof.reviews} Google-Bewertungen` },
                   { v: String(site.proof.years), l: "Jahre Erfahrung" },
                   { v: `${site.proof.projects}+`, l: "Projekte" },
                 ].map((f, i) => (

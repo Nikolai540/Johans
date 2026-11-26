@@ -8,6 +8,8 @@ type HomeCopy = {
   aboutRegion: string;
   regionTitle: string;
   regionIntro: string;
+  /** Google-Bewertung in den Fakten beim Einsatzgebiet, je Standort-Profil */
+  rating: string;
   /** Zusätzliche Fragen vor den allgemeinen FAQ */
   faqs: { q: string; a: string }[];
 };
@@ -22,6 +24,7 @@ export const homeCopy: Record<LocationId, HomeCopy> = {
     regionTitle: "Zwischen Augsburg, Ammersee und Allgäu",
     regionIntro:
       "Unsere Standorte sind Landsberg am Lech und Vilgertshofen. Von dort sind wir schnell bei Ihnen, zur Besichtigung genauso wie auf der Baustelle. Kurze Wege sparen Ihnen Geld.",
+    rating: "5 von 5",
     faqs: [],
   },
   vilgertshofen: {
@@ -33,6 +36,7 @@ export const homeCopy: Record<LocationId, HomeCopy> = {
     regionTitle: "Von Vilgertshofen in die ganze Region",
     regionIntro:
       "Unser Firmensitz ist in Vilgertshofen, zur Gemeinde gehören auch Issing, Mundraching, Pflugdorf und Stadl. Dazu kommt unser Standort in Landsberg am Lech. Nach Fuchstal, Denklingen oder Schongau ist es von hier nicht weit, zur Besichtigung genauso wie auf die Baustelle. Kurze Wege sparen Ihnen Geld.",
+    rating: `${site.proof.rating} von 5 (${site.proof.reviews} Bewertungen)`,
     faqs: [
       {
         q: "Wo ist Ihr Firmensitz?",

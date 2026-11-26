@@ -100,7 +100,8 @@ export function ReviewCarousel({ items, className }: { items: Review[]; classNam
               </span>
               {r.when && <span className="text-[13px] text-[#70757a]">{r.when}</span>}
             </div>
-            <blockquote className="mt-2 whitespace-pre-line">{r.text}</blockquote>
+            {/* Gekürzt, sonst macht eine sehr lange Bewertung alle Karten so hoch wie sich selbst */}
+            <blockquote className="mt-2 line-clamp-8 whitespace-pre-line sm:line-clamp-6">{r.text}</blockquote>
           </figure>
         ))}
       </div>

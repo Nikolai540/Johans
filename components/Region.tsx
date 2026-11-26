@@ -4,13 +4,6 @@ import { regions, type RegionId } from "@/lib/regions";
 import { homeCopy } from "@/lib/homes";
 import { locationById, locations, site, type LocationId } from "@/lib/site";
 
-const facts = [
-  { label: "Standorte", value: `${site.branch.locality} und ${site.address.locality}` },
-  { label: "Erfahrung", value: `${site.proof.years} Jahre, über ${site.proof.projects} Projekte` },
-  { label: "Google-Bewertung", value: `${site.proof.rating} von 5 (${site.proof.reviews} Bewertungen)` },
-  { label: "Ansprechpartner", value: site.owner },
-];
-
 const icons: Record<RegionId, typeof GateIcon> = {
   landsberg: GateIcon,
   ammersee: SailIcon,
@@ -25,6 +18,12 @@ export function Region({ location }: { location: LocationId }) {
   const loc = locationById(location);
   const other = locations.find((l) => l.id !== location)!;
   const copy = homeCopy[location];
+  const facts = [
+    { label: "Standorte", value: `${site.branch.locality} und ${site.address.locality}` },
+    { label: "Erfahrung", value: `${site.proof.years} Jahre, über ${site.proof.projects} Projekte` },
+    { label: "Google-Bewertung", value: copy.rating },
+    { label: "Ansprechpartner", value: site.owner },
+  ];
   return (
     <section id="einsatzgebiet" aria-labelledby="einsatzgebiet-title" className="bg-canvas py-section">
       <div className="page-x mx-auto max-w-page">

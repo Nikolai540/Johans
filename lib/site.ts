@@ -30,7 +30,7 @@ export const site = {
     geo: { latitude: 48.0623, longitude: 10.8566 },
   },
   // Angaben von der bisherigen Website
-  proof: { years: 7, projects: 270, rating: "4,8", reviews: 42 },
+  proof: { years: 7, projects: 270, rating: "4,8", reviews: 40 },
   // PLATZHALTER: Erreichbarkeit bestätigen
   hours: [
     { label: "Montag – Freitag", value: "8:00 – 20:00", days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "08:00", closes: "20:00" },

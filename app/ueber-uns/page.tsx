@@ -62,8 +62,8 @@ const reasons = [
     text: `Mit Standorten in ${site.branch.locality} und ${site.address.locality} sind wir schnell vor Ort, in Augsburg, am Ammersee und im Allgäu.`,
   },
   {
-    title: "Gut bewertet",
-    text: `${site.proof.rating} von 5 Sternen bei ${site.proof.reviews} Google-Bewertungen und über ${site.proof.projects} abgeschlossene Projekte in ${site.proof.years} Jahren.`,
+    title: "Viel Erfahrung",
+    text: `Über ${site.proof.projects} abgeschlossene Projekte in ${site.proof.years} Jahren, vom Kellerabteil bis zur Entkernung ganzer Häuser.`,
   },
 ];
 
@@ -129,11 +129,10 @@ export default function UeberUns() {
 
         {/* Zahlen */}
         <section aria-label="J&L Bauprojekte in Zahlen" className="bg-surface-soft py-xxl">
-          <dl className="page-x mx-auto grid max-w-page gap-xl sm:grid-cols-3 sm:gap-lg">
+          <dl className="page-x mx-auto grid max-w-page gap-xl sm:grid-cols-2 sm:gap-lg">
             {[
               { v: String(site.proof.years), l: "Jahre Erfahrung im Landkreis Landsberg" },
               { v: `${site.proof.projects}+`, l: "abgeschlossene Projekte" },
-              { v: site.proof.rating, l: `von 5 Sternen bei ${site.proof.reviews} Google-Bewertungen` },
             ].map((f, i) => (
               <div key={f.l} data-reveal style={{ ["--i" as string]: i }}>
                 <dt className="sr-only">{f.l}</dt>
